@@ -113,6 +113,7 @@ used by a selected web development technology, CMS, or template.
 **Upload Requirements**
 <br/>
 Submit at https://upload.bpa.org
+<br/>
 URL to project (including any necessary login
 credentials, if necessary), Works Cited and
 Release Form(s) in one combined PDF file.
