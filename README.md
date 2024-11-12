@@ -1,19 +1,6 @@
 **(435) Website Design Team**
 <br/>
 <br/>
-**Description**
-<br/>
-The team will work together to create a website based on the assigned topic.
-<br/>
-<br/>
-**Eligibility**
-<br/>
-Any secondary division student member may enter this team event. A team will consist of 2-4 members.
-Members participating in national level competition must be registered for the event prior to
-submission deadline for technical judging. Teams must participate in both parts of the competition to
-be ranked.
-<br/>
-<br/>
 **Topic**
 <br/>
 A local up-and-coming rock band, Stage Fright, has contracted your team to create a website for them.
@@ -53,13 +40,10 @@ into the testing area. Violation of this rule will result in disqualification.
 <br/>
 **Specifications**
 <br/>
-• This is a pre-submitted event. See instructions for submissions.
+• This is a **pre-submitted event.** See instructions for submissions.
 <br/>
 • Submit the URL to the final project files, Works Cited, and signed Release Form(s) in a
-combined PDF file to https://upload.bpa.org no later than 5:00 p.m. Eastern Time, on April 1,
-2025. This is the deadline for the National Leadership Conference. Each Regional or State
-Conference may have specific deadlines prior to the National deadlines. Please consult the
-Regional or State Conference Administrator for Regional or State deadlines.
+combined PDF file to https://upload.bpa.org
 <br/>
 • The team is responsible for securing a signed Release Form from any individual whose name,
 photograph, and/or other information is included on the website.
@@ -116,7 +100,6 @@ graphics, media, compatibility, and content).
 • Previously submitted websites used in BPA competition may not be submitted.
 Business Professionals of America Workplace Skills Assessment Program
 Material contained in this publication may be reproduced for member and/or event use only.
-Release v1.2 October 4, 2024
 <br/>
 • Members are permitted to use any web development technology or CMS desired by the team in
 order to complete the event; however, use of original code may be scored higher, Examples of
@@ -138,9 +121,9 @@ Pre-submitted Project Files
 Technical Scoring Rubric
 Presentation Scoring Rubric
 Length of event
-No more than three (3) minutes setup time
+**No more than three (3) minutes setup time
 No more than ten (10) minutes oral presentation
-No more than five (5) minutes for judges’ questions
+No more than five (5) minutes for judges’ questions**
 Finals may be included at regional, state, and national levels
 Entries
 Each state is allowed three (3) entries
@@ -148,6 +131,3 @@ Judges’ comments will be returned digitally through the online judging system 
 Materials submitted for technical judging cannot be returned and will not be available at NLC.
 Saved File Name(s)
 WDT-TeamID.pdf
-**Deadline
-April 1, 2025, 5:00 p.m.
-Eastern Time**
