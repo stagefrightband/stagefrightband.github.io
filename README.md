@@ -1,8 +1,10 @@
 **(435) Website Design Team**
 <br/>
+<br/>
 **Description**
 <br/>
 The team will work together to create a website based on the assigned topic.
+<br/>
 <br/>
 **Eligibility**
 <br/>
@@ -10,6 +12,7 @@ Any secondary division student member may enter this team event. A team will con
 Members participating in national level competition must be registered for the event prior to
 submission deadline for technical judging. Teams must participate in both parts of the competition to
 be ranked.
+<br/>
 <br/>
 **Topic**
 <br/>
@@ -28,6 +31,7 @@ purchasing options
 <br/>
 Teams who do not submit an entry that follows the topic above will be disqualified.
 <br/>
+<br/>
 **Team must supply**
 <br/>
 Team must supply one computer loaded with their website for presentation to the judges
@@ -45,6 +49,7 @@ member. Props or visual aids are allowed in this competition. No equipment, supp
 than those specified for an event will be allowed in the testing area. No previous Business Professionals of
 America tests and/or sample tests or facsimiles thereof (handwritten, photocopied, or keyed) may be taken
 into the testing area. Violation of this rule will result in disqualification.
+<br/>
 <br/>
 **Specifications**
 <br/>
@@ -121,6 +126,7 @@ used by a selected web development technology, CMS, or template.
 <br/>
 • No materials, other than the required submission materials, may be left with judges.
 <br/>
+<br/>
 **Upload Requirements**
 <br/>
 Submit at https://upload.bpa.org
@@ -142,6 +148,6 @@ Judges’ comments will be returned digitally through the online judging system 
 Materials submitted for technical judging cannot be returned and will not be available at NLC.
 Saved File Name(s)
 WDT-TeamID.pdf
-Deadline
+**Deadline
 April 1, 2025, 5:00 p.m.
-Eastern Time
+Eastern Time**
