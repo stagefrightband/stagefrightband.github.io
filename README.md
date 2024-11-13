@@ -1,5 +1,12 @@
 https://www.searchenginejournal.com/important-tags-seo/156440/
-
+<br/>
+<br/>
+https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare
+<br/>
+https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs
+<br/>
+https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+<br/>
 **(435) Website Design Team**
 <br/>
 <br/>
