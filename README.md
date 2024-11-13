@@ -7,6 +7,7 @@ https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs
 <br/>
 https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 <br/>
+<br/>
 **(435) Website Design Team**
 <br/>
 <br/>
