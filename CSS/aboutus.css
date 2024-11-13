@@ -2,9 +2,11 @@
 .topnav {
   background-color: #333;
   overflow: hidden;
+  border-radius: 10px;
+  margin-top: -5px;
 }
 
-/* Navigation Bar Links */ 
+/* Navigation Bar Links */
 .topnav a {
   float: left;
   color: #f2f2f2;
@@ -22,6 +24,6 @@
 
 /* Active page */
 .topnav a.active {
-  background-color:  #aa0404;
+  background-color: #aa0404;
   color: white;
 }
