@@ -20,8 +20,8 @@
   color: black;
 }
 
-/* Active link */
+/* Active page */
 .topnav a.active {
-  background-color: #04AA6D;
+  background-color:  #aa0404;
   color: white;
 }
