@@ -1,1 +1,2 @@
 # TODO: Re link to new store href
+yo why is store.html in its own stage fright store folder instead of with the rest of the htmls?
