@@ -1,3 +1,5 @@
+<!-- Important html tags -->
+
 https://www.searchenginejournal.com/important-tags-seo/156440/
 <br/>
 <br/>
