@@ -10,6 +10,7 @@ https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs
 https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 <br/>
 <br/>
+https://www.toptal.com/designers/htmlarrows/symbols/
 **(435) Website Design Team**
 <br/>
 <br/>
