@@ -1,8 +1,12 @@
 https://www.searchenginejournal.com/important-tags-seo/156440/
 <br/>
 <br/>
-html entities
+
+<!-- html entities -->
+
 https://www.toptal.com/designers/htmlarrows/symbols/
+<br/>
+<br/>
 https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare
 <br/>
 <br/>
