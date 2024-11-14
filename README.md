@@ -1,6 +1,8 @@
 https://www.searchenginejournal.com/important-tags-seo/156440/
 <br/>
 <br/>
+html entities
+https://www.toptal.com/designers/htmlarrows/symbols/
 https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare
 <br/>
 <br/>
@@ -10,7 +12,6 @@ https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs
 https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 <br/>
 <br/>
-https://www.toptal.com/designers/htmlarrows/symbols/
 **(435) Website Design Team**
 <br/>
 <br/>
