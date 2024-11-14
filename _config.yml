@@ -1,6 +1,7 @@
 theme: jekyll-theme-minimal
 
 # Where things are
+
 source              : .
 destination         : ./_site
 collections_dir     : .
@@ -50,7 +51,7 @@ show_dir_listing    : false
 # Outputting
 permalink           : date
 paginate_path       : /page:num
-timezone            : null
+timezone            : US/Mountain
 
 quiet               : false
 verbose             : false
