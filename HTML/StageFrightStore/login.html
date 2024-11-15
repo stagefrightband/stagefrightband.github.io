@@ -14,17 +14,38 @@
     <script src="../../JavaScript/login.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script>
-      function encryptWithSecretOnly() {
-        var encrypted = CryptoJS.AES.encrypt("plain text", "secretkey");
-      }
-      function decrypt() {
-        var encrypted = CryptoJS.AES.encrypt("plain text", "secretkey");
-        var bytes = CryptoJS.AES.decrypt(encrypted, "secretkey");
-        var decrypted = bytes.toString(CryptoJS.enc.Utf8);
-      }
+      const message = "Hello, World!";
+      const key = "Math.random()";
+
+      const encrypted = CryptoJS.AES.encrypt(message, key).toString();
+      const decrypted = CryptoJS.AES.decrypt(encrypted, key).toString(
+        CryptoJS.enc.Utf8
+      );
+
+      console.log(encrypted);
+      console.log(decrypted);
     </script>
     <title>Login - Stage Fright</title>
-    <link rel="icon" type="image/x-icon" href="/Icons/FrightTitleIcon.png" />
+            <!-- Favicons made with https://realfavicongenerator.net/ -->
+            <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="../../Icons/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="../../Icons/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="../../Icons/favicon-16x16.png"
+          />
+          <link rel="icon" type="image/x-icon" href="../../Icons/favicon.ico" />
+          <link rel="manifest" href="../../site.webmanifest" />
   </head>
 
   <!-- Login icon obtained from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-vector%2Flogin-icon&psig=AOvVaw1gsnfXABASMBCw_0OsnoO7&ust=1731690198618000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOCU2eqm3IkDFQAAAAAdAAAAABAE-->
