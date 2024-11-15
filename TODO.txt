@@ -1,3 +1,4 @@
 # TODO: Create band title icon and logo
 # TODO: Find a font to use
 # TODO: Make a login page for the store
+https://www.misterpki.com/cryptojs/
