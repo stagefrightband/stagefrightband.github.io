@@ -27,3 +27,8 @@
   background-color: #aa0404;
   color: white;
 }
+
+/* Stage Fright Logo */
+.topnav a img {
+ margin-bottom: -10px;
+}
