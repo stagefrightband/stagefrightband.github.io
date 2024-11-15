@@ -31,18 +31,9 @@
 }
 
 /* Stage Fright Logo */
-.topnav a img {
-  margin-top: -10px;
+.logo {
+  margin-top: -12px;
 }
-
- /* Login Link */
-.topnav a.login {
-  background-color:  lightskyblue;
-  color: black;
-}
-
- /* Login Link */
- .topnav a.login {
-  background-color:  lightskyblue;
-  color: black;
+.login {
+  margin-top: -2px;
 }

@@ -31,6 +31,10 @@
 }
 
 /* Stage Fright Logo */
-.topnav a img {
-  margin-top: -10px;
+.logo {
+  margin-top: -12px;
+}
+
+.login {
+  margin-top: -2px;
 }
