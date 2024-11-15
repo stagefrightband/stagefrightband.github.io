@@ -15,16 +15,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/appwrite@14.0.1"></script>
     <script>
-      import { Client, Account } from "appwrite";
-
-      export const client = new Client();
-
-      client
-        .setEndpoint("https://cloud.appwrite.io/v1")
-        .setProject("67378c4e000468025169"); // Replace with your project ID
-
-      export const account = new Account(client);
-      export { ID } from "appwrite";
+      function showPassword() {
+        var x = document.getElementById("passwordField");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
     </script>
     <title>Login - Stage Fright</title>
     <!-- Favicons made with https://realfavicongenerator.net/ -->
@@ -68,22 +66,39 @@
     </div>
     <br />
     <form style="text-align: center">
-      <label for="username">Username:</label><br />
-      <input
-        autocomplete="on"
-        type="text"
-        id="username"
-        name="username"
-      /><br /><br />
-      <label for="password">Password:</label><br />
-      <input
-        autocomplete="on"
-        type="text"
-        id="password"
-        name="password"
-      /><br /><br />
-      <a href="forgotpassword.html">Forgot Password</a><br /><br />
-      <button type="button">Sign In</button><br /><br />
+      <fieldset>
+        <legend>Login</legend>
+        <br />
+        <label for="username"></label>
+        <input
+          autocomplete="on"
+          placeholder="Username"
+          type="text"
+          id="username"
+          required
+          name="username"
+        /><br />
+        <label for="password"></label><br />
+        <input
+          autocomplete="on"
+          type="password"
+          placeholder="Password"
+          required
+          id="passwordField"
+          name="password"
+        /><br />
+        <input type="checkbox" onclick="showPassword()" />Show Password
+        <br /><br />
+        <label for="login"></label>
+        <input
+          autocomplete="off"
+          type="Submit"
+          value="Login"
+          id="login"
+          name="login"
+        /><br /><br />
+        <a href="forgotpassword.html">Forgot Password</a><br />
+      </fieldset>
     </form>
     <p style="text-align: center">
       Need an account? <a href="signup.html">Sign Up</a>
