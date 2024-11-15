@@ -9,21 +9,11 @@ https://www.searchenginejournal.com/important-tags-seo/156440/
 https://www.toptal.com/designers/htmlarrows/symbols/
 <br/>
 <br/>
-https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare
-<br/>
-<br/>
-https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs
-<br/>
-<br/>
-https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
-<br/>
-<br/>
 **(435) Website Design Team**
 <br/>
 <br/>
 **Topic**
 <br/>
-A local up-and-coming rock band, Stage Fright, has contracted your team to create a website for them.
 Your site must include, but is not limited to:
 <br/>
 • About – Write a description of the band along with profiles for each band member, their music,
@@ -51,11 +41,10 @@ Projector (optional)
 <br/>
 Props (optional)
 <br/>
-Business Professionals of America assumes no responsibility for hardware/software provided by the
-member. Props or visual aids are allowed in this competition. No equipment, supplies, or materials other
+Props or visual aids are allowed in this competition. No equipment, supplies, or materials other
 than those specified for an event will be allowed in the testing area. No previous Business Professionals of
 America tests and/or sample tests or facsimiles thereof (handwritten, photocopied, or keyed) may be taken
-into the testing area. Violation of this rule will result in disqualification.
+into the testing area.
 <br/>
 <br/>
 **Specifications**
@@ -81,7 +70,7 @@ submission or technical difficulties.
 <br/>
 • Multiple submissions cannot be accepted.
 <br/>
-• Only one (1) team member should complete the submission.
+**• Only one (1) team member should complete the submission.**
 <br/>
 • Materials from non-registered members and/or those missing Member IDs cannot be accepted.
 <br/>
