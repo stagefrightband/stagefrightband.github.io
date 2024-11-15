@@ -27,3 +27,12 @@
   background-color: #aa0404;
   color: white;
 }
+
+/* Table */
+table, th, td {
+  border: 1px solid black;
+}
+
+th {
+  text-align: center;
+}
