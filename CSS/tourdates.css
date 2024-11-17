@@ -55,6 +55,8 @@
   display: flex;
   flex-grow: 1;
   color: white;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 .tour {
   display: flex;
@@ -69,7 +71,7 @@
   border-top: 1px solid black;
 }
 
-/* Table */
+/* Table 
 table,
 th,
 td {
@@ -87,3 +89,4 @@ th {
   color: white;
   background-color: #156082;
 }
+*/
