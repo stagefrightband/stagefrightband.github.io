@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="test.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.29.0/dist/umd/supabase.min.js"></script>
+
+    <title>Login - Stage Fright</title>
+  </head>
+  <body>
+ <!-- Input for message and key to encrypt -->
+<input type="text" id="message" placeholder="Enter message" />
+<input type="text" id="encryption-key" placeholder="Enter encryption key" />
+<button id="encrypt-btn">Encrypt and Store</button>
+
+<!-- Input for encrypted message and key to decrypt -->
+<input type="text" id="encrypted-message" placeholder="Encrypted message" />
+<input type="text" id="decryption-key" placeholder="Enter decryption key" />
+<button id="decrypt-btn">Decrypt</button>
+
+<!-- Displaying the decrypted message -->
+<div id="decrypted-message"></div>
+
+  </body>
+</html>
