@@ -19,11 +19,6 @@ jobs:
         with:
           path: .env  # Path to your .env file
 
-      # Explicitly export environment variables
-      - name: Export environment variables
-        run: |
-          export $(grep -v '^#' .env | xargs)  # Export variables from the .env file
-
       # Show environment variables (optional, for debugging)
       - name: Show environment variables
         run: |
