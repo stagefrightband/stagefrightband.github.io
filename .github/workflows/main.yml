@@ -1,0 +1,44 @@
+            - name: Dotenv Action
+  # You may pin to the exact commit or the version.
+  # uses: falti/dotenv-action@d1cd55661714e830a6e26f608f81d36e23424fed
+  uses: falti/dotenv-action@v1.1.2
+  with:
+    # the path to the .env file (including file name)
+    path: # default is .env
+    # whether to log the variables to output or not
+    log-variables: # optional, default is false
+    # whether to mask the variables as secrets or not
+    mask-variables: # optional, default is false
+    # whether to export the variables to the environment or not
+    export-variables: # optional, default is false
+    # prefix to add to the exported variables
+    export-variables-prefix: # optional, default is 
+    # Transform keys case to lower, upper or keep as it is with bypass
+    keys-case: # optional, default is lower
+
+          name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Load environment variables from a .env file
+      - name: Load .env variables
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          env-file: .env
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
