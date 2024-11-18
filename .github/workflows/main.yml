@@ -11,21 +11,35 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # Updated to use the latest version
+        uses: actions/checkout@v3  # Use the latest version
 
       # Step to load environment variables from .env file
       - name: Load environment variables from .env file
         uses: falti/dotenv-action@v1.1.4
         with:
-          path: .env  # Corrected input parameter for the .env file path
+          path: .env  # Path to your .env file
 
-      - name: Show environment variables (optional)
+      # Explicitly export environment variables
+      - name: Export environment variables
+        run: |
+          export $(grep -v '^#' .env | xargs)  # Export variables from the .env file
+
+      # Show environment variables (optional, for debugging)
+      - name: Show environment variables
         run: |
           echo "Supabase URL: $SUPABASE_URL"
           echo "Supabase Key: $SUPABASE_KEY"
 
-      # You can add a step to deploy your website to your hosting service
-      - name: Deploy to Netlify or other service
+      # Install Netlify CLI and authenticate using the API token
+      - name: Install Netlify CLI
         run: |
-          # Your deploy command here (for example, with Netlify CLI or similar service)
-          netlify deploy --prod
+          npm install -g netlify-cli
+
+      - name: Authenticate with Netlify
+        run: |
+          echo ${{ secrets.NETLIFY_AUTH_TOKEN }} | netlify login --auth
+
+      # Deploy to Netlify
+      - name: Deploy to Netlify
+        run: |
+          netlify deploy --prod --dir=build  # Adjust the `--dir` argument based on your build output
