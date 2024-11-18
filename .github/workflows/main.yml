@@ -1,22 +1,4 @@
-            - name: Dotenv Action
-  # You may pin to the exact commit or the version.
-  # uses: falti/dotenv-action@d1cd55661714e830a6e26f608f81d36e23424fed
-  uses: falti/dotenv-action@v1.1.2
-  with:
-    # the path to the .env file (including file name)
-    path: # default is .env
-    # whether to log the variables to output or not
-    log-variables: # optional, default is false
-    # whether to mask the variables as secrets or not
-    mask-variables: # optional, default is false
-    # whether to export the variables to the environment or not
-    export-variables: # optional, default is false
-    # prefix to add to the exported variables
-    export-variables-prefix: # optional, default is 
-    # Transform keys case to lower, upper or keep as it is with bypass
-    keys-case: # optional, default is lower
-
-          name: CI/CD Pipeline
+name: Deploy Website with Environment Variables
 
 on:
   push:
@@ -24,21 +6,26 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
-      # Load environment variables from a .env file
-      - name: Load .env variables
-        uses: ad-m/github-push-action@v0.6.0
+      # Step to load environment variables from .env file
+      - name: Load environment variables from .env file
+        uses: falti/dotenv-action@v1.1.4
         with:
-          env-file: .env
+          env-path: .env  # Make sure this is the path to your .env file in the repo
 
-      - name: Install dependencies
-        run: npm install
+      - name: Show environment variables (optional)
+        run: |
+          echo "Supabase URL: $SUPABASE_URL"
+          echo "Supabase Key: $SUPABASE_KEY"
 
-      - name: Run tests
-        run: npm test
+      # You can add a step to deploy your website to your hosting service
+      - name: Deploy to Netlify or other service
+        run: |
+          # Your deploy command here (for example, with Netlify CLI or similar service)
+          netlify deploy --prod
