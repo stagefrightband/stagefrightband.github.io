@@ -32,8 +32,8 @@
   color: black;
 }
 
-/* Active page */
-.topnav a.active {
+/* Logo */
+.topnav a.logo {
   background-color: #aa0404;
   color: white;
   padding: 0;
@@ -43,9 +43,9 @@
 }
 
 /* Stage Fright Logo */
-.logo {
+.logoimage {
   width: 50px;
   height: 50px;
-  padding: 10px;
+  padding: 7px;
   margin: 5px;
 }
