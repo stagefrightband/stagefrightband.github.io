@@ -11,13 +11,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Updated to use the latest version
 
       # Step to load environment variables from .env file
       - name: Load environment variables from .env file
         uses: falti/dotenv-action@v1.1.4
         with:
-          env-path: .env  # Make sure this is the path to your .env file in the repo
+          path: .env  # Corrected input parameter for the .env file path
 
       - name: Show environment variables (optional)
         run: |
