@@ -2,11 +2,11 @@
 .topnav {
   background-color: #333;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 1.25rem;
 }
 
 /* Navigation Bar Links */
@@ -15,15 +15,15 @@
   color: #f2f2f2;
   text-align: center;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .topnav a:not(:first-child) {
   display: flex;
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 /* Links on hover */
@@ -44,10 +44,10 @@
 
 /* Stage Fright Logo */
 .logoimage {
-  width: 50px;
-  height: 50px;
-  padding: 10px;
-  margin: 5px;
+  width: 3.125rem;
+  height: 3.125rem;
+  padding: 0.625rem;
+  margin: 0.313;
 }
 
 /* Tour Grid Container */
@@ -55,8 +55,8 @@
   display: grid;
   gap: 0; /* No extra spacing between rows or columns */
   background-color: #dbdbdb;
-  border: 1px solid black; /* Outer border */
-  margin-bottom: 20px; /* Added spacing between tourdivs */
+  border: 0.063rem solid black; /* Outer border */
+  margin-bottom: 1.25rem; /* Added spacing between tourdivs */
   box-sizing: border-box; /* Ensure padding and border are included in size */
 }
 
@@ -69,7 +69,7 @@
 .tourrow {
   display: grid;
   grid-template-columns: 1fr auto auto;
-  border-bottom: 1px solid black; /* Consistent bottom border */
+  border-bottom: 0.063rem solid black; /* Consistent bottom border */
 }
 
 /* Remove bottom border for last row */
@@ -83,7 +83,7 @@
   flex-direction: column; /* Stack items as a column */
   align-items: flex-start; /* Align content to the left */
   justify-content: center; /* Center content vertically */
-  padding: 10px 10px 0px 10px; /* Updated padding */
+  padding: 0.625rem 0.625rem 0 0.625rem; /* Updated padding */
   height: 100%; /* Ensure it takes full height of the row */
   box-sizing: border-box; /* Include padding in height */
 }
@@ -94,25 +94,25 @@
   align-content: center;
   justify-content: center;
   flex-direction: column;
-  padding: 10px; /* Updated padding */
+  padding: 0.625rem; /* Updated padding */
 }
 
 .buytickets button {
   background-color: black;
   color: white;
-  padding: 5px 30px;
+  padding: 0.313rem 1.875rem;
 }
 
 /* Typography for Tour Details */
 .date {
-  font-size: 12px;
-  margin-bottom: 5px; /* Consistent spacing */
+  font-size: 0.75rem;
+  margin-bottom: 0.313rem; /* Consistent spacing */
 }
 .city {
-  font-size: 18px;
-  margin-bottom: 5px;
+  font-size: 1.125rem;
+  margin-bottom: 0.313rem;
 }
 .location {
-  font-size: 14px;
-  padding-bottom: 5px; /* Updated padding */
+  font-size: 0.875rem;
+  padding-bottom: 0.313rem; /* Updated padding */
 }
