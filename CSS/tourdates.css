@@ -118,3 +118,14 @@
   font-size: 0.875rem;
   padding-bottom: 0.313rem; /* Updated padding */
 }
+.tourname {
+  font-size: 1.875rem;
+  text-align: center;
+  text-shadow: 0.125rem 0.125rem 0.313rem red;
+  font-family: wolfhagen-blackletter;
+  margin-top: 0;
+}
+@font-face {
+  font-family: wolfhagen-blackletter;
+  src: url(../Fonts/wolfhagen_blackletter/WolfhagenBlackletter-Regular.ttf);
+}
