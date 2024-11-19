@@ -50,28 +50,51 @@
   margin: 5px;
 }
 
+/* Tour Grid Container */
 .tourdiv {
   display: grid;
-  grid-template-rows: repeat(2, auto);
-  grid-template-columns: 1fr auto auto;
+  gap: 0; /* No extra spacing between rows or columns */
   background-color: #dbdbdb;
-  border: 1px solid black;
+  border: 1px solid black; /* Outer border */
+  margin-bottom: 20px; /* Added spacing between tourdivs */
+  box-sizing: border-box; /* Ensure padding and border are included in size */
 }
-.tourinfo span {
-  display: flex;
-  flex-direction: column;
+
+/* Remove bottom margin for the last .tourdiv */
+.tourdiv:last-child {
+  margin-bottom: 0;
 }
+
+/* Each Tour Row */
+.tourrow {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  border-bottom: 1px solid black; /* Consistent bottom border */
+}
+
+/* Remove bottom border for last row */
+.tourrow:last-child {
+  border-bottom: 0;
+}
+
+/* Tour Info Section */
 .tourinfo {
-  padding: 10px;
-  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: column; /* Stack items as a column */
+  align-items: flex-start; /* Align content to the left */
+  justify-content: center; /* Center content vertically */
+  padding: 10px 10px 0px 10px; /* Updated padding */
+  height: 100%; /* Ensure it takes full height of the row */
+  box-sizing: border-box; /* Include padding in height */
 }
+
+/* Buy Tickets Section */
 .buytickets {
   display: flex;
   align-content: center;
   justify-content: center;
   flex-direction: column;
-  padding: 10px;
-  border-bottom: 1px solid black;
+  padding: 10px; /* Updated padding */
 }
 
 .buytickets button {
@@ -80,38 +103,16 @@
   padding: 5px 30px;
 }
 
+/* Typography for Tour Details */
 .date {
   font-size: 12px;
-  padding-bottom: 5px;
+  margin-bottom: 5px; /* Consistent spacing */
 }
 .city {
   font-size: 18px;
-  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 .location {
   font-size: 14px;
-  padding-bottom: 20px;
+  padding-bottom: 5px; /* Updated padding */
 }
-
-/*
- Tour List 
-.tour span {
-  display: flex;
-  flex-grow: 1;
-  color: white;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.tour {
-  display: flex;
-  border-bottom: 1px solid black;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  background-color: #262626;
-  padding-left: 10px;
-  margin: 0px;
-}
-.tour:first-child {
-  border-top: 1px solid black;
-}
-*/
