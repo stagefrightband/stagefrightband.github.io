@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 1.25rem;
+  height: 4.688rem;
 }
 
 /* Navigation Bar Links */
@@ -16,6 +17,7 @@
   text-align: center;
   text-decoration: none;
   font-size: 1.25rem;
+  padding: 4.688rem 0;
 }
 .topnav a:not(:first-child) {
   display: flex;
