@@ -63,8 +63,6 @@ photograph, and/or other information is included on the website.
 <br/>
 • Member ID will be required for all submissions.
 <br/>
-• No fax or mailed copies will be accepted.
-<br/>
 • No exceptions can be made for missed deadlines due to an incorrect email address for
 submission or technical difficulties.
 <br/>
