@@ -32,7 +32,7 @@ jobs:
 
       - name: Authenticate with Netlify
         run: |
-          echo ${{ secrets.NETLIFY_AUTH_TOKEN }} | netlify login --auth
+          echo ${{ secrets.NETLIFY_AUTH_TOKEN }} | netlify login --auth nfp_PeV9WB5JXjGQeqLDpWR4xWxummL1JMb60966
 
       # Deploy to Netlify
       - name: Deploy to Netlify
