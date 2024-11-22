@@ -55,3 +55,12 @@
 body {
   margin: 1.252vh
 }
+
+.profile {
+  border-radius: 1.565vh;
+  border: 0.156vh solid gray;
+  padding: 1.565vh;
+}
+h1 {
+  font-size: 3.13vh;
+}
