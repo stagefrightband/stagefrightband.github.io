@@ -2,12 +2,12 @@
 .topnav {
   background-color: #333;
   overflow: hidden;
-  border-radius: 0.625rem;
+  border-radius: 1.565vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.25rem;
-  height: 4.688rem;
+  padding: 0 3.13vh;
+  height: 11.738vh;
 }
 
 /* Navigation Bar Links */
@@ -16,16 +16,16 @@
   color: #f2f2f2;
   text-align: center;
   text-decoration: none;
-  font-size: 1.25rem;
-  padding: 4.688rem 0;
+  font-size: 3.13vh;
+  padding: 11.738vh 0;
 }
 .topnav a:not(:first-child) {
   display: flex;
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2.504vh;
+  padding-right: 2.504vh;
 }
 
 /* Links on hover */
@@ -46,9 +46,9 @@
 
 /* Stage Fright Logo */
 .logoimage {
-  width: 3.125rem;
-  height: 3.125rem;
-  padding: 0.625rem;
+  width: 7.825vh;
+  height: 7.825vh;
+  padding: 1.565vh;
   margin: 0.313;
 }
 
@@ -57,8 +57,8 @@
   display: grid;
   gap: 0; /* No extra spacing between rows or columns */
   background-color: #dbdbdb;
-  border: 0.063rem solid black; /* Outer border */
-  margin-bottom: 1.25rem; /* Added spacing between tourdivs */
+  border: 0.158vh solid black; /* Outer border */
+  margin-bottom: 3.13vh; /* Added spacing between tourdivs */
   box-sizing: border-box; /* Ensure padding and border are included in size */
 }
 
@@ -71,7 +71,7 @@
 .tourrow {
   display: grid;
   grid-template-columns: 1fr auto auto;
-  border-bottom: 0.063rem solid black; /* Consistent bottom border */
+  border-bottom: 0.158vh solid black; /* Consistent bottom border */
 }
 
 /* Remove bottom border for last row */
@@ -85,7 +85,7 @@
   flex-direction: column; /* Stack items as a column */
   align-items: flex-start; /* Align content to the left */
   justify-content: center; /* Center content vertically */
-  padding: 0.625rem 0.625rem 0 0.625rem; /* Updated padding */
+  padding: 1.565vh 1.565vh 0 1.565vh; /* Updated padding */
   height: 100%; /* Ensure it takes full height of the row */
   box-sizing: border-box; /* Include padding in height */
 }
@@ -96,36 +96,40 @@
   align-content: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0.625rem; /* Updated padding */
+  padding: 1.565vh; /* Updated padding */
 }
 
 .buytickets button {
   background-color: black;
   color: white;
-  padding: 0.313rem 1.875rem;
+  padding: 0.784vh 4.695vh;
 }
 
 /* Typography for Tour Details */
 .date {
-  font-size: 0.75rem;
-  margin-bottom: 0.313rem; /* Consistent spacing */
+  font-size: 1.878vh;
+  margin-bottom: 0.784vh; /* Consistent spacing */
 }
 .city {
-  font-size: 1.125rem;
-  margin-bottom: 0.313rem;
+  font-size: 2.817vh;
+  margin-bottom: 0.784vh;
 }
 .location {
-  font-size: 0.875rem;
-  padding-bottom: 0.313rem; /* Updated padding */
+  font-size: 2.191vh;
+  padding-bottom: 0.784vh; /* Updated padding */
 }
 .tourname {
-  font-size: 1.875rem;
+  font-size: 4.695vh;
   text-align: center;
-  text-shadow: 0.125rem 0.125rem 0.313rem red;
+  text-shadow: 0.313vh 0.313vh 0.784vh red;
   font-family: wolfhagen-blackletter;
   margin-top: 0;
 }
 @font-face {
   font-family: wolfhagen-blackletter;
   src: url(../Fonts/wolfhagen_blackletter/WolfhagenBlackletter-Regular.ttf);
+}
+
+body {
+  margin: 1.252vh
 }

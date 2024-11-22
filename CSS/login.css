@@ -2,12 +2,12 @@
 .topnav {
   background-color: #333;
   overflow: hidden;
-  border-radius: 0.625rem;
+  border-radius: 1.565vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.25rem;
-  height: 4.688rem;
+  padding: 0 3.13vh;
+  height: 11.738vh;
 }
 
 /* Navigation Bar Links */
@@ -16,16 +16,16 @@
   color: #f2f2f2;
   text-align: center;
   text-decoration: none;
-  font-size: 1.25rem;
-  padding: 4.688rem 0;
+  font-size: 3.13vh;
+  padding: 11.738vh 0;
 }
 .topnav a:not(:first-child) {
   display: flex;
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2.504vh;
+  padding-right: 2.504vh;
 }
 
 /* Links on hover */
@@ -46,14 +46,18 @@
 
 /* Stage Fright Logo */
 .logoimage {
-  width: 3.125rem;
-  height: 3.125rem;
-  padding: 0.438rem;
-  margin: 0.313rem;
+  width: 7.825vh;
+  height: 7.825vh;
+  padding: 1.097vh;
+  margin: 0.784vh;
 }
 
 fieldset {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+}
+
+body {
+  margin: 1.252vh
 }
