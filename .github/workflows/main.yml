@@ -37,4 +37,5 @@ jobs:
       # Deploy to Netlify
       - name: Deploy to Netlify
         run: |
+          netlify link
           netlify deploy --prod --dir=build  # Adjust the `--dir` argument based on your build output
