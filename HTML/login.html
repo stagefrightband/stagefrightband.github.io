@@ -41,6 +41,47 @@
         "SUPABASE_URL_PLACEHOLDER", // Placeholder for Supabase URL
         "SUPABASE_KEY_PLACEHOLDER" // Placeholder for Supabase Key
       );
+      document.addEventListener("DOMContentLoaded", () => {
+  const loginButton = document.getElementById("loginButton");
+
+  loginButton.addEventListener("click", async (event) => {
+    event.preventDefault(); // Prevent form submission behavior
+    console.log("Login button clicked!"); // Debugging message
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("passwordField").value;
+
+    if (!username || !password) {
+      alert("Please enter both username and password.");
+      return;
+    }
+
+    try {
+      const { data, error } = await supabase
+        .from("encrypted-data")
+        .select("*")
+        .eq("username", username)
+        .eq("password", password);
+
+      if (error) {
+        console.error("Error querying Supabase:", error);
+        alert("An error occurred. Please try again.");
+        return;
+      }
+
+      if (data && data.length > 0) {
+        alert("Login successful!");
+        window.location.href = "../index.html"; // Redirect after success
+      } else {
+        alert("Invalid username or password.");
+      }
+    } catch (err) {
+      console.error("Unexpected error:", err);
+      alert("An error occurred. Please try again.");
+    }
+  });
+});
+
     </script>
     <title>Login - Stage Fright</title>
     <!-- FavImages made with https://realfavicongenerator.net/ -->
@@ -103,7 +144,7 @@
       </a>
     </div>
     <br />
-    <form style="text-align: center">
+    <div style="text-align: center">
       <fieldset>
         <legend style="max-width: 25%">Login</legend>
         <br />
@@ -127,17 +168,12 @@
         /><br />
         <input type="checkbox" onclick="showPassword()" />Show Password
         <br /><br />
-        <label for="login"></label>
-        <input
-          autocomplete="off"
-          type="Submit"
-          value="Login"
-          id="login"
-          name="login"
-        /><br /><br />
+        <button id="loginButton">Login</button>
+        <br /><br />
         <a href="forgotpassword.html">Forgot Password</a><br />
       </fieldset>
-    </form>
+    </div>
+    
     <p style="text-align: center">
       Need an account? <a href="signup.html">Sign Up</a>
     </p>
@@ -147,11 +183,6 @@
 <script type="module">
   import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
-  // Initialize Supabase client
-  const supabase = createClient(
-    "https://cuxsndvcavwlffvywmfo.supabase.co",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN1eHNuZHZjYXZ3bGZmdnl3bWZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE4NzcwNDYsImV4cCI6MjA0NzQ1MzA0Nn0.UKmCIXv_qSKfeodEUQOVtgVU4pf9aHFMX1ygcV7NMYA"
-  );
 
   // Wait for DOM content to load before running other scripts
   document.addEventListener("DOMContentLoaded", function () {
