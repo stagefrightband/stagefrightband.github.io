@@ -62,7 +62,6 @@ body {
   border: 0.313vh solid black;
 }
 
-
 /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -87,8 +86,8 @@ body {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -99,16 +98,16 @@ body {
   left: 2px;
   bottom: 2px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
@@ -131,3 +130,33 @@ input:checked + .slider:before {
   align-items: center;
   gap: 10px; /* Adjust the gap as needed */
 }
+
+/* High Contrast Styles */
+.high-contrast body {
+  background-color: #000000; /* Black background */
+  color: #FFFFFF;            /* White text */
+}
+
+.high-contrast .topnav {
+  background-color: #000000; /* Black navigation bar */
+}
+
+.high-contrast .topnav a {
+  color: #FFFFFF;            /* White navigation links */
+}
+
+.high-contrast .topnav a:hover {
+  background-color: #FFFFFF; /* White background on hover */
+  color: #000000;            /* Black text on hover */
+}
+
+.high-contrast .logoimage {
+  /* Adjust logo image styles if needed */
+}
+
+.high-contrast .save {
+  background-color: #000000; /* Black background for save button */
+  color: #FFFFFF;            /* White text for save button */
+}
+
+/* Add additional high contrast styles as necessary */
