@@ -131,6 +131,18 @@ input:checked + .slider:before {
   gap: 10px; /* Adjust the gap as needed */
 }
 
+/* Add Open Dyslexic Font */
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("../Fonts/OpenDyslexic-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.open-dyslexic {
+  font-family: "OpenDyslexic", sans-serif;
+}
+
 /* High Contrast Styles */
 .high-contrast body {
   background-color: #000000; /* Black background */
