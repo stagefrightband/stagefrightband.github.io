@@ -12,13 +12,13 @@ jobs:
     steps:
       # Step 1: Checkout the repository
       - name: Checkout code
-        uses: actions/checkout@v3  # Use the latest version
+        uses: actions/checkout@v3
 
       # Step 2: Load environment variables from .env file
       - name: Load environment variables from .env file
         uses: falti/dotenv-action@v1.1.4
         with:
-          path: .env  # Path to your .env file
+          path: .env
 
       # Optional: Display the environment variables for debugging
       - name: Show environment variables
@@ -32,13 +32,23 @@ jobs:
         with:
           node-version: 16  # Use the desired Node.js version
 
-      # Step 4: Install dependencies and build the project
+      # Step 4: Initialize `package.json` if it doesn't exist
+      - name: Check and initialize package.json
+        run: |
+          if [ ! -f package.json ]; then
+            echo "package.json not found. Initializing..."
+            npm init -y
+          else
+            echo "package.json already exists."
+          fi
+
+      # Step 5: Install dependencies and build the project
       - name: Install dependencies and build
         run: |
           npm install
           npm run build  # Adjust this command based on your project's build script
 
-      # Step 5: Deploy to GitHub Pages
+      # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
