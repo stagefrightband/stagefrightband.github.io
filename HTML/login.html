@@ -33,6 +33,15 @@
         }
       }
     </script>
+    <script type="module">
+      import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+      // Initialize Supabase client
+      const supabase = createClient(
+        "SUPABASE_URL_PLACEHOLDER", // Placeholder for Supabase URL
+        "SUPABASE_KEY_PLACEHOLDER" // Placeholder for Supabase Key
+      );
+    </script>
     <title>Login - Stage Fright</title>
     <!-- FavImages made with https://realfavicongenerator.net/ -->
     <link
@@ -134,15 +143,66 @@
     </p>
   </body>
 </html>
+<!--
+<script type="module">
+  import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
-<!--      const message = "Hello, World!";
-      const key = "Math.random()";
+  // Initialize Supabase client
+  const supabase = createClient(
+    "https://cuxsndvcavwlffvywmfo.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN1eHNuZHZjYXZ3bGZmdnl3bWZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE4NzcwNDYsImV4cCI6MjA0NzQ1MzA0Nn0.UKmCIXv_qSKfeodEUQOVtgVU4pf9aHFMX1ygcV7NMYA"
+  );
 
-      const encrypted = CryptoJS.AES.encrypt(message, key).toString();
-      const decrypted = CryptoJS.AES.decrypt(encrypted, key).toString(
-        CryptoJS.enc.Utf8
-      );
+  // Wait for DOM content to load before running other scripts
+  document.addEventListener("DOMContentLoaded", function () {
+    // Encryption function using CryptoJS
+    function encryptData(data, key) {
+      return CryptoJS.AES.encrypt(JSON.stringify(data), key).toString();
+    }
 
-      console.log(encrypted);
-      console.log(decrypted);
-      -->
+    // Event listener for encryption
+    document.getElementById("encryptButton").addEventListener("click", () => {
+      const message = document.getElementById("encryptionMessage").value;
+      const key = document.getElementById("encryptionKey").value;
+
+      if (message && key) {
+        const encrypted = encryptData(message, key);
+        document.getElementById("encryptedMessage").value = encrypted;
+      } else {
+        alert("Please enter both a message and a key");
+      }
+    });
+
+    // Event listener for sending encrypted data to Supabase
+    document
+      .getElementById("sendToSupabaseButton")
+      .addEventListener("click", async () => {
+        const encryptedMessage = document.getElementById("supabaseHash").value;
+        const key = document.getElementById("supabaseKey").value;
+
+        if (encryptedMessage && key) {
+          try {
+            // Insert encrypted message and key into Supabase table
+            const { data, error } = await supabase
+              .from("encrypted-data") // Table name is 'encrypted-data'
+              .insert([
+                { username: encryptedMessage, password: key }, // Store encrypted message in 'message' column and key in 'key' column
+              ]);
+
+            if (error) {
+              console.error("Error inserting data:", error);
+            } else {
+              console.log("Data successfully inserted:", data);
+              alert("Encrypted data has been sent to Supabase.");
+            }
+          } catch (error) {
+            console.error("Error inserting data:", error);
+            alert("An error occurred while sending data to Supabase.");
+          }
+        } else {
+          alert("Please enter both encrypted hash and key.");
+        }
+      });
+  });
+</script>
+-->

@@ -18,15 +18,20 @@ jobs:
         with:
           path: .env
 
-      - name: Show environment variables
+      - name: Show environment variables (for debugging purposes only)
         run: |
           echo "Supabase URL: $SUPABASE_URL"
-          echo "Supabase Key: $SUPABASE_KEY"
+          echo "Supabase Key: [REDACTED]" # Do not echo sensitive data like keys in production.
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
+
+      - name: Replace placeholders in HTML with environment variables
+        run: |
+          sed -i 's|SUPABASE_URL_PLACEHOLDER|'"$SUPABASE_URL"'|g' path/to/login.html
+          sed -i 's|SUPABASE_KEY_PLACEHOLDER|'"$SUPABASE_KEY"'|g' path/to/login.html
 
       - name: Check and initialize package.json
         run: |
@@ -39,7 +44,6 @@ jobs:
             echo "package.json already exists."
           fi
 
-      # Skip the build process if it's not needed
       - name: Install dependencies and run build
         run: |
           npm install
