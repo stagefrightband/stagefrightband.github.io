@@ -23,3 +23,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+const opendyslexicToggle = document.getElementById("opendyslexic-toggle");
+
+// Check if 'opendyslexic' cookie is set to 'true'
+if (
+  document.cookie.split(";").some((item) => item.trim() === "opendyslexic=true")
+) {
+  opendyslexicToggle.checked = true;
+  document.body.classList.add("open-dyslexic");
+}
+
+opendyslexicToggle.addEventListener("change", function () {
+  const value = this.checked ? "true" : "false";
+  document.cookie =
+    "opendyslexic=" + value + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+
+  // Add or remove 'open-dyslexic' class on body
+  if (this.checked) {
+    document.body.classList.add("open-dyslexic");
+  } else {
+    document.body.classList.remove("open-dyslexic");
+  }
+});

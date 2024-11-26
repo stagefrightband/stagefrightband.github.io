@@ -53,5 +53,17 @@
 }
 
 body {
-  margin: 1.252vh
+  margin: 1.252vh;
+}
+
+/* Add Open Dyslexic Font */
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("../Fonts/OpenDyslexic-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.open-dyslexic {
+  font-family: "OpenDyslexic", sans-serif;
 }
