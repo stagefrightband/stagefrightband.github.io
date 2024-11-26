@@ -10,32 +10,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3  # Use the latest version
 
-      # Step to load environment variables from .env file
+      # Step 2: Load environment variables from .env file
       - name: Load environment variables from .env file
         uses: falti/dotenv-action@v1.1.4
         with:
           path: .env  # Path to your .env file
 
-      # Show environment variables (optional, for debugging)
+      # Optional: Display the environment variables for debugging
       - name: Show environment variables
         run: |
           echo "Supabase URL: $SUPABASE_URL"
           echo "Supabase Key: $SUPABASE_KEY"
 
-      # Install Netlify CLI and authenticate using the API token
-      - name: Install Netlify CLI
-        run: |
-          npm install -g netlify-cli
+      # Step 3: Set up Node.js environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16  # Use the desired Node.js version
 
-      - name: Authenticate with Netlify
+      # Step 4: Install dependencies and build the project
+      - name: Install dependencies and build
         run: |
-          echo ${{ secrets.NETLIFY_AUTH_TOKEN }} | netlify login --auth nfp_PeV9WB5JXjGQeqLDpWR4xWxummL1JMb60966
+          npm install
+          npm run build  # Adjust this command based on your project's build script
 
-      # Deploy to Netlify
-      - name: Deploy to Netlify
-        run: |
-          netlify link
-          netlify deploy --prod --dir=build  # Adjust the `--dir` argument based on your build output
+      # Step 5: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build  # Adjust this directory to match your build output
