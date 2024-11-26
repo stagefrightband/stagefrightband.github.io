@@ -30,8 +30,8 @@ jobs:
 
       - name: Replace placeholders in HTML with environment variables
         run: |
-          sed -i 's|SUPABASE_URL_PLACEHOLDER|'"$SUPABASE_URL"'|g' path/to/login.html
-          sed -i 's|SUPABASE_KEY_PLACEHOLDER|'"$SUPABASE_KEY"'|g' path/to/login.html
+          sed -i 's|SUPABASE_URL_PLACEHOLDER|'"$SUPABASE_URL"'|g' ../../HTML/login.html
+          sed -i 's|SUPABASE_KEY_PLACEHOLDER|'"$SUPABASE_KEY"'|g' ../../HTML/login.html
 
       - name: Check and initialize package.json
         run: |
