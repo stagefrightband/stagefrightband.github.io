@@ -38,50 +38,62 @@
 
       // Initialize Supabase client
       const supabase = createClient(
-        "SUPABASE_URL_PLACEHOLDER", // Placeholder for Supabase URL
-        "SUPABASE_KEY_PLACEHOLDER" // Placeholder for Supabase Key
+        "https://cuxsndvcavwlffvywmfo.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN1eHNuZHZjYXZ3bGZmdnl3bWZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE4NzcwNDYsImV4cCI6MjA0NzQ1MzA0Nn0.UKmCIXv_qSKfeodEUQOVtgVU4pf9aHFMX1ygcV7NMYA"
       );
       document.addEventListener("DOMContentLoaded", () => {
-  const loginButton = document.getElementById("loginButton");
+        const loginButton = document.getElementById("loginButton");
 
-  loginButton.addEventListener("click", async (event) => {
-    event.preventDefault(); // Prevent form submission behavior
-    console.log("Login button clicked!"); // Debugging message
+        // Function to create cookies that never expire
+        function createCookie(name, value) {
+          const expires = "expires=Fri, 31 Dec 9999 23:59:59 GMT"; // Far future expiration date
+          document.cookie = `${name}=${encodeURIComponent(
+            value
+          )}; ${expires}; path=/`;
+        }
 
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("passwordField").value;
+        loginButton.addEventListener("click", async (event) => {
+          event.preventDefault(); // Prevent form submission behavior
+          console.log("Login button clicked!"); // Debugging message
 
-    if (!username || !password) {
-      alert("Please enter both username and password.");
-      return;
-    }
+          const username = document.getElementById("username").value.trim();
+          const password = document.getElementById("passwordField").value;
 
-    try {
-      const { data, error } = await supabase
-        .from("encrypted-data")
-        .select("*")
-        .eq("username", username)
-        .eq("password", password);
+          if (!username || !password) {
+            alert("Please enter both username and password.");
+            return;
+          }
 
-      if (error) {
-        console.error("Error querying Supabase:", error);
-        alert("An error occurred. Please try again.");
-        return;
-      }
+          try {
+            const { data, error } = await supabase
+              .from("encrypted-data")
+              .select("*")
+              .eq("username", username)
+              .eq("password", password);
 
-      if (data && data.length > 0) {
-        alert("Login successful!");
-        window.location.href = "../index.html"; // Redirect after success
-      } else {
-        alert("Invalid username or password.");
-      }
-    } catch (err) {
-      console.error("Unexpected error:", err);
-      alert("An error occurred. Please try again.");
-    }
-  });
-});
+            if (error) {
+              console.error("Error querying Supabase:", error);
+              alert("An error occurred. Please try again.");
+              return;
+            }
 
+            if (data && data.length > 0) {
+              alert("Login successful!");
+              // Retrieve shopping_items data
+              const shoppingItems = data[0].shopping_items || ""; // Default to empty string if no items
+              createCookie("shopping_items", shoppingItems);
+
+              // Redirect to main page
+              window.location.href = "../index.html";
+            } else {
+              alert("Invalid username or password.");
+            }
+          } catch (err) {
+            console.error("Unexpected error:", err);
+            alert("An error occurred. Please try again.");
+          }
+        });
+      });
     </script>
     <title>Login - Stage Fright</title>
     <!-- FavImages made with https://realfavicongenerator.net/ -->
@@ -173,7 +185,7 @@
         <a href="forgotpassword.html">Forgot Password</a><br />
       </fieldset>
     </div>
-    
+
     <p style="text-align: center">
       Need an account? <a href="signup.html">Sign Up</a>
     </p>
