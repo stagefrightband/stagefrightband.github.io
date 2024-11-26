@@ -46,3 +46,24 @@ opendyslexicToggle.addEventListener("change", function () {
     document.body.classList.remove("open-dyslexic");
   }
 });
+
+// Function to get a cookie value by name
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+// Apply settings based on cookies
+document.addEventListener("DOMContentLoaded", () => {
+    const highContrast = getCookie('highcontrast');
+    const openDyslexic = getCookie('opendyslexic');
+
+    if (highContrast === 'true') {
+        document.body.classList.add('high-contrast');
+    }
+
+    if (openDyslexic === 'true') {
+        document.body.classList.add('opendyslexic-font');
+    }
+});
