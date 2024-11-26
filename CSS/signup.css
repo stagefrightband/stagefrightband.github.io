@@ -70,6 +70,18 @@ body {
   font-style: normal;
 }
 
+/* High Contrast Styles */
+.high-contrast {
+  background-color: #000;
+  color: #fff;
+  /* Add any additional high contrast styles as needed */
+}
+
+/* OpenDyslexic Font Style */
+.opendyslexic-font {
+  font-family: "OpenDyslexic", sans-serif;
+}
+
 .open-dyslexic {
   font-family: "OpenDyslexic", sans-serif;
 }
