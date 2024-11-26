@@ -9,7 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   highContrastToggle.addEventListener('change', function() {
     const value = highContrastToggle.checked ? 'true' : 'false';
-    document.cookie = 'highcontrast=' + value + '; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/';
+    document.cookie = 'highcontrast=' + value + '; max-age=31536000; path=/';
+
+    // Log the cookie to verify it's set
+    console.log('Cookie set:', document.cookie);
 
     // Add or remove 'high-contrast' class on body
     if (highContrastToggle.checked) {
