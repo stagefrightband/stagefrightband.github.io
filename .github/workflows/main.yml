@@ -10,47 +10,43 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Load environment variables from .env file
       - name: Load environment variables from .env file
         uses: falti/dotenv-action@v1.1.4
         with:
           path: .env
 
-      # Optional: Display the environment variables for debugging
       - name: Show environment variables
         run: |
           echo "Supabase URL: $SUPABASE_URL"
           echo "Supabase Key: $SUPABASE_KEY"
 
-      # Step 3: Set up Node.js environment
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16  # Use the desired Node.js version
+          node-version: 16
 
-      # Step 4: Initialize `package.json` if it doesn't exist
       - name: Check and initialize package.json
         run: |
           if [ ! -f package.json ]; then
             echo "package.json not found. Initializing..."
             npm init -y
+            # Add a default "build" script to avoid errors
+            npm set-script build "echo 'No build step needed'"
           else
             echo "package.json already exists."
           fi
 
-      # Step 5: Install dependencies and build the project
-      - name: Install dependencies and build
+      # Skip the build process if it's not needed
+      - name: Install dependencies and run build
         run: |
           npm install
-          npm run build  # Adjust this command based on your project's build script
+          npm run build
 
-      # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build  # Adjust this directory to match your build output
+          publish_dir: .  # Adjust this directory if needed
