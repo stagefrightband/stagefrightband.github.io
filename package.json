@@ -1,0 +1,21 @@
+{
+  "name": "stagefrightband.github.io",
+  "version": "1.0.0",
+  "description": "<!-- Important html tags -->",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo 'No build step needed'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stagefrightband/stagefrightband.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stagefrightband/stagefrightband.github.io/issues"
+  },
+  "homepage": "https://github.com/stagefrightband/stagefrightband.github.io#readme"
+}

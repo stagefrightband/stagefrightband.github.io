@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta
+      name="googlebot-news"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Stage Fright Band Website" />
+    <link rel="canonical" href="https://www.stagefrightsight.github.io" />
+    <link rel="stylesheet" href="../CSS/login.css" />
+    <script src="../JS/login.js"></script>
+    <!-- SRI Hashes made with https://www.srihash.org/-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+      integrity="sha256-jjsBF/TfS+RSwLavW48KCs+dSt4j0I1V1+MSryIHd2I="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/appwrite@14.0.1"
+      integrity="sha256-ZLh1yXjlzs4WxNoYOPyjkbA/IfnKzxq/+sPzGoIMHTY="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function showPassword() {
+        var x = document.getElementById("passwordField");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+    </script>
+    <title>Login - Stage Fright</title>
+    <!-- FavImages made with https://realfavicongenerator.net/ -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../Images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../Images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../Images/favicon-16x16.png"
+    />
+    <link rel="icon" type="image/x-icon" href="../Images/favicon.ico" />
+    <link rel="manifest" href="../site.webmanifest" />
+  </head>
+
+  <!-- Login icon obtained from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-vector%2Flogin-icon&psig=AOvVaw1gsnfXABASMBCw_0OsnoO7&ust=1731690198618000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOCU2eqm3IkDFQAAAAAdAAAAABAE-->
+
+  <body>
+    <div class="topnav">
+      <a class="logo" href="../index.html"
+        ><img
+          src="../Images/Main logo fright.png"
+          alt="Stage Fright Logo"
+          width="10.434vh"
+          class="logoimage"
+      /></a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contactus.html">Contact Us</a>
+      <a href="store.html">Store</a>
+      <a href="tourdates.html">Tour Dates</a>
+      <a href="login.html">
+        <img
+          alt="Login Icon"
+          style="width: 6.26vh; height: 6.26vh"
+          src="../Images/login-icon.png"
+        />
+      </a>
+      <a href="shoppingcart.html">
+        <img
+          alt="Shopping Cart Icon"
+          style="width: 6.26vh; height: 6.26vh"
+          src="../Images/shoppingcart.png"
+        />
+      </a>
+      <a href="settings.html">
+        <img
+          alt="Accessibility Settings"
+          style="width: 6.26vh; height: 6.26vh"
+          src="../Images/accessibilityicon.png"
+        />
+      </a>
+    </div>
+    <br />
+    <form style="text-align: center">
+      <fieldset>
+        <legend style="max-width: 25%">Login</legend>
+        <br />
+        <label for="username"></label>
+        <input
+          autocomplete="on"
+          placeholder="Username"
+          type="email"
+          id="username"
+          required
+          name="username"
+        /><br />
+        <label for="password"></label><br />
+        <input
+          autocomplete="on"
+          type="password"
+          placeholder="Password"
+          required
+          id="passwordField"
+          name="password"
+        /><br />
+        <input type="checkbox" onclick="showPassword()" />Show Password
+        <br /><br />
+        <label for="login"></label>
+        <input
+          autocomplete="off"
+          type="Submit"
+          value="Login"
+          id="login"
+          name="login"
+        /><br /><br />
+        <a href="forgotpassword.html">Forgot Password</a><br />
+      </fieldset>
+    </form>
+    <p style="text-align: center">
+      Need an account? <a href="signup.html">Sign Up</a>
+    </p>
+  </body>
+</html>
+
+<!--      const message = "Hello, World!";
+      const key = "Math.random()";
+
+      const encrypted = CryptoJS.AES.encrypt(message, key).toString();
+      const decrypted = CryptoJS.AES.decrypt(encrypted, key).toString(
+        CryptoJS.enc.Utf8
+      );
+
+      console.log(encrypted);
+      console.log(decrypted);
+      -->
