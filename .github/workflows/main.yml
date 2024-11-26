@@ -11,31 +11,42 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # Use the latest version
+        uses: actions/checkout@v3
 
-      # Step to load environment variables from .env file
       - name: Load environment variables from .env file
         uses: falti/dotenv-action@v1.1.4
         with:
-          path: .env  # Path to your .env file
+          path: .env
 
-      # Show environment variables (optional, for debugging)
       - name: Show environment variables
         run: |
           echo "Supabase URL: $SUPABASE_URL"
           echo "Supabase Key: $SUPABASE_KEY"
 
-      # Install Netlify CLI and authenticate using the API token
-      - name: Install Netlify CLI
-        run: |
-          npm install -g netlify-cli
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
-      - name: Authenticate with Netlify
+      - name: Check and initialize package.json
         run: |
-          echo ${{ secrets.NETLIFY_AUTH_TOKEN }} | netlify login --auth nfp_PeV9WB5JXjGQeqLDpWR4xWxummL1JMb60966
+          if [ ! -f package.json ]; then
+            echo "package.json not found. Initializing..."
+            npm init -y
+            # Add a default "build" script to avoid errors
+            npm set-script build "echo 'No build step needed'"
+          else
+            echo "package.json already exists."
+          fi
 
-      # Deploy to Netlify
-      - name: Deploy to Netlify
+      # Skip the build process if it's not needed
+      - name: Install dependencies and run build
         run: |
-          netlify link
-          netlify deploy --prod --dir=build  # Adjust the `--dir` argument based on your build output
+          npm install
+          npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .  # Adjust this directory if needed
