@@ -166,5 +166,3 @@ input:checked + .slider:before {
   background-color: #000000; /* Black background for save button */
   color: #ffffff; /* White text for save button */
 }
-
-/* Add additional high contrast styles as necessary */
