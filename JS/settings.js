@@ -1,83 +1,54 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const highContrastToggle = document.getElementById("highcontrast-toggle");
-  const opendyslexicToggle = document.getElementById("opendyslexic-toggle");
-
-  // Function to get cookie value by name
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(";").shift();
-  }
-
-  // Initialize High Contrast
-  if (
-    document.cookie
-      .split(";")
-      .some((item) => item.trim() === "highcontrast=true")
-  ) {
-    highContrastToggle.checked = true;
-    document.body.classList.add("high-contrast");
-  }
-
-  highContrastToggle.addEventListener("change", function () {
-    const value = this.checked ? "true" : "false";
-    document.cookie = "highcontrast=" + value + "; max-age=31536000; path=/";
-
-    if (this.checked) {
-      document.body.classList.add("high-contrast");
-    } else {
-      document.body.classList.remove("high-contrast");
-    }
-  });
-
-  // Initialize OpenDyslexic
-  if (
-    document.cookie
-      .split(";")
-      .some((item) => item.trim() === "opendyslexic=true")
-  ) {
-    opendyslexicToggle.checked = true;
-    document.body.classList.add("open-dyslexic");
-  }
-
-  opendyslexicToggle.addEventListener("change", function () {
-    const value = this.checked ? "true" : "false";
-    document.cookie =
-      "opendyslexic=" + value + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
-
-    if (this.checked) {
-      document.body.classList.add("open-dyslexic");
-    } else {
-      document.body.classList.remove("open-dyslexic");
-    }
-  });
-});
-
 // Function to get a cookie by name
 function getCookie(name) {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
+  if (parts.length === 2) return parts.pop().split(";").shift();
   return null;
+}
+
+// Function to set a cookie with a specific name and value (no expiration)
+function setCookie(name, value) {
+  document.cookie = `${name}=${value}; path=/; SameSite=Lax`;
 }
 
 // Function to apply or remove a class based on cookie value
 function toggleClassBasedOnCookie(cookieName, className) {
-  const cookieValue = getCookie(cookieName) === 'true';
+  const cookieValue = getCookie(cookieName) === "true";
   if (cookieValue) {
-      document.documentElement.classList.add(className);
+    document.documentElement.classList.add(className);
   } else {
-      document.documentElement.classList.remove(className);
+    document.documentElement.classList.remove(className);
   }
 }
 
+// Function to initialize switch states based on cookies
+function initializeSwitches() {
+  const highContrastToggle = document.getElementById("highcontrast-toggle");
+  const openDyslexicToggle = document.getElementById("opendyslexic-toggle");
+
+  // Initialize the High Contrast toggle switch
+  highContrastToggle.checked = getCookie("highcontrast") === "true";
+
+  // Initialize the Open Dyslexic toggle switch
+  openDyslexicToggle.checked = getCookie("opendyslexic") === "true";
+
+  // Add event listeners to toggle switches
+  highContrastToggle.addEventListener("change", () => {
+    const newValue = highContrastToggle.checked ? "true" : "false";
+    setCookie("highcontrast", newValue);
+    toggleClassBasedOnCookie("highcontrast", "high-contrast");
+  });
+
+  openDyslexicToggle.addEventListener("change", () => {
+    const newValue = openDyslexicToggle.checked ? "true" : "false";
+    setCookie("opendyslexic", newValue);
+    toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
+  });
+}
+
 // Check and apply the classes based on the cookies
-toggleClassBasedOnCookie('highcontrast', 'high-contrast');
-toggleClassBasedOnCookie('opendyslexic', 'open-dyslexic');
+toggleClassBasedOnCookie("highcontrast", "high-contrast");
+toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
 
-// Optional: If you want to monitor changes in the cookies dynamically
-setInterval(() => {
-  toggleClassBasedOnCookie('highcontrast', 'high-contrast');
-  toggleClassBasedOnCookie('opendyslexic', 'open-dyslexic');
-}, 1000);
-
+// Initialize switches when the page loads
+window.addEventListener("DOMContentLoaded", initializeSwitches);
