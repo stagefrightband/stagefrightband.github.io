@@ -133,9 +133,9 @@ input:checked + .slider:before {
 
 /* Importing OpenDyslexic font */
 @font-face {
-  font-family: 'OpenDyslexic';
-  src: url('path/to/open-dyslexic-font.woff2') format('woff2'),  /* Replace with actual path */
-       url('path/to/open-dyslexic-font.woff') format('woff');   /* Fallback */
+  font-family: "OpenDyslexic";
+  src: url("../Fonts/opendyslexic/OpenDyslexic-Regular.woff2") format("woff2"),
+      url("../Fonts/opendyslexic/OpenDyslexic-Regular.woff") format("woff"); /* Fallback */
   font-weight: normal;
   font-style: normal;
 }
@@ -168,12 +168,12 @@ input:checked + .slider:before {
 
 /* Open Dyslexic Font Mode */
 .open-dyslexic {
-  font-family: 'OpenDyslexic', sans-serif !important;
+  font-family: "OpenDyslexic", sans-serif !important;
 }
 
 /* Example for buttons and form inputs */
 .open-dyslexic input,
 .open-dyslexic textarea,
 .open-dyslexic button {
-  font-family: 'OpenDyslexic', sans-serif !important;
+  font-family: "OpenDyslexic", sans-serif !important;
 }
