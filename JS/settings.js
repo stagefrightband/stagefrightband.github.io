@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const highContrastToggle = document.getElementById("highcontrast-toggle");
+  const opendyslexicToggle = document.getElementById("opendyslexic-toggle");
 
   // Check if 'highcontrast' cookie is set to 'true'
   if (
@@ -22,8 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.classList.remove("high-contrast");
     }
   });
-
-  const opendyslexicToggle = document.getElementById("opendyslexic-toggle");
 
   // Check if 'opendyslexic' cookie is set to 'true'
   if (

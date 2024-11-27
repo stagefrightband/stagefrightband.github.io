@@ -46,3 +46,12 @@ opendyslexicToggle.addEventListener("change", function () {
     document.body.classList.remove("open-dyslexic");
   }
 });
+
+function showPassword() {
+  var x = document.getElementById("passwordField");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
