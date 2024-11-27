@@ -67,3 +67,8 @@ body {
 .open-dyslexic {
   font-family: "OpenDyslexic", sans-serif;
 }
+
+.high-contrast {
+  background-color: #000;
+  color: #fff;
+}
