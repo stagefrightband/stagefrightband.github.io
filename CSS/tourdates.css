@@ -137,7 +137,6 @@ body {
 @font-face {
   font-family: "OpenDyslexic";
   src: url("../Fonts/opendyslexic/OpenDyslexic-Regular.woff2") format("woff2"),
-    /* Replace with actual path */
       url("../Fonts/opendyslexic/OpenDyslexic-Regular.woff") format("woff"); /* Fallback */
   font-weight: normal;
   font-style: normal;
@@ -169,6 +168,18 @@ body {
   color: var(--button-text) !important;
 }
 
+/* Ensure text in tourinfo adopts high-contrast colors */
+.high-contrast .tourinfo,
+.high-contrast .tourinfo span {
+  color: var(--text-color) !important;
+}
+
+.high-contrast .buytickets button {
+  background-color: var(--button-background) !important;
+  color: var(--button-text) !important;
+  border: 0.1vh solid var(--border-color) !important;
+}
+
 /* Open Dyslexic Font Mode */
 .open-dyslexic {
   font-family: "OpenDyslexic", sans-serif !important;
@@ -179,4 +190,10 @@ body {
 .open-dyslexic textarea,
 .open-dyslexic button {
   font-family: "OpenDyslexic", sans-serif !important;
+}
+
+/* Specifically target elements using Wolfhagen Blackletter and override */
+.open-dyslexic .tourname {
+  font-family: "OpenDyslexic", sans-serif !important;
+  text-shadow: none; /* Optionally remove the text-shadow for readability */
 }
