@@ -135,7 +135,7 @@ input:checked + .slider:before {
 @font-face {
   font-family: "OpenDyslexic";
   src: url("../Fonts/opendyslexic/OpenDyslexic-Regular.woff2") format("woff2"),
-      url("../Fonts/opendyslexic/OpenDyslexic-Regular.woff") format("woff"); /* Fallback */
+    url("../Fonts/opendyslexic/OpenDyslexic-Regular.woff") format("woff"); /* Fallback */
   font-weight: normal;
   font-style: normal;
 }
