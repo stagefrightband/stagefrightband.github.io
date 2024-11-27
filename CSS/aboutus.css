@@ -65,38 +65,50 @@ h1 {
   font-size: 3.13vh;
 }
 
-/* Add Open Dyslexic Font */
+/* Importing OpenDyslexic font */
 @font-face {
   font-family: "OpenDyslexic";
-  src: url("../Fonts/OpenDyslexic-Regular.woff2") format("woff2");
+  src: url("../Fonts/opendyslexic/OpenDyslexic-Regular.woff2") format("woff2"),
+    /* Replace with actual path */
+      url("../Fonts/opendyslexic/OpenDyslexic-Regular.woff") format("woff"); /* Fallback */
   font-weight: normal;
   font-style: normal;
 }
 
+/* High Contrast Mode */
+.high-contrast {
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --link-color: #00ffff;
+  --button-background: #ffcc00;
+  --button-text: #000000;
+  --border-color: #ffffff;
+
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.high-contrast a {
+  color: var(--link-color) !important;
+  text-decoration: underline;
+}
+
+.high-contrast button,
+.high-contrast input[type="button"],
+.high-contrast input[type="submit"] {
+  background-color: var(--button-background) !important;
+  color: var(--button-text) !important;
+}
+
+/* Open Dyslexic Font Mode */
 .open-dyslexic {
-  font-family: "OpenDyslexic", sans-serif;
+  font-family: "OpenDyslexic", sans-serif !important;
 }
 
-/* High Contrast Styles */
-.high-contrast body {
-  background-color: #000000; /* Black background */
-  color: #ffffff; /* White text */
+/* Example for buttons and form inputs */
+.open-dyslexic input,
+.open-dyslexic textarea,
+.open-dyslexic button {
+  font-family: "OpenDyslexic", sans-serif !important;
 }
-
-.high-contrast .topnav {
-  background-color: #000000; /* Black navigation bar */
-}
-
-.high-contrast .topnav a {
-  color: #ffffff; /* White navigation links */
-}
-
-.high-contrast .topnav a:hover {
-  background-color: #ffffff; /* White background on hover */
-  color: #000000; /* Black text on hover */
-}
-
-.high-contrast .profile {
-  border: 0.156vh solid #ffffff; /* White border for profiles */
-}
-

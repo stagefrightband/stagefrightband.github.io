@@ -1,48 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const highContrastToggle = document.getElementById("highcontrast-toggle");
-  const opendyslexicToggle = document.getElementById("opendyslexic-toggle");
+// Function to get a cookie by name
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
+  return null;
+}
 
-  // Check if 'highcontrast' cookie is set to 'true'
-  if (
-    document.cookie
-      .split(";")
-      .some((item) => item.trim() === "highcontrast=true")
-  ) {
-    highContrastToggle.checked = true;
-    document.body.classList.add("high-contrast");
-  }
-
-  // Check if 'opendyslexic' cookie is set to 'true'
-  if (
-    document.cookie.split(";").some((item) => item.trim() === "opendyslexic=true")
-  ) {
-    opendyslexicToggle.checked = true;
-    document.body.classList.add("open-dyslexic");
-  }
-
-  function handleToggle(toggle, className, cookieName) {
-    toggle.addEventListener("change", function () {
-      const value = toggle.checked ? "true" : "false";
-      document.cookie = cookieName + "=" + value + "; max-age=31536000; path=/";
-
-      // Add or remove class on body
-      if (toggle.checked) {
-        document.body.classList.add(className);
-      } else {
-        document.body.classList.remove(className);
-      }
-    });
-  }
-
-  handleToggle(highContrastToggle, "high-contrast", "highcontrast");
-  handleToggle(opendyslexicToggle, "open-dyslexic", "opendyslexic");
-});
-
-function showPassword() {
-  var x = document.getElementById("passwordField");
-  if (x.type === "password") {
-    x.type = "text";
+// Function to apply or remove a class based on cookie value
+function toggleClassBasedOnCookie(cookieName, className) {
+  const cookieValue = getCookie(cookieName) === "true";
+  if (cookieValue) {
+    document.documentElement.classList.add(className);
   } else {
-    x.type = "password";
+    document.documentElement.classList.remove(className);
   }
 }
+
+// Check and apply the classes based on the cookies
+toggleClassBasedOnCookie("highcontrast", "high-contrast");
+toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
+
+// Optional: If you want to monitor changes in the cookies dynamically
+setInterval(() => {
+  toggleClassBasedOnCookie("highcontrast", "high-contrast");
+  toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
+}, 1000);

@@ -1,41 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const highContrastToggle = document.getElementById("highcontrast-toggle");
-  const opendyslexicToggle = document.getElementById("opendyslexic-toggle");
+// Function to get a cookie by name
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
+  return null;
+}
 
-  // Function to get cookie value by name
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(";").shift();
+// Function to apply or remove a class based on cookie value
+function toggleClassBasedOnCookie(cookieName, className) {
+  const cookieValue = getCookie(cookieName) === "true";
+  if (cookieValue) {
+    document.documentElement.classList.add(className);
+  } else {
+    document.documentElement.classList.remove(className);
   }
+}
 
-  const isOpendyslexic = getCookie("opendyslexic") === "true";
-  const isHighContrast = getCookie("highcontrast") === "true";
+// Check and apply the classes based on the cookies
+toggleClassBasedOnCookie("highcontrast", "high-contrast");
+toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
 
-  if (isOpendyslexic) {
-    opendyslexicToggle.checked = true;
-    document.body.classList.add("open-dyslexic");
-  }
-
-  if (isHighContrast) {
-    highContrastToggle.checked = true;
-    document.body.classList.add("high-contrast");
-  }
-
-  function handleToggle(toggle, className, cookieName) {
-    toggle.addEventListener("change", function () {
-      const value = toggle.checked ? "true" : "false";
-      document.cookie =
-        cookieName + "=" + value + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
-
-      if (toggle.checked) {
-        document.body.classList.add(className);
-      } else {
-        document.body.classList.remove(className);
-      }
-    });
-  }
-
-  handleToggle(opendyslexicToggle, "open-dyslexic", "opendyslexic");
-  handleToggle(highContrastToggle, "high-contrast", "highcontrast");
-});
+// Optional: If you want to monitor changes in the cookies dynamically
+setInterval(() => {
+  toggleClassBasedOnCookie("highcontrast", "high-contrast");
+  toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
+}, 1000);
