@@ -60,6 +60,7 @@ body {
   border-radius: 1.565vh;
   border: 0.156vh solid gray;
   padding: 1.565vh;
+  text-align: center;
 }
 h1 {
   font-size: 3.13vh;
