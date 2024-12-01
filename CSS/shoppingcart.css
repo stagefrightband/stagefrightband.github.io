@@ -103,3 +103,10 @@ body {
 .open-dyslexic button {
   font-family: "OpenDyslexic", sans-serif !important;
 }
+
+#cart-content ul {
+  list-style: none;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+}
