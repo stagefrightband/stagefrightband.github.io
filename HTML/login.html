@@ -70,8 +70,8 @@
             if (data && data.length > 0) {
               alert("Login successful!");
               // Retrieve shopping_items data
-              const shoppingItems = data[0].shopping_items || ""; // Default to empty string if no items
-              createCookie("shopping_items", shoppingItems);
+              const cartitems = data[0].cartitems || ""; // Default to empty string if no items
+              createCookie("cartitems", cartitems);
 
               // Redirect to main page
               window.location.href = "../index.html";
@@ -86,7 +86,7 @@
       });
     </script>
     <title>Login - Stage Fright</title>
-    <!-- FavImages made with https://realfavicongenerator.net/ -->
+    
     <link
       rel="apple-touch-icon"
       sizes="180x180"
