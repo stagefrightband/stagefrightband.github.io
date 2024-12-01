@@ -18,11 +18,8 @@
       integrity="sha256-jjsBF/TfS+RSwLavW48KCs+dSt4j0I1V1+MSryIHd2I="
       crossorigin="anonymous"
     ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/appwrite@14.0.1"
-      integrity="sha256-ZLh1yXjlzs4WxNoYOPyjkbA/IfnKzxq/+sPzGoIMHTY="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script type="module">
       import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
@@ -43,14 +40,13 @@
         }
 
         loginButton.addEventListener("click", async (event) => {
-          event.preventDefault(); // Prevent form submission behavior
-          console.log("Login button clicked!"); // Debugging message
+          event.preventDefault();
 
           const username = document.getElementById("username").value.trim();
           const password = document.getElementById("passwordField").value;
 
           if (!username || !password) {
-            alert("Please enter both username and password.");
+            alert("Please enter a username and password.");
             return;
           }
 
@@ -69,11 +65,9 @@
 
             if (data && data.length > 0) {
               alert("Login successful!");
-              // Retrieve shopping_items data
-              const cartitems = data[0].cartitems || ""; // Default to empty string if no items
+              const cartitems = data[0].cartitems || "";
               createCookie("cartitems", cartitems);
 
-              // Redirect to main page
               window.location.href = "../index.html";
             } else {
               alert("Invalid username or password.");
@@ -86,7 +80,7 @@
       });
     </script>
     <title>Login - Stage Fright</title>
-    
+
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -148,7 +142,7 @@
     <br />
     <div style="text-align: center">
       <fieldset>
-        <legend style="max-width: 25%">Login</legend>
+        <legend style="max-width: 25vh">Login</legend>
         <br />
         <label for="username"></label>
         <input
@@ -167,7 +161,7 @@
           required
           id="passwordField"
           name="password"
-        /><br />
+        /><br /><br />
         <input type="checkbox" onclick="showPassword()" />Show Password
         <br /><br />
         <button id="loginButton">Login</button>

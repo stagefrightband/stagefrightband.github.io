@@ -74,14 +74,43 @@
       </a>
     </div>
     <br />
-    <form style="text-align: center">
-      <label for="username">Username:</label><br />
-      <input type="text" id="username" name="username" /><br />
-      <label for="password">Password:</label><br />
-      <input type="text" id="password" name="password" /><br />
-      <label for="savelogin">Remember me:</label>
-      <input type="checkbox" id="savelogin" name="savelogin" /><br />
-    </form>
+    <div style="text-align: center">
+      <fieldset>
+        <legend style="max-width: 25vh;">Sign Up</legend>
+        <br />
+        <label for="email"></label>
+        <input
+          autocomplete="on"
+          placeholder="E-Mail Address"
+          type="email"
+          id="email"
+          required
+          name="email"
+        /><br /><br>
+        <label for="username"></label>
+        <input
+          autocomplete="on"
+          placeholder="Username"
+          type="email"
+          id="username"
+          required
+          name="username"
+        /><br />
+        <label for="password"></label><br />
+        <input
+          autocomplete="on"
+          type="password"
+          placeholder="Password"
+          required
+          id="passwordField"
+          name="password"
+        /><br /><br>
+        <input type="checkbox" onclick="showPassword()" />Show Password
+        <br /><br />
+        <button id="loginButton">Sign Up</button>
+      </fieldset>
+    </div>
+
     <p style="text-align: center">
       Already have an account? <a href="login.html">Log In</a>
     </p>

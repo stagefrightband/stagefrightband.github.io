@@ -101,6 +101,7 @@
 
 .buytickets button {
   background-color: black;
+  border: 0.156vh solid black;
   color: white;
   padding: 0.784vh 4.695vh;
 }
