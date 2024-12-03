@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="CSS/index.css" />
     <link rel="canonical" href="https://stagefrightband.github.io" />
     <title>Home Page - Stage Fright</title>
-    
+
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -33,42 +33,48 @@
     <link rel="manifest" href="/site.webmanifest" />
     <script src="JS/index.js"></script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@supabase/supabase-js"></script>
-  <script src="https://unpkg.com/@supabase/auth-ui-react"></script>
-  <script src="https://unpkg.com/@supabase/auth-ui-shared"></script>
-  <script>
-    const { useState, useEffect } = React;
-    const { createClient } = supabase;
-    const { Auth } = supabaseAuthUiReact;
-    const { ThemeSupa } = supabaseAuthUiShared;
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js"></script>
+    <script src="https://unpkg.com/@supabase/auth-ui-react"></script>
+    <script src="https://unpkg.com/@supabase/auth-ui-shared"></script>
+    <script>
+      const { useState, useEffect } = React;
+      const { createClient } = supabase;
+      const { Auth } = supabaseAuthUiReact;
+      const { ThemeSupa } = supabaseAuthUiShared;
 
-    const supabase = createClient('https://<project>.supabase.co', '<your-anon-key>');
+      const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+      const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+      const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-    function App() {
-      const [session, setSession] = useState(null);
+      function App() {
+        const [session, setSession] = useState(null);
 
-      useEffect(() => {
-        supabase.auth.getSession().then(({ data: { session } }) => {
-          setSession(session);
-        });
+        useEffect(() => {
+          supabase.auth.getSession().then(({ data: { session } }) => {
+            setSession(session);
+          });
 
-        const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-          setSession(session);
-        });
+          const {
+            data: { subscription },
+          } = supabase.auth.onAuthStateChange((_event, session) => {
+            setSession(session);
+          });
 
-        return () => subscription.unsubscribe();
-      }, []);
+          return () => subscription.unsubscribe();
+        }, []);
 
-      if (!session) {
-        return (<Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />);
-      } else {
-        return (<div>Logged in!</div>);
+        if (!session) {
+          return (
+            <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />
+          );
+        } else {
+          return <div>Logged in!</div>;
+        }
       }
-    }
 
-    ReactDOM.render(<App />, document.getElementById('root'));
-  </script>
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
   </head>
 
   <body>
