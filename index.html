@@ -1,30 +1,36 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="robots" content="noindex,nofollow"/><meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content="Stage Fright Band Website"/><link rel="stylesheet" href="CSS/index.css"/><link rel="canonical" href="https://stagefrightband.github.io"/><title>Home Page - Stage Fright</title><link rel="apple-touch-icon" sizes="180x180" href="Images/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png"/><link rel="icon" type="image/x-icon" href="Images/favicon.ico"/><link rel="manifest" href="/site.webmanifest"/><script src="JS/index.js"></script><script src="https://unpkg.com/react@18/umd/react.production.min.js"></script><script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script><script src="https://unpkg.com/@supabase/supabase-js"></script><script src="https://unpkg.com/@supabase/auth-ui-react"></script><script src="https://unpkg.com/@supabase/auth-ui-shared"></script><script>const { useState, useEffect } = React;
-    const { createClient } = supabase;
-    const { Auth } = supabaseAuthUiReact;
-    const { ThemeSupa } = supabaseAuthUiShared;
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="robots" content="noindex,nofollow"/><meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content="Stage Fright Band Website"/><link rel="stylesheet" href="CSS/index.css"/><link rel="canonical" href="https://stagefrightband.github.io"/><title>Home Page - Stage Fright</title><link rel="apple-touch-icon" sizes="180x180" href="Images/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png"/><link rel="icon" type="image/x-icon" href="Images/favicon.ico"/><link rel="manifest" href="site.webmanifest"/><script src="JS/index.js"></script><script src="https://unpkg.com/react@18/umd/react.production.min.js"></script><script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script><script src="https://unpkg.com/@supabase/supabase-js@2.46.2/dist/umd/supabase.js"></script><script src="https://unpkg.com/@supabase/auth-ui-react@0.4.7/dist/umd/index.js"></script><script src="https://unpkg.com/@supabase/auth-ui-shared@0.1.8/dist/umd/index.js"></script><script type="text/babel">const { useState, useEffect } = React;
+      const { createClient } = supabase;
+      const { Auth } = supabaseAuthUiReact;
+      const { ThemeSupa } = supabaseAuthUiShared;
 
-    const supabase = createClient('https://<project>.supabase.co', '<your-anon-key>');
+      const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+    const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+    const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-    function App() {
-      const [session, setSession] = useState(null);
+      function App() {
+        const [session, setSession] = useState(null);
 
-      useEffect(() => {
-        supabase.auth.getSession().then(({ data: { session } }) => {
-          setSession(session);
-        });
+        useEffect(() => {
+          supabase.auth.getSession().then(({ data: { session } }) => {
+            setSession(session);
+          });
 
-        const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-          setSession(session);
-        });
+          const {
+            data: { subscription },
+          } = supabase.auth.onAuthStateChange((_event, session) => {
+            setSession(session);
+          });
 
-        return () => subscription.unsubscribe();
-      }, []);
+          return () => subscription.unsubscribe();
+        }, []);
 
-      if (!session) {
-        return (<Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />);
-      } else {
-        return (<div>Logged in!</div>);
+        if (!session) {
+          return (
+            <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />
+          );
+        }
+
+        return <div>Welcome, you are logged in!</div>;
       }
-    }
 
-    ReactDOM.render(<App />, document.getElementById('root'));</script><script defer="defer" src="/static/js/main.2b856a22.js"></script><link href="/static/css/main.e6c13ad2.css" rel="stylesheet"></head><body><div class="topnav"><a class="logo" href="index.html"><img src="Images/Main logo fright.png" alt="Stage Fright Logo" width="10.434vh" class="logoimage"/></a><a href="HTML/aboutus.html">About Us</a> <a href="HTML/contactus.html">Contact Us</a> <a href="HTML/store.html">Store</a> <a href="HTML/tourdates.html">Tour Dates</a> <a href="HTML/login.html"><img alt="Login" style="width:6.26vh;height:6.26vh" src="Images/login-icon.png"/> </a><a href="HTML/shoppingcart.html"><img alt="Shopping Cart" style="width:6.26vh;height:6.26vh" src="Images/shoppingcart.png"/> </a><a href="HTML/settings.html"><img alt="Accessibility Settings" style="width:6.26vh;height:6.26vh" src="Images/accessibilityicon.png"/></a></div></body></html>
+      ReactDOM.render(<App />, document.getElementById("root"));</script><script defer="defer" src="/static/js/main.77deeca1.js"></script><link href="/static/css/main.e6c13ad2.css" rel="stylesheet"></head><body><div class="topnav"><a class="logo" href="index.html"><img src="Images/Main logo fright.png" alt="Stage Fright Logo" width="10.434vh" class="logoimage"/></a><a href="HTML/aboutus.html">About Us</a> <a href="HTML/contactus.html">Contact Us</a> <a href="HTML/store.html">Store</a> <a href="HTML/tourdates.html">Tour Dates</a> <a href="HTML/login.html"><img alt="Login" style="width:6.26vh;height:6.26vh" src="Images/login-icon.png"/> </a><a href="HTML/shoppingcart.html"><img alt="Shopping Cart" style="width:6.26vh;height:6.26vh" src="Images/shoppingcart.png"/> </a><a href="HTML/settings.html"><img alt="Accessibility Settings" style="width:6.26vh;height:6.26vh" src="Images/accessibilityicon.png"/></a></div></body></html>
