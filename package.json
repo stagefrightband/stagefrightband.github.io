@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://stagefrightband.github.io",
+  "homepage": "https://stagefrightband.github.io/stagefrightband.github.io",
   "dependencies": {
     "@supabase/auth-ui-react": "^0.4.7",
     "@supabase/auth-ui-shared": "^0.1.8",
