@@ -3,16 +3,18 @@ import { createClient } from '@supabase/supabase-js';
 import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
 
-const supabase = createClient('https://<project>.supabase.co', '<your-anon-key>');
-
 /**
  * @typedef {import('@supabase/supabase-js').Session} Session
  */
 
-const App = () => {
-  /**
-   * @type {[Session | null, React.Dispatch<React.SetStateAction<Session | null>>]}
-   */
+const supabaseUrl = process.env.REACT_APP_SUPABASE_URL
+const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error('Missing Supabase URL or anon key');
+}
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+function App() {
   const [session, setSession] = useState(/** @type {Session | null} */ (null));
 
   useEffect(() => {
@@ -32,6 +34,6 @@ const App = () => {
   } else {
     return <div>Logged in!</div>;
   }
-};
+}
 
 export default App;
