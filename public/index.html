@@ -32,19 +32,19 @@
     <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
     <link rel="manifest" href="/site.webmanifest" />
     <script src="JS/index.js"></script>
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@supabase/supabase-js"></script>
     <script src="https://unpkg.com/@supabase/auth-ui-react"></script>
     <script src="https://unpkg.com/@supabase/auth-ui-shared"></script>
-    <script>
+    <script type="text/babel">
       const { useState, useEffect } = React;
       const { createClient } = supabase;
       const { Auth } = supabaseAuthUiReact;
       const { ThemeSupa } = supabaseAuthUiShared;
 
-      const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
-      const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+      const supabaseUrl = window.env.SUPABASE_URL;
+      const supabaseAnonKey = window.env.SUPABASE_ANON_KEY;
       const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
       function App() {
@@ -68,9 +68,9 @@
           return (
             <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />
           );
-        } else {
-          return <div>Logged in!</div>;
         }
+
+        return <div>Welcome, you are logged in!</div>;
       }
 
       ReactDOM.render(<App />, document.getElementById("root"));
