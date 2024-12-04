@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My React App</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@supabase/supabase-js"></script>
+  <script src="https://unpkg.com/@supabase/auth-ui-react"></script>
+  <script src="https://unpkg.com/@supabase/auth-ui-shared"></script>
+  <script>
+    const { useState, useEffect } = React;
+    const { createClient } = supabase;
+    const { Auth } = supabaseAuthUiReact;
+    const { ThemeSupa } = supabaseAuthUiShared;
+
+    const supabase = createClient('https://<project>.supabase.co', '<your-anon-key>');
+
+    function App() {
+      const [session, setSession] = useState(null);
+
+      useEffect(() => {
+        supabase.auth.getSession().then(({ data: { session } }) => {
+          setSession(session);
+        });
+
+        const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+          setSession(session);
+        });
+
+        return () => subscription.unsubscribe();
+      }, []);
+
+      if (!session) {
+        return (<Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />);
+      } else {
+        return (<div>Logged in!</div>);
+      }
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>
