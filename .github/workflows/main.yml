@@ -1,56 +1,34 @@
-name: Deploy Website with Environment Variables
+name: Deploy React App to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - react-js # Change this to your default branch if it's not 'main'
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
-      - name: Load environment variables from .env file
-        uses: falti/dotenv-action@v1.1.4
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          path: .env
+          node-version: "20"
 
-      - name: Show environment variables (for debugging purposes only)
-        run: |
-          echo "Supabase URL: $SUPABASE_URL"
-          echo "Supabase Key: [REDACTED]" # Do not echo sensitive data like keys in production.
+      - name: Install dependencies
+        run: npm install
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Replace placeholders in HTML with environment variables
-        run: |
-          sed -i 's|SUPABASE_URL_PLACEHOLDER|'"$SUPABASE_URL"'|g' HTML/login.html
-          sed -i 's|SUPABASE_KEY_PLACEHOLDER|'"$SUPABASE_KEY"'|g' HTML/login.html
-
-      - name: Check and initialize package.json
-        run: |
-          if [ ! -f package.json ]; then
-            echo "package.json not found. Initializing..."
-            npm init -y
-            # Add a default "build" script to avoid errors
-            npm set-script build "echo 'No build step needed'"
-          else
-            echo "package.json already exists."
-          fi
-
-      - name: Install dependencies and run build
-        run: |
-          npm install
-          npm run build
+      - name: Build the React app
+        env:
+          REACT_APP_SUPABASE_URL: ${{ secrets.REACT_APP_SUPABASE_URL }}
+          REACT_APP_SUPABASE_ANON_KEY: ${{ secrets.REACT_APP_SUPABASE_ANON_KEY }}
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .  # Adjust this directory if needed
+          publish_dir: ./build
