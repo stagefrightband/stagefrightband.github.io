@@ -9,3 +9,6 @@ updates:
         versions: ["<2.0.1"]
       - dependency-name: "postcss"
         versions: ["<8.4.31"]
+    commit-message:
+      prefix: "deps"
+    open-pull-requests-limit: 10
