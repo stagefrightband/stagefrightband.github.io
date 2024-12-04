@@ -43,9 +43,9 @@
       const { Auth } = supabaseAuthUiReact;
       const { ThemeSupa } = supabaseAuthUiShared;
 
-      const supabaseUrl = window.env.SUPABASE_URL;
-      const supabaseAnonKey = window.env.SUPABASE_ANON_KEY;
-      const supabase = createClient(supabaseUrl, supabaseAnonKey);
+      const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+    const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+    const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
       function App() {
         const [session, setSession] = useState(null);
