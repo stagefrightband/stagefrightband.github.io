@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createClient, Session } from '@supabase/supabase-js';
 import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
-import '../styles/Settings.css';
+import '../styles/login.css';
 
 // Function to get a cookie by name
 interface Cookie {
