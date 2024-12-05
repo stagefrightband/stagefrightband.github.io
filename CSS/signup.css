@@ -65,9 +65,9 @@ body {
 /* Importing OpenDyslexic font */
 @font-face {
   font-family: "OpenDyslexic";
-  src: url("../Fonts/opendyslexic/OpenDyslexic-Regular.woff2") format("woff2"),
+  src: url("../../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff2") format("woff2"),
     /* Replace with actual path */
-      url("../Fonts/opendyslexic/OpenDyslexic-Regular.woff") format("woff"); /* Fallback */
+      url("../../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff") format("woff"); /* Fallback */
   font-weight: normal;
   font-style: normal;
 }

@@ -143,8 +143,8 @@ input:checked + .slider:before {
 /* Importing OpenDyslexic font */
 @font-face {
   font-family: "OpenDyslexic";
-  src: url("../Fonts/opendyslexic/OpenDyslexic-Regular.woff2") format("woff2"),
-    url("../Fonts/opendyslexic/OpenDyslexic-Regular.woff") format("woff"); /* Fallback */
+  src: url("../../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff2") format("woff2"),
+    url("../../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff") format("woff"); /* Fallback */
   font-weight: normal;
   font-style: normal;
 }
