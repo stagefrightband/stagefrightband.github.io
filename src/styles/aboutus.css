@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 3.13vh;
+  padding: 0 1.565vh;
   height: 11.738vh;
 }
 
@@ -52,15 +52,20 @@
   margin: 0.784vh;
 }
 
-fieldset {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 body {
   margin: 1.252vh;
 }
+
+.profile {
+  border-radius: 1.565vh;
+  border: 0.156vh solid gray;
+  padding: 1.565vh;
+  text-align: center;
+}
+h1 {
+  font-size: 3.13vh;
+}
+
 /* Importing OpenDyslexic font */
 @font-face {
   font-family: "OpenDyslexic";

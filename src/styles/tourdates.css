@@ -128,7 +128,7 @@
 }
 @font-face {
   font-family: wolfhagen-blackletter;
-  src: url(../Fonts/wolfhagen_blackletter/WolfhagenBlackletter-Regular.ttf);
+  src: url("../../public/Fonts/wolfhagen_blackletter/WolfhagenBlackletter-Regular.ttf");
 }
 
 body {
