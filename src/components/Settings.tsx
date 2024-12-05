@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Settings.css'; 
+import '../styles/settings.css'; 
 
 // Function to get a cookie by name
 function getCookie(name: string): string | null {
