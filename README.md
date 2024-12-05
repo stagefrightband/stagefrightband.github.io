@@ -12,8 +12,6 @@ https://www.toptal.com/designers/htmlarrows/symbols/
 <br/>
 **Topic**
 <br/>
-Your site must include, but is not limited to:
-<br/>
 • About – Write a description of the band along with profiles for each band member, their music,
 and how the band got started
 <br/>
