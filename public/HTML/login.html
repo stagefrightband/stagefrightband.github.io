@@ -12,72 +12,49 @@
     <link rel="canonical" href="https://stagefrightband.github.io" />
     <link rel="stylesheet" href="../CSS/login.css" />
     <script src="../JS/login.js"></script>
-    <!-- SRI Hashes made with https://www.srihash.org/-->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
-      integrity="sha256-jjsBF/TfS+RSwLavW48KCs+dSt4j0I1V1+MSryIHd2I="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script type="module">
-      import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2.46.2/dist/umd/supabase.js"></script>
+    <script src="https://unpkg.com/@supabase/auth-ui-react@0.4.7/dist/umd/index.js"></script>
+    <script src="https://unpkg.com/@supabase/auth-ui-shared@0.1.8/dist/umd/index.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script type="text/babel">
+      const { useState, useEffect } = React;
+      const { createClient } = supabase;
+      const { Auth } = supabaseAuthUiReact;
+      const { ThemeSupa } = supabaseAuthUiShared;
 
-      // Initialize Supabase client
-      const supabase = createClient(
-        "https://cuxsndvcavwlffvywmfo.supabase.co",
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN1eHNuZHZjYXZ3bGZmdnl3bWZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE4NzcwNDYsImV4cCI6MjA0NzQ1MzA0Nn0.UKmCIXv_qSKfeodEUQOVtgVU4pf9aHFMX1ygcV7NMYA"
-      );
-      document.addEventListener("DOMContentLoaded", () => {
-        const loginButton = document.getElementById("loginButton");
+      const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+      const supabaseAnonKey = process.env.REACT_APP_ANON_KEY;
+      const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-        // Function to create cookies that never expire
-        function createCookie(name, value) {
-          const expires = "expires=Fri, 31 Dec 9999 23:59:59 GMT"; // Far future expiration date
-          document.cookie = `${name}=${encodeURIComponent(
-            value
-          )}; ${expires}; path=/`;
+      function App() {
+        const [session, setSession] = useState(null);
+
+        useEffect(() => {
+          supabase.auth.getSession().then(({ data: { session } }) => {
+            setSession(session);
+          });
+
+          const {
+            data: { subscription },
+          } = supabase.auth.onAuthStateChange((_event, session) => {
+            setSession(session);
+          });
+
+          return () => subscription.unsubscribe();
+        }, []);
+
+        if (!session) {
+          return (
+            <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />
+          );
         }
 
-        loginButton.addEventListener("click", async (event) => {
-          event.preventDefault();
+        return <div>Welcome, you are logged in!</div>;
+      }
 
-          const username = document.getElementById("username").value.trim();
-          const password = document.getElementById("passwordField").value;
-
-          if (!username || !password) {
-            alert("Please enter a username and password.");
-            return;
-          }
-
-          try {
-            const { data, error } = await supabase
-              .from("encrypted-data")
-              .select("*")
-              .eq("username", username)
-              .eq("password", password);
-
-            if (error) {
-              console.error("Error querying Supabase:", error);
-              alert("An error occurred. Please try again.");
-              return;
-            }
-
-            if (data && data.length > 0) {
-              alert("Login successful!");
-              const cartitems = data[0].cartitems || "";
-              createCookie("cartitems", cartitems);
-
-              window.location.href = "../index.html";
-            } else {
-              alert("Invalid username or password.");
-            }
-          } catch (err) {
-            console.error("Unexpected error:", err);
-            alert("An error occurred. Please try again.");
-          }
-        });
-      });
+      ReactDOM.render(<App />, document.getElementById("root"));
     </script>
     <title>Login - Stage Fright</title>
 
@@ -139,97 +116,5 @@
         />
       </a>
     </div>
-    <br />
-    <div style="text-align: center">
-      <fieldset>
-        <legend style="max-width: 25vh">Login</legend>
-        <br />
-        <label for="username"></label>
-        <input
-          autocomplete="on"
-          placeholder="Username"
-          type="email"
-          id="username"
-          required
-          name="username"
-        /><br />
-        <label for="password"></label><br />
-        <input
-          autocomplete="on"
-          type="password"
-          placeholder="Password"
-          required
-          id="passwordField"
-          name="password"
-        /><br /><br />
-        <input type="checkbox" onclick="showPassword()" />Show Password
-        <br /><br />
-        <button id="loginButton">Login</button>
-        <br /><br />
-        <a href="forgotpassword.html">Forgot Password</a><br />
-      </fieldset>
-    </div>
-
-    <p style="text-align: center">
-      Need an account? <a href="signup.html">Sign Up</a>
-    </p>
   </body>
 </html>
-<!--
-<script type="module">
-  import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
-
-
-  // Wait for DOM content to load before running other scripts
-  document.addEventListener("DOMContentLoaded", function () {
-    // Encryption function using CryptoJS
-    function encryptData(data, key) {
-      return CryptoJS.AES.encrypt(JSON.stringify(data), key).toString();
-    }
-
-    // Event listener for encryption
-    document.getElementById("encryptButton").addEventListener("click", () => {
-      const message = document.getElementById("encryptionMessage").value;
-      const key = document.getElementById("encryptionKey").value;
-
-      if (message && key) {
-        const encrypted = encryptData(message, key);
-        document.getElementById("encryptedMessage").value = encrypted;
-      } else {
-        alert("Please enter both a message and a key");
-      }
-    });
-
-    // Event listener for sending encrypted data to Supabase
-    document
-      .getElementById("sendToSupabaseButton")
-      .addEventListener("click", async () => {
-        const encryptedMessage = document.getElementById("supabaseHash").value;
-        const key = document.getElementById("supabaseKey").value;
-
-        if (encryptedMessage && key) {
-          try {
-            // Insert encrypted message and key into Supabase table
-            const { data, error } = await supabase
-              .from("encrypted-data") // Table name is 'encrypted-data'
-              .insert([
-                { username: encryptedMessage, password: key }, // Store encrypted message in 'message' column and key in 'key' column
-              ]);
-
-            if (error) {
-              console.error("Error inserting data:", error);
-            } else {
-              console.log("Data successfully inserted:", data);
-              alert("Encrypted data has been sent to Supabase.");
-            }
-          } catch (error) {
-            console.error("Error inserting data:", error);
-            alert("An error occurred while sending data to Supabase.");
-          }
-        } else {
-          alert("Please enter both encrypted hash and key.");
-        }
-      });
-  });
-</script>
--->
