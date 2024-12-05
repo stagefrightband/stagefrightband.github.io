@@ -25,3 +25,44 @@ setInterval(() => {
   toggleClassBasedOnCookie("highcontrast", "high-contrast");
   toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
 }, 1000);
+
+const { useState, useEffect } = React;
+const { createClient } = supabase;
+const { Auth } = supabaseAuthUiReact;
+const { ThemeSupa } = supabaseAuthUiShared;
+
+const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+const supabaseAnonKey = process.env.REACT_APP_ANON_KEY;
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+function Login() {
+  const [session, setSession] = useState(null);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  if (!session) {
+    return <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />;
+  } else {
+    return <div>Logged in!</div>;
+  }
+}
+
+const rootElement = document.getElementById('login-root');
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
+    <React.StrictMode>
+      <Login />
+    </React.StrictMode>
+  );
+}
