@@ -1,7 +1,7 @@
-import React from "react";
-import "../styles/tourdates.css";
+import React, { useEffect } from 'react';
+import '../styles/tourdates.css';
 
-// Function to get a cookie by name
+// Utility functions for cookies
 function getCookie(name: string): string | null {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
@@ -24,14 +24,16 @@ function toggleClassBasedOnCookie({ cookieName, className }: ToggleClassBasedOnC
   }
 }
 
-// Check and apply the classes based on the cookies
-toggleClassBasedOnCookie({ cookieName: "highcontrast", className: "high-contrast" });
-toggleClassBasedOnCookie({ cookieName: "opendyslexic", className: "open-dyslexic" });
+const TourDates: React.FC = () => {
+  useEffect(() => {
+    // Check and apply the classes based on the cookies
+    toggleClassBasedOnCookie({ cookieName: "highcontrast", className: "high-contrast" });
+    toggleClassBasedOnCookie({ cookieName: "opendyslexic", className: "open-dyslexic" });
+  }, []);
 
-const AboutUs: React.FC = () => {
   return (
     <div>
-      <br />
+            <br />
       <p className="tourname">The Crete's Labyrinth Tour</p>
       <div className="tourdiv">
         <div className="tourrow">
@@ -109,4 +111,4 @@ const AboutUs: React.FC = () => {
   );
 };
 
-export default AboutUs;
+export default TourDates;

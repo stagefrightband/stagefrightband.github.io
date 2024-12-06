@@ -1,72 +1,59 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/settings.css'; 
 
-// Function to get a cookie by name
-function getCookie(name: string): string | null {
+// Utility functions for cookies
+const getCookie = (name: string): string | null => {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) {
-    const part = parts.pop();
-    if (part) return part.split(";").shift() || null;
-  }
+  if (parts.length === 2) return parts.pop()?.split(';').shift() || null;
   return null;
-}
+};
 
-// Function to set a cookie with a specific name and value (no expiration)
-function setCookie(name: string, value: string): void {
-  document.cookie = `${name}=${value}; path=/; SameSite=Lax`;
-}
+const setCookie = (name: string, value: string, days = 365): void => {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+};
 
-// Function to apply or remove a class based on cookie value
-function toggleClassBasedOnCookie(cookieName: string, className: string): void {
-  const cookieValue = getCookie(cookieName) === "true";
+const toggleClassBasedOnCookie = (cookieName: string, className: string): void => {
+  const cookieValue = getCookie(cookieName) === 'true';
   if (cookieValue) {
     document.documentElement.classList.add(className);
   } else {
     document.documentElement.classList.remove(className);
   }
-}
-
-// Function to initialize switch states based on cookies
-function initializeSwitches() {
-  const highContrastToggle = document.getElementById("highcontrast-toggle") as HTMLInputElement;
-  const openDyslexicToggle = document.getElementById("opendyslexic-toggle") as HTMLInputElement;
-
-  // Initialize the High Contrast toggle switch
-  if (highContrastToggle) {
-    highContrastToggle.checked = getCookie("highcontrast") === "true";
-    highContrastToggle.addEventListener("change", () => {
-      const newValue = highContrastToggle.checked ? "true" : "false";
-      setCookie("highcontrast", newValue);
-      toggleClassBasedOnCookie("highcontrast", "high-contrast");
-    });
-  }
-
-  if (openDyslexicToggle) {
-    openDyslexicToggle.checked = getCookie("opendyslexic") === "true";
-    openDyslexicToggle.addEventListener("change", () => {
-      const newValue = openDyslexicToggle.checked ? "true" : "false";
-      setCookie("opendyslexic", newValue);
-      toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
-    });
-  }
-}
-
-// Check and apply the classes based on the cookies
-toggleClassBasedOnCookie("highcontrast", "high-contrast");
-toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
-
-// Initialize switches when the page loads
-window.addEventListener("DOMContentLoaded", initializeSwitches);
+};
 
 const Settings: React.FC = () => {
+  const [highContrast, setHighContrast] = useState(getCookie('highcontrast') === 'true');
+  const [openDyslexic, setOpenDyslexic] = useState(getCookie('opendyslexic') === 'true');
+
+  useEffect(() => {
+    toggleClassBasedOnCookie('highcontrast', 'high-contrast');
+    toggleClassBasedOnCookie('opendyslexic', 'open-dyslexic');
+  }, []);
+
+  useEffect(() => {
+    setCookie('highcontrast', highContrast.toString());
+    toggleClassBasedOnCookie('highcontrast', 'high-contrast');
+  }, [highContrast]);
+
+  useEffect(() => {
+    setCookie('opendyslexic', openDyslexic.toString());
+    toggleClassBasedOnCookie('opendyslexic', 'open-dyslexic');
+  }, [openDyslexic]);
+
   return (
     <div>
       <div className="setting high-contrast">
         <div className="setting-header">
           <strong>High Contrast</strong>
           <label className="switch">
-            <input type="checkbox" id="highcontrast-toggle" />
+            <input
+              type="checkbox"
+              id="highcontrast-toggle"
+              checked={highContrast}
+              onChange={() => setHighContrast(!highContrast)}
+            />
             <span className="slider round"></span>
           </label>
         </div>
@@ -78,7 +65,12 @@ const Settings: React.FC = () => {
         <div className="setting-header">
           <strong>Open Dyslexic Font</strong>
           <label className="switch">
-            <input type="checkbox" id="opendyslexic-toggle" />
+            <input
+              type="checkbox"
+              id="opendyslexic-toggle"
+              checked={openDyslexic}
+              onChange={() => setOpenDyslexic(!openDyslexic)}
+            />
             <span className="slider round"></span>
           </label>
         </div>

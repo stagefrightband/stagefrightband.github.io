@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createClient, Session } from '@supabase/supabase-js';
 import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
 import '../styles/login.css';
 
-// Function to get a cookie by name
-interface Cookie {
-  name: string;
-  value: string | null;
-}
-
+// Utility functions for cookies
 function getCookie(name: string): string | null {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
@@ -32,18 +27,20 @@ function toggleClassBasedOnCookie({ cookieName, className }: ToggleClassBasedOnC
   }
 }
 
-// Check and apply the classes based on the cookies
-toggleClassBasedOnCookie({ cookieName: "highcontrast", className: "high-contrast" });
-toggleClassBasedOnCookie({ cookieName: "opendyslexic", className: "open-dyslexic" });
-
-const supabaseUrl = process.env.REACT_APP_SUPABASE_URL || '';
-const supabaseAnonKey = process.env.REACT_APP_ANON_KEY || '';
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
 const Login: React.FC = () => {
   const [session, setSession] = useState<Session | null>(null);
 
+  const supabaseUrl = process.env.REACT_APP_SUPABASE_URL || '';
+  const supabaseAnonKey = process.env.REACT_APP_ANON_KEY || '';
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.error('Supabase URL and Anon Key are required.');
+  }
+  const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
   useEffect(() => {
+    toggleClassBasedOnCookie({ cookieName: "highcontrast", className: "high-contrast" });
+    toggleClassBasedOnCookie({ cookieName: "opendyslexic", className: "open-dyslexic" });
+
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
     });

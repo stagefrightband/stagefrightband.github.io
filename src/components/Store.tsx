@@ -1,7 +1,7 @@
-import React from 'react';
-import '../styles/store.css'
+import React, { useEffect } from 'react';
+import '../styles/store.css';
 
-// Function to get a cookie by name
+// Utility functions for cookies
 function getCookie(name: string): string | null {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
@@ -27,15 +27,19 @@ function toggleClassBasedOnCookie({ cookieName, className }: ToggleClassBasedOnC
   }
 }
 
-// Check and apply the classes based on the cookies
-toggleClassBasedOnCookie({ cookieName: "highcontrast", className: "high-contrast" });
-toggleClassBasedOnCookie({ cookieName: "opendyslexic", className: "open-dyslexic" });
+const Store: React.FC = () => {
+  useEffect(() => {
+    // Check and apply the classes based on the cookies
+    toggleClassBasedOnCookie({ cookieName: "highcontrast", className: "high-contrast" });
+    toggleClassBasedOnCookie({ cookieName: "opendyslexic", className: "open-dyslexic" });
+  }, []);
 
-const AboutUs: React.FC = () => {
   return (
     <div>
+      <h1>Store</h1>
+      <p>Welcome to the Stage Fright Band store. Browse our merchandise below.</p>
     </div>
   );
 };
 
-export default AboutUs;
+export default Store;

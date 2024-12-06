@@ -1,76 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import "../styles/shoppingcart.css";
 
-// Function to get a cookie by name
-function getCookie(name: string): string | null {
+// Utility functions for cookies
+const getCookie = (name: string): string | null => {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) {
-    const part = parts.pop();
-    if (part) return part.split(";").shift() || null;
-  }
+  if (parts.length === 2) return parts.pop()?.split(';').shift() || null;
   return null;
-}
+};
 
-// Function to apply or remove a class based on cookie value
-interface ToggleClassBasedOnCookieParams {
-  cookieName: string;
-  className: string;
-}
+const setCookie = (name: string, value: string, days = 365): void => {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+};
 
-function toggleClassBasedOnCookie({
-  cookieName,
-  className,
-}: ToggleClassBasedOnCookieParams): void {
-  const cookieValue = getCookie(cookieName) === "true";
+const toggleClassBasedOnCookie = (cookieName: string, className: string): void => {
+  const cookieValue = getCookie(cookieName) === 'true';
   if (cookieValue) {
     document.documentElement.classList.add(className);
   } else {
     document.documentElement.classList.remove(className);
   }
-}
+};
 
-// Function to display cart items
-function displayCartItems() {
-  const cartContent = document.getElementById("cart-content");
-  const cartItems = getCookie("cartitems");
+const ShoppingCart: React.FC = () => {
+  const [cartItems, setCartItems] = useState<string[]>([]);
 
-  if (cartContent) {
-    if (!cartItems || cartItems === "null") {
-      cartContent.innerText = "You have no items in your cart.";
-    } else {
-      const items = cartItems.split(",");
-      const list = document.createElement("ul");
-      items.forEach((item) => {
-        const listItem = document.createElement("li");
-        listItem.innerText = item.trim();
-        list.appendChild(listItem);
-      });
-      cartContent.innerHTML = "";
-      cartContent.appendChild(list);
+  useEffect(() => {
+    const cartItemsCookie = getCookie('cartitems');
+    if (cartItemsCookie && cartItemsCookie !== 'null') {
+      setCartItems(cartItemsCookie.split(',').map(item => item.trim()));
     }
-  }
-}
+  }, []);
 
-// Call displayCartItems on page load
-document.addEventListener("DOMContentLoaded", displayCartItems);
-
-// Check and apply the classes based on the cookies
-toggleClassBasedOnCookie({
-  cookieName: "highcontrast",
-  className: "high-contrast",
-});
-toggleClassBasedOnCookie({
-  cookieName: "opendyslexic",
-  className: "open-dyslexic",
-});
-
-const AboutUs: React.FC = () => {
   return (
     <div>
-      <div id="cart-content"></div>
+      <div id="cart-content">
+        {cartItems.length === 0 ? (
+          <p>You have no items in your cart.</p>
+        ) : (
+          <ul>
+            {cartItems.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };
 
-export default AboutUs;
+export default ShoppingCart;

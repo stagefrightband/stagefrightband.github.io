@@ -1,20 +1,16 @@
-import React from 'react';
-import '../styles/aboutus.css'
+import React, { useEffect } from 'react';
+import '../styles/aboutus.css';
 
 // Function to get a cookie by name
-function getCookie(name: string): string | null {
+const getCookie = (name: string): string | null => {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
   if (parts.length === 2) return parts.pop()?.split(";").shift() || null;
   return null;
-}
+};
 
 // Function to apply or remove a class based on cookie value
-interface ToggleClassBasedOnCookie {
-  (cookieName: string, className: string): void;
-}
-
-const toggleClassBasedOnCookie: ToggleClassBasedOnCookie = (cookieName, className) => {
+const toggleClassBasedOnCookie = (cookieName: string, className: string): void => {
   const cookieValue = getCookie(cookieName) === "true";
   if (cookieValue) {
     document.documentElement.classList.add(className);
@@ -23,32 +19,23 @@ const toggleClassBasedOnCookie: ToggleClassBasedOnCookie = (cookieName, classNam
   }
 };
 
-// Check and apply the classes based on the cookies
-toggleClassBasedOnCookie("highcontrast", "high-contrast");
-toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
-
 const AboutUs: React.FC = () => {
+  useEffect(() => {
+    // Check and apply the classes based on the cookies
+    toggleClassBasedOnCookie("highcontrast", "high-contrast");
+    toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
+  }, []);
+
   return (
     <div>
       <div className="profile">
-      <h1>(Name) - (Instrument)</h1>
-      <p>(Bio)</p>
-    </div>
-    <br />
-    <div className="profile">
-      <h1>(Name) - (Instrument)</h1>
-      <p>(Bio)</p>
-    </div>
-    <br />
-    <div className="profile">
-      <h1>(Name) - (Instrument)</h1>
-      <p>(Bio)</p>
-    </div>
-    <br />
-    <div className="profile">
-      <h1>(Name) - (Instrument)</h1>
-      <p>(Bio)</p>
-    </div>
+        <h1>(Name) - (Instrument)</h1>
+        <p>Bio goes here...</p>
+      </div>
+      <div className="profile">
+        <h1>(Name) - (Instrument)</h1>
+        <p>Bio goes here...</p>
+      </div>
     </div>
   );
 };
