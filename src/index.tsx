@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import App from './components/App';
-import reportWebVitals from './reportWebVitals';
 
 const rootElement = document.getElementById('root');
 if (rootElement) {
@@ -13,5 +12,3 @@ if (rootElement) {
     </React.StrictMode>
   );
 }
-
-reportWebVitals(console.log);
