@@ -1,3 +1,7 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Disallow: /private/
+Disallow: /tmp/
+Allow: /
+
+Sitemap: https://stagefrightband.github.io/sitemap.xml
