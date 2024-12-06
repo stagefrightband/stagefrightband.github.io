@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/shoppingcart.css'
+import React from "react";
+import "../styles/shoppingcart.css";
 
 // Function to get a cookie by name
 function getCookie(name: string): string | null {
@@ -18,7 +18,10 @@ interface ToggleClassBasedOnCookieParams {
   className: string;
 }
 
-function toggleClassBasedOnCookie({ cookieName, className }: ToggleClassBasedOnCookieParams): void {
+function toggleClassBasedOnCookie({
+  cookieName,
+  className,
+}: ToggleClassBasedOnCookieParams): void {
   const cookieValue = getCookie(cookieName) === "true";
   if (cookieValue) {
     document.documentElement.classList.add(className);
@@ -38,7 +41,7 @@ function displayCartItems() {
     } else {
       const items = cartItems.split(",");
       const list = document.createElement("ul");
-      items.forEach(item => {
+      items.forEach((item) => {
         const listItem = document.createElement("li");
         listItem.innerText = item.trim();
         list.appendChild(listItem);
@@ -53,15 +56,19 @@ function displayCartItems() {
 document.addEventListener("DOMContentLoaded", displayCartItems);
 
 // Check and apply the classes based on the cookies
-toggleClassBasedOnCookie({ cookieName: "highcontrast", className: "high-contrast" });
-toggleClassBasedOnCookie({ cookieName: "opendyslexic", className: "open-dyslexic" });
+toggleClassBasedOnCookie({
+  cookieName: "highcontrast",
+  className: "high-contrast",
+});
+toggleClassBasedOnCookie({
+  cookieName: "opendyslexic",
+  className: "open-dyslexic",
+});
 
 const AboutUs: React.FC = () => {
   return (
     <div>
-      <h1>About Us</h1>
-      <p>Welcome to the About Us page of Stage Fright Band.</p>
-      {/* Add more content here */}
+      <div id="cart-content"></div>
     </div>
   );
 };

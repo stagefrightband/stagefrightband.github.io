@@ -34,9 +34,6 @@ toggleClassBasedOnCookie({ cookieName: "opendyslexic", className: "open-dyslexic
 const AboutUs: React.FC = () => {
   return (
     <div>
-      <h1>About Us</h1>
-      <p>Welcome to the About Us page of Stage Fright Band.</p>
-      {/* Add more content here */}
     </div>
   );
 };
