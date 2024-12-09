@@ -5,5 +5,4 @@ import { test } from '@jest/globals';
 
 test('renders learn react link', () => {
   render(<App />);
-  // Add your test assertions here
 });

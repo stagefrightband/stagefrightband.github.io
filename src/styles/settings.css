@@ -1,4 +1,3 @@
-
 .topnav {
   background-color: #333;
   overflow: hidden;
@@ -9,8 +8,6 @@
   padding: 0 3.13vh;
   height: 11.738vh;
 }
-
-
 .topnav a {
   float: left;
   color: #f2f2f2;
@@ -27,14 +24,10 @@
   padding-left: 2.504vh;
   padding-right: 2.504vh;
 }
-
-
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
-
-
 .topnav a.logo {
   background-color: #aa0404;
   color: white;
@@ -43,41 +36,31 @@
   align-items: center;
   justify-content: center;
 }
-
-
 .logoimage {
   width: 7.825vh;
   height: 7.825vh;
   padding: 1.097vh;
   margin: 0.784vh;
 }
-
 body {
   margin: 1.252vh;
 }
-
 .save {
   background-color: #4d9900;
   color: white;
   border: 0.313vh solid black;
 }
-
-/* The switch - the box around the slider */
 .switch {
   position: relative;
   display: inline-block;
   width: 4.695vh;
   height: 2.66vh;
 }
-
-
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-
-
 .slider {
   position: absolute;
   cursor: pointer;
@@ -89,7 +72,6 @@ body {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
 .slider:before {
   position: absolute;
   content: "";
@@ -101,55 +83,44 @@ body {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
 input:checked + .slider {
   background-color: #2196f3;
 }
-
 input:focus + .slider {
   box-shadow: 0 0 0.156vh #2196f3;
 }
-
 input:checked + .slider:before {
   -webkit-transform: translateX(2.034vh);
   -ms-transform: translateX(2.034vh);
   transform: translateX(2.034vh);
 }
-
-
 .slider.round {
   border-radius: 2.66vh;
 }
-
 .slider.round:before {
   border-radius: 50%;
 }
-
 .setting {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5vh; /* Reduced gap from 0.783vh */
+  gap: 0.5vh;
 }
-
-/* Ensure the setting-header arranges items in a row */
 .setting-header {
   display: flex;
   align-items: center;
-  gap: 1.5vh; 
-  margin-bottom: -1.565vh; 
+  gap: 1.5vh;
+  margin-bottom: -1.565vh;
 }
-
-
 @font-face {
   font-family: "OpenDyslexic";
-  src: url("../../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff2") format("woff2"),
-    url("../../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff") format("woff"); /* Fallback */
+  src: url("../../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff2")
+      format("woff2"),
+    url("../../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff")
+      format("woff");
   font-weight: normal;
   font-style: normal;
 }
-
-
 .high-contrast {
   --background-color: #000000;
   --text-color: #ffffff;
@@ -157,7 +128,6 @@ input:checked + .slider:before {
   --button-background: #ffcc00;
   --button-text: #000000;
   --border-color: #ffffff;
-
   background-color: var(--background-color) !important;
   color: var(--text-color) !important;
   border-color: var(--border-color) !important;
@@ -165,28 +135,22 @@ input:checked + .slider:before {
   border-radius: 5px;
   padding: 10px;
 }
-
 .high-contrast a {
   color: var(--link-color) !important;
   text-decoration: underline;
 }
-
 .high-contrast button,
 .high-contrast input[type="button"],
 .high-contrast input[type="submit"] {
   background-color: var(--button-background) !important;
   color: var(--button-text) !important;
 }
-
-
 .open-dyslexic {
   font-family: "OpenDyslexic", sans-serif !important;
   border: 0.157vh solid black;
   border-radius: 0.783vh;
   padding: 1.565vh;
 }
-
-
 .open-dyslexic input,
 .open-dyslexic textarea,
 .open-dyslexic button {
