@@ -83,3 +83,16 @@ body {
 .open-dyslexic button {
   font-family: "OpenDyslexic", sans-serif !important;
 }
+
+.product-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+}
+
+.product-image img {
+  width: 33vh;
+  height: 33vh;
+}
