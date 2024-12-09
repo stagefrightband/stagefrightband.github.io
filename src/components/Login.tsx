@@ -4,7 +4,7 @@ import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
 import '../styles/login.css';
 
-// Utility functions for cookies
+
 function getCookie(name: string): string | null {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
@@ -12,7 +12,7 @@ function getCookie(name: string): string | null {
   return null;
 }
 
-// Function to apply or remove a class based on cookie value
+
 interface ToggleClassBasedOnCookieParams {
   cookieName: string;
   className: string;

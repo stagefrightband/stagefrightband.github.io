@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/settings.css'; 
 
-// Utility functions for cookies
+
 const getCookie = (name: string): string | null => {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "../styles/contactus.css";
 
-// Function to get a cookie by name
+
 const getCookie = (name: string): string | null => {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
@@ -9,7 +9,7 @@ const getCookie = (name: string): string | null => {
   return null;
 };
 
-// Function to apply or remove a class based on cookie value
+
 const toggleClassBasedOnCookie = (
   cookieName: string,
   className: string
@@ -24,7 +24,7 @@ const toggleClassBasedOnCookie = (
 
 const ContactUs: React.FC = () => {
   useEffect(() => {
-    // Check and apply the classes based on the cookies
+    
     toggleClassBasedOnCookie("highcontrast", "high-contrast");
     toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
   }, []);

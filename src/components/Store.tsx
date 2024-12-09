@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import '../styles/store.css';
 
-// Utility functions for cookies
+
 function getCookie(name: string): string | null {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
@@ -12,7 +12,7 @@ function getCookie(name: string): string | null {
   return null;
 }
 
-// Function to apply or remove a class based on cookie value
+
 interface ToggleClassBasedOnCookieParams {
   cookieName: string;
   className: string;
@@ -29,7 +29,7 @@ function toggleClassBasedOnCookie({ cookieName, className }: ToggleClassBasedOnC
 
 const Store: React.FC = () => {
   useEffect(() => {
-    // Check and apply the classes based on the cookies
+    
     toggleClassBasedOnCookie({ cookieName: "highcontrast", className: "high-contrast" });
     toggleClassBasedOnCookie({ cookieName: "opendyslexic", className: "open-dyslexic" });
   }, []);
