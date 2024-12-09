@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "20"
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
@@ -24,8 +24,16 @@ jobs:
       - name: Build the React app
         env:
           REACT_APP_SUPABASE_URL: ${{ secrets.REACT_APP_SUPABASE_URL }}
-          REACT_APP_SUPABASE_ANON_KEY: ${{ secrets.REACT_APP_SUPABASE_ANON_KEY }}
+          REACT_APP_SUPABASE_ANON_KEY: ${{ secrets.REACT_APP_ANON_KEY }}
         run: npm run build
+
+      - name: Install Brotli
+        run: sudo apt-get install brotli
+
+      - name: Compress assets using Brotli
+        run: |
+          find build -type f -name '*.js' -exec brotli --best --output {}.br {} \;
+          find build -type f -name '*.css' -exec brotli --best --output {}.br {} \;
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
