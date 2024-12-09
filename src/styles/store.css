@@ -36,6 +36,15 @@
   align-items: center;
   justify-content: center;
 }
+.topnav a.product-button {
+  background-image: url('../../public/Images/stagefrightmerch.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  width: 33vh;
+  height: 33vh;
+  cursor: pointer;
+}
 .logoimage {
   width: 7.825vh;
   height: 7.825vh;
@@ -95,4 +104,21 @@ body {
 .product-image img {
   width: 33vh;
   height: 33vh;
+}
+
+.overlay {
+  position: fixed;
+  top: 11.738vh;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 11.738vh);
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay.active {
+  display: flex;
 }

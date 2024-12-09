@@ -20,7 +20,7 @@ importers:
         specifier: ^0.1.8
         version: 0.1.8(@supabase/supabase-js@2.47.3)
       '@supabase/supabase-js':
-        specifier: ^2.47.2
+        specifier: ^2.47.3
         version: 2.47.3
       '@testing-library/jest-dom':
         specifier: ^6.6.3
@@ -7392,7 +7392,7 @@ snapshots:
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 22.10.1
 
   '@types/semver@7.5.8': {}
 

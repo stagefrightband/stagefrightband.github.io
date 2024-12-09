@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - react-js # Change this to your default branch if it's not 'main'
+      - react-js
 
 jobs:
   build-and-deploy:
@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Dedupe dependencies
+        run: pnpm dedupe
+
       - name: Build the React app
         env:
           REACT_APP_SUPABASE_URL: ${{ secrets.REACT_APP_SUPABASE_URL }}
@@ -42,4 +45,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./builds
+          publish_dir: ./build
