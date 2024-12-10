@@ -55,7 +55,7 @@ const Store: React.FC = () => {
           <button
             className="product-button"
             style={{
-              backgroundImage: "url('../../public/Images/stagefrightmerch.webp')"
+              backgroundImage: "url('/Images/stagefrightmerch.webp')"
             }}
             onClick={handleButtonClick}
             aria-label="Stage Fright Merch"
