@@ -52,7 +52,14 @@ const Store: React.FC = () => {
     <div>
       <div className="product-tile">
         <div className="product-image">
-          <button className="product-button" onClick={handleButtonClick} aria-label="Stage Fright Merch"></button>
+          <button
+            className="product-button"
+            style={{
+              backgroundImage: "url('../../public/Images/stagefrightmerch.webp')"
+            }}
+            onClick={handleButtonClick}
+            aria-label="Stage Fright Merch"
+          ></button>
         </div>
         <div className="product-info">
           <p>Stage Fright T-Shirt</p>

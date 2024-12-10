@@ -24,9 +24,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
-      - name: Dedupe dependencies
-        run: pnpm dedupe
-
       - name: Build the React app
         env:
           REACT_APP_SUPABASE_URL: ${{ secrets.REACT_APP_SUPABASE_URL }}
