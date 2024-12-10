@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.3770ba63.css",
+    "main.css": "/static/css/main.661f3544.css",
     "main.js": "/static/js/main.92aa3f19.js",
     "static/js/449.ad75dd3e.chunk.js": "/static/js/449.ad75dd3e.chunk.js",
     "static/media/WolfhagenBlackletter-Regular.ttf": "/static/media/WolfhagenBlackletter-Regular.ff088f8c6906975c2b5f.ttf",
@@ -10,7 +10,7 @@
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.3770ba63.css",
+    "static/css/main.661f3544.css",
     "static/js/main.92aa3f19.js"
   ]
 }
