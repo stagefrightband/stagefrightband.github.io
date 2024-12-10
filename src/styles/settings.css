@@ -145,7 +145,6 @@ input:checked + .slider:before {
 }
 .open-dyslexic {
   font-family: "OpenDyslexic", sans-serif !important;
-  border: 0.157vh solid black;
   padding: 1.565vh;
 }
 .open-dyslexic input,
