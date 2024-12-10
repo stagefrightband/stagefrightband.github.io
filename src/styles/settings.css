@@ -131,8 +131,6 @@ input:checked + .slider:before {
   background-color: var(--background-color) !important;
   color: var(--text-color) !important;
   border-color: var(--border-color) !important;
-  border: 1px solid black;
-  border-radius: 5px;
   padding: 10px;
 }
 .high-contrast a {
@@ -148,7 +146,6 @@ input:checked + .slider:before {
 .open-dyslexic {
   font-family: "OpenDyslexic", sans-serif !important;
   border: 0.157vh solid black;
-  border-radius: 0.783vh;
   padding: 1.565vh;
 }
 .open-dyslexic input,
