@@ -1,31 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.aee0f982.css",
-    "main.js": "/static/js/main.8b0fa0d2.js",
-    "static/js/886.717fd50b.chunk.js": "/static/js/886.717fd50b.chunk.js",
-    "static/css/826.403cc6be.chunk.css": "/static/css/826.403cc6be.chunk.css",
-    "static/js/826.b18516d1.chunk.js": "/static/js/826.b18516d1.chunk.js",
-    "static/css/209.2c4f6ba7.chunk.css": "/static/css/209.2c4f6ba7.chunk.css",
-    "static/js/209.dce0a671.chunk.js": "/static/js/209.dce0a671.chunk.js",
-    "static/css/529.52b24b3c.chunk.css": "/static/css/529.52b24b3c.chunk.css",
-    "static/js/529.2309a4ce.chunk.js": "/static/js/529.2309a4ce.chunk.js",
-    "static/css/17.aee0f982.chunk.css": "/static/css/17.aee0f982.chunk.css",
-    "static/js/17.7cdfa91a.chunk.js": "/static/js/17.7cdfa91a.chunk.js",
-    "static/css/339.fd4d2209.chunk.css": "/static/css/339.fd4d2209.chunk.css",
-    "static/js/339.603d0c38.chunk.js": "/static/js/339.603d0c38.chunk.js",
-    "static/css/635.ce9c1234.chunk.css": "/static/css/635.ce9c1234.chunk.css",
-    "static/js/635.ccd281bb.chunk.js": "/static/js/635.ccd281bb.chunk.js",
-    "static/css/684.875f199b.chunk.css": "/static/css/684.875f199b.chunk.css",
-    "static/js/684.c8f2d1c0.chunk.js": "/static/js/684.c8f2d1c0.chunk.js",
+    "main.css": "/static/css/main.3770ba63.css",
+    "main.js": "/static/js/main.92aa3f19.js",
     "static/js/449.ad75dd3e.chunk.js": "/static/js/449.ad75dd3e.chunk.js",
-    "static/js/11.35840961.chunk.js": "/static/js/11.35840961.chunk.js",
     "static/media/WolfhagenBlackletter-Regular.ttf": "/static/media/WolfhagenBlackletter-Regular.ff088f8c6906975c2b5f.ttf",
     "static/media/OpenDyslexic-Regular.woff": "/static/media/OpenDyslexic-Regular.faf7bb41c4bbb5a043ed.woff",
     "static/media/OpenDyslexic-Regular.woff2": "/static/media/OpenDyslexic-Regular.904b03b8ee84dff60d49.woff2",
+    "static/media/stagefrightmerch.webp": "/static/media/stagefrightmerch.0947699fcea794eedfe0.webp",
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.aee0f982.css",
-    "static/js/main.8b0fa0d2.js"
+    "static/css/main.3770ba63.css",
+    "static/js/main.92aa3f19.js"
   ]
 }
