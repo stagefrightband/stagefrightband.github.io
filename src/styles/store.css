@@ -37,11 +37,10 @@
   justify-content: center;
 }
 .topnav a.product-button {
-  background-image: url('../../public/Images/stagefrightmerch.webp');
+  background-image: url('/Images/stagefrightmerch.webp');
   background-size: cover;
   background-repeat: no-repeat;
   border: none;
-  width: 33vh;
   height: 33vh;
   cursor: pointer;
 }
