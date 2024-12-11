@@ -1,2 +1,1 @@
-declare module '@supabase/auth-ui-react';
-declare module '@supabase/auth-ui-shared';
+declare module '@supabase/auth-ui-react';declare module '@supabase/auth-ui-shared';

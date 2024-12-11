@@ -1,8 +1,2 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './components/App';
-import { test } from '@jest/globals';
-
-test('renders learn react link', () => {
-  render(<App />);
-});
+import React from 'react'; import { render, test } from '@testing-library/react'; import App from './components/App';
+test('renders learn react link', () => { render(<App />); });
