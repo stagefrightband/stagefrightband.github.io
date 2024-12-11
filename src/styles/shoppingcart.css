@@ -53,6 +53,7 @@ body {
       format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: fallback;
 }
 .high-contrast {
   --background-color: #000000;

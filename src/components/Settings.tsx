@@ -11,7 +11,7 @@ const getCookie = (name: string): string | null => {
 
 const setCookie = (name: string, value: string, days = 365): void => {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
-  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+  document.cookie = `${name}=${value}; expires=${expires}; path=/; SameSite=Lax`;
 };
 
 const toggleClassBasedOnCookie = (cookieName: string, className: string): void => {
@@ -53,6 +53,7 @@ const Settings: React.FC = () => {
               id="highcontrast-toggle"
               checked={highContrast}
               onChange={() => setHighContrast(!highContrast)}
+              aria-label="Toggle High Contrast"
             />
             <span className="slider round"></span>
           </label>
@@ -70,6 +71,7 @@ const Settings: React.FC = () => {
               id="opendyslexic-toggle"
               checked={openDyslexic}
               onChange={() => setOpenDyslexic(!openDyslexic)}
+              aria-label="Toggle Open Dyslexic Font"
             />
             <span className="slider round"></span>
           </label>

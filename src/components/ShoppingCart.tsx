@@ -9,20 +9,6 @@ const getCookie = (name: string): string | null => {
   return null;
 };
 
-const setCookie = (name: string, value: string, days = 365): void => {
-  const expires = new Date(Date.now() + days * 864e5).toUTCString();
-  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
-};
-
-const toggleClassBasedOnCookie = (cookieName: string, className: string): void => {
-  const cookieValue = getCookie(cookieName) === 'true';
-  if (cookieValue) {
-    document.documentElement.classList.add(className);
-  } else {
-    document.documentElement.classList.remove(className);
-  }
-};
-
 const ShoppingCart: React.FC = () => {
   const [cartItems, setCartItems] = useState<string[]>([]);
 
