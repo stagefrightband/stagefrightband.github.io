@@ -15,13 +15,13 @@ importers:
     dependencies:
       '@supabase/auth-ui-react':
         specifier: ^0.4.7
-        version: 0.4.7(@supabase/supabase-js@2.47.3)
+        version: 0.4.7(@supabase/supabase-js@2.47.5)
       '@supabase/auth-ui-shared':
         specifier: ^0.1.8
-        version: 0.1.8(@supabase/supabase-js@2.47.3)
+        version: 0.1.8(@supabase/supabase-js@2.47.5)
       '@supabase/supabase-js':
-        specifier: ^2.47.3
-        version: 2.47.3
+        specifier: ^2.47.5
+        version: 2.47.5
       '@testing-library/jest-dom':
         specifier: ^6.6.3
         version: 6.6.3
@@ -1195,8 +1195,8 @@ packages:
   '@supabase/storage-js@2.7.1':
     resolution: {integrity: sha512-asYHcyDR1fKqrMpytAS1zjyEfvxuOIp1CIXX7ji4lHHcJKqyk+sLl/Vxgm4sN6u8zvuUtae9e4kDxQP2qrwWBA==}
 
-  '@supabase/supabase-js@2.47.3':
-    resolution: {integrity: sha512-AmwTyHtOXdfjLVKiM+neYItB62T4gAl1jV8ZrIg3yp1Z1NICzYfsujJDSuELkrLkYvU/RGfZXpIBheDTt7fmwA==}
+  '@supabase/supabase-js@2.47.5':
+    resolution: {integrity: sha512-Xd4L2HR0pdZ+rBnoIi33CJ0K0q9BU9b42NaR13jDkiSYGbxJlZdYtXkTEhyVMQBXnYVvUHXM53q54iw/lgFrHA==}
 
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
@@ -7229,18 +7229,18 @@ snapshots:
     dependencies:
       '@supabase/node-fetch': 2.6.15
 
-  '@supabase/auth-ui-react@0.4.7(@supabase/supabase-js@2.47.3)':
+  '@supabase/auth-ui-react@0.4.7(@supabase/supabase-js@2.47.5)':
     dependencies:
       '@stitches/core': 1.2.8
-      '@supabase/auth-ui-shared': 0.1.8(@supabase/supabase-js@2.47.3)
-      '@supabase/supabase-js': 2.47.3
+      '@supabase/auth-ui-shared': 0.1.8(@supabase/supabase-js@2.47.5)
+      '@supabase/supabase-js': 2.47.5
       prop-types: 15.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@supabase/auth-ui-shared@0.1.8(@supabase/supabase-js@2.47.3)':
+  '@supabase/auth-ui-shared@0.1.8(@supabase/supabase-js@2.47.5)':
     dependencies:
-      '@supabase/supabase-js': 2.47.3
+      '@supabase/supabase-js': 2.47.5
 
   '@supabase/functions-js@2.4.3':
     dependencies:
@@ -7268,7 +7268,7 @@ snapshots:
     dependencies:
       '@supabase/node-fetch': 2.6.15
 
-  '@supabase/supabase-js@2.47.3':
+  '@supabase/supabase-js@2.47.5':
     dependencies:
       '@supabase/auth-js': 2.66.1
       '@supabase/functions-js': 2.4.3
