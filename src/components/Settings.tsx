@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/settings.css'; 
+import '../styles.css'; 
 
 
 const getCookie = (name: string): string | null => {

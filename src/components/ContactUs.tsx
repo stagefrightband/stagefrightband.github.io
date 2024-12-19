@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../styles/contactus.css";
+import "../styles.css";
 
 
 const getCookie = (name: string): string | null => {

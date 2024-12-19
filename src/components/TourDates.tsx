@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import '../styles/tourdates.css';
+import '../styles.css';
 
 
 function getCookie(name: string): string | null {

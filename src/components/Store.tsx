@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/store.css';
+import '../styles.css';
 
 function getCookie(name: string): string | null {
   const value = `; ${document.cookie}`;
