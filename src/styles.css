@@ -14,15 +14,17 @@
   text-align: center;
   text-decoration: none;
   font-size: 3.13vh;
-  padding: 11.738vh 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .topnav a:not(:first-child) {
   display: flex;
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-  padding-left: 2.504vh;
-  padding-right: 2.504vh;
+  padding: 0 2.504vh;
 }
 .topnav a:hover {
   background-color: #ddd;
@@ -44,8 +46,8 @@
 .logoimage {
   width: 7.825vh;
   height: 7.825vh;
-  padding: 1.097vh;
-  margin: 0.784vh;
+  padding: 1.565vh;
+  margin: 0.313vh;
 }
 body {
   margin: 1.252vh;
@@ -109,15 +111,40 @@ body {
   left: 0;
   width: 100%;
   height: calc(100% - 11.738vh);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #d3d3d3; /* Light gray */
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 2vh;
+  box-sizing: border-box;
 }
 
 .overlay.active {
   display: flex;
+  flex-direction: row;
+}
+
+.overlay-left, .overlay-right {
+  width: 50%;
+  height: 100%;
+}
+
+.overlay-left {
+  width: 50%;
+  height: 100%;
+  padding-top: 5vh;
+  padding-left: 5vh; /* Adjust padding as needed */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-left img {
+  width: 44.715vh;
+  height: 33vh;
+  object-fit: cover;
 }
 
 .product-button {
@@ -247,12 +274,6 @@ input:checked + .slider:before {
   padding: 10px;
 }
 
-.logoimage {
-  width: 7.825vh;
-  height: 7.825vh;
-  padding: 1.565vh;
-  margin: 0.313;
-}
 .tourdiv {
   display: grid;
   gap: 0;
@@ -277,7 +298,7 @@ input:checked + .slider:before {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 1.565vh 1.565vh 0 1.565vh;
+  padding: 1.565vh 1.565vh 0;
   height: 100%;
   box-sizing: border-box;
 }
@@ -329,4 +350,15 @@ input:checked + .slider:before {
 .open-dyslexic .tourname {
   font-family: "OpenDyslexic", sans-serif !important;
   text-shadow: none;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  font-size: 10vh;
+  cursor: pointer;
+  z-index: 1001;
 }

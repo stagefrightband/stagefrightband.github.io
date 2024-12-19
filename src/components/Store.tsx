@@ -66,7 +66,13 @@ const Store: React.FC = () => {
         </div>
       </div>
       <div className={`overlay ${isOverlayVisible ? 'active' : ''}`}>
-        <p>Test</p>
+        <button className="close-button" onClick={() => setIsOverlayVisible(false)}>X</button>
+        <div className="overlay-left">
+          <img src="/Images/stagefrightmerch.webp" alt="Stage Fright Merch" />
+        </div>
+        <div className="overlay-right">
+          {/* Right half content can be added here */}
+        </div>
       </div>
     </div>
   );
