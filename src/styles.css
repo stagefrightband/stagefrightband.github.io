@@ -13,7 +13,7 @@
   color: #f2f2f2;
   text-align: center;
   text-decoration: none;
-  font-size: 3.13vh;
+  font-size: 1rem;
   height: 100%;
   display: flex;
   align-items: center;
@@ -155,13 +155,13 @@ body {
 }
 
 .overlay-right p {
-  font-size: 3vh;
+  font-size: 1rem;
 }
 
 .overlay-right button {
   margin-top: 1vh;
   padding: 0.5vh 2vh;
-  font-size: 2vh;
+  font-size: 0.666rem;
   cursor: pointer;
 }
 
@@ -181,7 +181,7 @@ body {
   text-align: center;
 }
 h1 {
-  font-size: 3.13vh;
+  font-size: 1.5rem;
 }
 
 .App {
@@ -292,10 +292,6 @@ input:checked + .slider:before {
   padding: 1.5649vh;
 }
 
-#cart-content ul li input {
-  margin-left: 0.5vh; /* Adds spacing between item name and input field */
-}
-
 .tourdiv {
   display: grid;
   gap: 0;
@@ -336,21 +332,22 @@ input:checked + .slider:before {
   border: 0.156vh solid black;
   color: white;
   padding: 0.784vh 4.695vh;
+  font-size: 0.666rem;
 }
 .date {
-  font-size: 1.878vh;
+  font-size: 0.63rem;
   margin-bottom: 0.784vh;
 }
 .city {
-  font-size: 2.817vh;
+  font-size: 0.95rem;
   margin-bottom: 0.784vh;
 }
 .location {
-  font-size: 2.191vh;
+  font-size: 0.74rem;
   padding-bottom: 0.784vh;
 }
 .tourname {
-  font-size: 4.695vh;
+  font-size: 1.56rem;
   text-align: center;
   text-shadow: 0.313vh 0.313vh 0.784vh red;
   font-family: wolfhagen-blackletter;
@@ -399,5 +396,5 @@ input:checked + .slider:before {
 }
 
 .quantity-container span {
-  margin-left: 0.5vh; /* Adds extra spacing between input and text */
+  margin-left: 0.5vh;
 }

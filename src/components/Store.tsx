@@ -12,7 +12,7 @@ function getCookie(name: string): string | null {
 }
 
 function setCookie(name: string, value: string): void {
-  const expires = "Fri, 31 Dec 9999 23:59:59 GMT"; // Far future date
+  const expires = "Fri, 31 Dec 9999 23:59:59 GMT"; 
   document.cookie = `${name}=${value}; expires=${expires}; path=/`;
 }
 
@@ -32,7 +32,7 @@ function toggleClassBasedOnCookie({ cookieName, className }: ToggleClassBasedOnC
 
 const Store: React.FC = () => {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
-  const [quantity, setQuantity] = useState(1); // Added state for quantity
+  const [quantity, setQuantity] = useState(1); 
 
   useEffect(() => {
     toggleClassBasedOnCookie({ cookieName: "highcontrast", className: "high-contrast" });
@@ -62,7 +62,7 @@ const Store: React.FC = () => {
   const handleSubmit = () => {
     setCookie("cartitems", `Merch${quantity}`);
     console.log(`Added merch${quantity} to cart.`);
-    setIsOverlayVisible(false); // Hides the overlay
+    setIsOverlayVisible(false);
   };
 
   return (
@@ -90,13 +90,13 @@ const Store: React.FC = () => {
         <div className="overlay-right">
           <p>Stage Fright Merch</p>
           <div className="quantity-container">
+            <span>Quantity:</span>
             <input
               type="number"
               min="1"
               value={quantity}
               onChange={handleQuantityChange}
             />
-            <span>{quantity === 1 ? "shirt" : "shirts"}</span>
           </div>
           <button onClick={handleSubmit}>Add to Cart</button>
         </div>
