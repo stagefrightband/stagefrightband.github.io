@@ -26,9 +26,17 @@ const ShoppingCart: React.FC = () => {
           <p>You have no items in your cart.</p>
         ) : (
           <ul>
-            {cartItems.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
+            {cartItems.map((item, index) => {
+              const match = item.match(/(\D+)(\d+)/);
+              const name = match ? match[1] : item;
+              const quantity = match ? parseInt(match[2], 10) : 1;
+              return (
+                <li key={index}>
+                  {name}
+                  <input type="number" min="1" defaultValue={quantity} />
+                </li>
+              );
+            })}
           </ul>
         )}
       </div>

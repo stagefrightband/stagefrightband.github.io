@@ -11,6 +11,11 @@ function getCookie(name: string): string | null {
   return null;
 }
 
+function setCookie(name: string, value: string): void {
+  const expires = "Fri, 31 Dec 9999 23:59:59 GMT"; // Far future date
+  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+}
+
 interface ToggleClassBasedOnCookieParams {
   cookieName: string;
   className: string;
@@ -27,6 +32,7 @@ function toggleClassBasedOnCookie({ cookieName, className }: ToggleClassBasedOnC
 
 const Store: React.FC = () => {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+  const [quantity, setQuantity] = useState(1); // Added state for quantity
 
   useEffect(() => {
     toggleClassBasedOnCookie({ cookieName: "highcontrast", className: "high-contrast" });
@@ -46,6 +52,17 @@ const Store: React.FC = () => {
 
   const handleButtonClick = () => {
     setIsOverlayVisible(true);
+  };
+
+  const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value, 10);
+    setQuantity(value >= 1 ? value : 1);
+  };
+
+  const handleSubmit = () => {
+    setCookie("cartitems", `Merch${quantity}`);
+    console.log(`Added merch${quantity} to cart.`);
+    setIsOverlayVisible(false); // Hides the overlay
   };
 
   return (
@@ -71,7 +88,17 @@ const Store: React.FC = () => {
           <img src="/Images/stagefrightmerch.webp" alt="Stage Fright Merch" />
         </div>
         <div className="overlay-right">
-          {/* Right half content can be added here */}
+          <p>Stage Fright Merch</p>
+          <div className="quantity-container">
+            <input
+              type="number"
+              min="1"
+              value={quantity}
+              onChange={handleQuantityChange}
+            />
+            <span>{quantity === 1 ? "shirt" : "shirts"}</span>
+          </div>
+          <button onClick={handleSubmit}>Add to Cart</button>
         </div>
       </div>
     </div>

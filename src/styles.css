@@ -98,6 +98,7 @@ body {
   align-items: center;
   justify-content: center;
   align-self: flex-start;
+  margin-top: 2vh;
 }
 
 .product-image img {
@@ -107,15 +108,15 @@ body {
 
 .overlay {
   position: fixed;
-  top: 11.738vh;
+  top: 0; 
   left: 0;
   width: 100%;
-  height: calc(100% - 11.738vh);
-  background-color: #d3d3d3; /* Light gray */
+  height: 100%; 
+  background-color: #d3d3d3; 
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 1100;
   padding: 2vh;
   box-sizing: border-box;
 }
@@ -133,18 +134,35 @@ body {
 .overlay-left {
   width: 50%;
   height: 100%;
-  padding-top: 5vh;
-  padding-left: 5vh; /* Adjust padding as needed */
+  padding-left: 5vh;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .overlay-left img {
-  width: 44.715vh;
-  height: 33vh;
+  width: 40vw;
+  height: 45vh;
   object-fit: cover;
+}
+
+.overlay-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.overlay-right p {
+  font-size: 3vh;
+}
+
+.overlay-right button {
+  margin-top: 1vh;
+  padding: 0.5vh 2vh;
+  font-size: 2vh;
+  cursor: pointer;
 }
 
 .product-button {
@@ -269,9 +287,13 @@ input:checked + .slider:before {
 }
 #cart-content ul {
   list-style: none;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  padding: 10px;
+  border: 0.313vh solid #ccc;
+  border-radius: 1.252vh;
+  padding: 1.5649vh;
+}
+
+#cart-content ul li input {
+  margin-left: 0.5vh; /* Adds spacing between item name and input field */
 }
 
 .tourdiv {
@@ -354,11 +376,28 @@ input:checked + .slider:before {
 
 .close-button {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 0.7825vh;
+  left: 0.7825vh;
   background: none;
   border: none;
-  font-size: 10vh;
+  font-size: 5vh;
   cursor: pointer;
   z-index: 1001;
+}
+
+.quantity-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5vh;
+  margin-top: 1vh;
+}
+
+.quantity-container input {
+  width: 50px;
+  padding: 0.5vh;
+}
+
+.quantity-container span {
+  margin-left: 0.5vh; /* Adds extra spacing between input and text */
 }
