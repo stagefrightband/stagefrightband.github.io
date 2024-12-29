@@ -34,6 +34,9 @@ const Store: React.FC = () => {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [quantity, setQuantity] = useState(1); 
 
+  
+  const [size, setSize] = useState<string>(getCookie('size') || 'Medium');
+
   useEffect(() => {
     toggleClassBasedOnCookie({ cookieName: "highcontrast", className: "high-contrast" });
     toggleClassBasedOnCookie({ cookieName: "opendyslexic", className: "open-dyslexic" });
@@ -59,9 +62,15 @@ const Store: React.FC = () => {
     setQuantity(value >= 1 ? value : 1);
   };
 
+  
+  const handleSizeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSize(e.target.value);
+    setCookie('size', e.target.value);
+  };
+
   const handleSubmit = () => {
-    setCookie("cartitems", `Merch${quantity}`);
-    console.log(`Added merch${quantity} to cart.`);
+    setCookie("cartitems", `Merch${quantity} Size:${size}`);
+    console.log(`Added Merch${quantity} Size:${size} to cart.`);
     setIsOverlayVisible(false);
   };
 
@@ -88,17 +97,30 @@ const Store: React.FC = () => {
           <img src="/Images/stagefrightmerch.webp" alt="Stage Fright Merch" />
         </div>
         <div className="overlay-right">
-          <p>Stage Fright Merch</p>
-          <div className="quantity-container">
-            <span>Quantity:</span>
-            <input
-              type="number"
-              min="1"
-              value={quantity}
-              onChange={handleQuantityChange}
-            />
+          <div className="overlay-content">
+            <p>Stage Fright Merch</p>
+            <div className="size-container">
+              <span>Size:</span>
+              <select value={size} onChange={handleSizeChange} aria-label="Size Dropdown">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="X-Large">X-Large</option>
+                <option value="XX-Large">XX-Large</option>
+                <option value="3X-Large">3X-Large</option>
+              </select>
+            </div>
+            <div className="quantity-container">
+              <span>Quantity:</span>
+              <input
+                type="number"
+                min="1"
+                value={quantity}
+                onChange={handleQuantityChange}
+              />
+            </div>
+            <button className="submit-button" onClick={handleSubmit}>Add to Cart</button>
           </div>
-          <button onClick={handleSubmit}>Add to Cart</button>
         </div>
       </div>
     </div>

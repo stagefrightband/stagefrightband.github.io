@@ -30,16 +30,32 @@ const ContactUs: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <p>
-        Email us:
+    <div className="contact-container">
+      <div className="contact-left">
+        <h2>Email Us</h2>
         <a
           style={{ textDecoration: "underline" }}
           href="mailto:stagefrightbandemail@gmail.com"
         >
           stagefrightbandemail@gmail.com
         </a>
-      </p>
+      </div>
+      <div className="contact-right">
+        <h2>Bookings</h2>
+        <div className="booking-field">
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name" name="name" />
+        </div>
+        <div className="booking-field">
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email" name="email" />
+        </div>
+        <div className="booking-field">
+          <label htmlFor="message">Message</label>
+          <textarea id="message" name="message" className="message-textarea"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </div>
     </div>
   );
 };

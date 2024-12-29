@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useEffect, useState } from 'react';
 import '../styles.css'; 
 
 
@@ -30,12 +30,17 @@ const Settings: React.FC = () => {
     getCookie('fontsize') ? parseInt(getCookie('fontsize')!, 10) : 100
   );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     toggleClassBasedOnCookie('highcontrast', 'high-contrast');
     toggleClassBasedOnCookie('opendyslexic', 'open-dyslexic');
     /* Set root font size based on fontsize state */
     document.documentElement.style.fontSize = `${fontSize}%`;
   }, []);
+
+  useEffect(() => {
+    /* Update root font size when fontSize state changes */
+    document.documentElement.style.fontSize = `${fontSize}%`;
+  }, [fontSize]);
 
   useEffect(() => {
     setCookie('highcontrast', highContrast.toString());
