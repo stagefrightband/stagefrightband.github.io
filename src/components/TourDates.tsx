@@ -96,7 +96,7 @@ const TourDates: React.FC = () => {
           <div className="tourinfo">
             <span className="date">January 9, 2025</span>
             <span className="city">San Diego, California, U.S.A.</span>
-            <span className="location">House of Blues</span>
+            <span className="location">House of Blues San Diego</span>
           </div>
           <div className="buytickets">
             <span>

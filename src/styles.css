@@ -190,9 +190,17 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   border: none;
-  height: 33vh;
-  width: 44.715vh;
   cursor: pointer;
+}
+
+.merch-button {
+  height: 33vh;
+  width: 22.3226vw;
+}
+
+.ticket-button {
+  height: 33vh;
+  width: 16.4742vw;
 }
 
 .profile {
@@ -312,6 +320,16 @@ input:checked + .slider:before {
   border: 0.313vh solid #ccc;
   border-radius: 1.252vh;
   padding: 1.5649vh;
+}
+
+#cart-content ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5vh;
+}
+
+.item-name {
+  margin-right: 0.5vh;
 }
 
 .tourdiv {
@@ -534,4 +552,58 @@ input:checked + .slider:before {
   cursor: pointer;
   font-size: 1rem;
   align-self: flex-start;
+}
+
+.products-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2vh;
+  justify-content: center;
+}
+
+.product-info p {
+  text-align: center;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 1vh;
+  margin-bottom: 1vh;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.5vh;
+}
+
+.cart-item-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ...existing code... */
+.cart-item-details .item-venue {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.3vh;
+}
+/* ...existing code... */
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 0.5vh;
+}
+
+.quantity-controls input {
+  width: 30px;
+  text-align: center;
+  border-radius: 0;
 }
