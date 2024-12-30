@@ -6,14 +6,14 @@ function getCookie(name: string): string | null {
   const parts = value.split(`; ${name}=`);
   if (parts.length === 2) {
     const part = parts.pop();
-    if (part) return part.split(";").shift() || null;
+    if (part) return decodeURIComponent(part.split(";").shift() || "");
   }
   return null;
 }
 
 function setCookie(name: string, value: string): void {
   const expires = "Fri, 31 Dec 9999 23:59:59 GMT"; 
-  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+  document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
 }
 
 interface ToggleClassBasedOnCookieParams {
