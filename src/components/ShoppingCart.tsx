@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import "../styles.css";
 
+interface CartItem {
+  name: string;
+  quantity: number;
+  venue?: string;
+  size?: string; // Added size property
+}
 
 const getCookie = (name: string): string | null => {
   const value = `; ${document.cookie}`;
@@ -15,39 +21,40 @@ const setCookie = (name: string, value: string, days = 7) => {
 };
 
 const ShoppingCart: React.FC = () => {
-  const [cartItems, setCartItems] = useState<{ name: string; quantity: number; venue?: string }[]>([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const allowedItems = ["Merch", "Music", "Tickets"]; 
 
   useEffect(() => {
     const cartItemsCookie = getCookie('cartitems');
     if (cartItemsCookie && cartItemsCookie !== 'null') {
       const itemsArray = cartItemsCookie.split(',');
-      const aggregatedItems: Record<string, { quantity: number; venue?: string }> = {};
+      const aggregatedItems: Record<string, CartItem> = {};
 
       itemsArray.forEach(item => {
-        const match = item.match(/^([A-Za-z]+)(\d+)(?:_(.+))?$/);
+        const match = item.match(/^([A-Za-z]+)(\d+)(?:_(.+?))?(?:_([A-Za-z]+))?$/);
         if (match) {
           const name = match[1];
           const quantity = parseInt(match[2], 10);
           const venue = match[3] ? match[3].replace(/_/g, ' ') : undefined;
-          const key = venue ? `${name}_${venue}` : name;
+          const size = match[4] ? match[4] : undefined;
+          const key = size ? `${name}_${size}` : name;
 
           if (aggregatedItems[key]) {
             aggregatedItems[key].quantity += quantity;
           } else {
-            aggregatedItems[key] = { quantity, venue };
+            aggregatedItems[key] = { name, quantity, venue, size };
           }
         }
       });
 
-      const aggregatedCartItems = Object.entries(aggregatedItems).map(([key, value]) => {
-        const [name, venue] = key.split('_');
-        return {
-          name: name.charAt(0).toUpperCase() + name.slice(1).toLowerCase(),
-          quantity: value.quantity,
-          venue: venue,
-        };
-      }).filter(item => allowedItems.includes(item.name));
+      const aggregatedCartItems = Object.values(aggregatedItems)
+        .map(item => ({
+          name: item.name.charAt(0).toUpperCase() + item.name.slice(1).toLowerCase(),
+          quantity: item.quantity,
+          venue: item.venue,
+          size: item.size,
+        }))
+        .filter(item => allowedItems.includes(item.name));
 
       setCartItems(aggregatedCartItems);
     }
@@ -134,6 +141,7 @@ const ShoppingCart: React.FC = () => {
                 <div className="cart-item-details">
                   <span className="item-name">{item.name}</span>
                   {item.venue && <span className="item-venue">{item.venue}</span>}
+                  {item.size && <span className="item-size">Size: {item.size}</span>} {/* Display size */}
                   <div className="quantity-controls">
                     <button
                       className="decrease-button"

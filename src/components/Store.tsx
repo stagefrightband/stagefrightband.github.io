@@ -76,55 +76,71 @@ const Store: React.FC = () => {
     setSelectedVenue(e.target.value);
   };
 
-  const updateCartItems = (itemName: string, quantityToAdd: number, venue?: string) => {
+  interface CartItem {
+    name: string;
+    quantity: number;
+    venue?: string;
+    size?: string; // Added size property
+  }
+
+  const updateCartItems = (itemName: string, quantityToAdd: number, venue?: string, size?: string) => {
     const currentCart = getCookie('cartitems');
-    const itemsMap: Record<string, number> = {};
-  
+    const itemsMap: Record<string, CartItem> = {};
+
     if (currentCart) {
       currentCart.split(',').forEach(item => {
-        const match = item.match(/^([A-Za-z]+)(\d+)(?:_(.+))?$/);
+        const match = item.match(/^([A-Za-z]+)(\d+)(?:_(.+?))?(?:_([A-Za-z]+))?$/);
         if (match) {
           const name = match[1];
           const quantity = parseInt(match[2], 10);
-          const venueName = match[3] ? match[3].replace(/_/g, ' ') : "";
-          const key = venueName ? `${name}_${match[3]}` : name;
+          const venueName = match[3] ? match[3].replace(/_/g, ' ') : undefined;
+          const sizeValue = match[4] ? match[4] : undefined;
+          const key = sizeValue ? `${name}_${sizeValue}` : name;
+
           if (itemsMap[key]) {
-            itemsMap[key] += quantity;
+            itemsMap[key].quantity += quantity;
           } else {
-            itemsMap[key] = quantity;
+            itemsMap[key] = { name, quantity, venue: venueName, size: sizeValue };
           }
         }
       });
     }
-  
+
     let key = itemName;
     if (itemName === 'Tickets' && venue) {
-      const formattedVenue = venue.replace(/ /g, '_').replace(/,/g, ''); // Remove commas
+      const formattedVenue = venue.replace(/ /g, '_').replace(/,/g, '');
       key += `_${formattedVenue}`;
     }
-  
-    if (itemsMap[key]) {
-      itemsMap[key] += quantityToAdd;
-    } else {
-      itemsMap[key] = quantityToAdd;
+    if (itemName === 'Merch' && size) {
+      key += `_${size}`;
     }
-  
-    const updatedCart = Object.entries(itemsMap)
-      .map(([name, qty]) => {
-        if (name.startsWith('Tickets_')) {
-          const venue = name.substring('Tickets_'.length); // Extract entire venue name
-          return `Tickets${qty}_${venue}`;
+
+    if (itemsMap[key]) {
+      itemsMap[key].quantity += quantityToAdd;
+    } else {
+      itemsMap[key] = { name: itemName, quantity: quantityToAdd, venue, size };
+    }
+
+    const updatedCart = Object.values(itemsMap)
+      .map(cartItem => {
+        let itemString = `${cartItem.name}${cartItem.quantity}`;
+        if (cartItem.venue) {
+          const formattedVenue = cartItem.venue.replace(/ /g, '_').replace(/,/g, '');
+          itemString += `_${formattedVenue}`;
         }
-        return `${name}${qty}`;
+        if (cartItem.size) {
+          itemString += `_${cartItem.size}`;
+        }
+        return itemString;
       })
       .join(',');
-  
+
     setCookie('cartitems', updatedCart);
   };
-  
+
   const handleSubmitMerch = () => { // Submit handler for merch
-    updateCartItems('Merch', quantity);
-    console.log(`Added Merch${quantity} to cart.`);
+    updateCartItems('Merch', quantity, undefined, size); // Pass size
+    console.log(`Added Merch${quantity}_${size} to cart.`);
     setIsOverlayVisible(false);
   };
   

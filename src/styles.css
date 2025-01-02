@@ -1,3 +1,6 @@
+/* Import Special Elite font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
 .topnav {
   background-color: #333;
   overflow: hidden;
@@ -52,6 +55,7 @@
 }
 body {
   margin: 1.252vh;
+  font-family: 'Special Elite', sans-serif;
 }
 @font-face {
   font-family: "OpenDyslexic";
@@ -460,6 +464,21 @@ input:checked + .slider:before {
   padding: 0.3vh 0.5vh;
 }
 
+.venue-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5vh;
+  margin-bottom: 0.5vh;
+}
+
+.venue-container span {
+  margin-right: 0.5vh;
+}
+
+.venue-container select {
+  font-size: 1rem;
+  padding: 0.3vh 0.5vh;
+}
 
 .contact-container {
   display: flex;
@@ -593,6 +612,14 @@ input:checked + .slider:before {
   color: #555;
   margin-top: 0.3vh;
 }
+
+/* Style for item size in the cart */
+.item-size {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.3vh;
+}
+
 /* ...existing code... */
 
 .quantity-controls {
