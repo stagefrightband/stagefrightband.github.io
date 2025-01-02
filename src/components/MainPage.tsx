@@ -27,14 +27,14 @@ const MainPage: React.FC = () => {
 
   return (
     <div className="mainpage-container">
-      <h1>Welcome to Stage Fright Band</h1>
+      <h1>Welcome to the Stage Fright band's Website!</h1>
       <div className="products-section">
         <Link to="/store" className="product-link">
           <img src="/Images/stagefrightmerch.webp" alt="Stage Fright Merch" className="product-image" />
           <p>Explore Our Merch</p>
         </Link>
         <Link to="/store" className="product-link">
-          <img src="/Images/tickets.webp" alt="Stage Fright Tickets" className="product-image" />
+          <img src="/Images/ticket.webp" alt="Stage Fright Tickets" className="product-image" />
           <p>Buy Tickets</p>
         </Link>
       </div>
