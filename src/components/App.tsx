@@ -9,13 +9,14 @@ const ContactUs = lazy(() => import('./ContactUs'));
 const Store = lazy(() => import('./Store'));
 const TourDates = lazy(() => import('./TourDates'));
 const ShoppingCart = lazy(() => import('./ShoppingCart'));
+const MainPage = lazy(() => import('./MainPage')); // Import MainPage
 
 const App: React.FC = () => {
   return (
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<MainPage />} /> {/* Set MainPage as the home page */}
           <Route path="/login" element={<Login />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/aboutus" element={<AboutUs />} />
@@ -23,6 +24,7 @@ const App: React.FC = () => {
           <Route path="/store" element={<Store />} />
           <Route path="/tourdates" element={<TourDates />} />
           <Route path="/shoppingcart" element={<ShoppingCart />} />
+          <Route path="/mainpage" element={<MainPage />} /> {/* Add MainPage route */}
         </Routes>
       </Suspense>
     </Router>

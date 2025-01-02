@@ -1,5 +1,10 @@
-/* Import Special Elite font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@font-face {
+  font-family: 'Special Elite';
+  src: url('../public/Fonts/special_elite/SpecialElite-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 .topnav {
   background-color: #333;
@@ -312,6 +317,9 @@ input:checked + .slider:before {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5vh;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 1vh;
 }
 .setting-header {
   display: flex;
@@ -606,21 +614,21 @@ input:checked + .slider:before {
   flex-direction: column;
 }
 
-/* ...existing code... */
+
 .cart-item-details .item-venue {
   font-size: 0.9rem;
   color: #555;
   margin-top: 0.3vh;
 }
 
-/* Style for item size in the cart */
+
 .item-size {
   font-size: 0.9rem;
   color: #555;
   margin-top: 0.3vh;
 }
 
-/* ...existing code... */
+
 
 .quantity-controls {
   display: flex;
@@ -633,4 +641,75 @@ input:checked + .slider:before {
   width: 30px;
   text-align: center;
   border-radius: 0;
+}
+
+
+.mainpage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vh;
+}
+
+.mainpage-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2vh;
+}
+
+.products-section {
+  display: flex;
+  gap: 3vh;
+  margin-bottom: 3vh;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1vh;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  width: 30vh;
+  height: 30vh;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-link p {
+  margin-top: 1vh;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.additional-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  width: 80%;
+  max-width: 600px;
+}
+
+.info-link h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.info-link:hover h2 {
+  color: #aa0404;
 }
