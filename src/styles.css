@@ -608,7 +608,7 @@ input:checked + .slider:before {
     top: 100%;
     right: 0;
     background-color: #333;
-    width: 200px;
+    width: auto;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
@@ -820,22 +820,22 @@ quantity-controls input {
 }
 
 .hamburger-button {
-  display: none; /* Hidden on larger screens */
+  display: none;
   background: none;
   border: none;
   font-size: 2rem;
-  color: #000; /* Changed from #f2f2f2 to black */
+  color: #000;
   cursor: pointer;
 }
 
 .hamburger-links {
   display: none;
   flex-direction: column;
-  background-color: #000; /* Changed from #333 to black */
+  background-color: #000;
   position: absolute;
   top: 100%;
-  left: 0; /* Align the menu to the left */
-  width: 100%; /* Make the menu span the full width */
+  left: 0;
+  width: fit-content;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   z-index: 1000;
@@ -843,10 +843,12 @@ quantity-controls input {
 
 .hamburger-links.open {
   display: flex;
+  padding: 10px 0;
 }
 
 .hamburger-links li {
   list-style: none;
+  width: fit-content;
 }
 
 .hamburger-links a {
@@ -862,16 +864,16 @@ quantity-controls input {
 
 @media (max-width: 768px) {
   .topnav {
-    display: none; /* Hide original nav on small screens */
+    display: none;
   }
   
   .hamburger-button {
-    display: block; /* Show hamburger button on small screens */
+    display: block;
   }
 }
 
 @media (min-width: 769px) {
   .hamburger-nav {
-    display: none; /* Hide hamburger nav on larger screens */
+    display: none;
   }
 }
