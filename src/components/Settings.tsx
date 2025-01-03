@@ -17,9 +17,9 @@ const setCookie = (name: string, value: string, days = 365): void => {
 const toggleClassBasedOnCookie = (cookieName: string, className: string): void => {
   const cookieValue = getCookie(cookieName) === 'true';
   if (cookieValue) {
-    document.documentElement.classList.add(className);
+    document.body.classList.add(className);
   } else {
-    document.documentElement.classList.remove(className);
+    document.body.classList.remove(className);
   }
 };
 

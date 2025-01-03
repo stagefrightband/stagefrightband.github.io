@@ -5,9 +5,6 @@
   font-style: normal;
   font-display: swap;
 }
-* {
-  font-family: 'Special Elite', sans-serif;
-}
 html, body {
   height: 100%;
 }
@@ -15,14 +12,13 @@ body {
   display: flex;
   flex-direction: column;
   margin: 1.252vh;
-  font-family: 'Special Elite', sans-serif;
+  font-family: 'Special Elite', 'wolfhagen-blackletter', sans-serif;
 }
 #root {
   flex: 1;
 }
 .topnav {
   background-color: #333;
-  overflow: hidden;
   border-radius: 1.565vh;
   display: flex;
   align-items: center;
@@ -103,8 +99,9 @@ body {
   background-color: var(--button-background) !important;
   color: var(--button-text) !important;
 }
-.open-dyslexic {
+body.open-dyslexic {
   font-family: "OpenDyslexic", sans-serif !important;
+  font-size: 100%;
 }
 .open-dyslexic input,
 .open-dyslexic textarea,
@@ -674,6 +671,7 @@ quantity-controls input {
 .mainpage-container h1 {
   font-size: 2.5rem;
   margin-bottom: 2vh;
+  text-align: center;
 }
 .products-section {
   display: flex;
@@ -768,7 +766,6 @@ quantity-controls input {
   background-color: #333;
   width: 200px;
   border-radius: 5px;
-  overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 .hamburger-links a {
@@ -818,11 +815,6 @@ quantity-controls input {
   color: #555;
   text-align: center;
   margin-top: 2vh;
-}
-
-
-.open-dyslexic, .open-dyslexic * {
-  font-family: "OpenDyslexic", sans-serif !important;
 }
 .mainpage {
   height: 30vh;
