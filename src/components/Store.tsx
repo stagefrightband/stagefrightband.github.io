@@ -165,7 +165,7 @@ const Store: React.FC = () => {
             ></button>
           </div>
           <div className="product-info">
-            <p>Stage Fright T-Shirt</p>
+            <p>Stage Fright T-Shirt</p> {/* Ensure this text is under the button */}
           </div>
         </div>
         <div className="product-tile">
@@ -180,7 +180,7 @@ const Store: React.FC = () => {
             ></button>
           </div>
           <div className="product-info">
-            <p>Stage Fright Tickets</p>
+            <p>Stage Fright Tickets</p> {/* Ensure this text is under the button */}
           </div>
         </div>
       </div>

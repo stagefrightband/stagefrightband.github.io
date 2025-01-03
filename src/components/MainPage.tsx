@@ -30,11 +30,11 @@ const MainPage: React.FC = () => {
       <h1>Welcome to the Stage Fright band's Website!</h1>
       <div className="products-section">
         <Link to="/store" className="product-link">
-          <img src="/Images/stagefrightmerch.webp" alt="Stage Fright Merch" className="product-image" />
+          <img src="/Images/stagefrightmerch.webp" alt="Stage Fright Merch" className="product-image mainpage" />
           <p>Explore Our Merch</p>
         </Link>
         <Link to="/store" className="product-link">
-          <img src="/Images/ticket.webp" alt="Stage Fright Tickets" className="product-image" />
+          <img src="/Images/ticket.webp" alt="Stage Fright Tickets" className="product-image mainpage" />
           <p>Buy Tickets</p>
         </Link>
       </div>

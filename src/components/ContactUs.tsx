@@ -54,7 +54,7 @@ const ContactUs: React.FC = () => {
           <label htmlFor="message">Message</label>
           <textarea id="message" name="message" className="message-textarea"></textarea>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="submit-button">Submit</button>
       </div>
     </div>
   );

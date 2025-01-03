@@ -31,7 +31,7 @@
     />
     <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest" />
   </head>
-  <body>
+  <body class="open-dyslexic">
     <div class="topnav">
       <a class="logo" href="#/mainpage"
         ><img
@@ -58,8 +58,40 @@
           src="%PUBLIC_URL%/Images/accessibilityicon.webp"
       /></a>
     </div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleHamburgerMenu()">
+        &#9776;
+      </div>
+      <div class="hamburger-links" id="hamburgerLinks">
+        <a href="#/mainpage">Home</a>
+        <a href="#/aboutus">About Us</a>
+        <a href="#/contactus">Contact Us</a>
+        <a href="#/store">Store</a>
+        <a href="#/tourdates">Tour Dates</a>
+        <a href="#/login">Login</a>
+        <a href="#/shoppingcart">Shopping Cart</a>
+        <a href="#/settings">Settings</a>
+      </div>
+    </div>
+
     <div id="root"></div>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script>
+      function toggleHamburgerMenu() {
+        var links = document.getElementById("hamburgerLinks");
+        if (links.style.display === "block") {
+          links.style.display = "none";
+        } else {
+          links.style.display = "block";
+        }
+      }
+    </script>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2023 Stage Fright Band. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>

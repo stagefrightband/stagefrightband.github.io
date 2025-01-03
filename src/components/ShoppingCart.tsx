@@ -99,7 +99,7 @@ const ShoppingCart: React.FC = () => {
       return newItems;
     });
 
-    // Update the specific item in the cookie
+
     const cartItemsCookie = getCookie('cartitems');
     if (cartItemsCookie) {
       const updatedCart = cartItemsCookie.split(',').map(cartItem => {
@@ -122,7 +122,7 @@ const ShoppingCart: React.FC = () => {
     <div>
       <div id="cart-content">
         {cartItems.length === 0 ? (
-          <p>You have no items in your cart.</p>
+          <p className="empty-cart-message">You have no items in your cart.</p>
         ) : (
           <div className="cart-items">
             {cartItems.map((item, index) => (

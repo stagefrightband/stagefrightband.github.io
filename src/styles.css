@@ -5,11 +5,21 @@
   font-style: normal;
   font-display: swap;
 }
-
 * {
   font-family: 'Special Elite', sans-serif;
 }
-
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 1.252vh;
+  font-family: 'Special Elite', sans-serif;
+}
+#root {
+  flex: 1;
+}
 .topnav {
   background-color: #333;
   overflow: hidden;
@@ -62,10 +72,6 @@
   padding: 1.565vh;
   margin: 0.313vh;
 }
-body {
-  margin: 1.252vh;
-  font-family: 'Special Elite', sans-serif;
-}
 @font-face {
   font-family: "OpenDyslexic";
   src: url("../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff2")
@@ -105,7 +111,6 @@ body {
 .open-dyslexic button {
   font-family: "OpenDyslexic", sans-serif !important;
 }
-
 .product-tile {
   display: flex;
   flex-direction: column;
@@ -114,14 +119,9 @@ body {
   align-self: flex-start;
   margin-top: 2vh;
   margin-bottom: 2vh;
-  flex: 0 1 45%;
+ 
+  gap: 1vh;
 }
-
-.product-image img {
-  width: 33vh;
-  height: 33vh;
-}
-
 .overlay {
   position: fixed;
   top: 0; 
@@ -136,17 +136,14 @@ body {
   padding: 2vh;
   box-sizing: border-box;
 }
-
 .overlay.active {
   display: flex;
   flex-direction: row;
 }
-
 .overlay-left, .overlay-right {
   width: 50%;
   height: 100%;
 }
-
 .overlay-left {
   width: 50%;
   height: 100%;
@@ -156,24 +153,20 @@ body {
   align-items: center;
   justify-content: flex-start;
 }
-
 .overlay-left img {
   width: 40vw;
   height: 45vh;
   object-fit: cover;
 }
-
 .overlay-right {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-
 .overlay-right p {
   font-size: 1.5rem;
 }
-
 .overlay-right button {
   font-size: 1rem;
   padding: 0.7vh 2.5vh;
@@ -181,8 +174,6 @@ body {
   margin-top: 1vh;
   align-self: center;
 }
-
-
 .overlay-content {
   border: 1px solid black;
   border-radius: 8px;
@@ -193,14 +184,11 @@ body {
   justify-content: center;
   gap: 1vh;
 }
-
-
 .overlay-content p {
   font-size: 1.5rem;
   padding-left: 1vh;
   padding-right: 1vh;
 }
-
 .product-button {
   background-size: cover;
   background-repeat: no-repeat;
@@ -212,26 +200,20 @@ body {
   padding: 1vh 2vh;
   transition: background-color 0.3s, transform 0.3s;
 }
-
 .product-button:hover {
   background-color: #777;
   transform: scale(1.05);
 }
-
-
 .merch-button {
   width: 22.3226vw;
   height: 33vh;
   background-color: #ff5722;
 }
-
-
 .ticket-button {
   width: 16.4742vw;
   height: 33vh;
   background-color: #2196f3;
 }
-
 .product-info {
   margin-top: 1vh;
   margin-left: 0;
@@ -239,8 +221,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 0.5vh;
 }
-
 .product-info p {
   font-size: 1.2rem;
   color: #333;
@@ -248,58 +230,38 @@ body {
   margin: 0;
   padding-left: 1vh;
 }
-
-.merch-button {
-  height: 33vh;
-  width: 22.3226vw;
-}
-
-.ticket-button {
-  height: 33vh;
-  width: 16.4742vw;
-}
-
 .profile {
   border-radius: 1.565vh;
   border: 0.156vh solid gray;
-  padding: 1.565vh;
+  padding: 2vh;
   text-align: center;
   margin-bottom: 2vh;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 2vh;
-  text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .profile:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
 .profile-image {
-  width: 150px;
-  height: 150px;
+  width: 23.4750vh;
+  height: 23.4750vh;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 1vh;
 }
-
 .profile h2 {
   font-size: 1.5rem;
   margin-bottom: 0.5vh;
 }
-
 .profile p {
   font-size: 1rem;
   color: #666;
 }
-
 h1 {
   font-size: 1.5rem;
 }
-
 .App {
   text-align: center;
 }
@@ -333,7 +295,6 @@ h1 {
     transform: rotate(360deg);
   }
 }
-
 .save {
   background-color: #4d9900;
   color: white;
@@ -358,7 +319,6 @@ h1 {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 .slider:before {
@@ -369,7 +329,6 @@ h1 {
   left: 0.313vh;
   bottom: 0.313vh;
   background-color: white;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 input:checked + .slider {
@@ -397,6 +356,7 @@ input:checked + .slider:before {
   border: 1px solid black;
   border-radius: 5px;
   margin-bottom: 1vh;
+  padding: 1vh;
 }
 .setting-header {
   display: flex;
@@ -410,17 +370,14 @@ input:checked + .slider:before {
   border-radius: 1.252vh;
   padding: 1.5649vh;
 }
-
 #cart-content ul li {
   display: flex;
   align-items: center;
   gap: 0.5vh;
 }
-
 .item-name {
   margin-right: 0.5vh;
 }
-
 .tourdiv {
   display: grid;
   gap: 0;
@@ -499,7 +456,6 @@ input:checked + .slider:before {
   font-family: "OpenDyslexic", sans-serif !important;
   text-shadow: none;
 }
-
 .close-button {
   position: absolute;
   top: 0.7825vh;
@@ -510,7 +466,6 @@ input:checked + .slider:before {
   cursor: pointer;
   z-index: 1001;
 }
-
 .quantity-container {
   display: flex;
   flex-direction: row;
@@ -518,104 +473,90 @@ input:checked + .slider:before {
   gap: 0.5vh;
   margin-top: 1vh;
 }
-
-
-quantity-container span {
-  margin-right: 0.5vh;
+.quantity-container span {
+  margin: 0.5vh;
 }
-
 .quantity-container input {
-  width: 50px;
+  width: 7.8250vh;
   padding: 0.5vh;
 }
-
-.quantity-container span {
-  margin-left: 0.5vh;
-}
-
 .fontsize select {
   font-size: 1rem;
 }
-
 .size-container {
   display: flex;
   align-items: center;
   gap: 0.5vh;
   margin-bottom: 0.5vh;
 }
-
 .size-container select {
   font-size: 1rem;
   padding: 0.3vh 0.5vh;
 }
-
 .venue-container {
   display: flex;
   align-items: center;
   gap: 0.5vh;
   margin-bottom: 0.5vh;
 }
-
 .venue-container span {
   margin-right: 0.5vh;
 }
-
 .venue-container select {
   font-size: 1rem;
   padding: 0.3vh 0.5vh;
 }
-
 .contact-container {
   display: flex;
-  width: 100%;
-  height: 60vh;
-  box-sizing: border-box;
-}
-
-.contact-left, .contact-right {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  align-items: flex-start;
+  gap: 4vh;
   padding: 2vh;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+.contact-left, .contact-right {
+  width: 45%;
+  background-color: #ffffff;
+  padding: 2vh;
+  border-radius: 8px;
+}
 .contact-left {
   align-items: flex-start;
 }
-
 .contact-left h2, .contact-right h2 {
   font-size: 1.8rem;
   margin-bottom: 1vh;
 }
-
 .contact-left a {
   font-size: 1rem;
 }
-
 .booking-field {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1vh;
+  margin-bottom: 1.5vh;
 }
-
 .booking-field label {
   margin-bottom: 0.5vh;
   font-size: 1rem;
+  color: #555;
 }
-
 .booking-field input, .booking-field textarea {
-  padding: 0.5vh;
+  padding: 0.8vh;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
+  transition: border-color 0.3s;
 }
-
+.booking-field input:focus, .booking-field textarea:focus {
+  border-color: #777;
+}
 .message-textarea {
   height: 100px;
   resize: vertical;
 }
-
 .contact-right button {
   padding: 0.7vh 2vh;
   font-size: 1rem;
@@ -626,62 +567,57 @@ quantity-container span {
   border-radius: 5px;
   align-self: flex-start;
 }
-
 .contact-right button:hover {
   background-color: #555;
 }
-
-
+.submit-button {
+  background-color: #aa0404;
+  color: white;
+  padding: 0.8vh 2.5vh;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+.submit-button:hover {
+  background-color: #ff5722;
+}
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-left, .contact-right {
+    width: 90%;
+  }
+}
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
     height: auto;
   }
-
   .contact-left, .contact-right {
     width: 100%;
   }
 }
-
 .booking-field {
   margin-bottom: 1vh;
 }
-
-.submit-button {
-  background-color: #333;
-  color: #fff;
-  padding: 0.7vh 2vh;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  align-self: flex-start;
-}
-
 .products-container {
   display: flex;
   flex-direction: row;
-  gap: 1.5vh;
+  gap: 5vh;
   justify-content: center;
   flex-wrap: wrap;
   align-items: flex-start;
-  margin-bottom: 3vh;
+  margin-top: 2vh;
 }
-
-@media (max-width: 600px) {
-  .products-container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 .product-info {
-  margin-left: 2vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .product-info p {
   font-size: 1.2rem;
   color: #333;
@@ -689,7 +625,6 @@ quantity-container span {
   margin: 0;
   padding-left: 1vh;
 }
-
 .cart-item {
   display: flex;
   align-items: center;
@@ -699,61 +634,47 @@ quantity-container span {
   border-radius: 5px;
   padding: 0.5vh;
 }
-
 .cart-item-image {
   width: 50px;
   height: 50px;
   object-fit: cover;
   border-radius: 5px;
 }
-
 .cart-item-details {
   display: flex;
   flex-direction: column;
 }
-
-
 .cart-item-details .item-venue {
   font-size: 0.9rem;
   color: #555;
   margin-top: 0.3vh;
 }
-
-
 .item-size {
   font-size: 0.9rem;
   color: #555;
   margin-top: 0.3vh;
 }
-
-
-
 .quantity-controls {
   display: flex;
   align-items: center;
   gap: 0;
   margin-top: 0.5vh;
 }
-
 quantity-controls input {
   width: 30px;
   text-align: center;
   border-radius: 0;
 }
-
-
 .mainpage-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2vh;
 }
-
 .mainpage-container h1 {
   font-size: 2.5rem;
   margin-bottom: 2vh;
 }
-
 .products-section {
   display: flex;
   gap: 3vh;
@@ -761,7 +682,6 @@ quantity-controls input {
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .product-link {
   display: flex;
   flex-direction: column;
@@ -773,25 +693,19 @@ quantity-controls input {
   padding: 1vh;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .product-link:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .product-image {
-  width: 30vh;
-  height: 30vh;
   object-fit: cover;
   border-radius: 8px;
 }
-
 .product-link p {
   margin-top: 1vh;
   font-size: 1.2rem;
   font-weight: bold;
 }
-
 .additional-links {
   display: flex;
   flex-direction: column;
@@ -799,7 +713,6 @@ quantity-controls input {
   width: 80%;
   max-width: 600px;
 }
-
 .info-link h2 {
   font-size: 1.8rem;
   text-align: center;
@@ -807,41 +720,110 @@ quantity-controls input {
   text-decoration: none;
   transition: color 0.3s;
 }
-
 .info-link:hover h2 {
   color: #aa0404;
 }
-
-
 .aboutus-container {
   padding: 2vh;
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .about-section {
   text-align: center;
   margin-bottom: 4vh;
 }
-
 .about-section h1 {
   font-size: 3rem;
   margin-bottom: 1vh;
 }
-
 .about-section p {
   font-size: 1.2rem;
   line-height: 1.6;
   color: #555;
 }
-
 .profiles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2vh;
 }
-
 .centered-profile {
   justify-self: center;
   align-self: center;  
+}
+.hamburger-menu {
+  display: none;
+  position: relative;
+}
+.hamburger-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #f2f2f2;
+}
+.hamburger-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #333;
+  width: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.hamburger-links a {
+  padding: 1rem;
+  color: #f2f2f2;
+  text-decoration: none;
+  text-align: left;
+}
+.hamburger-links a:hover {
+  background-color: #575757;
+  color: white;
+}
+@media (max-width: 768px) {
+  .topnav {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+    padding: 1rem;
+    background-color: #333;
+    border-radius: 1.565vh;
+  }
+  .hamburger-links {
+    display: none;
+  }
+  .hamburger-menu.active .hamburger-links {
+    display: flex;
+  }
+}
+.hamburger-links {
+  transition: display 0.3s ease;
+}
+
+.footer {
+  background-color: #333;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 2vh 0;
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.empty-cart-message {
+  font-size: 1.5rem;
+  color: #555;
+  text-align: center;
+  margin-top: 2vh;
+}
+
+
+.open-dyslexic, .open-dyslexic * {
+  font-family: "OpenDyslexic", sans-serif !important;
+}
+.mainpage {
+  height: 30vh;
 }
