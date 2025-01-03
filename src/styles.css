@@ -613,7 +613,8 @@ input:checked + .slider:before {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
   .hamburger-links a {
-    padding: 1rem;
+    padding: 1.5rem;
+    font-size: 1.25rem;
     color: #f2f2f2;
     text-decoration: none;
     text-align: left;
@@ -677,10 +678,8 @@ input:checked + .slider:before {
   padding: 0.5vh;
 }
 .cart-item-image {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  border-radius: 5px;
+  width: 7.825vh;
+  height: 7.825vh;
 }
 .cart-item-details {
   display: flex;
@@ -703,7 +702,7 @@ input:checked + .slider:before {
   margin-top: 0.5vh;
 }
 quantity-controls input {
-  width: 30px;
+  width: 4.695vh;
   text-align: center;
   border-radius: 0;
 }
@@ -748,6 +747,13 @@ quantity-controls input {
   margin-top: 1vh;
   font-size: 1.2rem;
   font-weight: bold;
+}
+.product-link img[src*="stagefrightmerch.webp"] {
+  width: 40.6772vh;
+}
+
+.product-link img[src*="ticket.webp"] {
+  width: 30vh;
 }
 .additional-links {
   display: flex;
@@ -852,7 +858,8 @@ quantity-controls input {
 }
 
 .hamburger-links a {
-  padding: 1rem;
+  padding: 1.5rem;
+  font-size: 1.25rem;
   color: #f2f2f2;
   text-decoration: none;
 }
