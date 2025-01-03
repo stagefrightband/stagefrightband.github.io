@@ -1,0 +1,6 @@
+import React,{useState} from 'react';
+import '../styles.css';
+
+const HamburgerMenu: React.FC=()=>{const [isOpen,setIsOpen]=useState(false);const toggleMenu=()=>{setIsOpen(!isOpen);};return(<nav className="hamburger-nav"><button className="hamburger-button" onClick={toggleMenu} aria-label="Toggle navigation menu">&#9776;</button><ul className={`hamburger-links ${isOpen?'open':''}`}><li><a href="#/mainpage">Home</a></li><li><a href="#/aboutus">About Us</a></li><li><a href="#/contactus">Contact Us</a></li><li><a href="#/store">Store</a></li><li><a href="#/tourdates">Tour Dates</a></li><li><a href="#/login">Login</a></li><li><a href="#/shoppingcart">Shopping Cart</a></li><li><a href="#/settings">Settings</a></li></ul></nav>);};
+
+export default HamburgerMenu;

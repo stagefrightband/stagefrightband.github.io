@@ -581,12 +581,46 @@ input:checked + .slider:before {
   background-color: #ff5722;
 }
 @media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-    align-items: center;
+  .topnav {
+    display: none;
   }
-  .contact-left, .contact-right {
-    width: 90%;
+  .hamburger-menu {
+    display: block;
+    position: relative;
+    padding: 1rem;
+    background-color: #333;
+    border-radius: 1.565vh;
+  }
+  .hamburger-menu.active .hamburger-links {
+    display: flex;
+  }
+  #hamburgerMenu {
+    cursor: pointer;
+    font-size: 2rem;
+    background: none;
+    border: none;
+  }
+  .hamburger-links {
+    display: none;
+    flex-direction: column;
+    transition: display 0.3s ease;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .hamburger-links a {
+    padding: 1rem;
+    color: #f2f2f2;
+    text-decoration: none;
+    text-align: left;
+  }
+  .hamburger-links a:hover {
+    background-color: #575757;
+    color: white;
   }
 }
 @media (max-width: 768px) {
@@ -596,6 +630,17 @@ input:checked + .slider:before {
   }
   .contact-left, .contact-right {
     width: 100%;
+  }
+}
+@media (min-width: 769px) {
+  .topnav {
+    display: flex;
+  }
+  .hamburger-menu {
+    display: none;
+  }
+  .hamburger-links {
+    display: none;
   }
 }
 .booking-field {
@@ -748,56 +793,6 @@ quantity-controls input {
   justify-self: center;
   align-self: center;  
 }
-.hamburger-menu {
-  display: none;
-  position: relative;
-}
-.hamburger-icon {
-  font-size: 2rem;
-  cursor: pointer;
-  color: #f2f2f2;
-}
-.hamburger-links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: #333;
-  width: 200px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.hamburger-links a {
-  padding: 1rem;
-  color: #f2f2f2;
-  text-decoration: none;
-  text-align: left;
-}
-.hamburger-links a:hover {
-  background-color: #575757;
-  color: white;
-}
-@media (max-width: 768px) {
-  .topnav {
-    display: none;
-  }
-  .hamburger-menu {
-    display: block;
-    padding: 1rem;
-    background-color: #333;
-    border-radius: 1.565vh;
-  }
-  .hamburger-links {
-    display: none;
-  }
-  .hamburger-menu.active .hamburger-links {
-    display: flex;
-  }
-}
-.hamburger-links {
-  transition: display 0.3s ease;
-}
 
 .footer {
   background-color: #333;
@@ -818,4 +813,65 @@ quantity-controls input {
 }
 .mainpage {
   height: 30vh;
+}
+
+.hamburger-nav {
+  position: relative;
+}
+
+.hamburger-button {
+  display: none; /* Hidden on larger screens */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #000; /* Changed from #f2f2f2 to black */
+  cursor: pointer;
+}
+
+.hamburger-links {
+  display: none;
+  flex-direction: column;
+  background-color: #000; /* Changed from #333 to black */
+  position: absolute;
+  top: 100%;
+  left: 0; /* Align the menu to the left */
+  width: 100%; /* Make the menu span the full width */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.hamburger-links.open {
+  display: flex;
+}
+
+.hamburger-links li {
+  list-style: none;
+}
+
+.hamburger-links a {
+  padding: 1rem;
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+.hamburger-links a:hover {
+  background-color: #575757;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .topnav {
+    display: none; /* Hide original nav on small screens */
+  }
+  
+  .hamburger-button {
+    display: block; /* Show hamburger button on small screens */
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger-nav {
+    display: none; /* Hide hamburger nav on larger screens */
+  }
 }
