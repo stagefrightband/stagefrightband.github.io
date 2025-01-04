@@ -611,9 +611,10 @@ input:checked + .slider:before {
     width: auto;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    gap: 1rem; /* Adds spacing between each hamburger menu link */
   }
   .hamburger-links a {
-    padding: 1.5rem;
+    padding-left: 1.5rem;
     font-size: 1.25rem;
     color: #f2f2f2;
     text-decoration: none;
@@ -832,6 +833,8 @@ quantity-controls input {
   font-size: 2rem;
   color: #000;
   cursor: pointer;
+  background-color: black; /* Adds a black square background */
+  color: white; /* Makes the hamburger icon white */
 }
 
 .hamburger-links {
