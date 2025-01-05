@@ -31,13 +31,15 @@ const ShoppingCart: React.FC = () => {
       const aggregatedItems: Record<string, CartItem> = {};
 
       itemsArray.forEach(item => {
-        const match = item.match(/^([A-Za-z]+)(\d+)(?:_(.+?))?(?:_([A-Za-z]+))?$/);
+        // Updated regex to include underscores and commas in venue names
+        const match = item.match(/^([A-Za-z' _-]+)(\d+)(?:_([A-Za-z' _-]+))?$/);
         if (match) {
           const name = match[1];
           const quantity = parseInt(match[2], 10);
           const venue = match[3] ? match[3].replace(/_/g, ' ') : undefined;
           const size = match[4] ? match[4] : undefined;
-          const key = size ? `${name}_${size}` : name;
+          // Updated key generation to include venue for Tickets
+          const key = size ? `${name}_${size}` : venue ? `${name}_${venue}` : name;
 
           if (aggregatedItems[key]) {
             aggregatedItems[key].quantity += quantity;
@@ -70,20 +72,17 @@ const ShoppingCart: React.FC = () => {
         return newItems;
       });
 
-      // Update the specific item in the cookie
       const cartItemsCookie = getCookie('cartitems');
       if (cartItemsCookie) {
+        // Updated originalItemString construction to match new regex
+        const originalItemString = `${item.name}${item.quantity}` +
+          (item.size ? `_${item.size.replace(/ /g, '_')}` : '') +
+          (item.venue ? `_${item.venue.replace(/ /g, '_')}` : '');
+
         const updatedCart = cartItemsCookie.split(',').map(cartItem => {
-          const match = cartItem.match(/^([A-Za-z]+)(\d+)(?:_(.+))?$/);
-          if (match) {
-            const name = match[1];
-            const quantity = parseInt(match[2], 10);
-            const venuePart = match[3] ? `_${match[3]}` : '';
-            if (name === item.name && (item.venue ? match[3] === item.venue.replace(/ /g, '_') : !match[3])) {
-              return `${name}${updatedQuantity}${venuePart}`;
-            }
-          }
-          return cartItem;
+          return cartItem === originalItemString ? `${item.name}${updatedQuantity}` +
+            (item.size ? `_${item.size.replace(/ /g, '_')}` : '') +
+            (item.venue ? `_${item.venue.replace(/ /g, '_')}` : '') : cartItem;
         }).join(',');
         setCookie("cartitems", updatedCart);
       }
@@ -99,21 +98,36 @@ const ShoppingCart: React.FC = () => {
       return newItems;
     });
 
+    const cartItemsCookie = getCookie('cartitems');
+    if (cartItemsCookie) {
+      // Updated originalItemString construction to match new regex
+      const originalItemString = `${item.name}${item.quantity}` +
+        (item.size ? `_${item.size.replace(/ /g, '_')}` : '') +
+        (item.venue ? `_${item.venue.replace(/ /g, '_')}` : '');
+
+      const updatedCart = cartItemsCookie.split(',').map(cartItem => {
+        return cartItem === originalItemString ? `${item.name}${updatedQuantity}` +
+          (item.size ? `_${item.size.replace(/ /g, '_')}` : '') +
+          (item.venue ? `_${item.venue.replace(/ /g, '_')}` : '') : cartItem;
+      }).join(',');
+      setCookie("cartitems", updatedCart);
+    }
+  };
+
+  const handleDelete = (index: number) => {
+    const itemToDelete = cartItems[index];
+    setCartItems(prevItems => prevItems.filter((_, i) => i !== index));
 
     const cartItemsCookie = getCookie('cartitems');
     if (cartItemsCookie) {
-      const updatedCart = cartItemsCookie.split(',').map(cartItem => {
-        const match = cartItem.match(/^([A-Za-z]+)(\d+)(?:_(.+))?$/);
-        if (match) {
-          const name = match[1];
-          const quantity = parseInt(match[2], 10);
-          const venuePart = match[3] ? `_${match[3]}` : '';
-          if (name === item.name && (item.venue ? match[3] === item.venue.replace(/ /g, '_') : !match[3])) {
-            return `${name}${updatedQuantity}${venuePart}`;
-          }
-        }
-        return cartItem;
-      }).join(',');
+      // Updated itemString construction to match new regex
+      const itemString = `${itemToDelete.name}${itemToDelete.quantity}` +
+        (itemToDelete.size ? `_${itemToDelete.size.replace(/ /g, '_')}` : '') +
+        (itemToDelete.venue ? `_${itemToDelete.venue.replace(/ /g, '_')}` : '');
+
+      const itemsArray = cartItemsCookie.split(',');
+      const updatedItemsArray = itemsArray.filter(item => item !== itemString);
+      const updatedCart = updatedItemsArray.join(',');
       setCookie("cartitems", updatedCart);
     }
   };
@@ -154,6 +168,7 @@ const ShoppingCart: React.FC = () => {
                     <button className="increase-button" onClick={() => handleIncrease(index)}>
                       +
                     </button>
+                    <button className="delete-button" onClick={() => handleDelete(index)}>Delete</button> {/* Added Delete button */}
                   </div>
                 </div>
               </div>
