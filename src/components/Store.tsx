@@ -34,8 +34,8 @@ const Store: React.FC = () => {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const [isTicketOverlayVisible, setIsTicketOverlayVisible] = useState(false); // New state for ticket overlay
   const [quantity, setQuantity] = useState(1); 
-  const [size, setSize] = useState<string>(getCookie('size') || 'Medium');
   const [selectedVenue, setSelectedVenue] = useState<string>("House of Blues, Houston");
+  const [size, setSize] = useState<string>("M"); // Add state for size
 
   useEffect(() => {
     toggleClassBasedOnCookie({ cookieName: "highcontrast", className: "high-contrast" });
@@ -67,11 +67,6 @@ const Store: React.FC = () => {
     setQuantity(value >= 1 ? value : 1);
   };
 
-  const handleSizeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSize(e.target.value);
-    setCookie('size', e.target.value);
-  };
-
   const handleVenueChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedVenue(e.target.value);
   };
@@ -89,18 +84,18 @@ const Store: React.FC = () => {
 
     if (currentCart) {
       currentCart.split(',').forEach(item => {
-        const match = item.match(/^([A-Za-z]+)(\d+)(?:_(.+?))?(?:_([A-Za-z]+))?$/);
+        // Updated regex to include underscores and commas in venue names
+        const match = item.match(/^([A-Za-z' _-]+)(\d+)(?:_([A-Za-z' _-]+))?$/);
         if (match) {
           const name = match[1];
           const quantity = parseInt(match[2], 10);
           const venueName = match[3] ? match[3].replace(/_/g, ' ') : undefined;
-          const sizeValue = match[4] ? match[4] : undefined;
-          const key = sizeValue ? `${name}_${sizeValue}` : name;
+          const key = venueName ? `${name}_${venueName}` : name;
 
           if (itemsMap[key]) {
             itemsMap[key].quantity += quantity;
           } else {
-            itemsMap[key] = { name, quantity, venue: venueName, size: sizeValue };
+            itemsMap[key] = { name, quantity, venue: venueName };
           }
         }
       });
@@ -193,17 +188,23 @@ const Store: React.FC = () => {
         </div>
         <div className="overlay-right">
           <div className="overlay-content">
-            <p>Stage Fright Merch</p>
             <div className="size-container">
               <span>Size:</span>
-              <select value={size} onChange={handleSizeChange} aria-label="Size Dropdown">
-                <option value="Small">Small</option>
-                <option value="Medium">Medium</option>
-                <option value="Large">Large</option>
-                <option value="X-Large">X-Large</option>
-                <option value="XX-Large">XX-Large</option>
-                <option value="3X-Large">3X-Large</option>
+              <select value={size} onChange={(e) => setSize(e.target.value)}>
+                <option value="S">Small</option>
+                <option value="M">Medium</option>
+                <option value="L">Large</option>
+                <option value="XL">Extra Large</option>
               </select>
+            </div>
+            <div className="quantity-container">
+              <span>Quantity:</span>
+              <input
+                type="number"
+                min="1"
+                value={quantity}
+                onChange={handleQuantityChange}
+              />
             </div>
             <div className="quantity-container">
               <span>Quantity:</span>

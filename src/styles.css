@@ -27,7 +27,7 @@ body {
   height: 11.738vh;
   margin-bottom: 2vh;
   position: relative;
-  z-index: 1000; /* Ensure nav bar is above the background video */
+  z-index: 1000;
 }
 .topnav a {
   float: left;
@@ -72,10 +72,7 @@ body {
 }
 @font-face {
   font-family: "OpenDyslexic";
-  src: url("../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff2")
-      format("woff2"),
-    url("../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff")
-      format("woff");
+  src: url("../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff2") format("woff2"), url("../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: fallback;
@@ -118,7 +115,6 @@ body.open-dyslexic {
   align-self: flex-start;
   margin-top: 2vh;
   margin-bottom: 2vh;
- 
   gap: 1vh;
 }
 .overlay {
@@ -174,7 +170,7 @@ body.open-dyslexic {
   align-self: center;
 }
 .overlay-content {
-  border: 1px solid black;
+  border: 0.1565vh solid black;
   border-radius: 8px;
   padding: 1vh;
   display: flex;
@@ -194,7 +190,7 @@ body.open-dyslexic {
   border: none;
   cursor: pointer;
   background-color: #555;
-  border: 2px solid #fff;
+  border: 0.313vh solid #fff;
   border-radius: 10px;
   padding: 1vh 2vh;
   transition: background-color 0.3s, transform 0.3s;
@@ -214,13 +210,12 @@ body.open-dyslexic {
   background-color: #2196f3;
 }
 .product-info {
-  margin-top: 1vh;
+  margin-top: 0.5vh;
   margin-left: 0;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 0.5vh;
 }
 .product-info p {
   font-size: 1.2rem;
@@ -236,7 +231,7 @@ body.open-dyslexic {
   text-align: center;
   margin-bottom: 2vh;
   background-color: #f9f9f9;
-  border: 1px solid #ddd;
+  border: 0.1565vh solid #ddd;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .profile:hover {
@@ -310,49 +305,12 @@ h1 {
   width: 0;
   height: 0;
 }
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-}
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 2.191vh;
-  width: 2.034vh;
-  left: 0.313vh;
-  bottom: 0.313vh;
-  background-color: white;
-  transition: 0.4s;
-}
-input:checked + .slider {
-  background-color: #2196f3;
-}
-input:focus + .slider {
-  box-shadow: 0 0 0.156vh #2196f3;
-}
-input:checked + .slider:before {
-  -webkit-transform: translateX(2.034vh);
-  -ms-transform: translateX(2.034vh);
-  transform: translateX(2.034vh);
-}
-.slider.round {
-  border-radius: 2.66vh;
-}
-.slider.round:before {
-  border-radius: 50%;
-}
 .setting {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5vh;
-  border: 1px solid black;
+  border: 0.1565vh solid black;
   border-radius: 5px;
   margin-bottom: 1vh;
   padding: 1vh;
@@ -365,9 +323,9 @@ input:checked + .slider:before {
 }
 #cart-content ul {
   list-style: none;
-  border: 0.313vh solid #ccc;
-  border-radius: 1.252vh;
-  padding: 1.5649vh;
+  border: 0.04925vh solid #ccc;
+  border-radius: 0.198vh;
+  padding: 0.250vh;
 }
 #cart-content ul li {
   display: flex;
@@ -535,7 +493,12 @@ input:checked + .slider:before {
 .booking-field {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.5vh;
+  margin-bottom: 1vh;
+  align-items: flex-start;
+  gap: 0.5vh;
+  border: 0.1565vh solid black;
+  border-radius: 5px;
+  padding: 1vh;
 }
 .booking-field label {
   margin-bottom: 0.5vh;
@@ -545,7 +508,7 @@ input:checked + .slider:before {
 .booking-field input, .booking-field textarea {
   padding: 0.8vh;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 0.1565vh solid #ccc;
   border-radius: 5px;
   transition: border-color 0.3s;
 }
@@ -647,37 +610,14 @@ input:checked + .slider:before {
     display: none;
   }
 }
-.booking-field {
-  margin-bottom: 1vh;
-}
-.products-container {
-  display: flex;
-  flex-direction: row;
-  gap: 5vh;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  margin-top: 2vh;
-}
-.product-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.product-info p {
-  font-size: 1.2rem;
-  text-align: left;
-  margin: 0;
-  padding-left: 1vh;
-}
 .cart-item {
   display: flex;
   align-items: center;
   gap: 1vh;
   margin-bottom: 1vh;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 0.5vh;
+  border: 0.1565vh solid black;
+  border-radius: 0.7825vh;
+  padding: 0.07825vh;
 }
 .cart-item-image {
   width: 7.825vh;
@@ -688,23 +628,23 @@ input:checked + .slider:before {
   flex-direction: column;
 }
 .cart-item-details .item-venue {
-  font-size: 0.9rem;
+  font-size: 0.1565vh;
   color: #555;
   margin-top: 0.3vh;
 }
 .item-size {
-  font-size: 0.9rem;
+  font-size: 0.1565vh;
   color: #555;
   margin-top: 0.3vh;
 }
 .quantity-controls {
   display: flex;
   align-items: center;
-  gap: 0.5vh; /* Added gap for better spacing */
+  gap: 0.5vh;
   margin-top: 0.5vh;
 }
 .quantity-controls input {
-  width: 4.695vh;
+  width: 0.73418vh;
   text-align: center;
   border-radius: 0;
 }
@@ -727,7 +667,7 @@ input:checked + .slider:before {
   border: none;
   padding: 0.5vh 1vh;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 0.7825vh;
   margin-left: 0.5vh;
   transition: background-color 0.3s;
 }
@@ -760,7 +700,7 @@ input:checked + .slider:before {
   align-items: center;
   text-decoration: none;
   color: inherit;
-  border: 1px solid #ccc;
+  border: 0.4695vh solid #ccc;
   border-radius: 8px;
   padding: 1vh;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -781,7 +721,6 @@ input:checked + .slider:before {
 .product-link img[src*="stagefrightmerch.webp"] {
   width: 40.6772vh;
 }
-
 .product-link img[src*="ticket.webp"] {
   width: 30vh;
 }
@@ -828,14 +767,13 @@ input:checked + .slider:before {
   justify-self: center;
   align-self: center;  
 }
-
 .footer {
   background-color: #333;
   color: #f2f2f2;
   text-align: center;
   padding: 2vh 0;
-  position: relative; /* Added to establish positioning context */
-  z-index: 1; /* Ensures footer appears above the background video */
+  position: relative;
+  z-index: 1;
   border-radius: 1.565vh;
 }
 .footer-content {
@@ -852,11 +790,9 @@ input:checked + .slider:before {
 .mainpage {
   height: 30vh;
 }
-
 .hamburger-nav {
   position: relative;
 }
-
 .hamburger-button {
   display: none;
   background: none;
@@ -867,7 +803,6 @@ input:checked + .slider:before {
   background-color: black;
   color: white;
 }
-
 .hamburger-links {
   display: none;
   flex-direction: column;
@@ -876,33 +811,28 @@ input:checked + .slider:before {
   top: 100%;
   left: 0;
   width: fit-content;
-  border-radius: 5px;
+  border-radius: 0.7825vh;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   z-index: 1000;
 }
-
 .hamburger-links.open {
   display: flex;
   padding: 10px 0;
 }
-
 .hamburger-links li {
   list-style: none;
   width: fit-content;
 }
-
 .hamburger-links a {
   padding: 1.5rem;
   font-size: 1.25rem;
   color: #f2f2f2;
   text-decoration: none;
 }
-
 .hamburger-links a:hover {
   background-color: #575757;
   color: white;
 }
-
 @media (max-width: 768px) {
   .topnav {
     display: none;
@@ -912,28 +842,11 @@ input:checked + .slider:before {
     display: block;
   }
 }
-
 @media (min-width: 769px) {
   .hamburger-nav {
     display: none;
   }
 }
-
-.delete-button {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 0.5vh 1vh;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-left: 0.5vh;
-  transition: background-color 0.3s;
-}
-
-.delete-button:hover {
-  background-color: #cc0000;
-}
-
 .background-video {
   position: fixed;
   top: 0;
@@ -944,7 +857,7 @@ input:checked + .slider:before {
   z-index: -1;
   pointer-events: none;
 }
-
 .mainpage-text {
-  color: white; /* Changes text color to white */
+  color: white;
+  background-color: black;
 }

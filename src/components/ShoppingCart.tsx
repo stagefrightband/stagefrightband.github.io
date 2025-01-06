@@ -32,14 +32,20 @@ const ShoppingCart: React.FC = () => {
 
       itemsArray.forEach(item => {
         // Updated regex to include underscores and commas in venue names
-        const match = item.match(/^([A-Za-z' _-]+)(\d+)(?:_([A-Za-z' _-]+))?$/);
+        const match = item.match(/^([A-Za-z' _,-]+)(\d+)(?:_([A-Za-z' _,-]+))?$/);
         if (match) {
           const name = match[1];
           const quantity = parseInt(match[2], 10);
-          const venue = match[3] ? match[3].replace(/_/g, ' ') : undefined;
-          const size = match[4] ? match[4] : undefined;
-          // Updated key generation to include venue for Tickets
-          const key = size ? `${name}_${size}` : venue ? `${name}_${venue}` : name;
+          const thirdPart = match[3] ? match[3].replace(/_/g, ' ') : undefined;
+          
+          let venue, size;
+          if (name.toLowerCase() === 'tickets') {
+            venue = thirdPart;
+          } else if (name.toLowerCase() === 'merch') {
+            size = thirdPart;
+          }
+
+          const key = venue ? `${name}_${venue}` : size ? `${name}_${size}` : name;
 
           if (aggregatedItems[key]) {
             aggregatedItems[key].quantity += quantity;
