@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.a11cbf6c.css",
-    "main.js": "/static/js/main.32ba503c.js",
+    "main.js": "/static/js/main.1cd3ce11.js",
     "static/js/886.717fd50b.chunk.js": "/static/js/886.717fd50b.chunk.js",
-    "static/js/184.0c6a92bf.chunk.js": "/static/js/184.0c6a92bf.chunk.js",
+    "static/js/184.94ccd524.chunk.js": "/static/js/184.94ccd524.chunk.js",
     "static/js/648.6c0a9a7d.chunk.js": "/static/js/648.6c0a9a7d.chunk.js",
     "static/js/492.158ed667.chunk.js": "/static/js/492.158ed667.chunk.js",
     "static/js/943.3e81b869.chunk.js": "/static/js/943.3e81b869.chunk.js",
@@ -12,7 +12,7 @@
     "static/js/29.a08d212f.chunk.js": "/static/js/29.a08d212f.chunk.js",
     "static/js/281.ea381ba8.chunk.js": "/static/js/281.ea381ba8.chunk.js",
     "static/js/449.ad75dd3e.chunk.js": "/static/js/449.ad75dd3e.chunk.js",
-    "static/js/64.9cfc1939.chunk.js": "/static/js/64.9cfc1939.chunk.js",
+    "static/js/74.da98e65b.chunk.js": "/static/js/74.da98e65b.chunk.js",
     "static/media/WolfhagenBlackletter-Regular.ttf": "/static/media/WolfhagenBlackletter-Regular.ff088f8c6906975c2b5f.ttf",
     "static/media/SpecialElite-Regular.ttf": "/static/media/SpecialElite-Regular.cefed1373df28714f8e5.ttf",
     "static/media/OpenDyslexic-Regular.woff": "/static/media/OpenDyslexic-Regular.faf7bb41c4bbb5a043ed.woff",
@@ -21,6 +21,6 @@
   },
   "entrypoints": [
     "static/css/main.a11cbf6c.css",
-    "static/js/main.32ba503c.js"
+    "static/js/main.1cd3ce11.js"
   ]
 }
