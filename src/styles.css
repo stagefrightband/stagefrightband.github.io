@@ -200,12 +200,12 @@ body.open-dyslexic {
   transform: scale(1.05);
 }
 .merch-button {
-  width: 22.3226vw;
+  width: 45vh;
   height: 33vh;
   background-color: #ff5722;
 }
 .ticket-button {
-  width: 16.4742vw;
+  width: 33vh;
   height: 33vh;
   background-color: #2196f3;
 }
@@ -824,7 +824,7 @@ h1 {
   width: fit-content;
 }
 .hamburger-links a {
-  padding: 1.5rem;
+  padding: 0.5rem;
   font-size: 1.25rem;
   color: #f2f2f2;
   text-decoration: none;
