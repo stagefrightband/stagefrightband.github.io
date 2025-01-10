@@ -120,7 +120,7 @@ body.open-dyslexic {
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 900;
+  z-index: 3000;
   padding: 2vh;
   box-sizing: border-box;
 }
@@ -359,7 +359,7 @@ h1 { font-size: 1.5rem; }
   left: 0.7825vh;
   font-size: 5vh;
   cursor: pointer;
-  z-index: 2000;
+  z-index: 3000;
 }
 .quantity-container {
   display: flex;
@@ -510,6 +510,10 @@ h1 { font-size: 1.5rem; }
   .contact-left, .contact-right { width: 100%; }
   .products-container {
     flex-direction: column;
+  }
+  .overlay {
+    top: 0;
+    height: 100%;
   }
 }
 @media (min-width: 769px) {
