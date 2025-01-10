@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../styles.css";
-interface CartItem{name:string;quantity:number;venue? :string;size? :string}const getCookie=(name:string):string|null=>{const value=`; ${document.cookie}`;const parts=value.split(`; ${name}=`);if(parts.length===2)return decodeURIComponent(parts.pop()?.split(';').shift()||"");return null};const setCookie=(name:string,value:string,days=7)=>{const expires=new Date(Date.now()+days*864e5).toUTCString();document.cookie=`${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`};const ShoppingCart:React.FC=()=>{const[cartItems,setCartItems]=useState<CartItem[]>([]);const allowedItems=["Merch","Music","Tickets","S-Gate"];useEffect(()=>{const cartItemsCookie=getCookie('cartitems');if(cartItemsCookie&&cartItemsCookie!=='null'){const itemsArray=cartItemsCookie.split(',');const aggregatedItems:Record<string, CartItem>={};itemsArray.forEach(item=>{const match=item.match(/^([A-Za-z' _,-]+)(\d+)(?:_([A-Za-z' _,-]+))?$/);if(match){const name=match[1];const quantity=parseInt(match[2],10);const thirdPart=match[3]?match[3].replace(/_/g,' '):undefined;let venue,size;if(name.toLowerCase()==='tickets'){venue=thirdPart}else if(name.toLowerCase()==='merch'){size=thirdPart}const key=venue?`${name}_${venue}`:size?`${name}_${size}`:name;if(aggregatedItems[key]){aggregatedItems[key].quantity+=quantity}else{aggregatedItems[key]={name,quantity,venue,size}}}});
+interface CartItem{name:string;quantity:number;venue? :string;size? :string}const getCookie=(name:string):string|null=>{const value=`; ${document.cookie}`;const parts=value.split(`; ${name}=`);if(parts.length===2)return decodeURIComponent(parts.pop()?.split(';').shift()||"");return null};const setCookie=(name:string,value:string,days=7)=>{const expires=new Date(Date.now()+days*864e5).toUTCString();document.cookie=`${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`};const ShoppingCart:React.FC=()=>{const[cartItems,setCartItems]=useState<CartItem[]>([]);const allowedItems=["Merch","Music","Tickets","S-Gate", "CD: S-Gate"];useEffect(()=>{const cartItemsCookie=getCookie('cartitems');if(cartItemsCookie&&cartItemsCookie!=='null'){const itemsArray=cartItemsCookie.split(',');const aggregatedItems:Record<string, CartItem>={};itemsArray.forEach(item=>{const match=item.match(/^([A-Za-z' _,-]+)(\d+)(?:_([A-Za-z' _,-]+))?$/);if(match){const name=match[1];const quantity=parseInt(match[2],10);const thirdPart=match[3]?match[3].replace(/_/g,' '):undefined;let venue,size;if(name.toLowerCase()==='tickets'){venue=thirdPart}else if(name.toLowerCase()==='merch'){size=thirdPart}const key=venue?`${name}_${venue}`:size?`${name}_${size}`:name;if(aggregatedItems[key]){aggregatedItems[key].quantity+=quantity}else{aggregatedItems[key]={name,quantity,venue,size}}}});
 // Updated name capitalization to handle hyphens
 const aggregatedCartItems = Object.values(aggregatedItems).map(item => ({
     name: item.name.split('-').map(part => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase()).join('-'),
@@ -26,6 +26,10 @@ return (
                     ? '/Images/ticket.webp'
                     : item.name.toLowerCase() === 's-gate'
                     ? '/Images/albumcover.webp'
+                    : item.name.toLowerCase() === 'digital s-gate'
+                    ? '/Images/digitalsgate.webp' // Added image for Digital S-Gate
+                    : item.name.toLowerCase() === 'cd: s-gate'
+                    ? '/Images/cdgatesgate.webp' // Added image for CD: S-Gate
                     : ''
                 }
                 alt={`${item.name} Image`}

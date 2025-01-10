@@ -425,7 +425,7 @@ h1 { font-size: 1.5rem; }
   padding: 2vh;
   border-radius: 1.252vh;
 }
-.contact-left { align-items: flex-start; }
+.contact-left { align-items: flex-start; display: flex; flex-direction: column; }
 .contact-left h2, .contact-right h2 {
   font-size: 1.8rem;
   text-align: center;
@@ -811,4 +811,16 @@ h1 { font-size: 1.5rem; }
   align-items: center;
   z-index: 900;
   padding: 2vh;  box-sizing: border-box;
+}
+
+.cd-button {
+  width: 33vh;
+  height: 33vh;
+  background-color: #ff9800; /* Example color for CD: S-Gate */
+}
+
+.digital-button {
+  width: 33vh;
+  height: 33vh;
+  background-color: #4caf50; /* Example color */
 }
