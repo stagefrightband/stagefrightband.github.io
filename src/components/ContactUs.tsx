@@ -36,7 +36,7 @@ const getCookie=(name:string):string|null=>{const value=`; ${document.cookie}`;c
       </div>
     </div>
     {overlay.visible && (
-      <div className="overlay active">
+      <div className="overlay active contactusoverlay">
         <div className="overlay-content">
           <h2>{overlay.type === 'success' ? 'Submitted!' : 'Error!'}</h2>
           <p>{overlay.type === 'success' ? 'Your form was successfully submitted.' : 'There was an error submitting your form. Please try again.'}</p>
