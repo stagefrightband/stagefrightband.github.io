@@ -116,11 +116,11 @@ body.open-dyslexic {
   left: 0;
   width: 100%;
   height: 100%; 
-  background-color: lightgray;
+  background-color: transparent;
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 1100;
+  z-index: 900; /* Changed from 1100 to 900 to place overlay below navbar */
   padding: 2vh;
   box-sizing: border-box;
 }
@@ -153,46 +153,26 @@ body.open-dyslexic {
 .overlay-right button {
   font-size: 1rem;
   padding: 0.7vh 2.5vh;
-  border-radius: 15px;
+  border-radius: 2.3474vh;
   margin-top: 1vh;
   align-self: center;
 }
 .overlay-content {
   border: 0.1565vh solid black;
-  border-radius: 8px;
+  border-radius: 1.252vh;
   padding: 1vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1vh;
-  text-align: center;
+  background-color: lightgray;
 }
-
-.overlay-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1vh;
-}
-
 .overlay-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2vh;
+  font-size: 1.5rem;
+  padding-left: 1vh;
+  padding-right: 1vh;
 }
-
-.overlay-content button {
-  padding: 0.5vh 2vh;
-  font-size: 1rem;
-  border: none;
-  background-color: #aa0404;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.overlay-content button:hover {
-  background-color: #ff5722;
-}
-
 .product-button {
   background-size: cover;
   background-repeat: no-repeat;
@@ -200,7 +180,7 @@ body.open-dyslexic {
   cursor: pointer;
   background-color: #555;
   border: 0.313vh solid #fff;
-  border-radius: 10px;
+  border-radius: 1.5649vh;
   padding: 1vh 2vh;
   transition: background-color 0.3s, transform 0.3s;
 }
@@ -236,8 +216,8 @@ body.open-dyslexic {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .profile:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-0.7825vh);
+  box-shadow: 0 0.626vh 1.8779vh rgba(0,0,0,0.1);
 }
 .profile-image {
   width: 23.4750vh;
@@ -286,7 +266,7 @@ h1 { font-size: 1.5rem; }
   align-items: flex-start;
   gap: 0.5vh;
   border: 0.1565vh solid black;
-  border-radius: 5px;
+  border-radius: 0.7825vh;
   margin-bottom: 1vh;
   padding: 1vh;
 }
@@ -425,14 +405,14 @@ h1 { font-size: 1.5rem; }
   gap: 4vh;
   padding: 2vh;
   background-color: #f0f0f0;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 1.5649vh;
+  box-shadow: 0 0.626vh 1.252vh rgba(0, 0, 0, 0.1);
 }
 .contact-left, .contact-right {
   width: 45%;
   background-color: #ffffff;
   padding: 2vh;
-  border-radius: 8px;
+  border-radius: 1.252vh;
 }
 .contact-left { align-items: flex-start; }
 .contact-left h2, .contact-right h2 {
@@ -447,7 +427,7 @@ h1 { font-size: 1.5rem; }
   align-items: flex-start;
   gap: 0.5vh;
   border: 0.1565vh solid black;
-  border-radius: 5px;
+  border-radius: 0.7825vh;
   padding: 1vh;
 }
 .booking-field label {
@@ -459,13 +439,13 @@ h1 { font-size: 1.5rem; }
   padding: 0.8vh;
   font-size: 1rem;
   border: 0.1565vh solid #ccc;
-  border-radius: 5px;
+  border-radius: 0.7825vh;
   transition: border-color 0.3s;
 }
 .booking-field input:focus, .booking-field textarea:focus {
   border-color: #777;
 }
-.message-textarea { height: 100px; resize: vertical; }
+.message-textarea { height: 15.6495vh; resize: vertical; }
 .contact-right button {
   padding: 0.7vh 2vh;
   font-size: 1rem;
@@ -473,7 +453,7 @@ h1 { font-size: 1.5rem; }
   background-color: #333;
   color: #fff;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 0.7825vh;
   align-self: flex-start;
 }
 .contact-right button:hover { background-color: #555; }
@@ -482,7 +462,7 @@ h1 { font-size: 1.5rem; }
   color: white;
   padding: 0.8vh 2.5vh;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.7825vh;
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s;
@@ -513,8 +493,8 @@ h1 { font-size: 1.5rem; }
     right: 0;
     background-color: #333;
     width: auto;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 0.7825vh;
+    box-shadow: 0 0.626vh 1.252vh rgba(0,0,0,0.1);
     gap: 1rem;
   }
   .hamburger-links a {
@@ -579,7 +559,7 @@ h1 { font-size: 1.5rem; }
   border: none;
   padding: 0.5vh 1vh;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 0.4695vh;
   transition: background-color 0.3s;
 }
 .decrease-button:hover,
@@ -623,17 +603,17 @@ h1 { font-size: 1.5rem; }
   text-decoration: none;
   color: inherit;
   border: 0.4695vh solid #ccc;
-  border-radius: 8px;
+  border-radius: 1.252vh;
   padding: 1vh;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .product-link:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.626vh 1.252vh rgba(0, 0, 0, 0.2);
 }
 .product-image {
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 1.252vh;
 }
 .product-link p {
   margin-top: 1vh;
@@ -727,12 +707,12 @@ h1 { font-size: 1.5rem; }
   left: 0;
   width: fit-content;
   border-radius: 0.7825vh;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 0.626vh 1.252vh rgba(0,0,0,0.1);
   z-index: 2002;
 }
 .hamburger-links.open {
   display: flex;
-  padding: 10px 0;
+  padding: 1.5649vh 0;
   width: max-content;
 }
 .hamburger-links li { list-style: none; width: fit-content; }
