@@ -64,7 +64,7 @@ const handleSubmitCD = () => {
             <button
               className="product-button cd-button"
               style={{
-                backgroundImage: "url('/Images/cdcover.webp')"
+                backgroundImage: "url('/Images/cdimage.webp')"
               }}
               onClick={handleCDButtonClick}
               aria-label="CD: S-Gate"
@@ -165,7 +165,7 @@ const handleSubmitCD = () => {
       <div className={`overlay ${isCDOverlayVisible ? 'active' : ''}`}>
         <button className="close-button" onClick={() => setIsCDOverlayVisible(false)}>X</button>
         <div className="overlay-left">
-          <img src="/Images/cdcover.webp" alt="CD: S-Gate" />
+          <img src="/Images/cdimage.webp" alt="CD: S-Gate" />
         </div>
         <div className="overlay-right">
           <div className="overlay-content">
