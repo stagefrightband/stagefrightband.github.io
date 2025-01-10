@@ -139,9 +139,22 @@ body.open-dyslexic {
   justify-content: flex-start;
 }
 .overlay-left img {
-  width: 70vh;
-  height: 75vh;
+  width: 10rem;
+  height: 10rem;
   object-fit: cover;
+}
+@media (max-width: 768px) {
+  .overlay-left img {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .overlay-left img {
+    width: 70vh;
+    height: 70vh;
+  }
 }
 .overlay-right {
   display: flex;
@@ -415,9 +428,10 @@ h1 { font-size: 1.5rem; }
 .contact-left { align-items: flex-start; }
 .contact-left h2, .contact-right h2 {
   font-size: 1.8rem;
+  text-align: center;
   margin-bottom: 1vh;
 }
-.contact-left a { font-size: 1rem; }
+.contact-left a { font-size: 1rem; text-align: center; }
 .booking-field {
   display: flex;
   flex-direction: column;
@@ -510,6 +524,7 @@ h1 { font-size: 1.5rem; }
   .contact-left, .contact-right { width: 100%; }
   .products-container {
     flex-direction: column;
+    align-items: center;
   }
   .overlay {
     top: 0;
@@ -520,6 +535,9 @@ h1 { font-size: 1.5rem; }
   .topnav { display: flex; }
   .hamburger-menu { display: none; }
   .hamburger-links { display: none; }
+  .products-container {
+    flex-direction: row;
+  }
 }
 .cart-item {
   display: flex;
@@ -747,7 +765,6 @@ h1 { font-size: 1.5rem; }
 .mainpage-text { color: white; background-color: black; }
 .products-container{
   display: flex;
-  flex-direction: row;
   justify-content: center;
   gap: 5vh;
 }
