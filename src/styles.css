@@ -112,10 +112,10 @@ body.open-dyslexic {
 }
 .overlay {
   position: fixed;
-  top: 0; 
+  top: 11.738vh;
   left: 0;
   width: 100%;
-  height: 100%; 
+  height: calc(100% - 11.738vh);
   background-color: lightgray;
   display: none;
   justify-content: center;
@@ -357,11 +357,9 @@ h1 { font-size: 1.5rem; }
   position: absolute;
   top: 0.7825vh;
   left: 0.7825vh;
-  background: none;
-  border: none;
   font-size: 5vh;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 2000;
 }
 .quantity-container {
   display: flex;
