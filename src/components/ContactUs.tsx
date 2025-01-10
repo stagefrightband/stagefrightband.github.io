@@ -11,6 +11,9 @@ const getCookie=(name:string):string|null=>{const value=`; ${document.cookie}`;c
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
+  // Add state for overlay
+  const [overlay, setOverlay] = useState<{ visible: boolean; type: 'success' | 'error' }>({ visible: false, type: 'success' });
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const { error } = await supabase
@@ -18,16 +21,24 @@ const getCookie=(name:string):string|null=>{const value=`; ${document.cookie}`;c
       .insert([{ name, 'e-mail': email, message }]);
     if (error) {
       console.error(error);
+      setOverlay({ visible: true, type: 'error' });
     } else {
       // Optionally reset form
       setName('');
       setEmail('');
       setMessage('');
+      setOverlay({ visible: true, type: 'success' });
     }
+  };
+
+  // Add function to close overlay
+  const closeOverlay = () => {
+    setOverlay({ ...overlay, visible: false });
   };
 
   useEffect(()=>{toggleClassBasedOnCookie("highcontrast","high-contrast");toggleClassBasedOnCookie("opendyslexic","open-dyslexic")},[]);
   return (
+    <>
     <div className="contact-container">
       <div className="contact-left">
         <h2>Email Us</h2>
@@ -57,6 +68,16 @@ const getCookie=(name:string):string|null=>{const value=`; ${document.cookie}`;c
         </form>
       </div>
     </div>
+    {overlay.visible && (
+      <div className="overlay active">
+        <div className="overlay-content">
+          <h2>{overlay.type === 'success' ? 'Submitted!' : 'Error!'}</h2>
+          <p>{overlay.type === 'success' ? 'Your form was successfully submitted.' : 'There was an error submitting your form. Please try again.'}</p>
+          <button onClick={closeOverlay}>Ok</button>
+        </div>
+    </div>
+    )}
+    </>
   );
 };
 export default ContactUs;

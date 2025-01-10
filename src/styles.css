@@ -166,12 +166,33 @@ body.open-dyslexic {
   align-items: center;
   justify-content: center;
   gap: 1vh;
+  text-align: center;
 }
+
+.overlay-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1vh;
+}
+
 .overlay-content p {
-  font-size: 1.5rem;
-  padding-left: 1vh;
-  padding-right: 1vh;
+  font-size: 1.2rem;
+  margin-bottom: 2vh;
 }
+
+.overlay-content button {
+  padding: 0.5vh 2vh;
+  font-size: 1rem;
+  border: none;
+  background-color: #aa0404;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.overlay-content button:hover {
+  background-color: #ff5722;
+}
+
 .product-button {
   background-size: cover;
   background-repeat: no-repeat;
