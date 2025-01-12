@@ -88,6 +88,7 @@ const handleDecrement = () => {
                 className="dropdown"
                 value={size}
                 onChange={(e) => setSize(e.target.value)}
+                aria-label="Select size"
               >
                 <option value="S">Small</option>
                 <option value="M">Medium</option>
@@ -106,6 +107,7 @@ const handleDecrement = () => {
                   readOnly
                   value={quantity}
                   onChange={handleQuantityChange}
+                  aria-label="Quantity for Merch"
                 />
                 <button onClick={handleIncrement}>+</button>
               </div>
@@ -139,6 +141,7 @@ const handleDecrement = () => {
                 className="dropdown"
                 value={selectedVenue}
                 onChange={handleVenueChange}
+                aria-label="Select venue"
               >
                 <option value="House of Blues, Houston">
                   House of Blues, Houston
@@ -164,6 +167,7 @@ const handleDecrement = () => {
                   readOnly
                   value={quantity}
                   onChange={handleQuantityChange}
+                  aria-label="Quantity for Tickets"
                 />
                 <button onClick={handleIncrement}>+</button>
               </div>
@@ -201,6 +205,7 @@ const handleDecrement = () => {
                 className="dropdown"
                 value={selectedType}
                 onChange={handleTypeChange}
+                aria-label="Select album type"
               >
                 <option value="mp3">mp3</option>
                 <option value="CD">CD</option>
@@ -217,6 +222,7 @@ const handleDecrement = () => {
                   readOnly
                   value={quantity}
                   onChange={handleQuantityChange}
+                  aria-label="Quantity for Album"
                 />
                 <button onClick={handleIncrement}>+</button>
               </div>
