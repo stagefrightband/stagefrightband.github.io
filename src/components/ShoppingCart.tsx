@@ -3,6 +3,7 @@ import "../styles.css";
 interface CartItem{name:string;quantity:number;venue? :string;size? :string;type? :string}const ShoppingCart:React.FC=()=>{const[cartItems,setCartItems]=useState<CartItem[]>([]);const allowedItems=["Merch","Music","Tickets","S-Gate","CD: S-Gate","Digital S-Gate"];useEffect(()=>{const cartItemsStorage=localStorage.getItem("cartItems");if(cartItemsStorage&&cartItemsStorage!=="null"){const parsedCart:CartItem[]=JSON.parse(cartItemsStorage);setCartItems(parsedCart.filter(item=>allowedItems.includes(item.name)))}},[]);const handleDecrease=(index:number)=>{const item=cartItems[index];if(item.quantity>1){const updatedQuantity=item.quantity-1;const updatedCart=[...cartItems];updatedCart[index].quantity=updatedQuantity;setCartItems(updatedCart);localStorage.setItem("cartItems",JSON.stringify(updatedCart))}};const handleIncrease=(index:number)=>{const item=cartItems[index];const updatedQuantity=item.quantity+1;const updatedCart=[...cartItems];updatedCart[index].quantity=updatedQuantity;setCartItems(updatedCart);localStorage.setItem("cartItems",JSON.stringify(updatedCart))};const handleDelete=(index:number)=>{const updatedCart=cartItems.filter((_,i)=>i!==index);setCartItems(updatedCart);localStorage.setItem("cartItems",JSON.stringify(updatedCart))};
   return (
     <div>
+      <h1 style={{ textAlign: "center" }}>Shopping Cart</h1>
       <div id="cart-content">
         {cartItems.length === 0 ? (
           <p className="empty-cart-message">You have no items in your cart.</p>
