@@ -431,7 +431,7 @@ h1 { font-size: 1.5rem; }
   text-align: center;
   margin-bottom: 1vh;
 }
-.contact-left a { font-size: 1rem; text-align: center; }
+.contact-left a { font-size: 1rem; text-align: center; align-self: center; }
 .booking-field {
   display: flex;
   flex-direction: column;
@@ -559,6 +559,11 @@ h1 { font-size: 1.5rem; }
   margin-top: 0.3vh;
 }
 .item-size {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.3vh;
+}
+.item-type {
   font-size: 1rem;
   color: #555;
   margin-top: 0.3vh;
@@ -823,4 +828,10 @@ h1 { font-size: 1.5rem; }
   width: 33vh;
   height: 33vh;
   background-color: #4caf50; /* Example color */
+}
+
+.type-container {
+  display: flex;
+  align-items: center;
+  gap: 1vh; /* Adds spacing between "Type:" label and dropdown */
 }
