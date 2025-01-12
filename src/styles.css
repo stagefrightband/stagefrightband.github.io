@@ -529,8 +529,8 @@ h1 { font-size: 1.5rem; }
 }
 /* Add specific item image classes */
 .merch-item-image {
-  height: 7.825vh;
-  width: 10vh;
+  height: 8.5446;
+  width: 11.5806;
   padding: 1vh;
 }
 
@@ -833,13 +833,6 @@ h1 { font-size: 1.5rem; }
   height: calc(100vh - 11.738vh);
   position: relative;
 }
-.login-container {
-  background-color: #ffffff;
-  padding: 2vh;
-  border-radius: 1.252vh;
-  box-shadow: 0 0.626vh 1.252vh rgba(0, 0, 0, 0.1);
-  width: 300px;
-}
 .signup-overlay {
   position: absolute;
   top: 0;
@@ -994,5 +987,5 @@ h1 { font-size: 1.5rem; }
   font-size: 1.2rem;
 }
 .shoppingcart-container {
-  padding-bottom: 80px;
+  padding-bottom: 2vh;
 }
