@@ -488,7 +488,7 @@ h1 { font-size: 1.5rem; }
   .hamburger-menu.active .hamburger-links { display: flex; }
   #hamburgerMenu {
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 25px;
     background: none;
     border: none;
   }
@@ -710,7 +710,7 @@ h1 { font-size: 1.5rem; }
   display: none;
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 25px;
   color: #000;
   cursor: pointer;
   background-color: black;
