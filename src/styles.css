@@ -68,7 +68,8 @@ body {
 }
 @font-face {
   font-family: "OpenDyslexic";
-  src: url("../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff2") format("woff2"), url("../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff") format("woff");
+  src: url("../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff2") format("woff2"),
+       url("../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: fallback;
@@ -84,7 +85,10 @@ body {
   color: var(--text-color) !important;
   border-color: var(--border-color) !important;
 }
-.high-contrast a { color: var(--link-color) !important; text-decoration: underline; }
+.high-contrast a {
+  color: var(--link-color) !important;
+  text-decoration: underline;
+}
 .high-contrast button,
 .high-contrast input[type="button"],
 .high-contrast input[type="submit"] {
@@ -132,11 +136,10 @@ body.open-dyslexic {
 .overlay-left {
   width: 50%;
   height: 100%;
-  padding-left: 5vh;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .overlay-left img {
   width: 10rem;
@@ -152,7 +155,6 @@ body.open-dyslexic {
     flex-direction: column;
   }
 }
-
 @media (min-width: 769px) {
   .overlay-left img {
     width: 70vh;
@@ -186,11 +188,14 @@ body.open-dyslexic {
   justify-content: center;
   gap: 1vh;
   background-color: lightgray;
+  width: 50vh;
+  max-width: fit-content;
 }
 .overlay-content p {
   font-size: 1.5rem;
   padding-left: 1vh;
   padding-right: 1vh;
+  text-align: center;
 }
 .product-button {
   background-size: cover;
@@ -431,11 +436,12 @@ h1 { font-size: 1.5rem; }
   padding: 2vh;
   border-radius: 1.252vh;
 }
-.contact-left { align-items: flex-start; display: flex; flex-direction: column; }
+.contact-left { display: flex; flex-direction: column; }
 .contact-left h2 {
   font-size: 1.8rem;
   text-align: center;
   margin-bottom: 1vh;
+  align-self: center;
 }
 .contact-left a { font-size: 1rem; text-align: center; align-self: center; }
 .booking-field {
@@ -496,11 +502,7 @@ h1 { font-size: 1.5rem; }
   font-size: 1rem;
   transition: background-color 0.3s;
 }
-
-.sign-up-button:hover {
-  background-color: #1976D2;
-}
-
+.sign-up-button:hover { background-color: #1976D2; }
 .back-button {
   margin-top: 1vh;
   background-color: #555;
@@ -512,10 +514,7 @@ h1 { font-size: 1.5rem; }
   font-size: 1rem;
   transition: background-color 0.3s;
 }
-
-.back-button:hover {
-  background-color: #333;
-}
+.back-button:hover { background-color: #333; }
 @media (max-width: 768px) {
   .topnav { display: none; }
   .hamburger-menu {
@@ -558,22 +557,14 @@ h1 { font-size: 1.5rem; }
   }
   .contact-container { flex-direction: column; height: auto; }
   .contact-left, .contact-right { width: 100%; }
-  .products-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .overlay {
-    top: 0;
-    height: 100%;
-  }
+  .products-container { flex-direction: column; align-items: center; }
+  .overlay { top: 0; height: 100%; }
 }
 @media (min-width: 769px) {
   .topnav { display: flex; }
   .hamburger-menu { display: none; }
   .hamburger-links { display: none; }
-  .products-container {
-    flex-direction: row;
-  }
+  .products-container { flex-direction: row; }
 }
 .cart-item {
   display: flex;
@@ -585,10 +576,7 @@ h1 { font-size: 1.5rem; }
   padding: 0.07825vh;
 }
 .cart-item-image { width: 7.825vh; height: 7.825vh; padding: 1vh; }
-.cart-item-details {
-  display: flex;
-  flex-direction: column;
-}
+.cart-item-details { display: flex; flex-direction: column; }
 .cart-item-details .item-venue {
   font-size: 1rem;
   color: #555;
@@ -673,10 +661,7 @@ h1 { font-size: 1.5rem; }
   transform: scale(1.05);
   box-shadow: 0 0.626vh 1.252vh rgba(0, 0, 0, 0.2);
 }
-.product-image {
-  object-fit: cover;
-  border-radius: 1.252vh;
-}
+.product-image { object-fit: cover; border-radius: 1.252vh; }
 .product-link p {
   margin-top: 1vh;
   font-size: 1.2rem;
@@ -708,7 +693,7 @@ h1 { font-size: 1.5rem; }
   margin-bottom: 4vh;
 }
 .about-section h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 1vh;
 }
 .about-section p {
@@ -765,8 +750,6 @@ h1 { font-size: 1.5rem; }
   position: absolute;
   top: 100%;
   left: 0;
-  top: 100%;
-  left: 0;
   width: fit-content;
   border-radius: 0.7825vh;
   box-shadow: 0 0.626vh 1.252vh rgba(0,0,0,0.1);
@@ -804,7 +787,7 @@ h1 { font-size: 1.5rem; }
   pointer-events: none;
 }
 .mainpage-text { color: white; background-color: black; }
-.products-container{
+.products-container {
   display: flex;
   justify-content: center;
   gap: 5vh;
@@ -851,27 +834,24 @@ h1 { font-size: 1.5rem; }
   justify-content: center;
   align-items: center;
   z-index: 900;
-  padding: 2vh;  box-sizing: border-box;
+  padding: 2vh;
+  box-sizing: border-box;
 }
-
 .cd-button {
   width: 33vh;
   height: 33vh;
   background-color: #ff9800;
 }
-
 .digital-button {
   width: 33vh;
   height: 33vh;
   background-color: #4caf50;
 }
-
 .type-container {
   display: flex;
   align-items: center;
   gap: 1vh;
 }
-
 .auth-container {
   display: flex;
   justify-content: center;
@@ -879,7 +859,6 @@ h1 { font-size: 1.5rem; }
   height: calc(100vh - 11.738vh);
   position: relative;
 }
-
 .login-container {
   background-color: #ffffff;
   padding: 2vh;
@@ -887,7 +866,6 @@ h1 { font-size: 1.5rem; }
   box-shadow: 0 0.626vh 1.252vh rgba(0, 0, 0, 0.1);
   width: 300px;
 }
-
 .signup-overlay {
   position: absolute;
   top: 0;
@@ -899,7 +877,6 @@ h1 { font-size: 1.5rem; }
   justify-content: center;
   align-items: center;
 }
-
 .signup-container {
   background-color: #ffffff;
   padding: 2vh;
@@ -907,7 +884,6 @@ h1 { font-size: 1.5rem; }
   box-shadow: 0 0.626vh 1.252vh rgba(0, 0, 0, 0.2);
   width: 300px;
 }
-
 .error-overlay {
   position: fixed;
   top: 11.738vh;
@@ -920,7 +896,6 @@ h1 { font-size: 1.5rem; }
   align-items: center;
   z-index: 3001;
 }
-
 .error-popup {
   background-color: #ffffff;
   padding: 2vh;
@@ -929,17 +904,14 @@ h1 { font-size: 1.5rem; }
   width: 300px;
   text-align: center;
 }
-
 .error-popup h2 {
   margin-bottom: 1vh;
   color: #ff0000;
 }
-
 .error-popup p {
   margin-bottom: 2vh;
   color: #333;
 }
-
 .error-popup button {
   background-color: #aa0404;
   color: white;
@@ -950,11 +922,9 @@ h1 { font-size: 1.5rem; }
   font-size: 1rem;
   transition: background-color 0.3s;
 }
-
 .error-popup button:hover {
   background-color: #ff5722;
 }
-
 .back-button {
   margin-top: 1vh;
   background-color: #555;
@@ -1008,9 +978,7 @@ h1 { font-size: 1.5rem; }
   border-color: #777;
   box-shadow: 0 0 5px rgba(121, 85, 72, 0.5);
 }
-.centered-text {
-  text-align: center;
-}
+.centered-text { text-align: center; }
 .ok-button {
   height: 5vh;
   width: 7vh;
@@ -1025,10 +993,7 @@ h1 { font-size: 1.5rem; }
 .ok-button:hover {
   background-color: #45a049;
 }
-.merch-image {
-  width: 45vh;
-  height: 33vh;
-}
+.merch-image { width: 45vh; height: 33vh; }
 .ticket-image,
 .album-image,
 .digital-image {
@@ -1036,7 +1001,7 @@ h1 { font-size: 1.5rem; }
   height: 33vh;
 }
 .tour-dates-heading {
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
 }
 .open-dyslexic {

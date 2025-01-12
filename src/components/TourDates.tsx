@@ -16,7 +16,7 @@ function getCookie(name:string):string|null{const value=`; ${document.cookie}`;c
           </div>
           <div className="buytickets">
             <span>
-              <Link to="/store"> {/* Replace <a href="store.tsx"> with <Link to="/store"> */}
+              <Link to="/store">
                 <button>Buy Tickets</button>
               </Link>
             </span>

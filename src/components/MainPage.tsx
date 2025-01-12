@@ -27,7 +27,6 @@ const getCookie=(name:string):string|null=>{const value=`; ${document.cookie}`;c
           <h2>Get in touch with us!</h2>
         </Link>
       </div>
-      <button className="main-button bounce">Click Me</button>
     </div>
   );
 };
