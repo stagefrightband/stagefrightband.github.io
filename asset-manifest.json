@@ -1,19 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.c744e418.css",
-    "main.js": "/static/js/main.cf2be57a.js",
+    "main.css": "/static/css/main.fdf33d7a.css",
+    "main.js": "/static/js/main.136600f8.js",
     "static/js/886.717fd50b.chunk.js": "/static/js/886.717fd50b.chunk.js",
-    "static/js/184.94ccd524.chunk.js": "/static/js/184.94ccd524.chunk.js",
-    "static/js/648.8d12fc54.chunk.js": "/static/js/648.8d12fc54.chunk.js",
+    "static/js/184.110b42aa.chunk.js": "/static/js/184.110b42aa.chunk.js",
+    "static/js/648.c2b7e07a.chunk.js": "/static/js/648.c2b7e07a.chunk.js",
     "static/js/492.c93f64bd.chunk.js": "/static/js/492.c93f64bd.chunk.js",
-    "static/js/943.281dfb82.chunk.js": "/static/js/943.281dfb82.chunk.js",
-    "static/js/772.f01375e0.chunk.js": "/static/js/772.f01375e0.chunk.js",
-    "static/js/638.fff43f42.chunk.js": "/static/js/638.fff43f42.chunk.js",
-    "static/js/29.4e6fc0c7.chunk.js": "/static/js/29.4e6fc0c7.chunk.js",
-    "static/js/281.ea381ba8.chunk.js": "/static/js/281.ea381ba8.chunk.js",
+    "static/js/943.6c7f1ef8.chunk.js": "/static/js/943.6c7f1ef8.chunk.js",
+    "static/js/772.5cba6f54.chunk.js": "/static/js/772.5cba6f54.chunk.js",
+    "static/js/638.e25a3f90.chunk.js": "/static/js/638.e25a3f90.chunk.js",
+    "static/js/29.58971cfc.chunk.js": "/static/js/29.58971cfc.chunk.js",
+    "static/js/281.37e27e7a.chunk.js": "/static/js/281.37e27e7a.chunk.js",
     "static/js/449.ad75dd3e.chunk.js": "/static/js/449.ad75dd3e.chunk.js",
     "static/js/968.813fcf1b.chunk.js": "/static/js/968.813fcf1b.chunk.js",
-    "static/js/319.c313692a.chunk.js": "/static/js/319.c313692a.chunk.js",
     "static/media/WolfhagenBlackletter-Regular.ttf": "/static/media/WolfhagenBlackletter-Regular.ff088f8c6906975c2b5f.ttf",
     "static/media/SpecialElite-Regular.ttf": "/static/media/SpecialElite-Regular.cefed1373df28714f8e5.ttf",
     "static/media/OpenDyslexic-Regular.woff": "/static/media/OpenDyslexic-Regular.faf7bb41c4bbb5a043ed.woff",
@@ -21,7 +20,7 @@
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.c744e418.css",
-    "static/js/main.cf2be57a.js"
+    "static/css/main.fdf33d7a.css",
+    "static/js/main.136600f8.js"
   ]
 }
