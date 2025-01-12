@@ -716,6 +716,10 @@ h1 { font-size: 1.5rem; }
   background-color: black;
   color: white;
   z-index: 2001;
+  text-align: center;
+  align-self: center;
+  position: relative;
+  padding: 0;
 }
 .hamburger-links {
   display: none;
