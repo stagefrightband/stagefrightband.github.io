@@ -1,7 +1,38 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Import Link
-import '../styles.css';
-function getCookie(name:string):string|null{const value=`; ${document.cookie}`;const parts=value.split(`; ${name}=`);if(parts.length===2)return parts.pop()?.split(";").shift()||null;return null}interface ToggleClassBasedOnCookieParams{cookieName:string;className:string}function toggleClassBasedOnCookie({cookieName,className}:ToggleClassBasedOnCookieParams):void{const cookieValue=getCookie(cookieName)==="true";if(cookieValue){document.documentElement.classList.add(className)}else{document.documentElement.classList.remove(className)}}const TourDates:React.FC=()=>{useEffect(()=>{toggleClassBasedOnCookie({cookieName:"highcontrast",className:"high-contrast"});toggleClassBasedOnCookie({cookieName:"opendyslexic",className:"open-dyslexic"})},[]);
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom"; // Import Link
+import "../styles.css";
+function getCookie(name: string): string | null {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop()?.split(";").shift() || null;
+  return null;
+}
+interface ToggleClassBasedOnCookieParams {
+  cookieName: string;
+  className: string;
+}
+function toggleClassBasedOnCookie({
+  cookieName,
+  className,
+}: ToggleClassBasedOnCookieParams): void {
+  const cookieValue = getCookie(cookieName) === "true";
+  if (cookieValue) {
+    document.documentElement.classList.add(className);
+  } else {
+    document.documentElement.classList.remove(className);
+  }
+}
+const TourDates: React.FC = () => {
+  useEffect(() => {
+    toggleClassBasedOnCookie({
+      cookieName: "highcontrast",
+      className: "high-contrast",
+    });
+    toggleClassBasedOnCookie({
+      cookieName: "opendyslexic",
+      className: "open-dyslexic",
+    });
+  }, []);
   return (
     <div className="tourdates-container slide-up">
       <meta http-equiv="Cache-Control" content="max-age=31536000" />

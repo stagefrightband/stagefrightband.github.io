@@ -1,22 +1,59 @@
-import React, { useEffect } from 'react';
-import '../styles.css';
-import { Link } from 'react-router-dom';
-const getCookie=(name:string):string|null=>{const value=`; ${document.cookie}`;const parts=value.split(`; ${name}=`);if(parts.length===2)return parts.pop()?.split(";").shift()||null;return null};const toggleClassBasedOnCookie=(cookieName:string,className:string):void=>{const cookieValue=getCookie(cookieName)==="true";if(cookieValue){document.documentElement.classList.add(className)}else{document.documentElement.classList.remove(className)}};const MainPage:React.FC=()=>{useEffect(()=>{toggleClassBasedOnCookie("highcontrast","high-contrast");toggleClassBasedOnCookie("opendyslexic","open-dyslexic");
-  return () => {};
-},[]);
+import React, { useEffect } from "react";
+import "../styles.css";
+import { Link } from "react-router-dom";
+const getCookie = (name: string): string | null => {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop()?.split(";").shift() || null;
+  return null;
+};
+const toggleClassBasedOnCookie = (
+  cookieName: string,
+  className: string
+): void => {
+  const cookieValue = getCookie(cookieName) === "true";
+  if (cookieValue) {
+    document.documentElement.classList.add(className);
+  } else {
+    document.documentElement.classList.remove(className);
+  }
+};
+const MainPage: React.FC = () => {
+  useEffect(() => {
+    toggleClassBasedOnCookie("highcontrast", "high-contrast");
+    toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
+    return () => {};
+  }, []);
   return (
     <div className="mainpage-container zoom-in">
       <meta http-equiv="Cache-Control" content="max-age=31536000" />
       <link rel="preload" as="image" href="/Images/stagefrightmerch.webp" />
-      <video className="background-video" src="/Images/background.mp4" autoPlay loop muted playsInline />
-      <h1 className="mainpage-text">Welcome to the Stage Fright band's Website!</h1>
+      <video
+        className="background-video"
+        src="/Images/background.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+      <h1 className="mainpage-text">
+        Welcome to the Stage Fright band's Website!
+      </h1>
       <div className="products-section">
         <Link to="/store" className="product-link mainpage-text">
-          <img src="/Images/stagefrightmerch.webp" alt="Stage Fright Merch" className="product-image mainpage" />
+          <img
+            src="/Images/stagefrightmerch.webp"
+            alt="Stage Fright Merch"
+            className="product-image mainpage"
+          />
           <p className="mainpage-text">Explore Our Merch</p>
         </Link>
         <Link to="/store" className="product-link mainpage-text">
-          <img src="/Images/ticket.webp" alt="Stage Fright Tickets" className="product-image mainpage" />
+          <img
+            src="/Images/ticket.webp"
+            alt="Stage Fright Tickets"
+            className="product-image mainpage"
+          />
           <p className="mainpage-text">Buy Tickets</p>
         </Link>
       </div>
