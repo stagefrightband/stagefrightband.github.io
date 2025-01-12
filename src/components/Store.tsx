@@ -227,21 +227,6 @@ const handleDecrement = () => {
           </div>
         </div>
       </div>
-      <div className={`overlay ${isDigitalOverlayVisible ? "active" : ""}`}>
-        <button
-          className="close-button"
-          onClick={() => setIsDigitalOverlayVisible(false)}
-        >
-          X
-        </button>
-        <div className="overlay-left">
-          <img
-            className="digital-image"
-            src="/Images/digitalsgate.webp"
-            alt="Digital S-Gate"
-          />
-        </div>
-      </div>
     </div>
   );
 };
