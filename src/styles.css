@@ -55,11 +55,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-.topnav a.product-button {
-  border: none;
-  height: 33vh;
-  cursor: pointer;
-}
+
 .logoimage {
   width: 7.825vh;
   height: 7.825vh;
@@ -142,26 +138,25 @@ body.open-dyslexic {
   justify-content: center;
 }
 .overlay-left img {
-  width: 10rem;
-  height: 10rem;
   object-fit: cover;
 }
 @media (max-width: 768px) {
-  .overlay-left img {
-    width: 10rem;
-    height: 10rem;
-  }
   .overlay.active {
     flex-direction: column;
   }
 }
 @media (min-width: 769px) {
-  .overlay-left img {
-    width: 70vh;
-    height: 70vh;
-  }
   .overlay.active {
     flex-direction: row;
+  }
+  .ticket-image,
+  .album-image {
+    width: 50vh;
+    height: 50vh;
+  }
+  .merch-image {
+    width: 75vh;
+    height: 50vh;
   }
 }
 .overlay-right {
@@ -173,15 +168,14 @@ body.open-dyslexic {
 .overlay-right p { font-size: 1.5rem; }
 .overlay-right button {
   font-size: 1rem;
-  padding: 0.7vh 2.5vh;
+  padding: 0.5vh 2vh;
   border-radius: 2.3474vh;
-  margin-top: 1vh;
   align-self: center;
 }
 .overlay-content {
   border: 0.1565vh solid black;
   border-radius: 1.252vh;
-  padding: 1vh;
+  padding: 3vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -253,30 +247,6 @@ body.open-dyslexic {
 .profile h2 { font-size: 1.5rem; margin-bottom: 0.5vh; }
 .profile p { font-size: 1rem; color: #666; }
 h1 { font-size: 1.5rem; }
-.App { text-align: center; }
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo { animation: App-logo-spin infinite 20s linear; }
-}
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-.App-link { color: #61dafb; }
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-.save { background-color: #4d9900; color: white; border: 0.313vh solid black; }
 .switch {
   position: relative;
   display: inline-block;
@@ -299,17 +269,6 @@ h1 { font-size: 1.5rem; }
   align-items: center;
   gap: 1.5vh;
   margin-bottom: -1.565vh;
-}
-#cart-content ul {
-  list-style: none;
-  border: 0.04925vh solid #ccc;
-  border-radius: 0.198vh;
-  padding: 0.250vh;
-}
-#cart-content ul li {
-  display: flex;
-  align-items: center;
-  gap: 0.5vh;
 }
 .item-name { margin-right: 0.5vh; }
 .tourdiv {
@@ -384,6 +343,8 @@ h1 { font-size: 1.5rem; }
   font-size: 5vh;
   cursor: pointer;
   z-index: 3000;
+  width: 7vh;
+  height: 7vh;
 }
 .quantity-container {
   display: flex;
@@ -566,6 +527,20 @@ h1 { font-size: 1.5rem; }
   .hamburger-links { display: none; }
   .products-container { flex-direction: row; }
 }
+/* Add specific item image classes */
+.merch-item-image {
+  height: 7.825vh;
+  width: 10vh;
+  padding: 1vh;
+}
+
+.ticket-item-image,
+.music-item-image,
+.album-item-image {
+  height: 10vh;
+  width: 10vh;
+  padding: 1vh;
+}
 .cart-item {
   display: flex;
   align-items: center;
@@ -575,7 +550,6 @@ h1 { font-size: 1.5rem; }
   border-radius: 0.7825vh;
   padding: 0.07825vh;
 }
-.cart-item-image { width: 7.825vh; height: 7.825vh; padding: 1vh; }
 .cart-item-details { display: flex; flex-direction: column; }
 .cart-item-details .item-venue {
   font-size: 1rem;
@@ -599,7 +573,7 @@ h1 { font-size: 1.5rem; }
   margin-top: 0.5vh;
 }
 .quantity-controls input {
-  width: 2vh;
+  width: 4vh;
   text-align: center;
   border-radius: 0;
 }
@@ -615,7 +589,7 @@ h1 { font-size: 1.5rem; }
 .decrease-button:hover,
 .increase-button:hover { background-color: #ccc; }
 .delete-button {
-  background-color: red;
+  background-color: #970000;
   color: white;
   border: none;
   padding: 0.5vh 1vh;
@@ -773,7 +747,7 @@ h1 { font-size: 1.5rem; }
 }
 @media (max-width: 768px) {
   .topnav { display: none; }
-  .hamburger-button { display: block; }
+  .hamburger-button { display: block; width: 8vh; height: 8vh;}
 }
 @media (min-width: 769px) { .hamburger-nav { display: none; } }
 .background-video {
@@ -954,7 +928,7 @@ h1 { font-size: 1.5rem; }
   transform: scale(1.05);
 }
 .dropdown {
-  width: 100%;
+  width: max-content;
   padding: 0.5vh 1vh;
   border: 0.1565vh solid #ccc;
   border-radius: 0.7825vh;
@@ -966,7 +940,6 @@ h1 { font-size: 1.5rem; }
   box-shadow: 0 0 5px rgba(121, 85, 72, 0.5);
 }
 .quantity-input {
-  width: 50px;
   padding: 0.5vh;
   border: 0.1565vh solid #ccc;
   border-radius: 0.3925vh;
@@ -1006,4 +979,20 @@ h1 { font-size: 1.5rem; }
 }
 .open-dyslexic {
   font-family: "OpenDyslexic", sans-serif !important;
+}
+.total-price {
+  position: static;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  margin-top: 2vh;
+  background-color: #f8f8f8;
+  padding: 1vh 2vh;
+  border: 1px solid #ccc;
+  border-radius: 0.7825vh;
+  box-shadow: 0 0.313vh 0.625vh rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+}
+.shoppingcart-container {
+  padding-bottom: 80px;
 }

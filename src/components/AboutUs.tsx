@@ -3,6 +3,7 @@ import '../styles.css';
 const getCookie=(name:string)=>document.cookie.split('; ').find(c=>c.startsWith(`${name}=`))?.split('=')[1]||null;const toggleClassBasedOnCookie=(cookieName:string,className:string)=>{document.documentElement.classList[getCookie(cookieName)==="true"?'add':'remove'](className)};const AboutUs:React.FC=()=>{useEffect(()=>{toggleClassBasedOnCookie("highcontrast","high-contrast");toggleClassBasedOnCookie("opendyslexic","open-dyslexic")},[]);
   return (
     <div className="aboutus-container fade-in">
+      <meta http-equiv="Cache-Control" content="max-age=31536000" />
       <div className="about-section">
         <h1>About the Band</h1>
         <p>

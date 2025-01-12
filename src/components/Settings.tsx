@@ -1,8 +1,9 @@
 import React, { useLayoutEffect, useEffect, useState } from 'react';
 import '../styles.css'; 
-const getCookie=(name:string):string|null=>{const value=`; ${document.cookie}`;const parts=value.split(`; ${name}=`);if(parts.length===2){const part=parts.pop();if(part)return decodeURIComponent(part.split(";").shift()||"");}return null};const setCookie=(name:string,value:string,days=365):void=>{const expires=new Date(Date.now()+days*864e5).toUTCString();document.cookie=`${name}=${value}; expires=${expires}; path=/; SameSite=Lax`};const toggleClassBasedOnCookie=(cookieName:string,className:string):void=>{const cookieValue=getCookie(cookieName)==='true';if(cookieValue){document.body.classList.add(className)}else{document.body.classList.remove(className)}};const Settings:React.FC=()=>{const[highContrast,setHighContrast]=useState(getCookie('highcontrast')==='true');const[openDyslexic,setOpenDyslexic]=useState(getCookie('opendyslexic')==='true');const[fontSize,setFontSize]=useState<number>(getCookie('fontsize')?parseInt(getCookie('fontsize')!,10):100);useLayoutEffect(()=>{toggleClassBasedOnCookie('highcontrast','high-contrast');toggleClassBasedOnCookie('opendyslexic','open-dyslexic');document.documentElement.style.fontSize=`${fontSize}%`},[]);useEffect(()=>{document.documentElement.style.fontSize=`${fontSize}%`},[fontSize]);useEffect(()=>{setCookie('highcontrast',highContrast.toString());toggleClassBasedOnCookie('highcontrast','high-contrast')},[highContrast]);useEffect(()=>{setCookie('opendyslexic',openDyslexic.toString());toggleClassBasedOnCookie('opendyslexic','open-dyslexic')},[openDyslexic]);const handleFontSizeChange=(value:number)=>{setFontSize(value);setCookie('fontsize',value.toString());document.documentElement.style.fontSize=`${value}%`};
+const getCookie=(name:string):string|null=>{const value=`; ${document.cookie}`;const parts=value.split(`; ${name}=`);if(parts.length===2){const part=parts.pop();if(part)return decodeURIComponent(part.split(";").shift()||"");}return null};const setCookie=(name:string,value:string,days=365):void=>{const expires=new Date(Date.now()+days*864e5).toUTCString();document.cookie=`${name}=${value}; expires=${expires}; path=/; SameSite=Lax`};const toggleClassBasedOnCookie=(cookieName:string,className:string):void=>{const cookieValue=getCookie(cookieName)==='true';if(cookieValue){document.body.classList.add(className)}else{document.body.classList.remove(className)}};const Settings:React.FC=()=>{const[highContrast,setHighContrast]=useState(getCookie('highcontrast')==='true');const[openDyslexic,setOpenDyslexic]=useState(getCookie('opendyslexic')==='true');const[fontSize,setFontSize]=useState<number>(getCookie('fontsize')?parseInt(getCookie('fontsize')!,10):100);useLayoutEffect(()=>{toggleClassBasedOnCookie('highcontrast','high-contrast');toggleClassBasedOnCookie('opendyslexic','open-dyslexic');document.documentElement.style.fontSize=`${fontSize}%`},[highContrast, openDyslexic]);useEffect(()=>{document.documentElement.style.fontSize=`${fontSize}%`},[fontSize]);useEffect(()=>{setCookie('highcontrast',highContrast.toString());toggleClassBasedOnCookie('highcontrast','high-contrast')},[highContrast]);useEffect(()=>{setCookie('opendyslexic',openDyslexic.toString());toggleClassBasedOnCookie('opendyslexic','open-dyslexic')},[openDyslexic]);const handleFontSizeChange=(value:number)=>{setFontSize(value);setCookie('fontsize',value.toString());document.documentElement.style.fontSize=`${value}%`};
   return (
     <div className="settings-container fade-in">
+      <meta http-equiv="Cache-Control" content="max-age=31536000" />
       <h1 style={{ textAlign: "center", fontSize: "2rem" }}>Settings</h1>
       <div className="setting high-contrast slide-in">
         <div className="setting-header">
@@ -19,7 +20,7 @@ const getCookie=(name:string):string|null=>{const value=`; ${document.cookie}`;c
           </label>
         </div>
         <p>
-          Makes text easier to read by increasing the difference between the text and its background color. Useful for people with low vision or color blindness.
+          Makes text easier to read by maximizing the difference between colors.
         </p>
       </div>
       <div className="setting open-dyslexic open-dyslexic-font slide-in">
@@ -42,7 +43,7 @@ const getCookie=(name:string):string|null=>{const value=`; ${document.cookie}`;c
         <div className="setting-header">
           <strong>Font Size</strong>
         </div>
-        <p>Changes how large or small text is throughout the website.</p>
+        <p>Change how large or small text is throughout the website.</p>
         <select
           value={fontSize}
           onChange={(e) => handleFontSizeChange(parseInt(e.target.value, 10))}

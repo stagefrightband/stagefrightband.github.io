@@ -1,8 +1,26 @@
 import React, { useEffect, useState } from "react";
 import "../styles.css";
 interface CartItem{name:string;quantity:number;venue? :string;size? :string;type? :string}const ShoppingCart:React.FC=()=>{const[cartItems,setCartItems]=useState<CartItem[]>([]);const allowedItems=["Merch","Music","Tickets","S-Gate","CD: S-Gate","Digital S-Gate"];useEffect(()=>{const cartItemsStorage=localStorage.getItem("cartItems");if(cartItemsStorage&&cartItemsStorage!=="null"){const parsedCart:CartItem[]=JSON.parse(cartItemsStorage);setCartItems(parsedCart.filter(item=>allowedItems.includes(item.name)))}},[]);const handleDecrease=(index:number)=>{const item=cartItems[index];if(item.quantity>1){const updatedQuantity=item.quantity-1;const updatedCart=[...cartItems];updatedCart[index].quantity=updatedQuantity;setCartItems(updatedCart);localStorage.setItem("cartItems",JSON.stringify(updatedCart))}};const handleIncrease=(index:number)=>{const item=cartItems[index];const updatedQuantity=item.quantity+1;const updatedCart=[...cartItems];updatedCart[index].quantity=updatedQuantity;setCartItems(updatedCart);localStorage.setItem("cartItems",JSON.stringify(updatedCart))};const handleDelete=(index:number)=>{const updatedCart=cartItems.filter((_,i)=>i!==index);setCartItems(updatedCart);localStorage.setItem("cartItems",JSON.stringify(updatedCart))};
+
+  // Define unit prices for each allowed item
+  const unitPrices: { [key: string]: number } = {
+    Merch: 20,
+    Music: 15,
+    Tickets: 50,
+    "S-Gate": 25,
+    "CD: S-Gate": 10,
+    "Digital S-Gate": 5,
+  };
+
+  // Calculate total price
+  const totalPrice = cartItems.reduce((total, item) => {
+    const price = unitPrices[item.name] || 0;
+    return total + price * item.quantity;
+  }, 0);
+
   return (
     <div className="shoppingcart-container fade-in">
+      <meta http-equiv="Cache-Control" content="max-age=31536000" />
       <h1 style={{ textAlign: "center", fontSize: "2rem" }}>Shopping Cart</h1>
       <div id="cart-content">
         {cartItems.length === 0 ? (
@@ -26,7 +44,12 @@ interface CartItem{name:string;quantity:number;venue? :string;size? :string;type
                       : ""
                   }
                   alt={`${item.name} Image`}
-                  className="cart-item-image"
+                  className={
+                    item.name.toLowerCase() === "merch" ? "merch-item-image" :
+                    item.name.toLowerCase() === "tickets" ? "ticket-item-image" :
+                    item.name.toLowerCase() === "s-gate" ? "album-item-image" :
+                    "cart-item-image"
+                  }
                 />
                 <div className="cart-item-details">
                   <span className="item-name">{item.name}</span>
@@ -36,7 +59,6 @@ interface CartItem{name:string;quantity:number;venue? :string;size? :string;type
                   {item.type && (
                     <span className="item-type">Type: {item.type}</span>
                   )}{" "}
-                  {/* Display type as "mp3" or "CD" */}
                   {item.size && (
                     <span className="item-size">Size: {item.size}</span>
                   )}
@@ -54,6 +76,7 @@ interface CartItem{name:string;quantity:number;venue? :string;size? :string;type
                       name={`quantity-${index}`}
                       value={item.quantity}
                       readOnly
+                      aria-label={`Quantity for ${item.name}`}
                     />
                     <button
                       className="increase-button"
@@ -74,8 +97,10 @@ interface CartItem{name:string;quantity:number;venue? :string;size? :string;type
           </div>
         )}
       </div>
+      <div className="total-price">
+        Total Price: ${totalPrice.toFixed(2)}
+      </div>
     </div>
   );
 };
-
 export default ShoppingCart;
