@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import "../styles.css";
 interface ToggleClassBasedOnCookieParams{cookieName:string;className:string}function toggleClassBasedOnCookie({cookieName,className}:ToggleClassBasedOnCookieParams):void{const cookieValue=getCookie(cookieName)==="true";if(cookieValue){document.documentElement.classList.add(className)}else{document.documentElement.classList.remove(className)}}const Store:React.FC=()=>{const[isOverlayVisible,setIsOverlayVisible]=useState(false);const[isTicketOverlayVisible,setIsTicketOverlayVisible]=useState(false);const[isAlbumOverlayVisible,setIsAlbumOverlayVisible]=useState(false);const[isDigitalOverlayVisible,setIsDigitalOverlayVisible]=useState(false);const[quantity,setQuantity]=useState(1);const[selectedVenue,setSelectedVenue]=useState<string>("House of Blues, Houston");const[size,setSize]=useState<string>("M");const[selectedType,setSelectedType]=useState<string>("Digital Version (.mp3)");useEffect(()=>{toggleClassBasedOnCookie({cookieName:"highcontrast",className:"high-contrast"});toggleClassBasedOnCookie({cookieName:"opendyslexic",className:"open-dyslexic"});const handleKeyDown=(e:KeyboardEvent)=>{if(e.key==="Escape"){setIsOverlayVisible(false);setIsTicketOverlayVisible(false);setIsAlbumOverlayVisible(false);setIsDigitalOverlayVisible(false)}};document.addEventListener("keydown",handleKeyDown);return()=>{document.removeEventListener("keydown",handleKeyDown)}},[]);const handleMerchButtonClick=()=>{setIsOverlayVisible(true)};const handleTicketButtonClick=()=>{setIsTicketOverlayVisible(true)};const handleAlbumButtonClick=()=>{setIsAlbumOverlayVisible(true)};const handleDigitalButtonClick=()=>{setIsDigitalOverlayVisible(true)};const handleQuantityChange=(e:React.ChangeEvent<HTMLInputElement>)=>{const value=parseInt(e.target.value,10);setQuantity(value>=1?value:1)};const handleVenueChange=(e:React.ChangeEvent<HTMLSelectElement>)=>{setSelectedVenue(e.target.value)};const handleTypeChange=(e:React.ChangeEvent<HTMLSelectElement>)=>{setSelectedType(e.target.value)};interface CartItem{name:string;quantity:number;venue? :string;size? :string;type? :string}const updateCartItems=(itemName:string,quantityToAdd:number,venue? :string,size? :string,type? :string)=>{const currentCart=localStorage.getItem("cartItems");let cart:CartItem[]=currentCart?JSON.parse(currentCart):[];const existingItemIndex=cart.findIndex((item)=>item.name===itemName&&item.venue===venue&&item.size===size&&item.type===type);if(existingItemIndex!==-1){cart[existingItemIndex].quantity+=quantityToAdd}else{cart.push({name:itemName,quantity:quantityToAdd,venue,size,type})}localStorage.setItem("cartItems",JSON.stringify(cart))};const handleSubmitMerch=()=>{updateCartItems("Merch",quantity,undefined,size);setIsOverlayVisible(false)};const handleSubmitTickets=()=>{updateCartItems("Tickets",quantity,selectedVenue);setIsTicketOverlayVisible(false)};const handleSubmitAlbum=()=>{updateCartItems("S-Gate",quantity,undefined,undefined,selectedType);setIsAlbumOverlayVisible(false)};const handleSubmitDigital=()=>{updateCartItems("Digital S-Gate",quantity,undefined,undefined,"mp3");setIsDigitalOverlayVisible(false)};
   return (
-    <div>
-      <h1 style={{ textAlign: "center" }}>Store</h1>
+    <div className="store-container fade-in">
+      <h1 style={{ textAlign: "center", fontSize: "3rem" }}>Store</h1>
       <div className="products-container">
-        <div className="product-tile">
+        <div className="product-tile fade-in">
           <div className="product-image">
             <button
               className="product-button merch-button"
@@ -20,7 +20,7 @@ interface ToggleClassBasedOnCookieParams{cookieName:string;className:string}func
             <p>Stage Fright T-Shirt</p>
           </div>
         </div>
-        <div className="product-tile">
+        <div className="product-tile fade-in">
           <div className="product-image">
             <button
               className="product-button ticket-button"
@@ -35,7 +35,7 @@ interface ToggleClassBasedOnCookieParams{cookieName:string;className:string}func
             <p>Stage Fright Tickets</p>
           </div>
         </div>
-        <div className="product-tile">
+        <div className="product-tile fade-in">
           <div className="product-image">
             <button
               className="product-button album-button"
@@ -60,14 +60,22 @@ interface ToggleClassBasedOnCookieParams{cookieName:string;className:string}func
           X
         </button>
         <div className="overlay-left">
-          <img src="/Images/stagefrightmerch.webp" alt="Stage Fright Merch" />
+          <img
+            className="merch-image"
+            src="/Images/stagefrightmerch.webp"
+            alt="Stage Fright Merch"
+          />
         </div>
         <div className="overlay-right">
           <div className="overlay-content">
             <p>Stage Fright Merch</p>
             <div className="size-container">
               <span>Size:</span>
-              <select value={size} onChange={(e) => setSize(e.target.value)}>
+              <select
+                className="dropdown"
+                value={size}
+                onChange={(e) => setSize(e.target.value)}
+              >
                 <option value="S">Small</option>
                 <option value="M">Medium</option>
                 <option value="L">Large</option>
@@ -78,6 +86,7 @@ interface ToggleClassBasedOnCookieParams{cookieName:string;className:string}func
               <span>Quantity:</span>
               <input
                 type="number"
+                className="quantity-input"
                 min="1"
                 value={quantity}
                 onChange={handleQuantityChange}
@@ -98,14 +107,22 @@ interface ToggleClassBasedOnCookieParams{cookieName:string;className:string}func
           X
         </button>
         <div className="overlay-left">
-          <img src="/Images/ticket.webp" alt="Stage Fright Tickets" />
+          <img
+            className="ticket-image"
+            src="/Images/ticket.webp"
+            alt="Stage Fright Tickets"
+          />
         </div>
         <div className="overlay-right">
           <div className="overlay-content">
             <p>Stage Fright Tickets</p>
             <div className="venue-container">
               <span>Venue:</span>
-              <select value={selectedVenue} onChange={handleVenueChange}>
+              <select
+                className="dropdown"
+                value={selectedVenue}
+                onChange={handleVenueChange}
+              >
                 <option value="House of Blues, Houston">
                   House of Blues Houston
                 </option>
@@ -123,6 +140,7 @@ interface ToggleClassBasedOnCookieParams{cookieName:string;className:string}func
               <span>Quantity:</span>
               <input
                 type="number"
+                className="quantity-input"
                 min="1"
                 value={quantity}
                 onChange={handleQuantityChange}
@@ -144,6 +162,7 @@ interface ToggleClassBasedOnCookieParams{cookieName:string;className:string}func
         </button>
         <div className="overlay-left">
           <img
+            className="album-image"
             src={
               selectedType === "CD"
                 ? "/Images/cdimage.webp"
@@ -157,7 +176,11 @@ interface ToggleClassBasedOnCookieParams{cookieName:string;className:string}func
             <p>Album: S-Gate</p> {/* Renamed text */}
             <div className="type-container">
               <span>Type:</span>
-              <select value={selectedType} onChange={handleTypeChange}>
+              <select
+                className="dropdown"
+                value={selectedType}
+                onChange={handleTypeChange}
+              >
                 <option value="mp3">mp3</option>
                 <option value="CD">CD</option>
               </select>
@@ -166,6 +189,7 @@ interface ToggleClassBasedOnCookieParams{cookieName:string;className:string}func
               <span>Quantity:</span>
               <input
                 type="number"
+                className="quantity-input"
                 min="1"
                 value={quantity}
                 onChange={handleQuantityChange}
@@ -186,7 +210,11 @@ interface ToggleClassBasedOnCookieParams{cookieName:string;className:string}func
           X
         </button>
         <div className="overlay-left">
-          <img src="/Images/digitalsgate.webp" alt="Digital S-Gate" />
+          <img
+            className="digital-image"
+            src="/Images/digitalsgate.webp"
+            alt="Digital S-Gate"
+          />
         </div>
         <div className="overlay-right">
           <div className="overlay-content">
@@ -195,6 +223,7 @@ interface ToggleClassBasedOnCookieParams{cookieName:string;className:string}func
               <span>Quantity:</span>
               <input
                 type="number"
+                className="quantity-input"
                 min="1"
                 value={quantity}
                 onChange={handleQuantityChange}

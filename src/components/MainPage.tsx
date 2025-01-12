@@ -3,7 +3,7 @@ import '../styles.css';
 import { Link } from 'react-router-dom';
 const getCookie=(name:string):string|null=>{const value=`; ${document.cookie}`;const parts=value.split(`; ${name}=`);if(parts.length===2)return parts.pop()?.split(";").shift()||null;return null};const toggleClassBasedOnCookie=(cookieName:string,className:string):void=>{const cookieValue=getCookie(cookieName)==="true";if(cookieValue){document.documentElement.classList.add(className)}else{document.documentElement.classList.remove(className)}};const MainPage:React.FC=()=>{useEffect(()=>{toggleClassBasedOnCookie("highcontrast","high-contrast");toggleClassBasedOnCookie("opendyslexic","open-dyslexic")},[]);
   return (
-    <div className="mainpage-container">
+    <div className="mainpage-container zoom-in">
       <video className="background-video" src="/Images/background.mp4" autoPlay loop muted playsInline />
       <h1 className="mainpage-text">Welcome to the Stage Fright band's Website!</h1>
       <div className="products-section">
@@ -27,6 +27,7 @@ const getCookie=(name:string):string|null=>{const value=`; ${document.cookie}`;c
           <h2>Get in touch with us!</h2>
         </Link>
       </div>
+      <button className="main-button bounce">Click Me</button>
     </div>
   );
 };

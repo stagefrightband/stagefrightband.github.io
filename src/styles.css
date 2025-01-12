@@ -148,12 +148,18 @@ body.open-dyslexic {
     width: 10rem;
     height: 10rem;
   }
+  .overlay.active {
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 769px) {
   .overlay-left img {
     width: 70vh;
     height: 70vh;
+  }
+  .overlay.active {
+    flex-direction: row;
   }
 }
 .overlay-right {
@@ -481,7 +487,7 @@ h1 { font-size: 1.5rem; }
 }
 .submit-button:hover { background-color: #ff5722; }
 .sign-up-button {
-  background-color: #2196F3; /* Blue background */
+  background-color: #2196F3;
   color: white;
   padding: 0.6vh 1.5vh;
   border: none;
@@ -492,12 +498,12 @@ h1 { font-size: 1.5rem; }
 }
 
 .sign-up-button:hover {
-  background-color: #1976D2; /* Darker blue on hover */
+  background-color: #1976D2;
 }
 
 .back-button {
-  margin-top: 1vh; /* Existing spacing */
-  background-color: #555; /* Gray background */
+  margin-top: 1vh;
+  background-color: #555;
   color: white;
   padding: 0.6vh 1.5vh;
   border: none;
@@ -508,7 +514,7 @@ h1 { font-size: 1.5rem; }
 }
 
 .back-button:hover {
-  background-color: #333; /* Darker gray on hover */
+  background-color: #333;
 }
 @media (max-width: 768px) {
   .topnav { display: none; }
@@ -851,26 +857,26 @@ h1 { font-size: 1.5rem; }
 .cd-button {
   width: 33vh;
   height: 33vh;
-  background-color: #ff9800; /* Example color for CD: S-Gate */
+  background-color: #ff9800;
 }
 
 .digital-button {
   width: 33vh;
   height: 33vh;
-  background-color: #4caf50; /* Example color */
+  background-color: #4caf50;
 }
 
 .type-container {
   display: flex;
   align-items: center;
-  gap: 1vh; /* Adds spacing between "Type:" label and dropdown */
+  gap: 1vh;
 }
 
 .auth-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 11.738vh); /* Full height minus navbar */
+  height: calc(100vh - 11.738vh);
   position: relative;
 }
 
@@ -904,7 +910,7 @@ h1 { font-size: 1.5rem; }
 
 .error-overlay {
   position: fixed;
-  top: 11.738vh; /* Below the navbar */
+  top: 11.738vh;
   left: 0;
   width: 100%;
   height: calc(100% - 11.738vh);
@@ -916,7 +922,7 @@ h1 { font-size: 1.5rem; }
 }
 
 .error-popup {
-  background-color: #ffffff; /* White background */
+  background-color: #ffffff;
   padding: 2vh;
   border-radius: 1.252vh;
   box-shadow: 0 0.626vh 1.252vh rgba(0, 0, 0, 0.2);
@@ -926,7 +932,7 @@ h1 { font-size: 1.5rem; }
 
 .error-popup h2 {
   margin-bottom: 1vh;
-  color: #ff0000; /* Optional: Red color for error */
+  color: #ff0000;
 }
 
 .error-popup p {
@@ -950,8 +956,8 @@ h1 { font-size: 1.5rem; }
 }
 
 .back-button {
-  margin-top: 1vh; /* Adds spacing above the button */
-  background-color: #555; /* Gray background */
+  margin-top: 1vh;
+  background-color: #555;
   color: white;
   padding: 0.6vh 1.5vh;
   border: none;
@@ -960,7 +966,79 @@ h1 { font-size: 1.5rem; }
   font-size: 1rem;
   transition: background-color 0.3s;
 }
-
 .back-button:hover {
-  background-color: #333; /* Darker gray on hover */
+  background-color: #333;
+}
+.overlay-ok-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5vh 1.5vh;
+  border: none;
+  border-radius: 0.5vh;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.overlay-ok-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+.dropdown {
+  width: 100%;
+  padding: 0.5vh 1vh;
+  border: 0.1565vh solid #ccc;
+  border-radius: 0.7825vh;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.dropdown:focus {
+  border-color: #777;
+  box-shadow: 0 0 5px rgba(121, 85, 72, 0.5);
+}
+.quantity-input {
+  width: 50px;
+  padding: 0.5vh;
+  border: 0.1565vh solid #ccc;
+  border-radius: 0.3925vh;
+  text-align: center;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.quantity-input:focus {
+  border-color: #777;
+  box-shadow: 0 0 5px rgba(121, 85, 72, 0.5);
+}
+.centered-text {
+  text-align: center;
+}
+.ok-button {
+  height: 5vh;
+  width: 7vh;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 0.5vh;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+.ok-button:hover {
+  background-color: #45a049;
+}
+.merch-image {
+  width: 45vh;
+  height: 33vh;
+}
+.ticket-image,
+.album-image,
+.digital-image {
+  width: 33vh;
+  height: 33vh;
+}
+.tour-dates-heading {
+  font-size: 3rem;
+  text-align: center;
+}
+.open-dyslexic {
+  font-family: "OpenDyslexic", sans-serif !important;
 }
