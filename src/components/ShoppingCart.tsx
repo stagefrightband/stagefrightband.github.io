@@ -9,6 +9,8 @@ interface CartItem {
 }
 const ShoppingCart: React.FC = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [isCheckoutOverlayVisible, setIsCheckoutOverlayVisible] =
+    useState(false);
   const allowedItems = [
     "Merch",
     "Music",
@@ -52,16 +54,27 @@ const ShoppingCart: React.FC = () => {
   const unitPrices: { [key: string]: number } = {
     Merch: 20,
     Music: 15,
-    Tickets: 50,
+    Tickets: 40,
     "S-Gate": 25,
-    "CD: S-Gate": 10,
+    "CD: S-Gate": 15,
     "Digital S-Gate": 5,
   };
 
   const totalPrice = cartItems.reduce((total, item) => {
-    const price = unitPrices[item.name] || 0;
+    const price =
+      item.name.toLowerCase() === "s-gate"
+        ? item.type === "CD"
+          ? unitPrices["CD: S-Gate"]
+          : unitPrices["Digital S-Gate"]
+        : unitPrices[item.name] || 0;
     return total + price * item.quantity;
   }, 0);
+
+  const handleCheckout = () => {
+    localStorage.removeItem("cartItems");
+    setCartItems([]);
+    setIsCheckoutOverlayVisible(true);
+  };
 
   return (
     <div className="shoppingcart-container fade-in">
@@ -80,12 +93,12 @@ const ShoppingCart: React.FC = () => {
                       ? "/Images/stagefrightmerch.webp"
                       : item.name.toLowerCase() === "tickets"
                       ? "/Images/ticket.webp"
-                      : item.name.toLowerCase() === "s-gate"
+                      : item.name.toLowerCase() === "s-gate" &&
+                        item.type === "Digital Version (.mp3)"
                       ? "/Images/albumcover.webp"
-                      : item.name.toLowerCase() === "digital s-gate"
-                      ? "/Images/digitalsgate.webp"
-                      : item.name.toLowerCase() === "cd: s-gate"
-                      ? "/Images/cdgatesgate.webp"
+                      : item.name.toLowerCase() === "s-gate" &&
+                        item.type === "CD"
+                      ? "/Images/cdimage.webp"
                       : ""
                   }
                   alt={`${item.name} Image`}
@@ -94,8 +107,12 @@ const ShoppingCart: React.FC = () => {
                       ? "merch-item-image"
                       : item.name.toLowerCase() === "tickets"
                       ? "ticket-item-image"
-                      : item.name.toLowerCase() === "s-gate"
+                      : item.name.toLowerCase() === "s-gate" &&
+                        item.type === "Digital Version (.mp3)"
                       ? "album-item-image"
+                      : item.name.toLowerCase() === "s-gate" &&
+                        item.type === "CD"
+                      ? "cd-item-image"
                       : "cart-item-image"
                   }
                 />
@@ -110,6 +127,23 @@ const ShoppingCart: React.FC = () => {
                   {item.size && (
                     <span className="item-size">Size: {item.size}</span>
                   )}
+                  <span className="item-price">
+                    Price: $
+                    {item.name.toLowerCase() === "s-gate"
+                      ? item.type === "CD"
+                        ? unitPrices["CD: S-Gate"]
+                        : unitPrices["Digital S-Gate"]
+                      : unitPrices[item.name]}
+                    /item ($
+                    {(
+                      (item.name.toLowerCase() === "s-gate"
+                        ? item.type === "CD"
+                          ? unitPrices["CD: S-Gate"]
+                          : unitPrices["Digital S-Gate"]
+                        : unitPrices[item.name]) * item.quantity
+                    ).toFixed(2)}{" "}
+                    total)
+                  </span>
                   <div className="quantity-controls">
                     <button
                       className="decrease-button"
@@ -145,7 +179,22 @@ const ShoppingCart: React.FC = () => {
           </div>
         )}
       </div>
-      <div className="total-price">Total Price: ${totalPrice.toFixed(2)}</div>
+      <div className="total-price">
+        <span>Total Price: ${totalPrice.toFixed(2)}</span>
+        <button className="checkout-button" onClick={handleCheckout}>
+          Proceed to Checkout
+        </button>
+      </div>
+      {isCheckoutOverlayVisible && (
+        <div className="checkout-overlay">
+          <h2>Successfully Purchased!</h2>
+          <p>
+            Your items were successfully purchased. (Note: This is a demo. No
+            items were bought and no money was spent.)
+          </p>
+          <button onClick={() => setIsCheckoutOverlayVisible(false)}>Ok</button>
+        </div>
+      )}
     </div>
   );
 };

@@ -9,11 +9,13 @@ const HamburgerMenu: React.FC = () => {
     <nav className="hamburger-nav">
       <meta http-equiv="Cache-Control" content="max-age=31536000" />
       <button
-        className="hamburger-button bounce"
+        className={`hamburger-button ${isOpen ? "open" : ""}`}
         onClick={toggleMenu}
         aria-label="Toggle navigation menu"
       >
-        &#9776;
+        <span className="bar bar1"></span>
+        <span className="bar bar2"></span>
+        <span className="bar bar3"></span>
       </button>
       <ul className={`hamburger-links fade-in ${isOpen ? "open" : ""}`}>
         <li>

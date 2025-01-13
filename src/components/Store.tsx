@@ -28,6 +28,13 @@ const Store: React.FC = () => {
   const [selectedType, setSelectedType] = useState<string>(
     "Digital Version (.mp3)"
   );
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const unitPrices = {
+    Merch: 20,
+    Tickets: 50,
+    "S-Gate": 15,
+    "Digital S-Gate": 5,
+  };
   useEffect(() => {
     toggleClassBasedOnCookie({
       cookieName: "highcontrast",
@@ -46,6 +53,8 @@ const Store: React.FC = () => {
       }
     };
     document.addEventListener("keydown", handleKeyDown);
+    const currentCart = localStorage.getItem("cartItems");
+    setCartItems(currentCart ? JSON.parse(currentCart) : []);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
@@ -148,7 +157,7 @@ const Store: React.FC = () => {
             ></button>
           </div>
           <div className="product-info">
-            <p>Stage Fright T-Shirt</p>
+            <p>Stage Fright T-Shirt: $20/item</p>
           </div>
         </div>
         <div className="product-tile fade-in">
@@ -163,7 +172,7 @@ const Store: React.FC = () => {
             ></button>
           </div>
           <div className="product-info">
-            <p>Stage Fright Tickets</p>
+            <p>Stage Fright Tickets: $40/item</p>
           </div>
         </div>
         <div className="product-tile fade-in">
@@ -174,11 +183,11 @@ const Store: React.FC = () => {
                 backgroundImage: "url('/Images/albumcover.webp')",
               }}
               onClick={handleAlbumButtonClick}
-              aria-label="Album: S-Gate"
+              aria-label="S-Gate Album"
             ></button>
           </div>
           <div className="product-info">
-            <p>Album: S-Gate</p>
+            <p>S-Gate Album: $15/item CD, $5/item .mp3</p>
           </div>
         </div>
       </div>
@@ -229,6 +238,10 @@ const Store: React.FC = () => {
                 <button onClick={handleIncrement}>+</button>
               </div>
             </div>
+            <p className="item-price">
+              Price: ${unitPrices["Merch"]}/item ($
+              {unitPrices["Merch"] * quantity} total)
+            </p>
             <button className="submit-button" onClick={handleSubmitMerch}>
               Add to Cart
             </button>
@@ -289,6 +302,10 @@ const Store: React.FC = () => {
                 <button onClick={handleIncrement}>+</button>
               </div>
             </div>
+            <p className="item-price">
+              Price: ${unitPrices["Tickets"]}/item ($
+              {unitPrices["Tickets"] * quantity} total)
+            </p>
             <button className="submit-button" onClick={handleSubmitTickets}>
               Add to Cart
             </button>
@@ -310,12 +327,12 @@ const Store: React.FC = () => {
                 ? "/Images/cdimage.webp"
                 : "/Images/albumcover.webp"
             }
-            alt="Album: S-Gate"
+            alt="S-Gate Album"
           />
         </div>
         <div className="overlay-right">
           <div className="overlay-content">
-            <p>Album: S-Gate</p>
+            <p>S-Gate Album</p>
             <div className="type-container">
               <span>Type:</span>
               <select
@@ -344,6 +361,17 @@ const Store: React.FC = () => {
                 <button onClick={handleIncrement}>+</button>
               </div>
             </div>
+            <p className="item-price">
+              {`Price: $${
+                selectedType === "mp3"
+                  ? unitPrices["S-Gate"]
+                  : unitPrices["Digital S-Gate"]
+              }/item ($${
+                (selectedType === "mp3"
+                  ? unitPrices["S-Gate"]
+                  : unitPrices["Digital S-Gate"]) * quantity
+              } total)`}
+            </p>
             <button className="submit-button" onClick={handleSubmitAlbum}>
               Add to Cart
             </button>
