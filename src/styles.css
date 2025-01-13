@@ -805,6 +805,10 @@ h1 {
   position: relative;
   z-index: 1;
   border-radius: 1.565vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 .footer-content {
   display: flex;
@@ -828,7 +832,7 @@ h1 {
   display: none; /* Restore original display property */
   background: none;
   border: none;
-  font-size: 25px;
+  font-size: 30px;
   color: #000;
   cursor: pointer;
   background-color: black;
@@ -878,7 +882,7 @@ h1 {
     display: block;
     width: 8vh;
     height: 8vh;
-    font-size: 25px;
+    font-size: 30px;
   }
 }
 @media (min-width: 769px) {
@@ -1122,7 +1126,7 @@ h1 {
   bottom: auto;
   left: auto;
   transform: none;
-  margin-top: 2vh;
+  margin-top: 0;
   background-color: #f8f8f8;
   padding: 1vh 2vh;
   border: 1px solid #ccc;
@@ -1132,6 +1136,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: flex-start;
 }
 
 .total-price.empty-cart {
@@ -1224,4 +1229,7 @@ checkout-overlay p {
 }
 .total-price span {
   padding: 2vh 0;
+}
+.footer-special-text {
+  font-family: Arial, sans-serif;
 }
