@@ -238,6 +238,8 @@ const Store: React.FC = () => {
                 value={size}
                 onChange={(e) => setSize(e.target.value)}
                 aria-label="Select size"
+                id="merch-size"
+                name="merchSize"
               >
                 <option value="S">Small</option>
                 <option value="M">Medium</option>
@@ -257,6 +259,8 @@ const Store: React.FC = () => {
                   value={quantity}
                   onChange={handleQuantityChange}
                   aria-label="Quantity for Merch"
+                  id="merch-quantity"
+                  name="merchQuantity"
                 />
                 <button onClick={handleIncrement}>+</button>
               </div>
@@ -295,6 +299,8 @@ const Store: React.FC = () => {
                 value={selectedVenue}
                 onChange={handleVenueChange}
                 aria-label="Select venue"
+                id="tickets-venue"
+                name="ticketsVenue"
               >
                 <option value="House of Blues, Houston">
                   House of Blues, Houston
@@ -321,6 +327,8 @@ const Store: React.FC = () => {
                   value={quantity}
                   onChange={handleQuantityChange}
                   aria-label="Quantity for Tickets"
+                  id="tickets-quantity"
+                  name="ticketsQuantity"
                 />
                 <button onClick={handleIncrement}>+</button>
               </div>
@@ -363,6 +371,8 @@ const Store: React.FC = () => {
                 value={selectedType}
                 onChange={handleTypeChange}
                 aria-label="Select album type"
+                id="album-type"
+                name="albumType"
               >
                 <option value="mp3">mp3</option>
                 <option value="CD">CD</option>
@@ -382,13 +392,13 @@ const Store: React.FC = () => {
             </div>
             <audio controls>
               {selectedPreview === "Eclipsed Fury" && (
-                <source src="/media/eclipsedfurypreview.mp3" type="audio/mpeg" />
+                <source src="/Media/eclipsedfurypreview.mp3" type="audio/mpeg" />
               )}
               {selectedPreview === "Iron Tempest" && (
-                <source src="/media/irontempestpreview.mp3" type="audio/mpeg" />
+                <source src="/Media/irontempestpreview.mp3" type="audio/mpeg" />
               )}
               {selectedPreview === "Shadow of the Abyss" && (
-                <source src="/media/shadowoftheabysspreview.mp3" type="audio/mpeg" />
+                <source src="/Media/shadowoftheabysspreview.mp3" type="audio/mpeg" />
               )}
               Your browser does not support the audio element.
             </audio>
@@ -404,6 +414,8 @@ const Store: React.FC = () => {
                   value={quantity}
                   onChange={handleQuantityChange}
                   aria-label="Quantity for Album"
+                  id="album-quantity"
+                  name="albumQuantity"
                 />
                 <button onClick={handleIncrement}>+</button>
               </div>
@@ -432,13 +444,6 @@ const Store: React.FC = () => {
         >
           X
         </button>
-        <div className="overlay-left">
-          <img
-            className="digital-image"
-            src="/Media/digital.webp"
-            alt="Digital S-Gate"
-          />
-        </div>
         <div className="overlay-right">
           <div className="overlay-content">
             <p>Digital S-Gate</p>
@@ -454,6 +459,8 @@ const Store: React.FC = () => {
                   value={quantity}
                   onChange={handleQuantityChange}
                   aria-label="Quantity for Digital S-Gate"
+                  id="digital-quantity"
+                  name="digitalQuantity"
                 />
                 <button onClick={handleIncrement}>+</button>
               </div>

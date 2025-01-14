@@ -334,6 +334,9 @@ h1 {
   height: 100%;
   box-sizing: border-box;
 }
+.tourinfo:last-child {
+  margin-bottom: 2vh;
+}
 .buytickets {
   display: flex;
   align-content: center;
@@ -814,6 +817,7 @@ h1 {
   position: relative;
   z-index: 1;
   border-radius: 1.565vh;
+  margin-top: 2vh;
 }
 .footer-content {
   display: flex;
@@ -1125,6 +1129,10 @@ h1 {
 .checkout-overlay h2 {
   font-size: 2rem;
   margin-bottom: 1vh;
+  text-align: center;
+}
+.checkout-overlay p{
+  text-align: center;
 }
 checkout-overlay p {
   font-size: 1.2rem;
@@ -1213,6 +1221,6 @@ checkout-overlay p {
   margin-bottom: 2vh;
 }
 audio {
-  width: 33vh;
+  width: 35vh;
   height: 3.5vh;
 }

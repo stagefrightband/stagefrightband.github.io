@@ -181,11 +181,15 @@ const ShoppingCart: React.FC = () => {
       </div>
       <div className="total-price">
         <span>Total Price: ${totalPrice.toFixed(2)}</span>
-        <button className="checkout-button" onClick={handleCheckout}>
+        <button
+          className="checkout-button"
+          onClick={handleCheckout}
+          disabled={cartItems.length === 0}
+        >
           Proceed to Checkout
         </button>
       </div>
-      {isCheckoutOverlayVisible && (
+      {cartItems.length > 0 && isCheckoutOverlayVisible && (
         <div className="checkout-overlay">
           <h2>Successfully Purchased!</h2>
           <p>
