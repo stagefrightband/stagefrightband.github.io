@@ -27,10 +27,10 @@ const MainPage: React.FC = () => {
   return (
     <div className="mainpage-container zoom-in">
       <meta http-equiv="Cache-Control" content="max-age=31536000" />
-      <link rel="preload" as="image" href="/Images/stagefrightmerch.webp" />
+      <link rel="preload" as="image" href="/Media/stagefrightmerch.webp" />
       <video
         className="background-video"
-        src="/Images/background.mp4"
+        src="/Media/background.mp4"
         autoPlay
         loop
         muted
@@ -42,7 +42,7 @@ const MainPage: React.FC = () => {
       <div className="products-section">
         <Link to="/store" className="product-link mainpage-text">
           <img
-            src="/Images/stagefrightmerch.webp"
+            src="/Media/stagefrightmerch.webp"
             alt="Stage Fright Merch"
             className="product-image mainpage"
           />
@@ -50,7 +50,7 @@ const MainPage: React.FC = () => {
         </Link>
         <Link to="/store" className="product-link mainpage-text">
           <img
-            src="/Images/ticket.webp"
+            src="/Media/ticket.webp"
             alt="Stage Fright Tickets"
             className="product-image mainpage"
           />

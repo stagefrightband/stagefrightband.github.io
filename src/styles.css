@@ -634,7 +634,7 @@ h1 {
     flex-direction: row;
   }
 }
-/* Add specific item image classes */
+
 .merch-item-image {
   height: 8.5446vh;
   width: 11.5806vh;
@@ -837,7 +837,7 @@ h1 {
   z-index: 2000;
 }
 .hamburger-button {
-  display: none; /* Restore original display property */
+  display: none;
   background: none;
   border: none;
   font-size: 30px;
@@ -1100,8 +1100,8 @@ h1 {
 }
 
 .total-price.empty-cart {
-  margin-bottom: 2vh; /* Adjust spacing above the footer */
-  /* Additional styling if needed */
+  margin-bottom: 2vh;
+ 
 }
 
 .shoppingcart-container {
@@ -1110,16 +1110,16 @@ h1 {
 
 .checkout-overlay {
   position: fixed;
-  top: 0; /* Changed from 11.738vh to 0 */
+  top: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* Changed from calc(100% - 11.738vh) to 100% */
+  height: 100%;
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 1500; /* Changed from 4000 to 1500 */
+  z-index: 1500;
   padding: 2vh;
   box-sizing: border-box;
 }
@@ -1135,13 +1135,11 @@ h1 {
   font-size: 2rem;
   margin-bottom: 1vh;
 }
-
 checkout-overlay p {
   font-size: 1.2rem;
   text-align: center;
   margin-bottom: 2vh;
 }
-
 .checkout-overlay button {
   padding: 0.5vh 2vh;
   font-size: 1rem;
@@ -1152,11 +1150,9 @@ checkout-overlay p {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-
 .checkout-overlay button:hover {
   background-color: #45a049;
 }
-
 .item-price {
   text-align: center;
   color: #333;
@@ -1170,7 +1166,6 @@ checkout-overlay p {
 .footer-content p{
   margin: 1vh;
 }
-
 .checkout-button {
   background-color: #4caf50;
   color: white;
@@ -1182,7 +1177,6 @@ checkout-overlay p {
   transition: background-color 0.3s, transform 0.3s;
   margin-top: 1vh;
 }
-
 .checkout-button:hover {
   background-color: #45a049;
   transform: scale(1.05);
@@ -1193,12 +1187,9 @@ checkout-overlay p {
 .footer-special-text {
   font-family: Arial, sans-serif;
 }
-
-/* Add fade-in animation */
 .fade-in {
   animation: fadeIn 0.5s ease-in-out;
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1211,7 +1202,6 @@ checkout-overlay p {
   display: inline-block;
   cursor: pointer;
 }
-
 .hamburger-menu div {
   width: 35px;
   height: 5px;
@@ -1219,22 +1209,15 @@ checkout-overlay p {
   margin: 6px 0;
   transition: 0.4s;
 }
-
-/* Rotate first bar */
 .change.bar1 {
   transform: rotate(-45deg) translate(-9px, 6px);
 }
-
-/* Fade out the second bar */
 .change.bar2 {
   opacity: 0;
 }
-
-/* Rotate last bar */
 .change.bar3 {
   transform: rotate(45deg) translate(-8px, -8px);
 }
-
 .tourdiv .tourrow:last-child .tourinfo {
   margin-bottom: 2vh;
 }

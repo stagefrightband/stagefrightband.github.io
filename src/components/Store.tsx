@@ -41,6 +41,8 @@ const Store: React.FC = () => {
     setIsHamburgerOpen(!isHamburgerOpen);
   };
 
+  const [selectedPreview, setSelectedPreview] = useState("Eclipsed Fury");
+
   useEffect(() => {
     toggleClassBasedOnCookie({
       cookieName: "highcontrast",
@@ -148,7 +150,7 @@ const Store: React.FC = () => {
   return (
     <div className="store-container fade-in">
       <meta http-equiv="Cache-Control" content="max-age=31536000" />
-      <link rel="preload" as="image" href="/Images/stagefrightmerch.webp" />
+      <link rel="preload" as="image" href="/Media/stagefrightmerch.webp" />
       <h1 style={{ textAlign: "center", fontSize: "2rem" }}>Store</h1>
       <div className="hamburger-nav">
         <button
@@ -171,7 +173,7 @@ const Store: React.FC = () => {
             <button
               className="product-button merch-button"
               style={{
-                backgroundImage: "url('/Images/stagefrightmerch.webp')",
+                backgroundImage: "url('/Media/stagefrightmerch.webp')",
               }}
               onClick={handleMerchButtonClick}
               aria-label="Stage Fright Merch"
@@ -186,7 +188,7 @@ const Store: React.FC = () => {
             <button
               className="product-button ticket-button"
               style={{
-                backgroundImage: "url('/Images/ticket.webp')",
+                backgroundImage: "url('/Media/ticket.webp')",
               }}
               onClick={handleTicketButtonClick}
               aria-label="Stage Fright Tickets"
@@ -201,7 +203,7 @@ const Store: React.FC = () => {
             <button
               className="product-button album-button"
               style={{
-                backgroundImage: "url('/Images/albumcover.webp')",
+                backgroundImage: "url('/Media/albumcover.webp')",
               }}
               onClick={handleAlbumButtonClick}
               aria-label="S-Gate Album"
@@ -222,7 +224,7 @@ const Store: React.FC = () => {
         <div className="overlay-left">
           <img
             className="merch-image"
-            src="/Images/stagefrightmerch.webp"
+            src="/Media/stagefrightmerch.webp"
             alt="Stage Fright Merch"
           />
         </div>
@@ -279,7 +281,7 @@ const Store: React.FC = () => {
         <div className="overlay-left">
           <img
             className="ticket-image"
-            src="/Images/ticket.webp"
+            src="/Media/ticket.webp"
             alt="Stage Fright Tickets"
           />
         </div>
@@ -345,8 +347,8 @@ const Store: React.FC = () => {
             className="album-image"
             src={
               selectedType === "CD"
-                ? "/Images/cdimage.webp"
-                : "/Images/albumcover.webp"
+                ? "/Media/cdimage.webp"
+                : "/Media/albumcover.webp"
             }
             alt="S-Gate Album"
           />
@@ -366,6 +368,29 @@ const Store: React.FC = () => {
                 <option value="CD">CD</option>
               </select>
             </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1vh', marginBottom: '1vh' }}>
+              <span>Preview Music:</span>
+              <select
+                value={selectedPreview}
+                onChange={(e) => setSelectedPreview(e.target.value)}
+              >
+                <option value="Eclipsed Fury">Eclipsed Fury</option>
+                <option value="Iron Tempest">Iron Tempest</option>
+                <option value="Shadow of the Abyss">Shadow of the Abyss</option>
+              </select>
+            </div>
+            <audio controls>
+              {selectedPreview === "Eclipsed Fury" && (
+                <source src="/media/eclipsedfurypreview.mp3" type="audio/mpeg" />
+              )}
+              {selectedPreview === "Iron Tempest" && (
+                <source src="/media/irontempestpreview.mp3" type="audio/mpeg" />
+              )}
+              {selectedPreview === "Shadow of the Abyss" && (
+                <source src="/media/shadowoftheabysspreview.mp3" type="audio/mpeg" />
+              )}
+              Your browser does not support the audio element.
+            </audio>
             <div className="quantity-container">
               <span>Quantity:</span>
               <div className="quantity-controls">
@@ -409,7 +434,7 @@ const Store: React.FC = () => {
         <div className="overlay-left">
           <img
             className="digital-image"
-            src="/Images/digital.webp"
+            src="/Media/digital.webp"
             alt="Digital S-Gate"
           />
         </div>

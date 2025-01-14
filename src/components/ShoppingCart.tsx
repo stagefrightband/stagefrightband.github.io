@@ -90,15 +90,15 @@ const ShoppingCart: React.FC = () => {
                 <img
                   src={
                     item.name.toLowerCase() === "merch"
-                      ? "/Images/stagefrightmerch.webp"
+                      ? "/Media/stagefrightmerch.webp"
                       : item.name.toLowerCase() === "tickets"
-                      ? "/Images/ticket.webp"
+                      ? "/Media/ticket.webp"
                       : item.name.toLowerCase() === "s-gate" &&
                         item.type === "Digital Version (.mp3)"
-                      ? "/Images/albumcover.webp"
+                      ? "/Media/albumcover.webp"
                       : item.name.toLowerCase() === "s-gate" &&
                         item.type === "CD"
-                      ? "/Images/cdimage.webp"
+                      ? "/Media/cdimage.webp"
                       : ""
                   }
                   alt={`${item.name} Image`}

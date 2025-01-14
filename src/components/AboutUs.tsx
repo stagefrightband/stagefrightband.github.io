@@ -35,7 +35,7 @@ const AboutUs: React.FC = () => {
       <div className="profiles-grid">
         <div className="profile fade-in">
           <img
-            src="/Images/leadguitar.webp"
+            src="/Media/leadguitar.webp"
             alt="Lead Guitar"
             className="profile-image"
           />
@@ -53,7 +53,7 @@ const AboutUs: React.FC = () => {
         </div>
         <div className="profile fade-in">
           <img
-            src="/Images/rhythmguitar.webp"
+            src="/Media/rhythmguitar.webp"
             alt="Rhythm Guitar"
             className="profile-image"
           />
@@ -71,7 +71,7 @@ const AboutUs: React.FC = () => {
         </div>
         <div className="profile fade-in">
           <img
-            src="/Images/bassguitar.webp"
+            src="/Media/bassguitar.webp"
             alt="Bass Guitar"
             className="profile-image"
           />
@@ -88,7 +88,7 @@ const AboutUs: React.FC = () => {
           </p>
         </div>
         <div className="profile fade-in">
-          <img src="/Images/drums.webp" alt="Drums" className="profile-image" />
+          <img src="/Media/drums.webp" alt="Drums" className="profile-image" />
           <h2>Diana Lee - Drums</h2>
           <p>
             Diana's passion for drumming began in her early teens when drummers
@@ -102,7 +102,7 @@ const AboutUs: React.FC = () => {
         </div>
         <div className="profile centered-profile fade-in">
           <img
-            src="/Images/microphone.webp"
+            src="/Media/microphone.webp"
             alt="Microphone"
             className="profile-image"
           />
