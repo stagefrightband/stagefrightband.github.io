@@ -208,7 +208,7 @@ const Store: React.FC = () => {
             ></button>
           </div>
           <div className="product-info">
-            <p>S-Gate Album: $15/item CD, $5/item .mp3</p>
+            <p>S-Gate Album: $15/CD, $5/.mp3</p>
           </div>
         </div>
       </div>

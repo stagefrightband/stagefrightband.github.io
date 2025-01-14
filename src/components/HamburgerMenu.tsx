@@ -9,11 +9,11 @@ const HamburgerMenu: React.FC = () => {
     <nav className="hamburger-nav">
       <meta http-equiv="Cache-Control" content="max-age=31536000" />
       <div className="hamburger-menu" onClick={toggleMenu}>
-      <div className={`bar1 ${isOpen ? 'change' : ''}`}></div>
-      <div className={`bar2 ${isOpen ? 'change' : ''}`}></div>
-      <div className={`bar3 ${isOpen ? 'change' : ''}`}></div>
+        <div className={`bar1 ${isOpen ? 'change' : ''}`}></div>
+        <div className={`bar2 ${isOpen ? 'change' : ''}`}></div>
+        <div className={`bar3 ${isOpen ? 'change' : ''}`}></div>
       </div>
-      <ul className={`hamburger-links fade-in ${isOpen ? "open" : ""}`}>
+      <ul className={`hamburger-links ${isOpen ? "open" : ""}`}>
         <li>
           <a href="#/mainpage" onClick={toggleMenu}>
             Home

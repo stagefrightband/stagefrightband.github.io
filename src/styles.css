@@ -79,19 +79,19 @@ body {
   font-display: fallback;
 }
 .high-contrast {
-  --background-color: black;
-  --text-color: white;
-  --link-color: cyan;
-  --button-background: #ffcc00;
-  --button-text: #000000;
-  --border-color: white;
+  --background-color: black !important;
+  --text-color: white !important;
+  --link-color: cyan !important;
+  --button-background: #ffcc00 !important;
+  --button-text: #000000 !important;
+  --border-color: white !important;
   background-color: var(--background-color) !important;
   color: var(--text-color) !important;
   border-color: var(--border-color) !important;
 }
 .high-contrast a {
   color: var(--link-color) !important;
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 .high-contrast button,
 .high-contrast input[type="button"],
@@ -107,6 +107,10 @@ body.open-dyslexic {
 .open-dyslexic textarea,
 .open-dyslexic button {
   font-family: "OpenDyslexic", sans-serif !important;
+}
+body.high-contrast.open-dyslexic {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
 }
 .product-tile {
   display: flex;
@@ -589,7 +593,7 @@ h1 {
     width: max-content;
   }
   .hamburger-links a {
-    padding-left: 1.5rem;
+    padding: .5rem;
     font-size: 1.25rem;
     color: #f2f2f2;
     text-decoration: none;
@@ -849,6 +853,7 @@ h1 {
 }
 .hamburger-links {
   opacity: 0;
+  padding: 1.5649vh 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   flex-direction: column;
@@ -856,7 +861,7 @@ h1 {
   position: absolute;
   top: 100%;
   left: 0;
-  width: fit-content;
+  width: max-content;
   border-radius: 0.7825vh;
   box-shadow: 0 0.626vh 1.252vh rgba(0, 0, 0, 0.1);
   z-index: 2002;
@@ -866,13 +871,13 @@ h1 {
   visibility: visible;
   padding: 1.5649vh 0;
   width: max-content;
+  display: flex;
 }
 .hamburger-links li {
   list-style: none;
   width: fit-content;
 }
 .hamburger-links a {
-  padding: 0.5rem;
   font-size: 1.25rem;
   color: #f2f2f2;
   text-decoration: none;
@@ -1228,4 +1233,8 @@ checkout-overlay p {
 /* Rotate last bar */
 .change.bar3 {
   transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.tourdiv .tourrow:last-child .tourinfo {
+  margin-bottom: 2vh;
 }
