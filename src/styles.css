@@ -15,6 +15,7 @@ body {
   flex-direction: column;
   margin: 1.252vh;
   font-family: "Special Elite", "wolfhagen-blackletter", sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 #root {
   flex: 1;
@@ -119,15 +120,15 @@ body.open-dyslexic {
 }
 .overlay {
   position: fixed;
-  top: 11.738vh;
+  top: 0;
   left: 0;
   width: 100%;
-  height: calc(100% - 11.738vh);
+  height: 100%;
   background-color: lightgray;
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 3000;
+  z-index: 2000;
   padding: 2vh;
   box-sizing: border-box;
 }
@@ -554,8 +555,8 @@ h1 {
   .hamburger-menu {
     display: block;
     position: relative;
-    padding: 1rem;
-    background-color: #333;
+    padding: 1vh;
+    background-color: black;
     border-radius: 1.565vh;
   }
   .hamburger-menu.active .hamburger-links {
@@ -568,17 +569,24 @@ h1 {
     border: none;
   }
   .hamburger-links {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
     flex-direction: column;
-    transition: display 0.3s ease;
+    background-color: #000;
     position: absolute;
     top: 100%;
-    right: 0;
-    background-color: #333;
-    width: auto;
+    left: 0;
+    width: fit-content;
     border-radius: 0.7825vh;
     box-shadow: 0 0.626vh 1.252vh rgba(0, 0, 0, 0.1);
     gap: 1rem;
+  }
+  .hamburger-links.open {
+    opacity: 1;
+    visibility: visible;
+    padding: 1.5649vh 0;
+    width: max-content;
   }
   .hamburger-links a {
     padding-left: 1.5rem;
@@ -781,7 +789,7 @@ h1 {
 }
 .about-section h1 {
   font-size: 2rem;
-  margin-bottom: 1vh;
+  margin-top: 0;
 }
 .about-section p {
   font-size: 1.2rem;
@@ -805,10 +813,6 @@ h1 {
   position: relative;
   z-index: 1;
   border-radius: 1.565vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
 }
 .footer-content {
   display: flex;
@@ -844,7 +848,9 @@ h1 {
   padding: 0;
 }
 .hamburger-links {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   flex-direction: column;
   background-color: #000;
   position: absolute;
@@ -856,7 +862,8 @@ h1 {
   z-index: 2002;
 }
 .hamburger-links.open {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
   padding: 1.5649vh 0;
   width: max-content;
 }
@@ -909,33 +916,6 @@ h1 {
   justify-content: center;
   gap: 5vh;
 }
-.slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 2vh;
-}
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 2vh;
-  width: 2vh;
-  left: 0.3vh;
-  bottom: 0.3vh;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-.switch input:checked + .slider {
-  background-color: #2196f3;
-}
-.switch input:checked + .slider:before {
-  transform: translateX(2vh);
-}
 .album-button {
   width: 33vh;
   height: 33vh;
@@ -968,31 +948,6 @@ h1 {
   display: flex;
   align-items: center;
   gap: 1vh;
-}
-.auth-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 11.738vh);
-  position: relative;
-}
-.signup-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.signup-container {
-  background-color: #ffffff;
-  padding: 2vh;
-  border-radius: 1.252vh;
-  box-shadow: 0 0.626vh 1.252vh rgba(0, 0, 0, 0.2);
-  width: 300px;
 }
 .error-overlay {
   position: fixed;
@@ -1117,6 +1072,7 @@ h1 {
 .tour-dates-heading {
   font-size: 2rem;
   text-align: center;
+  margin-top: 0;
 }
 .open-dyslexic {
   font-family: "OpenDyslexic", sans-serif !important;
@@ -1126,7 +1082,7 @@ h1 {
   bottom: auto;
   left: auto;
   transform: none;
-  margin-top: 0;
+  margin-top: 2vh;
   background-color: #f8f8f8;
   padding: 1vh 2vh;
   border: 1px solid #ccc;
@@ -1136,7 +1092,6 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-self: flex-start;
 }
 
 .total-price.empty-cart {
@@ -1232,4 +1187,45 @@ checkout-overlay p {
 }
 .footer-special-text {
   font-family: Arial, sans-serif;
+}
+
+/* Add fade-in animation */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hamburger-menu {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.hamburger-menu div {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change.bar1 {
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+/* Fade out the second bar */
+.change.bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change.bar3 {
+  transform: rotate(45deg) translate(-8px, -8px);
 }

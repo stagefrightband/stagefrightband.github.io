@@ -55,6 +55,17 @@ const Settings: React.FC = () => {
     setCookie("fontsize", value.toString());
     document.documentElement.style.fontSize = `${value}%`;
   };
+  const toggleHighContrast = () => {
+    const isHighContrast = highContrast;
+    if (isHighContrast) {
+      document.body.classList.remove("high-contrast");
+      setCookie("highcontrast", "false");
+    } else {
+      document.body.classList.add("high-contrast");
+      setCookie("highcontrast", "true");
+    }
+    setHighContrast(!isHighContrast);
+  };
   return (
     <div className="settings-container fade-in">
       <meta http-equiv="Cache-Control" content="max-age=31536000" />
@@ -67,7 +78,7 @@ const Settings: React.FC = () => {
               type="checkbox"
               id="highcontrast-toggle"
               checked={highContrast}
-              onChange={() => setHighContrast(!highContrast)}
+              onChange={toggleHighContrast}
               aria-label="Toggle High Contrast"
             />
             <span className="slider round"></span>

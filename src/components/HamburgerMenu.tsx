@@ -8,13 +8,11 @@ const HamburgerMenu: React.FC = () => {
   return (
     <nav className="hamburger-nav">
       <meta http-equiv="Cache-Control" content="max-age=31536000" />
-      <button
-        className="hamburger-button bounce"
-        onClick={toggleMenu}
-        aria-label="Toggle navigation menu"
-      >
-        &#9776;
-      </button>
+      <div className="hamburger-menu" onClick={toggleMenu}>
+      <div className={`bar1 ${isOpen ? 'change' : ''}`}></div>
+      <div className={`bar2 ${isOpen ? 'change' : ''}`}></div>
+      <div className={`bar3 ${isOpen ? 'change' : ''}`}></div>
+      </div>
       <ul className={`hamburger-links fade-in ${isOpen ? "open" : ""}`}>
         <li>
           <a href="#/mainpage" onClick={toggleMenu}>

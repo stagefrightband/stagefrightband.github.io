@@ -30,11 +30,17 @@ const Store: React.FC = () => {
   );
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const unitPrices = {
-    Merch: 20,
-    Tickets: 50,
+    Merch: 25,
+    Tickets: 20,
     "S-Gate": 15,
     "Digital S-Gate": 5,
   };
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+
+  const toggleHamburgerMenu = () => {
+    setIsHamburgerOpen(!isHamburgerOpen);
+  };
+
   useEffect(() => {
     toggleClassBasedOnCookie({
       cookieName: "highcontrast",
@@ -144,6 +150,21 @@ const Store: React.FC = () => {
       <meta http-equiv="Cache-Control" content="max-age=31536000" />
       <link rel="preload" as="image" href="/Images/stagefrightmerch.webp" />
       <h1 style={{ textAlign: "center", fontSize: "2rem" }}>Store</h1>
+      <div className="hamburger-nav">
+        <button
+          id="hamburgerMenu"
+          className={`hamburger-button ${isHamburgerOpen ? "change" : ""}`}
+          onClick={toggleHamburgerMenu}
+          aria-label="Toggle menu"
+        >
+          <div className="bar1"></div>
+          <div className="bar2"></div>
+          <div className="bar3"></div>
+        </button>
+        <div className={`hamburger-links ${isHamburgerOpen ? "open" : ""}`}>
+          {/* Add your existing links here */}
+        </div>
+      </div>
       <div className="products-container">
         <div className="product-tile fade-in">
           <div className="product-image">
@@ -157,7 +178,7 @@ const Store: React.FC = () => {
             ></button>
           </div>
           <div className="product-info">
-            <p>Stage Fright T-Shirt: $20/item</p>
+            <p>Stage Fright T-Shirt: $25/item</p>
           </div>
         </div>
         <div className="product-tile fade-in">
@@ -172,7 +193,7 @@ const Store: React.FC = () => {
             ></button>
           </div>
           <div className="product-info">
-            <p>Stage Fright Tickets: $40/item</p>
+            <p>Stage Fright Tickets: $20/item</p>
           </div>
         </div>
         <div className="product-tile fade-in">
@@ -373,6 +394,49 @@ const Store: React.FC = () => {
               } total)`}
             </p>
             <button className="submit-button" onClick={handleSubmitAlbum}>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className={`overlay ${isDigitalOverlayVisible ? "active" : ""}`}>
+        <button
+          className="close-button"
+          onClick={() => setIsDigitalOverlayVisible(false)}
+        >
+          X
+        </button>
+        <div className="overlay-left">
+          <img
+            className="digital-image"
+            src="/Images/digital.webp"
+            alt="Digital S-Gate"
+          />
+        </div>
+        <div className="overlay-right">
+          <div className="overlay-content">
+            <p>Digital S-Gate</p>
+            <div className="quantity-container">
+              <span>Quantity:</span>
+              <div className="quantity-controls">
+                <button onClick={handleDecrement}>-</button>
+                <input
+                  type="text"
+                  className="quantity-input"
+                  min="1"
+                  readOnly
+                  value={quantity}
+                  onChange={handleQuantityChange}
+                  aria-label="Quantity for Digital S-Gate"
+                />
+                <button onClick={handleIncrement}>+</button>
+              </div>
+            </div>
+            <p className="item-price">
+              Price: ${unitPrices["Digital S-Gate"]}/item ($
+              {unitPrices["Digital S-Gate"] * quantity} total)
+            </p>
+            <button className="submit-button" onClick={handleSubmitDigital}>
               Add to Cart
             </button>
           </div>
