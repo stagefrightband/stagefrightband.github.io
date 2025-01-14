@@ -71,9 +71,9 @@ const ShoppingCart: React.FC = () => {
   }, 0);
 
   const handleCheckout = () => {
+    setIsCheckoutOverlayVisible(true);
     localStorage.removeItem("cartItems");
     setCartItems([]);
-    setIsCheckoutOverlayVisible(true);
   };
 
   return (
@@ -189,7 +189,7 @@ const ShoppingCart: React.FC = () => {
           Proceed to Checkout
         </button>
       </div>
-      {cartItems.length > 0 && isCheckoutOverlayVisible && (
+      {isCheckoutOverlayVisible && (
         <div className="checkout-overlay">
           <h2>Successfully Purchased!</h2>
           <p>
