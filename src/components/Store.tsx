@@ -373,6 +373,7 @@ const Store: React.FC = () => {
               <select
                 value={selectedPreview}
                 onChange={(e) => setSelectedPreview(e.target.value)}
+                className="dropdown"
               >
                 <option value="Eclipsed Fury">Eclipsed Fury</option>
                 <option value="Iron Tempest">Iron Tempest</option>

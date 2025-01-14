@@ -62,7 +62,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 .logoimage {
   width: 7.825vh;
   height: 7.825vh;
@@ -634,13 +633,11 @@ h1 {
     flex-direction: row;
   }
 }
-
 .merch-item-image {
   height: 8.5446vh;
   width: 11.5806vh;
   padding: 1vh;
 }
-
 .ticket-item-image,
 .cd-item-image,
 .music-item-image,
@@ -1098,16 +1095,12 @@ h1 {
   flex-direction: column;
   align-items: center;
 }
-
 .total-price.empty-cart {
   margin-bottom: 2vh;
- 
 }
-
 .shoppingcart-container {
   padding-bottom: 2vh;
 }
-
 .checkout-overlay {
   position: fixed;
   top: 0;
@@ -1123,14 +1116,12 @@ h1 {
   padding: 2vh;
   box-sizing: border-box;
 }
-
 @media (max-width: 768px) {
   .checkout-overlay {
     top: 0;
     height: 100%;
   }
 }
-
 .checkout-overlay h2 {
   font-size: 2rem;
   margin-bottom: 1vh;
@@ -1158,12 +1149,12 @@ checkout-overlay p {
   color: #333;
   margin-top: 0.5vh;
 }
-.bpa-logo{
+.bpa-logo {
   height: 7.8247vh;
   width: 7.8247vh;
   padding-bottom: 2vh;
 }
-.footer-content p{
+.footer-content p {
   margin: 1vh;
 }
 .checkout-button {
@@ -1220,4 +1211,8 @@ checkout-overlay p {
 }
 .tourdiv .tourrow:last-child .tourinfo {
   margin-bottom: 2vh;
+}
+audio {
+  width: 33vh;
+  height: 3.5vh;
 }
