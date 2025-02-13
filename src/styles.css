@@ -786,7 +786,6 @@ input:checked + .slider:before {
   border-radius: 1.252vh;
 }
 .product-link p {
-  margin-top: 1vh;
   font-size: 1.2rem;
   font-weight: bold;
 }
