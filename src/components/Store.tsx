@@ -152,21 +152,6 @@ const Store: React.FC = () => {
       <meta http-equiv="Cache-Control" content="max-age=31536000" />
       <link rel="preload" as="image" href="/Media/stagefrightmerch.webp" />
       <h1 style={{ textAlign: "center", fontSize: "2rem" }}>Store</h1>
-      <div className="hamburger-nav">
-        <button
-          id="hamburgerMenu"
-          className={`hamburger-button ${isHamburgerOpen ? "change" : ""}`}
-          onClick={toggleHamburgerMenu}
-          aria-label="Toggle menu"
-        >
-          <div className="bar1"></div>
-          <div className="bar2"></div>
-          <div className="bar3"></div>
-        </button>
-        <div className={`hamburger-links ${isHamburgerOpen ? "open" : ""}`}>
-          {/* Add your existing links here */}
-        </div>
-      </div>
       <div className="products-container">
         <div className="product-tile fade-in">
           <div className="product-image">
