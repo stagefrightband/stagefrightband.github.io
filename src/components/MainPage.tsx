@@ -36,9 +36,9 @@ const MainPage: React.FC = () => {
         muted
         playsInline
       />
-      <h1 className="mainpage-text">
-        Welcome to the Stage Fright band's Website!
-      </h1>
+      <div className="welcome-text-container">
+        <h1 className="mainpage-text">Welcome to the Stage Fright band's Website!</h1>
+      </div>
       <div className="products-section">
         <Link to="/store" className="product-link mainpage-text">
           <img
@@ -59,13 +59,19 @@ const MainPage: React.FC = () => {
       </div>
       <div className="additional-links">
         <Link to="/aboutus" className="info-link mainpage-text">
-          <h2>Learn more about our band and how it got started!</h2>
+          <div className="welcome-text-container">
+            <h2>Learn more about our band and how it got started!</h2>
+          </div>
         </Link>
         <Link to="/tourdates" className="info-link mainpage-text">
-          <h2>View our upcoming tours and buy tickets here!</h2>
+          <div className="welcome-text-container">
+            <h2>View our upcoming tours and buy tickets here!</h2>
+          </div>
         </Link>
         <Link to="/contactus" className="info-link mainpage-text">
-          <h2>Get in touch with us!</h2>
+          <div className="welcome-text-container">
+            <h2>Get in touch with us!</h2>
+          </div>
         </Link>
       </div>
     </div>

@@ -1,1 +1,39 @@
-{"name":"Stage Fright Website","short_name":"StageFright","icons":[{"src":"/Images/android-chrome-192x192.webp","sizes":"192x192","type":"image/png"},{"src":"/Images/android-chrome-512x512.webp","sizes":"512x512","type":"image/png"},{"src":"/Images/apple-touch-icon.webp","sizes":"180x180","type":"image/png"},{"src":"/Images/favicon-32x32.webp","sizes":"32x32","type":"image/png"},{"src":"/Images/favicon-16x16.webp","sizes":"16x16","type":"image/png"}],"theme_color":"#ffffff","background_color":"#ffffff","display":"standalone","start_url":"/","scope":"/","description":"Website of the Stage Fright Band for BPA Web Design","orientation":"portrait-primary","lang":"en-US"}
+{
+  "name": "Stage Fright Website",
+  "short_name": "StageFright",
+  "icons": [
+    {
+      "src": "/Media/android-chrome-192x192.webp",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Media/android-chrome-512x512.webp",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/Media/apple-touch-icon.webp",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/Media/favicon-32x32.webp",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/Media/favicon-16x16.webp",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "description": "A website for the Stage Fright Band, a growing rock band. Created for the Business Professionals of America Website Design competition",
+  "orientation": "any",
+  "lang": "en-US"
+}
