@@ -33,7 +33,7 @@
   "display": "standalone",
   "start_url": "/",
   "scope": "/",
-  "description": "A website for the Stage Fright Band, a growing rock band. Created for the Business Professionals of America Website Design competition",
+  "description": "A website for the Stage Fright Band, a growing rock band. Created for the Business Professionals of America Website Design competition.",
   "orientation": "any",
   "lang": "en-US"
 }
