@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles.css";
 import { Link } from "react-router-dom";
 const getCookie = (name: string): string | null => {
@@ -19,13 +19,38 @@ const toggleClassBasedOnCookie = (
   }
 };
 const MainPage: React.FC = () => {
+  const [overlayVisible, setOverlayVisible] = useState(true);
+  const [text, setText] = useState("");
+
   useEffect(() => {
     toggleClassBasedOnCookie("highcontrast", "high-contrast");
     toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
-    return () => {};
+
+    const sequence = async () => {
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      setText("Stage");
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      setText("");
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      setText("Fright");
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      setText("");
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      document.querySelector('.welcome-overlay')?.classList.add('fade-out');
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      setOverlayVisible(false);
+    };
+
+    sequence();
   }, []);
+
   return (
     <div className="mainpage-container zoom-in">
+      {overlayVisible && (
+        <div className="welcome-overlay">
+          <div className="overlay-text">{text}</div>
+        </div>
+      )}
       <meta http-equiv="Cache-Control" content="max-age=31536000" />
       <link rel="preload" as="image" href="/Media/stagefrightmerch.webp" />
       <video
