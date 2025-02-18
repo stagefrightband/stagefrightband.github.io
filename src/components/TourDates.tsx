@@ -42,9 +42,9 @@ const TourDates: React.FC = () => {
       <div className="tourdiv">
         <div className="tourrow fade-in">
           <div className="tourinfo">
-            <span className="date">February 3, 2025</span>
-            <span className="city">Houston, Texas, U.S.A.</span>
-            <span className="location">House of Blues Houston</span>
+            <span className="date tourinfo-text">February 3, 2025</span>
+            <span className="city tourinfo-text">Houston, Texas, U.S.A.</span>
+            <span className="location tourinfo-text">House of Blues Houston</span>
           </div>
           <div className="buytickets">
             <span>
@@ -56,9 +56,9 @@ const TourDates: React.FC = () => {
         </div>
         <div className="tourrow fade-in">
           <div className="tourinfo">
-            <span className="date">February 5, 2025</span>
-            <span className="city">Austin, Texas, U.S.A.</span>
-            <span className="location">Emo's</span>
+            <span className="date tourinfo-text">February 5, 2025</span>
+            <span className="city tourinfo-text">Austin, Texas, U.S.A.</span>
+            <span className="location tourinfo-text">Emo's</span>
           </div>
           <div className="buytickets">
             <span>
@@ -70,9 +70,9 @@ const TourDates: React.FC = () => {
         </div>
         <div className="tourrow fade-in">
           <div className="tourinfo">
-            <span className="date">February 6, 2025</span>
-            <span className="city">Dallas, Texas, U.S.A.</span>
-            <span className="location">Ferris Wheeler's Backyard & BBQ</span>
+            <span className="date tourinfo-text">February 6, 2025</span>
+            <span className="city tourinfo-text">Dallas, Texas, U.S.A.</span>
+            <span className="location tourinfo-text">Ferris Wheeler's Backyard & BBQ</span>
           </div>
           <div className="buytickets">
             <span>
@@ -84,9 +84,9 @@ const TourDates: React.FC = () => {
         </div>
         <div className="tourrow fade-in">
           <div className="tourinfo">
-            <span className="date">February 8, 2025</span>
-            <span className="city">Mesa, Arizona, U.S.A.</span>
-            <span className="location">The Nile Theatre</span>
+            <span className="date tourinfo-text">February 8, 2025</span>
+            <span className="city tourinfo-text">Mesa, Arizona, U.S.A.</span>
+            <span className="location tourinfo-text">The Nile Theatre</span>
           </div>
           <div className="buytickets">
             <span>
@@ -98,9 +98,9 @@ const TourDates: React.FC = () => {
         </div>
         <div className="tourrow fade-in">
           <div className="tourinfo">
-            <span className="date">February 9, 2025</span>
-            <span className="city">San Diego, California, U.S.A.</span>
-            <span className="location">House of Blues San Diego</span>
+            <span className="date tourinfo-text">February 9, 2025</span>
+            <span className="city tourinfo-text">San Diego, California, U.S.A.</span>
+            <span className="location tourinfo-text">House of Blues San Diego</span>
           </div>
           <div className="buytickets">
             <span>

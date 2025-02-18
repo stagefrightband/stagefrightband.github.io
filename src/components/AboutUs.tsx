@@ -20,7 +20,7 @@ const AboutUs: React.FC = () => {
       <meta http-equiv="Cache-Control" content="max-age=31536000" />
       <div className="about-section">
         <h1>About the Band</h1>
-        <p>
+        <p className="about-section-text">
           Stage Fright was established in 2018 when five musicians gathered at a
           local jam session in downtown Seattle. While the members met each
           other in different ways and had different goals, their unique styles
@@ -40,7 +40,7 @@ const AboutUs: React.FC = () => {
             className="profile-image"
           />
           <h2>Alice Johnson - Lead Guitar</h2>
-          <p>
+          <p className="profile-text">
             Alice began learning guitar when she was 12 after being inspired by
             legendary guitarists like Jimi Hendrix and Eric Clapton. Her passion
             for the instrument grew as she gained more experience and
@@ -58,7 +58,7 @@ const AboutUs: React.FC = () => {
             className="profile-image"
           />
           <h2>Bob Smith - Rhythm Guitar</h2>
-          <p>
+          <p className="profile-text">
             Bob started playing guitar after being inspired by his favorite
             bands, The Beatles and Red Hot Chili Peppers. He liked how rhythm
             and harmony complemented lead melodies, which led him to play
@@ -76,7 +76,7 @@ const AboutUs: React.FC = () => {
             className="profile-image"
           />
           <h2>Charlie Davis - Bass Guitar</h2>
-          <p>
+          <p className="profile-text">
             Charlie wanted to play the bass in high school because of its deep,
             rich sounds. He adds depth and supports the band's music by
             connecting the rhythm and melody. His groovy bass lines blend the
@@ -90,7 +90,7 @@ const AboutUs: React.FC = () => {
         <div className="profile fade-in">
           <img src="/Media/drums.webp" alt="Drums" className="profile-image" />
           <h2>Diana Lee - Drums</h2>
-          <p>
+          <p className="profile-text">
             Diana's passion for drumming began in her early teens when drummers
             like Neil Peart and Sheila E inspired her. Her powerful beats
             provide rhythm and intensity and drive the band's performances.
@@ -107,7 +107,7 @@ const AboutUs: React.FC = () => {
             className="profile-image"
           />
           <h2>Edward King - Vocalist</h2>
-          <p>
+          <p className="profile-text">
             Edward has been singing since middle school, with a deep, emotional
             voice that captivates audiences. His soulful lyrics, fantastic voice
             control, and good tone allow him to connect with the audience and

@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useEffect, useState } from "react";
 import "../styles.css";
+
 const getCookie = (name: string): string | null => {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
@@ -9,10 +10,12 @@ const getCookie = (name: string): string | null => {
   }
   return null;
 };
+
 const setCookie = (name: string, value: string, days = 365): void => {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
   document.cookie = `${name}=${value}; expires=${expires}; path=/; SameSite=Lax`;
 };
+
 const toggleClassBasedOnCookie = (
   cookieName: string,
   className: string
@@ -24,6 +27,7 @@ const toggleClassBasedOnCookie = (
     document.body.classList.remove(className);
   }
 };
+
 const Settings: React.FC = () => {
   const [highContrast, setHighContrast] = useState(
     getCookie("highcontrast") === "true"
@@ -34,27 +38,33 @@ const Settings: React.FC = () => {
   const [fontSize, setFontSize] = useState<number>(
     getCookie("fontsize") ? parseInt(getCookie("fontsize")!, 10) : 100
   );
+
   useLayoutEffect(() => {
     toggleClassBasedOnCookie("highcontrast", "high-contrast");
     toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
     document.documentElement.style.fontSize = `${fontSize}%`;
-  }, [highContrast, openDyslexic]);
+  }, [highContrast, openDyslexic, fontSize]);
+
   useEffect(() => {
     document.documentElement.style.fontSize = `${fontSize}%`;
   }, [fontSize]);
+
   useEffect(() => {
     setCookie("highcontrast", highContrast.toString());
     toggleClassBasedOnCookie("highcontrast", "high-contrast");
   }, [highContrast]);
+
   useEffect(() => {
     setCookie("opendyslexic", openDyslexic.toString());
     toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
   }, [openDyslexic]);
+
   const handleFontSizeChange = (value: number) => {
     setFontSize(value);
     setCookie("fontsize", value.toString());
     document.documentElement.style.fontSize = `${value}%`;
   };
+
   const toggleHighContrast = () => {
     const isHighContrast = highContrast;
     if (isHighContrast) {
@@ -66,6 +76,7 @@ const Settings: React.FC = () => {
     }
     setHighContrast(!isHighContrast);
   };
+
   return (
     <div className="settings-container fade-in">
       <meta http-equiv="Cache-Control" content="max-age=31536000" />
@@ -124,4 +135,5 @@ const Settings: React.FC = () => {
     </div>
   );
 };
+
 export default Settings;

@@ -16,10 +16,9 @@ function toggleClassBasedOnCookie({
   }
 }
 const Store: React.FC = () => {
-  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+  const [isMerchOverlayVisible, setIsMerchOverlayVisible] = useState(false);
   const [isTicketOverlayVisible, setIsTicketOverlayVisible] = useState(false);
   const [isAlbumOverlayVisible, setIsAlbumOverlayVisible] = useState(false);
-  const [isDigitalOverlayVisible, setIsDigitalOverlayVisible] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [selectedVenue, setSelectedVenue] = useState<string>(
     "House of Blues, Houston"
@@ -54,10 +53,9 @@ const Store: React.FC = () => {
     });
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        setIsOverlayVisible(false);
+        setIsMerchOverlayVisible(false);
         setIsTicketOverlayVisible(false);
         setIsAlbumOverlayVisible(false);
-        setIsDigitalOverlayVisible(false);
       }
     };
     document.addEventListener("keydown", handleKeyDown);
@@ -68,16 +66,13 @@ const Store: React.FC = () => {
     };
   }, []);
   const handleMerchButtonClick = () => {
-    setIsOverlayVisible(true);
+    setIsMerchOverlayVisible(true);
   };
   const handleTicketButtonClick = () => {
     setIsTicketOverlayVisible(true);
   };
   const handleAlbumButtonClick = () => {
     setIsAlbumOverlayVisible(true);
-  };
-  const handleDigitalButtonClick = () => {
-    setIsDigitalOverlayVisible(true);
   };
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value, 10);
@@ -121,7 +116,7 @@ const Store: React.FC = () => {
   };
   const handleSubmitMerch = () => {
     updateCartItems("Merch", quantity, undefined, size);
-    setIsOverlayVisible(false);
+    setIsMerchOverlayVisible(false);
   };
   const handleSubmitTickets = () => {
     updateCartItems("Tickets", quantity, selectedVenue);
@@ -131,12 +126,7 @@ const Store: React.FC = () => {
     updateCartItems("S-Gate", quantity, undefined, undefined, selectedType);
     setIsAlbumOverlayVisible(false);
   };
-  const handleSubmitDigital = () => {
-    updateCartItems("Digital S-Gate", quantity, undefined, undefined, "mp3");
-    setIsDigitalOverlayVisible(false);
-  };
 
-  // Add Increment and Decrement functions
   const handleIncrement = () => {
     setQuantity(quantity + 1);
   };
@@ -165,7 +155,7 @@ const Store: React.FC = () => {
             ></button>
           </div>
           <div className="product-info">
-            <p>Stage Fright T-Shirt: $25/item</p>
+            <p className="product-info-text">Stage Fright T-Shirt: $25/item</p>
           </div>
         </div>
         <div className="product-tile fade-in">
@@ -180,7 +170,7 @@ const Store: React.FC = () => {
             ></button>
           </div>
           <div className="product-info">
-            <p>Stage Fright Tickets: $20/item</p>
+            <p className="product-info-text">Stage Fright Tickets: $20/item</p>
           </div>
         </div>
         <div className="product-tile fade-in">
@@ -195,14 +185,14 @@ const Store: React.FC = () => {
             ></button>
           </div>
           <div className="product-info">
-            <p>S-Gate Album: $15/CD, $5/.mp3</p>
+            <p className="product-info-text">S-Gate Album: $15/CD, $5/.mp3</p>
           </div>
         </div>
       </div>
-      <div className={`overlay ${isOverlayVisible ? "active" : ""}`}>
+      <div className={`merch-overlay ${isMerchOverlayVisible ? "active" : ""}`}>
         <button
           className="close-button"
-          onClick={() => setIsOverlayVisible(false)}
+          onClick={() => setIsMerchOverlayVisible(false)}
         >
           X
         </button>
@@ -260,7 +250,7 @@ const Store: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className={`overlay ${isTicketOverlayVisible ? "active" : ""}`}>
+      <div className={`ticket-overlay ${isTicketOverlayVisible ? "active" : ""}`}>
         <button
           className="close-button"
           onClick={() => setIsTicketOverlayVisible(false)}
@@ -328,7 +318,7 @@ const Store: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className={`overlay ${isAlbumOverlayVisible ? "active" : ""}`}>
+      <div className={`album-overlay ${isAlbumOverlayVisible ? "active" : ""}`}>
         <button
           className="close-button"
           onClick={() => setIsAlbumOverlayVisible(false)}
@@ -417,44 +407,6 @@ const Store: React.FC = () => {
               } total)`}
             </p>
             <button className="submit-button" onClick={handleSubmitAlbum}>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className={`overlay ${isDigitalOverlayVisible ? "active" : ""}`}>
-        <button
-          className="close-button"
-          onClick={() => setIsDigitalOverlayVisible(false)}
-        >
-          X
-        </button>
-        <div className="overlay-right">
-          <div className="overlay-content">
-            <p>Digital S-Gate</p>
-            <div className="quantity-container">
-              <span>Quantity:</span>
-              <div className="quantity-controls">
-                <button onClick={handleDecrement}>-</button>
-                <input
-                  type="text"
-                  className="quantity-input"
-                  min="1"
-                  readOnly
-                  value={quantity}
-                  onChange={handleQuantityChange}
-                  aria-label="Quantity for Digital S-Gate"
-                  id="digital-quantity"
-                  name="digitalQuantity"
-                />
-                <button onClick={handleIncrement}>+</button>
-              </div>
-            </div>
-            <p className="item-price">
-              Price: ${unitPrices["Digital S-Gate"]}/item ($
-              {unitPrices["Digital S-Gate"] * quantity} total)
-            </p>
-            <button className="submit-button" onClick={handleSubmitDigital}>
               Add to Cart
             </button>
           </div>

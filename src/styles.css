@@ -80,9 +80,10 @@ body {
 .high-contrast {
   --background-color: black !important;
   --text-color: white !important;
-  --link-color: cyan !important;
-  --button-background: #ffcc00 !important;
-  --button-text: #000000 !important;
+  --link-color: yellow !important;
+  --button-background: black !important;
+  --button-text: white !important;
+  --button-border: grey !important;
   --border-color: white !important;
   background-color: var(--background-color) !important;
   color: var(--text-color) !important;
@@ -97,6 +98,111 @@ body {
 .high-contrast input[type="submit"] {
   background-color: var(--button-background) !important;
   color: var(--button-text) !important;
+  border: 1px solid var(--button-border) !important;
+}
+.high-contrast .total-price,
+.high-contrast .contact-container,
+.high-contrast .profile,
+.high-contrast .tourinfo,
+.high-contrast .buytickets button,
+.high-contrast .overlay-content,
+.high-contrast .setting,
+.high-contrast .setting-header,
+.high-contrast .quantity-container,
+.high-contrast .quantity-controls,
+.high-contrast .cart-item,
+.high-contrast .cart-item-details,
+.high-contrast .cart-item-details .item-venue,
+.high-contrast .item-size,
+.high-contrast .item-type,
+.high-contrast .item-price,
+.high-contrast .checkout-overlay,
+.high-contrast .error-popup,
+.high-contrast .welcome-text-container,
+.high-contrast .mainpage-text,
+.high-contrast .products-section,
+.high-contrast .product-link,
+.high-contrast .product-image,
+.high-contrast .additional-links,
+.high-contrast .info-link,
+.high-contrast .aboutus-container,
+.high-contrast .about-section,
+.high-contrast .profiles-grid,
+.high-contrast .centered-profile,
+.high-contrast .footer,
+.high-contrast .footer-content,
+.high-contrast .empty-cart-message,
+.high-contrast .mainpage,
+.high-contrast .hamburger-nav,
+.high-contrast .hamburger-button,
+.high-contrast .hamburger-links,
+.high-contrast .hamburger-links li,
+.high-contrast .hamburger-links a,
+.high-contrast .background-video,
+.high-contrast .album-button,
+.high-contrast .contactusoverlay,
+.high-contrast .cd-button,
+.high-contrast .digital-button,
+.high-contrast .type-container,
+.high-contrast .error-overlay,
+.high-contrast .error-popup h2,
+.high-contrast .error-popup p,
+.high-contrast .error-popup button,
+.high-contrast .back-button,
+.high-contrast .overlay-ok-button,
+.high-contrast .dropdown,
+.high-contrast .quantity-input,
+.high-contrast .centered-text,
+.high-contrast .ok-button,
+.high-contrast .merch-image,
+.high-contrast .ticket-image,
+.high-contrast .album-image,
+.high-contrast .digital-image,
+.high-contrast .tour-dates-heading,
+.high-contrast .open-dyslexic,
+.high-contrast .total-price span,
+.high-contrast .footer-special-text,
+.high-contrast .fade-in,
+.high-contrast .hamburger-menu,
+.high-contrast .hamburger-menu div,
+.high-contrast .change.bar1,
+.high-contrast .change.bar2,
+.high-contrast .change.bar3,
+.high-contrast .tourdiv .tourrow:last-child .tourinfo,
+.high-contrast audio,
+.high-contrast .welcome-text-container,
+.high-contrast .iconimage,
+.high-contrast .overlay-text,
+.high-contrast .welcome-overlay,
+.high-contrast .merch-overlay,
+.high-contrast .ticket-overlay,
+.high-contrast .album-overlay {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+.high-contrast .about-section p,
+.high-contrast .profile p,
+.high-contrast .product-info p,
+.high-contrast .tourinfo span,
+.high-contrast .tourname {
+  color: white !important;
+}
+.high-contrast .tourname {
+  text-shadow: none !important;
+}
+.high-contrast .profile,
+.high-contrast .tourdiv,
+.high-contrast .tourrow,
+.high-contrast .contact-container,
+.high-contrast .booking-field,
+.high-contrast .cart-item,
+.high-contrast .overlay-content,
+.high-contrast .setting,
+.high-contrast .total-price,
+.high-contrast .checkout-overlay,
+.high-contrast .error-popup {
+  border-color: white !important;
 }
 body.open-dyslexic {
   font-family: "OpenDyslexic", sans-serif !important;
@@ -256,6 +362,11 @@ body.high-contrast.open-dyslexic {
   transform: translateY(-0.7825vh);
   box-shadow: 0 0.626vh 1.8779vh rgba(0, 0, 0, 0.1);
 }
+.high-contrast .profile {
+  background-color: black !important;
+  color: white !important;
+  border-color: white !important;
+}
 .profile-image {
   width: 23.475vh;
   height: 23.475vh;
@@ -406,10 +517,6 @@ input:checked + .slider:before {
   font-family: wolfhagen-blackletter;
   src: url("../public/Fonts/wolfhagen_blackletter/WolfhagenBlackletter-Regular.ttf");
 }
-.high-contrast .tourinfo,
-.high-contrast .tourinfo span {
-  color: black !important;
-}
 .high-contrast .buytickets button {
   background-color: var(--button-background) !important;
   color: var(--button-text) !important;
@@ -479,6 +586,11 @@ input:checked + .slider:before {
   background-color: #f0f0f0;
   border-radius: 1.5649vh;
   box-shadow: 0 0.626vh 1.252vh rgba(0, 0, 0, 0.1);
+}
+.high-contrast .contact-container {
+  background-color: black !important;
+  color: white !important;
+  border-color: white !important;
 }
 .contact-left,
 .contact-right {
@@ -1130,6 +1242,11 @@ input:checked + .slider:before {
 .total-price.empty-cart {
   margin-bottom: 2vh;
 }
+.high-contrast .total-price {
+  background-color: black !important;
+  color: white !important;
+  border-color: white !important;
+}
 .shoppingcart-container {
   padding-bottom: 2vh;
 }
@@ -1282,4 +1399,25 @@ audio {
 
 .welcome-overlay.fade-out {
   opacity: 0;
+}
+
+.merch-overlay,
+.ticket-overlay,
+.album-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.merch-overlay.active,
+.ticket-overlay.active,
+.album-overlay.active {
+  display: flex;
 }
