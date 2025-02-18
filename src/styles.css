@@ -93,6 +93,9 @@ body {
   color: var(--link-color) !important;
   text-decoration: underline !important;
 }
+.high-contrast .topnav a {
+  text-decoration: none !important;
+}
 .high-contrast button,
 .high-contrast input[type="button"],
 .high-contrast input[type="submit"] {
@@ -892,6 +895,12 @@ input:checked + .slider:before {
 .product-link:hover {
   transform: scale(1.05);
   box-shadow: 0 0.626vh 1.252vh rgba(0, 0, 0, 0.2);
+}
+.product-link.mainpage-text {
+  border-radius: 1.252vh;
+  border: 0.1565vh solid #ddd;
+  padding: 1vh;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 .product-image {
   object-fit: cover;

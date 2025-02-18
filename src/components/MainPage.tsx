@@ -23,14 +23,31 @@ const toggleClassBasedOnCookie = (
 
 const MainPage: React.FC = () => {
   const [overlayVisible, setOverlayVisible] = useState(true);
+  const [overlayText, setOverlayText] = useState("");
 
   useEffect(() => {
     toggleClassBasedOnCookie("highcontrast", "high-contrast");
     toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
 
+    const sequence = [
+      { text: "", duration: 0 },
+      { text: "Stage", duration: 500 },
+      { text: "", duration: 500 },
+      { text: "Fright", duration: 500 },
+      { text: "", duration: 500 },
+    ];
+
+    let totalDuration = 0;
+    sequence.forEach((step, index) => {
+      totalDuration += step.duration;
+      setTimeout(() => {
+        setOverlayText(step.text);
+      }, totalDuration);
+    });
+
     const timer = setTimeout(() => {
       setOverlayVisible(false);
-    }, 3000); // Adjust the timeout duration as needed
+    }, totalDuration + 1000); // Additional 1 second for fade out
 
     return () => clearTimeout(timer);
   }, []);
@@ -48,8 +65,8 @@ const MainPage: React.FC = () => {
         playsInline
       />
       {overlayVisible && (
-        <div className="welcome-overlay">
-          <div className="overlay-text">Welcome to the Stage Fright band's Website!</div>
+        <div className={`welcome-overlay ${!overlayVisible ? "fade-out" : ""}`}>
+          <div className="overlay-text">{overlayText}</div>
         </div>
       )}
       <div className="welcome-text-container">
