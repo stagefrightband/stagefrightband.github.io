@@ -96,6 +96,10 @@ body {
 .high-contrast .topnav a {
   text-decoration: none !important;
 }
+.high-contrast .topnav a:hover {
+  background-color: black !important;
+  color: white !important;
+}
 .high-contrast button,
 .high-contrast input[type="button"],
 .high-contrast input[type="submit"] {
@@ -206,6 +210,16 @@ body {
 .high-contrast .checkout-overlay,
 .high-contrast .error-popup {
   border-color: white !important;
+}
+.high-contrast .booking-field label {
+  color: white !important;
+}
+
+.high-contrast .booking-field input,
+.high-contrast .booking-field textarea {
+  border: 1px solid white !important;
+  background-color: #333 !important;
+  color: white !important;
 }
 body.open-dyslexic {
   font-family: "OpenDyslexic", sans-serif !important;
@@ -742,7 +756,7 @@ input:checked + .slider:before {
     width: max-content;
   }
   .hamburger-links a {
-    padding: .5rem;
+    padding: 0.5rem;
     font-size: 1.25rem;
     color: #f2f2f2;
     text-decoration: none;
@@ -787,6 +801,12 @@ input:checked + .slider:before {
   height: 8.5446vh;
   width: 11.5806vh;
   padding: 1vh;
+}
+.ticket-item-image {
+  height: 10vh;
+  width: 10vh;
+  padding: 1vh;
+  object-fit: cover; /* Ensures the image is cropped to fit the size */
 }
 .ticket-item-image,
 .cd-item-image,
@@ -967,6 +987,7 @@ input:checked + .slider:before {
   z-index: 1;
   border-radius: 1.565vh;
   margin-top: 2vh;
+  border: 1px solid white;
 }
 .footer-content {
   display: flex;
@@ -1065,6 +1086,7 @@ input:checked + .slider:before {
 .mainpage-text {
   color: white;
   background-color: black;
+  border-radius: 1.252vh;
 }
 .products-container {
   display: flex;
@@ -1285,7 +1307,7 @@ input:checked + .slider:before {
   margin-bottom: 1vh;
   text-align: center;
 }
-.checkout-overlay p{
+.checkout-overlay p {
   text-align: center;
 }
 checkout-overlay p {
@@ -1390,7 +1412,7 @@ audio {
 .overlay-text {
   font-size: 3rem;
   font-weight: bold;
-  color: white
+  color: white;
 }
 .welcome-overlay {
   position: fixed;
@@ -1408,6 +1430,7 @@ audio {
 
 .welcome-overlay.fade-out {
   opacity: 0;
+  pointer-events: none;
 }
 
 .merch-overlay,
@@ -1429,4 +1452,8 @@ audio {
 .ticket-overlay.active,
 .album-overlay.active {
   display: flex;
+}
+
+.hidden {
+  display: none !important;
 }

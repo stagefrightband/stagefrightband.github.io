@@ -52,6 +52,22 @@ const MainPage: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const topnav = document.querySelector(".topnav");
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+    const footer = document.querySelector(".footer");
+
+    if (overlayVisible) {
+      topnav?.classList.add("hidden");
+      hamburgerMenu?.classList.add("hidden");
+      footer?.classList.add("hidden");
+    } else {
+      topnav?.classList.remove("hidden");
+      hamburgerMenu?.classList.remove("hidden");
+      footer?.classList.remove("hidden");
+    }
+  }, [overlayVisible]);
+
   return (
     <div className="mainpage-container zoom-in">
       <meta http-equiv="Cache-Control" content="max-age=31536000" />
