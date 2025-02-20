@@ -67,14 +67,9 @@ const Settings: React.FC = () => {
 
   const toggleHighContrast = () => {
     const isHighContrast = highContrast;
-    if (isHighContrast) {
-      document.body.classList.remove("high-contrast");
-      setCookie("highcontrast", "false");
-    } else {
-      document.body.classList.add("high-contrast");
-      setCookie("highcontrast", "true");
-    }
     setHighContrast(!isHighContrast);
+    setCookie("highcontrast", (!isHighContrast).toString());
+    toggleClassBasedOnCookie("highcontrast", "high-contrast");
   };
 
   return (

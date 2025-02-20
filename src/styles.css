@@ -98,7 +98,6 @@ body {
 }
 .high-contrast .topnav a:hover {
   background-color: black !important;
-  color: white !important;
 }
 .high-contrast button,
 .high-contrast input[type="button"],
