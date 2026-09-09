@@ -68,6 +68,16 @@ const MainPage: React.FC = () => {
     }
   }, [overlayVisible]);
 
+  useEffect(() => {
+    if (!overlayVisible) {
+      const overlay = document.querySelector(".welcome-overlay");
+      overlay?.classList.add("fade-out");
+      setTimeout(() => {
+        overlay?.classList.add("hidden");
+      }, 1000); // Match the duration of the fade-out animation
+    }
+  }, [overlayVisible]);
+
   return (
     <div className="mainpage-container zoom-in">
       <meta http-equiv="Cache-Control" content="max-age=31536000" />
