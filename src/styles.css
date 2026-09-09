@@ -55,7 +55,6 @@ body {
   color: black;
 }
 .topnav a.logo {
-  background-color: #aa0404;
   color: white;
   padding: 0;
   display: inline-flex;
@@ -126,10 +125,8 @@ body {
 .high-contrast .error-popup,
 .high-contrast .welcome-text-container,
 .high-contrast .mainpage-text,
-.high-contrast .products-section,
 .high-contrast .product-link,
 .high-contrast .product-image,
-.high-contrast .additional-links,
 .high-contrast .info-link,
 .high-contrast .aboutus-container,
 .high-contrast .about-section,
@@ -177,7 +174,6 @@ body {
 .high-contrast .tourdiv .tourrow:last-child .tourinfo,
 .high-contrast audio,
 .high-contrast .welcome-text-container,
-.high-contrast .iconimage,
 .high-contrast .overlay-text,
 .high-contrast .welcome-overlay,
 .high-contrast .merch-overlay,
@@ -949,6 +945,9 @@ input:checked + .slider:before {
 }
 .info-link:hover h2 {
   color: #aa0404;
+}
+.high-contrast .info-link:hover h2 {
+  color: white !important;
 }
 .aboutus-container {
   padding: 2vh;
