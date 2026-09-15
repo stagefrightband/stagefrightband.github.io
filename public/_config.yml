@@ -1,0 +1,95 @@
+# Site settings
+title: "Stage Fright Band"
+description: "Website of the Stage Fright Band for BPA Web Design"
+url: "https://stagefrightband.github.io" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+
+# Build settings
+theme: jekyll-theme-minimal
+
+# Where things are
+source: .
+destination: ./_site
+collections_dir: .
+plugins_dir: _plugins
+layouts_dir: _layouts
+data_dir: _data
+includes_dir: _includes
+sass:
+  sass_dir: _sass
+collections:
+  posts:
+    output: true
+
+# Handling Reading
+safe: false
+include: [".htaccess"]
+exclude: ["Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", "vendor/cache/", "vendor/gems/", "vendor/ruby/"]
+keep_files: [".git", ".svn"]
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+strict_front_matter: false
+
+# Filtering Content
+show_drafts: false
+limit_posts: 0
+future: false
+unpublished: false
+
+# Plugins
+plugins: []
+
+# Permalinks
+permalink: pretty
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Sass
+sass:
+  style: compressed
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Stage Fright Band"
+
+# Exclude from processing
+exclude:
+  - "README.md"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "node_modules"
+  - "vendor/bundle/"
+  - "vendor/cache/"
+  - "vendor/gems/"
+  - "vendor/ruby/"
+
+# Include in processing
+include:
+  - ".htaccess"
+
+# Keep files
+keep_files:
+  - ".git"
+  - ".svn"
+
+# Encoding
+encoding: "utf-8"
+
+# Front matter
+strict_front_matter: false
