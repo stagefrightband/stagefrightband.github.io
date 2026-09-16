@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development react-scripts start",
-    "build": "node generate-sitemap.js && cross-env NODE_ENV=production GENERATE_SOURCEMAP=false react-scripts build"
+    "build": "node  && cross-env NODE_ENV=production GENERATE_SOURCEMAP=false react-scripts build"
   },
   "browserslist": {
     "production": [
