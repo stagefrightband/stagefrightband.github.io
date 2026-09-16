@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useEffect, useState } from "react";
-import "../styles.css";
+import "@/globals.css";
 
 const getCookie = (name: string): string | null => {
   const value = `; ${document.cookie}`;
@@ -74,7 +74,7 @@ const Settings: React.FC = () => {
 
   return (
     <div className="settings-container fade-in">
-      <meta http-equiv="Cache-Control" content="max-age=31536000" />
+      <meta httpEquiv="Cache-Control" content="max-age=31536000" />
       <h1 style={{ textAlign: "center", fontSize: "2rem" }}>Settings</h1>
       <div className="setting high-contrast slide-in">
         <div className="setting-header">

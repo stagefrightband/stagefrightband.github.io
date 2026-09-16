@@ -1,22 +1,5 @@
-import React, { useEffect, useState } from "react";
-import "../styles.css";
-const getCookie = (name: string): string | null => {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop()?.split(";").shift() || null;
-  return null;
-};
-const toggleClassBasedOnCookie = (
-  cookieName: string,
-  className: string
-): void => {
-  const cookieValue = getCookie(cookieName) === "true";
-  if (cookieValue) {
-    document.documentElement.classList.add(className);
-  } else {
-    document.documentElement.classList.remove(className);
-  }
-};
+import React, { useState } from "react";
+import "@/globals.css";
 const ContactUs: React.FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -34,13 +17,9 @@ const ContactUs: React.FC = () => {
   const closeOverlay = () => {
     setOverlay({ ...overlay, visible: false });
   };
-  useEffect(() => {
-    toggleClassBasedOnCookie("highcontrast", "high-contrast");
-    toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
-  }, []);
   return (
     <>
-      <meta http-equiv="Cache-Control" content="max-age=31536000" />
+      <meta httpEquiv="Cache-Control" content="max-age=31536000" />
       <h1 className="fade-in" style={{ textAlign: "center", fontSize: "2rem" }}>
         Contact Us
       </h1>

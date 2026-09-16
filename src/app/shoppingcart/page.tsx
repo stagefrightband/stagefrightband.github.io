@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../styles.css";
+import "@/globals.css";
 interface CartItem {
   name: string;
   quantity: number;
@@ -78,7 +78,7 @@ const ShoppingCart: React.FC = () => {
 
   return (
     <div className="shoppingcart-container fade-in">
-      <meta http-equiv="Cache-Control" content="max-age=31536000" />
+      <meta httpEquiv="Cache-Control" content="max-age=31536000" />
       <h1 style={{ textAlign: "center", fontSize: "2rem" }}>Shopping Cart</h1>
       <div id="cart-content">
         {cartItems.length === 0 ? (
