@@ -22,7 +22,6 @@ const toggleClassBasedOnCookie = (
   }
 };
 
-// Apply high contrast and open dyslexic classes before rendering the app
 toggleClassBasedOnCookie("highcontrast", "high-contrast");
 toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
 

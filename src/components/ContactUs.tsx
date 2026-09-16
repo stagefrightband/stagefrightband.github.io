@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../styles.css";
-import { createClient } from "@supabase/supabase-js";
 const getCookie = (name: string): string | null => {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
@@ -19,9 +18,6 @@ const toggleClassBasedOnCookie = (
   }
 };
 const ContactUs: React.FC = () => {
-  const supabaseUrl = process.env.REACT_APP_SUPABASE_URL || "";
-  const supabaseAnonKey = process.env.REACT_APP_ANON_KEY || "";
-  const supabase = createClient(supabaseUrl, supabaseAnonKey);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -34,25 +30,6 @@ const ContactUs: React.FC = () => {
     name.trim() !== "" && email.trim() !== "" && message.trim() !== "";
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!isFormValid || isCooldown) {
-      return;
-    }
-    const { error } = await supabase
-      .from("Bookings")
-      .insert([{ name, "e-mail": email, message }]);
-    if (error) {
-      console.error(error);
-      setOverlay({ visible: true, type: "error" });
-    } else {
-      setName("");
-      setEmail("");
-      setMessage("");
-      setOverlay({ visible: true, type: "success" });
-      setIsCooldown(true);
-      setTimeout(() => {
-        setIsCooldown(false);
-      }, 5000);
-    }
   };
   const closeOverlay = () => {
     setOverlay({ ...overlay, visible: false });
