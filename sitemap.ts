@@ -1,4 +1,5 @@
-import { SitemapStream, SitemapItemLoose, EnumChangefreq } from 'sitemap';
+import { SitemapStream, EnumChangefreq } from 'sitemap';
+import type { SitemapItemLoose } from 'sitemap';
 import { createWriteStream } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
