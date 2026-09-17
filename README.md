@@ -1,1 +1,1 @@
-**Stage Fright Band Website. Created for the (435) Website Design Team competition in Business Professionals of America.**
+**Website for Marlowby. Created for the (365) Website Design and Development Team in Business Professionals of America.**
