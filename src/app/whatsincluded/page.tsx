@@ -5,7 +5,7 @@ const AboutUs: React.FC = () => {
     <div className="aboutus-container fade-in">
   
       <div className="about-section">
-        <h1>`Sett`ing 1</h1>
+        <h1>Whats Included 1</h1>
         <p className="about-section-text">
           Whats Included 1
         </p>

@@ -16,33 +16,33 @@ const HamburgerMenu: React.FC = () => {
       </div>
       <ul className={`hamburger-links ${isOpen ? "open" : ""}`}>
         <li>
-          <a href="#/mainpage" onClick={toggleMenu}>
+          <a href="/" onClick={toggleMenu}>
             Home
           </a>
         </li>
         <li>
-          <a href="#/aboutus" onClick={toggleMenu}>
+          <a href="/aboutus" onClick={toggleMenu}>
             About Us
           </a>
         </li>
         <li>
-          <a href="#/contactus" onClick={toggleMenu}>
+          <a href="/contactus" onClick={toggleMenu}>
             Contact Us
           </a>
         </li>
         <li>
-          <a href="#/store" onClick={toggleMenu}>
-            Store
+          <a href="/store" onClick={toggleMenu}>
+            Whats Included
           </a>
         </li>
         <li>
-          <a href="#/tourdates" onClick={toggleMenu}>
-            Tour Dates
+          <a href="/tourdates" onClick={toggleMenu}>
+            Subscription Plans
           </a>
         </li>
         <li>
-          <a href="#/shoppingcart" onClick={toggleMenu}>
-            Shopping Cart
+          <a href="/shoppingcart" onClick={toggleMenu}>
+            Featured Cities
           </a>
         </li>
         <li>
