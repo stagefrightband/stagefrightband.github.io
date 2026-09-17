@@ -139,7 +139,7 @@ const Store: React.FC = () => {
 
   return (
     <div className="store-container fade-in">
-      <meta httpEquiv="Cache-Control" content="max-age=31536000" />
+      <meta http-equiv="Cache-Control" content="max-age=31536000" />
       <link rel="preload" as="image" href="/Media/stagefrightmerch.webp" />
       <h1 style={{ textAlign: "center", fontSize: "2rem" }}>Store</h1>
       <div className="products-container">

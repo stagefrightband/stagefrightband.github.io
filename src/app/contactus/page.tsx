@@ -1,22 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "@/globals.css";
 const ContactUs: React.FC = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [overlay, setOverlay] = useState<{
-    visible: boolean;
-    type: "success" | "error";
-  }>({ visible: false, type: "success" });
-  const [isCooldown, setIsCooldown] = useState(false);
-  const isFormValid =
-    name.trim() !== "" && email.trim() !== "" && message.trim() !== "";
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-  };
-  const closeOverlay = () => {
-    setOverlay({ ...overlay, visible: false });
-  };
   return (
     <>
       <meta httpEquiv="Cache-Control" content="max-age=31536000" />
@@ -35,7 +19,6 @@ const ContactUs: React.FC = () => {
         </div>
         <div className="contact-right fade-in">
           <h2>Bookings</h2>
-          <form onSubmit={handleSubmit}>
             <div className="booking-field">
               <label htmlFor="name">Name</label>
               <input
@@ -43,8 +26,6 @@ const ContactUs: React.FC = () => {
                 id="name"
                 name="name"
                 autoComplete="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
                 required
               />
             </div>
@@ -55,8 +36,6 @@ const ContactUs: React.FC = () => {
                 id="email"
                 name="email"
                 autoComplete="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
@@ -66,41 +45,16 @@ const ContactUs: React.FC = () => {
                 id="message"
                 name="message"
                 className="message-textarea"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
                 required
               ></textarea>
             </div>
             <button
               type="submit"
               className="submit-button"
-              disabled={!isFormValid || isCooldown}
             >
-              {isCooldown ? "Please wait..." : "Submit"}
             </button>
-          </form>
         </div>
       </div>
-      {overlay.visible && (
-        <div className="overlay active contactusoverlay slide-in">
-          <div className="overlay-content">
-            <h2>{overlay.type === "success" ? "Submitted!" : "Error!"}</h2>
-            <p className={overlay.type === "success" ? "centered-text" : ""}>
-              {overlay.type === "success"
-                ? "Your form was successfully submitted."
-                : "There was an error submitting your form. Please try again."}
-            </p>
-            <button
-              className={
-                overlay.type === "success" ? "ok-button" : "overlay-ok-button"
-              }
-              onClick={closeOverlay}
-            >
-              Ok
-            </button>
-          </div>
-        </div>
-      )}
     </>
   );
 };

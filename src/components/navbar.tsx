@@ -19,16 +19,9 @@ export const Navbar: React.FC = () => {
 
         <a href="/aboutus">About Us</a>
         <a href="/contactus">Contact Us</a>
-        <a href="/store">Store</a>
-        <a href="/tourdates">Tour Dates</a>
-
-        <a href="/shoppingcart">
-          <img 
-            src={`${publicUrl}/Media/shoppingcart.webp`} 
-            alt="Shopping Cart" 
-            className="iconimage" 
-          />
-        </a>
+        <a href="/whatsincluded">Whats Included</a>
+        <a href="/subscriptionplans">Subscription Plans</a>
+        <a href="/featuredcities">Featured Cities</a>
 
         <a href="/settings">
           <img 
