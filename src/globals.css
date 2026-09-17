@@ -1,11 +1,4 @@
-@font-face {
-  font-family: "Special Elite";
-  src: url("../public/Fonts/Special_Elite/SpecialElite-Regular.ttf")
-    format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+
 html,
 body {
   height: 100%;
@@ -14,7 +7,6 @@ body {
   display: flex;
   flex-direction: column;
   margin: 1.252vh;
-  font-family: "Special Elite", "wolfhagen-blackletter", sans-serif;
   transition: background-color 0.3s, color 0.3s;
 }
 #root {
@@ -66,15 +58,6 @@ body {
   height: 7.825vh;
   padding: 1.565vh;
   margin: 0.313vh;
-}
-@font-face {
-  font-family: "OpenDyslexic";
-  src: url("../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff2")
-      format("woff2"),
-    url("../public/Fonts/opendyslexic/OpenDyslexic-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: fallback;
 }
 .high-contrast {
   --background-color: black !important;
