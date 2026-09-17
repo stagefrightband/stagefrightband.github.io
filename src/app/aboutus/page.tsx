@@ -1,23 +1,9 @@
-import React, { useEffect } from "react";
-import "../styles.css";
-const getCookie = (name: string) =>
-  document.cookie
-    .split("; ")
-    .find((c) => c.startsWith(`${name}=`))
-    ?.split("=")[1] || null;
-const toggleClassBasedOnCookie = (cookieName: string, className: string) => {
-  document.documentElement.classList[
-    getCookie(cookieName) === "true" ? "add" : "remove"
-  ](className);
-};
+import React from "react";
+import "@/globals.css";
 const AboutUs: React.FC = () => {
-  useEffect(() => {
-    toggleClassBasedOnCookie("highcontrast", "high-contrast");
-    toggleClassBasedOnCookie("opendyslexic", "open-dyslexic");
-  }, []);
   return (
     <div className="aboutus-container fade-in">
-      <meta http-equiv="Cache-Control" content="max-age=31536000" />
+      <meta httpEquiv="Cache-Control" content="max-age=31536000" />
       <div className="about-section">
         <h1>About the Band</h1>
         <p className="about-section-text">
@@ -34,11 +20,6 @@ const AboutUs: React.FC = () => {
       </div>
       <div className="profiles-grid">
         <div className="profile fade-in">
-          <img
-            src="/Media/leadguitar.webp"
-            alt="Lead Guitar"
-            className="profile-image"
-          />
           <h2>Alice Johnson - Lead Guitar</h2>
           <p className="profile-text">
             Alice began learning guitar when she was 12 after being inspired by
@@ -52,11 +33,6 @@ const AboutUs: React.FC = () => {
           </p>
         </div>
         <div className="profile fade-in">
-          <img
-            src="/Media/rhythmguitar.webp"
-            alt="Rhythm Guitar"
-            className="profile-image"
-          />
           <h2>Bob Smith - Rhythm Guitar</h2>
           <p className="profile-text">
             Bob started playing guitar after being inspired by his favorite
@@ -70,11 +46,6 @@ const AboutUs: React.FC = () => {
           </p>
         </div>
         <div className="profile fade-in">
-          <img
-            src="/Media/bassguitar.webp"
-            alt="Bass Guitar"
-            className="profile-image"
-          />
           <h2>Charlie Davis - Bass Guitar</h2>
           <p className="profile-text">
             Charlie wanted to play the bass in high school because of its deep,
@@ -88,7 +59,6 @@ const AboutUs: React.FC = () => {
           </p>
         </div>
         <div className="profile fade-in">
-          <img src="/Media/drums.webp" alt="Drums" className="profile-image" />
           <h2>Diana Lee - Drums</h2>
           <p className="profile-text">
             Diana's passion for drumming began in her early teens when drummers
@@ -101,11 +71,6 @@ const AboutUs: React.FC = () => {
           </p>
         </div>
         <div className="profile centered-profile fade-in">
-          <img
-            src="/Media/microphone.webp"
-            alt="Microphone"
-            className="profile-image"
-          />
           <h2>Edward King - Vocalist</h2>
           <p className="profile-text">
             Edward has been singing since middle school, with a deep, emotional

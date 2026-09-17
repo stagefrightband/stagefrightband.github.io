@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../styles.css";
+import "@/globals.css";
 interface ToggleClassBasedOnCookieParams {
   cookieName: string;
   className: string;

@@ -1,5 +1,6 @@
+"use client";
 import React, { useState } from "react";
-import "../styles.css";
+import "@/globals.css";
 const HamburgerMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
@@ -7,7 +8,7 @@ const HamburgerMenu: React.FC = () => {
   };
   return (
     <nav className="hamburger-nav">
-      <meta http-equiv="Cache-Control" content="max-age=31536000" />
+      <meta httpEquiv="Cache-Control" content="max-age=31536000" />
       <div className="hamburger-menu" onClick={toggleMenu}>
         <div className={`bar1 ${isOpen ? 'change' : ''}`}></div>
         <div className={`bar2 ${isOpen ? 'change' : ''}`}></div>

@@ -1,41 +1,10 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom"; // Import Link
-import "../styles.css";
-function getCookie(name: string): string | null {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop()?.split(";").shift() || null;
-  return null;
-}
-interface ToggleClassBasedOnCookieParams {
-  cookieName: string;
-  className: string;
-}
-function toggleClassBasedOnCookie({
-  cookieName,
-  className,
-}: ToggleClassBasedOnCookieParams): void {
-  const cookieValue = getCookie(cookieName) === "true";
-  if (cookieValue) {
-    document.documentElement.classList.add(className);
-  } else {
-    document.documentElement.classList.remove(className);
-  }
-}
+import React from "react";
+import Link from "next/link";
+import "@/globals.css";
 const TourDates: React.FC = () => {
-  useEffect(() => {
-    toggleClassBasedOnCookie({
-      cookieName: "highcontrast",
-      className: "high-contrast",
-    });
-    toggleClassBasedOnCookie({
-      cookieName: "opendyslexic",
-      className: "open-dyslexic",
-    });
-  }, []);
   return (
     <div className="tourdates-container slide-up">
-      <meta http-equiv="Cache-Control" content="max-age=31536000" />
+      <meta httpEquiv="Cache-Control" content="max-age=31536000" />
       <br />
       <h1 className="tour-dates-heading">Tour Dates</h1>
       <p className="tourname">The Crete's Labyrinth Tour</p>
@@ -48,7 +17,7 @@ const TourDates: React.FC = () => {
           </div>
           <div className="buytickets">
             <span>
-              <Link to="/store">
+              <Link href="/store">
                 <button>Buy Tickets</button>
               </Link>
             </span>
@@ -62,7 +31,7 @@ const TourDates: React.FC = () => {
           </div>
           <div className="buytickets">
             <span>
-              <Link to="/store">
+              <Link href="/store">
                 <button>Buy Tickets</button>
               </Link>
             </span>
@@ -76,7 +45,7 @@ const TourDates: React.FC = () => {
           </div>
           <div className="buytickets">
             <span>
-              <Link to="/store">
+              <Link href="/store">
                 <button>Buy Tickets</button>
               </Link>
             </span>
@@ -90,7 +59,7 @@ const TourDates: React.FC = () => {
           </div>
           <div className="buytickets">
             <span>
-              <Link to="/store">
+              <Link href="/store">
                 <button>Buy Tickets</button>
               </Link>
             </span>
@@ -104,7 +73,7 @@ const TourDates: React.FC = () => {
           </div>
           <div className="buytickets">
             <span>
-              <Link to="/store">
+              <Link href="/store">
                 <button>Buy Tickets</button>
               </Link>
             </span>
