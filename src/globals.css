@@ -508,10 +508,6 @@ input:checked + .slider:before {
   font-family: wolfhagen-blackletter;
   margin-top: 0;
 }
-@font-face {
-  font-family: wolfhagen-blackletter;
-  src: url("../public/Fonts/wolfhagen_blackletter/WolfhagenBlackletter-Regular.ttf");
-}
 .high-contrast .buytickets button {
   background-color: var(--button-background) !important;
   color: var(--button-text) !important;
