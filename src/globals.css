@@ -88,105 +88,37 @@ body {
   color: var(--button-text) !important;
   border: 1px solid var(--button-border) !important;
 }
-.high-contrast .total-price,
 .high-contrast .contact-container,
 .high-contrast .profile,
-.high-contrast .tourinfo,
-.high-contrast .buytickets button,
-.high-contrast .overlay-content,
-.high-contrast .setting,
-.high-contrast .setting-header,
-.high-contrast .quantity-container,
-.high-contrast .quantity-controls,
-.high-contrast .cart-item,
-.high-contrast .cart-item-details,
-.high-contrast .cart-item-details .item-venue,
-.high-contrast .item-size,
-.high-contrast .item-type,
-.high-contrast .item-price,
-.high-contrast .checkout-overlay,
-.high-contrast .error-popup,
 .high-contrast .welcome-text-container,
 .high-contrast .mainpage-text,
-.high-contrast .product-link,
-.high-contrast .product-image,
-.high-contrast .info-link,
 .high-contrast .aboutus-container,
 .high-contrast .about-section,
 .high-contrast .profiles-grid,
-.high-contrast .centered-profile,
-.high-contrast .footer,
-.high-contrast .footer-content,
-.high-contrast .empty-cart-message,
-.high-contrast .mainpage,
 .high-contrast .hamburger-nav,
-.high-contrast .hamburger-button,
 .high-contrast .hamburger-links,
 .high-contrast .hamburger-links li,
 .high-contrast .hamburger-links a,
-.high-contrast .background-video,
-.high-contrast .album-button,
-.high-contrast .contactusoverlay,
-.high-contrast .cd-button,
-.high-contrast .digital-button,
-.high-contrast .type-container,
-.high-contrast .error-overlay,
-.high-contrast .error-popup h2,
-.high-contrast .error-popup p,
-.high-contrast .error-popup button,
-.high-contrast .back-button,
-.high-contrast .overlay-ok-button,
-.high-contrast .dropdown,
-.high-contrast .quantity-input,
-.high-contrast .centered-text,
-.high-contrast .ok-button,
-.high-contrast .merch-image,
-.high-contrast .ticket-image,
-.high-contrast .album-image,
-.high-contrast .digital-image,
-.high-contrast .tour-dates-heading,
 .high-contrast .open-dyslexic,
-.high-contrast .total-price span,
-.high-contrast .footer-special-text,
 .high-contrast .fade-in,
 .high-contrast .hamburger-menu,
 .high-contrast .hamburger-menu div,
 .high-contrast .change.bar1,
 .high-contrast .change.bar2,
 .high-contrast .change.bar3,
-.high-contrast .tourdiv .tourrow:last-child .tourinfo,
 .high-contrast audio,
-.high-contrast .welcome-text-container,
-.high-contrast .overlay-text,
-.high-contrast .welcome-overlay,
-.high-contrast .merch-overlay,
-.high-contrast .ticket-overlay,
-.high-contrast .album-overlay {
+.high-contrast .welcome-text-container {
   background-color: var(--background-color) !important;
   color: var(--text-color) !important;
   border-color: var(--border-color) !important;
 }
 .high-contrast .about-section p,
-.high-contrast .profile p,
-.high-contrast .product-info p,
-.high-contrast .tourinfo span,
-.high-contrast .tourname {
+.high-contrast .profile p {
   color: white !important;
 }
-.high-contrast .tourname {
-  text-shadow: none !important;
-}
 .high-contrast .profile,
-.high-contrast .tourdiv,
-.high-contrast .tourrow,
 .high-contrast .contact-container,
-.high-contrast .booking-field,
-.high-contrast .cart-item,
-.high-contrast .overlay-content,
-.high-contrast .setting,
-.high-contrast .total-price,
-.high-contrast .checkout-overlay,
-.high-contrast .error-popup {
+.high-contrast .booking-field {
   border-color: white !important;
 }
 .high-contrast .booking-field label {
@@ -212,137 +144,6 @@ body.high-contrast.open-dyslexic {
   background-color: var(--background-color) !important;
   color: var(--text-color) !important;
 }
-.product-tile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  gap: 1vh;
-}
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 3000;
-}
-.overlay.active {
-  display: flex;
-  flex-direction: row;
-}
-.overlay-left,
-.overlay-right {
-  width: 50%;
-  height: 100%;
-}
-.overlay-left {
-  width: 50%;
-  height: 100%;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.overlay-left img {
-  object-fit: cover;
-}
-@media (max-width: 768px) {
-  .overlay.active {
-    flex-direction: column;
-  }
-}
-@media (min-width: 769px) {
-  .overlay.active {
-    flex-direction: row;
-  }
-  .ticket-image,
-  .album-image {
-    width: 50vh;
-    height: 50vh;
-  }
-  .merch-image {
-    width: 75vh;
-    height: 50vh;
-  }
-}
-.overlay-right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.overlay-right button {
-  font-size: 1rem;
-  padding: 0.5vh 2vh;
-  border-radius: 2.3474vh;
-  align-self: center;
-}
-.overlay-content {
-  border: 0.1565vh solid black;
-  border-radius: 1.252vh;
-  padding: 3vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1vh;
-  background-color: lightgray;
-  width: 50vh;
-  max-width: fit-content;
-}
-.overlay-content p {
-  padding-left: 1vh;
-  padding-right: 1vh;
-  text-align: center;
-}
-.product-button {
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-  background-color: #555;
-  border: 0.313vh solid #fff;
-  border-radius: 1.5649vh;
-  padding: 1vh 2vh;
-  transition: background-color 0.3s, transform 0.3s;
-}
-.product-button:hover {
-  background-color: #777;
-  transform: scale(1.05);
-}
-.merch-button {
-  width: 45vh;
-  height: 33vh;
-  background-color: #ff5722;
-}
-.ticket-button {
-  width: 33vh;
-  height: 33vh;
-  background-color: #2196f3;
-}
-.product-info {
-  margin-top: 0.5vh;
-  margin-left: 0;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.product-info p {
-  font-size: 1.2rem;
-  color: #333;
-  text-align: left;
-  margin: 0;
-  padding-left: 1vh;
-}
 .profile {
   border-radius: 1.565vh;
   border: 0.156vh solid gray;
@@ -362,13 +163,6 @@ body.high-contrast.open-dyslexic {
   color: white !important;
   border-color: white !important;
 }
-.profile-image {
-  width: 23.475vh;
-  height: 23.475vh;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 1vh;
-}
 .profile h2 {
   font-size: 1.5rem;
   margin-bottom: 0.5vh;
@@ -379,193 +173,6 @@ body.high-contrast.open-dyslexic {
 }
 h1 {
   font-size: 1.5rem;
-}
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 4.695vh;
-  height: 2.66vh;
-}
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 2.66vh;
-}
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 2.1vh;
-  width: 2.1vh;
-  left: 0.3vh;
-  bottom: 0.3vh;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-input:checked + .slider {
-  background-color: #2196f3;
-}
-input:checked + .slider:before {
-  transform: translateX(2.035vh);
-}
-.slider.round {
-  border-radius: 2.66vh;
-}
-.slider.round:before {
-  border-radius: 50%;
-}
-.setting {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5vh;
-  border: 0.1565vh solid black;
-  border-radius: 0.7825vh;
-  margin-bottom: 1vh;
-  padding: 1vh;
-}
-.setting-header {
-  display: flex;
-  align-items: center;
-  gap: 1.5vh;
-  margin-bottom: -1.565vh;
-}
-.item-name {
-  margin-right: 0.5vh;
-}
-.tourdiv {
-  display: grid;
-  gap: 0;
-  background-color: #dbdbdb;
-  border: 0.158vh solid black;
-  margin-bottom: 3.13vh;
-  box-sizing: border-box;
-}
-.tourdiv:last-child {
-  margin-bottom: 0;
-}
-.tourrow {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  border-bottom: 0.158vh solid black;
-}
-.tourrow:last-child {
-  border-bottom: 0;
-}
-.tourinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 1.565vh 1.565vh 0;
-  height: 100%;
-  box-sizing: border-box;
-}
-.tourinfo:last-child {
-  margin-bottom: 2vh;
-}
-.buytickets {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 1.565vh;
-}
-.buytickets button {
-  background-color: black;
-  border: 0.156vh solid black;
-  color: white;
-  padding: 0.784vh 4.695vh;
-  font-size: 0.666rem;
-}
-.date {
-  font-size: 0.63rem;
-  margin-bottom: 0.784vh;
-}
-.city {
-  font-size: 0.95rem;
-  margin-bottom: 0.784vh;
-}
-.location {
-  font-size: 0.74rem;
-  padding-bottom: 0.784vh;
-}
-.tourname {
-  font-size: 1.56rem;
-  text-align: center;
-  text-shadow: 0.313vh 0.313vh 0.784vh red;
-  font-family: wolfhagen-blackletter;
-  margin-top: 0;
-}
-.high-contrast .buytickets button {
-  background-color: var(--button-background) !important;
-  color: var(--button-text) !important;
-  border: 0.1vh solid var(--border-color) !important;
-}
-.open-dyslexic .tourname {
-  font-family: "OpenDyslexic", sans-serif !important;
-  text-shadow: none;
-}
-.close-button {
-  position: absolute;
-  top: 0.7825vh;
-  left: 0.7825vh;
-  font-size: 5vh;
-  cursor: pointer;
-  z-index: 3000;
-  width: 7vh;
-  height: 7vh;
-}
-.quantity-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5vh;
-  margin-top: 1vh;
-}
-.quantity-container span {
-  margin: 0.5vh;
-}
-.quantity-container input {
-  width: 7.825vh;
-  padding: 0.5vh;
-}
-.fontsize select {
-  font-size: 1rem;
-}
-.size-container {
-  display: flex;
-  align-items: center;
-  gap: 0.5vh;
-  margin-bottom: 0.5vh;
-}
-.size-container select {
-  font-size: 1rem;
-  padding: 0.3vh 0.5vh;
-}
-.venue-container {
-  display: flex;
-  align-items: center;
-  gap: 0.5vh;
-  margin-bottom: 0.5vh;
-}
-.venue-container span {
-  margin-right: 0.5vh;
-}
-.venue-container select {
-  font-size: 1rem;
-  padding: 0.3vh 0.5vh;
 }
 .contact-container {
   display: flex;
@@ -662,33 +269,6 @@ input:checked + .slider:before {
 .submit-button:hover {
   background-color: #ff5722;
 }
-.sign-up-button {
-  background-color: #2196f3;
-  color: white;
-  padding: 0.6vh 1.5vh;
-  border: none;
-  border-radius: 0.7825vh;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s;
-}
-.sign-up-button:hover {
-  background-color: #1976d2;
-}
-.back-button {
-  margin-top: 1vh;
-  background-color: #555;
-  color: white;
-  padding: 0.6vh 1.5vh;
-  border: none;
-  border-radius: 0.7825vh;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s;
-}
-.back-button:hover {
-  background-color: #333;
-}
 @media (max-width: 768px) {
   .topnav {
     display: none;
@@ -700,7 +280,7 @@ input:checked + .slider:before {
     background-color: black;
     border-radius: 1.565vh;
   }
-  .hamburger-menu.active .hamburger-links {
+  .hamburger-links {
     display: flex;
   }
   #hamburgerMenu {
@@ -748,14 +328,6 @@ input:checked + .slider:before {
   .contact-right {
     width: 100%;
   }
-  .products-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .overlay {
-    top: 0;
-    height: 100%;
-  }
 }
 @media (min-width: 769px) {
   .topnav {
@@ -767,94 +339,6 @@ input:checked + .slider:before {
   .hamburger-links {
     display: none;
   }
-  .products-container {
-    flex-direction: row;
-  }
-}
-.merch-item-image {
-  height: 8.5446vh;
-  width: 11.5806vh;
-  padding: 1vh;
-}
-.ticket-item-image {
-  height: 10vh;
-  width: 10vh;
-  padding: 1vh;
-  object-fit: cover; /* Ensures the image is cropped to fit the size */
-}
-.ticket-item-image,
-.cd-item-image,
-.music-item-image,
-.album-item-image {
-  height: 10vh;
-  width: 10vh;
-  padding: 1vh;
-}
-.cart-item {
-  display: flex;
-  align-items: center;
-  gap: 1vh;
-  margin-bottom: 1vh;
-  border: 0.1565vh solid black;
-  border-radius: 0.7825vh;
-  padding: 0.07825vh;
-}
-.cart-item-details {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.cart-item-details .item-venue {
-  font-size: 1rem;
-  color: #555;
-  margin-top: 0.3vh;
-}
-.item-size {
-  font-size: 1rem;
-  color: #555;
-  margin-top: 0.3vh;
-}
-.item-type {
-  font-size: 1rem;
-  color: #555;
-  margin-top: 0.3vh;
-}
-.quantity-controls {
-  display: flex;
-  align-items: center;
-  gap: 0.5vh;
-  margin-top: 0.5vh;
-}
-.quantity-controls input {
-  width: 4vh;
-  text-align: center;
-  border-radius: 0;
-}
-.decrease-button,
-.increase-button {
-  background-color: #ddd;
-  border: none;
-  padding: 0.5vh 1vh;
-  cursor: pointer;
-  border-radius: 0.4695vh;
-  transition: background-color 0.3s;
-}
-.decrease-button:hover,
-.increase-button:hover {
-  background-color: #ccc;
-}
-.delete-button {
-  background-color: #970000;
-  color: white;
-  border: none;
-  padding: 0.5vh 1vh;
-  cursor: pointer;
-  border-radius: 0.7825vh;
-  margin-left: 0.5vh;
-  transition: background-color 0.3s;
-}
-.delete-button:hover {
-  background-color: #cc0000;
 }
 .mainpage-container {
   display: flex;
@@ -869,64 +353,6 @@ input:checked + .slider:before {
   font-size: 2.5rem;
   margin: 0;
   text-align: center;
-}
-.products-section {
-  display: flex;
-  gap: 3vh;
-  margin: 3vh 0;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.product-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  padding: 1vh;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.product-link:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0.626vh 1.252vh rgba(0, 0, 0, 0.2);
-}
-.product-link.mainpage-text {
-  border-radius: 1.252vh;
-  border: 0.1565vh solid #ddd;
-  padding: 1vh;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-.product-image {
-  object-fit: cover;
-  border-radius: 1.252vh;
-}
-.product-link p {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-.product-link img[src*="stagefrightmerch.webp"] {
-  width: 40.6772vh;
-}
-.additional-links {
-  display: flex;
-  flex-direction: column;
-  gap: 2vh;
-  width: 80%;
-  max-width: 600px;
-}
-.info-link h2 {
-  font-size: 1.8rem;
-  text-align: center;
-  text-decoration: none;
-  transition: color 0.3s;
-  margin: 0;
-  border-radius: 1.252vh;
-}
-.info-link:hover h2 {
-  color: #aa0404;
-}
-.high-contrast .info-link:hover h2 {
-  color: white !important;
 }
 .aboutus-container {
   padding: 2vh;
@@ -951,53 +377,9 @@ input:checked + .slider:before {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2vh;
 }
-.centered-profile {
-  justify-self: center;
-  align-self: center;
-}
-.footer {
-  background-color: #333;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 2vh 0;
-  position: relative;
-  z-index: 1;
-  border-radius: 1.565vh;
-  margin-top: 2vh;
-  border: 1px solid white;
-}
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.empty-cart-message {
-  font-size: 1.5rem;
-  color: #555;
-  text-align: center;
-  margin-top: 2vh;
-}
-.mainpage {
-  height: 30vh;
-}
 .hamburger-nav {
   position: fixed;
   z-index: 2000;
-}
-.hamburger-button {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 30px;
-  color: #000;
-  cursor: pointer;
-  background-color: black;
-  color: white;
-  z-index: 2001;
-  text-align: center;
-  align-self: center;
-  position: relative;
-  padding: 0;
 }
 .hamburger-links {
   opacity: 0;
@@ -1038,306 +420,18 @@ input:checked + .slider:before {
   .topnav {
     display: none;
   }
-  .hamburger-button {
-    display: block;
-    width: 8vh;
-    height: 8vh;
-    font-size: 30px;
-  }
 }
 @media (min-width: 769px) {
   .hamburger-nav {
     display: none;
   }
 }
-.background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  pointer-events: none;
-}
 .mainpage-text {
   color: white;
   background-color: black;
   border-radius: 1.252vh;
 }
-.products-container {
-  display: flex;
-  justify-content: center;
-  gap: 5vh;
-}
-.album-button {
-  width: 33vh;
-  height: 33vh;
-}
-.contactusoverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 900;
-  padding: 2vh;
-  box-sizing: border-box;
-}
-.cd-button {
-  width: 33vh;
-  height: 33vh;
-  background-color: #ff9800;
-}
-.digital-button {
-  width: 33vh;
-  height: 33vh;
-  background-color: #4caf50;
-}
-.type-container {
-  display: flex;
-  align-items: center;
-  gap: 1vh;
-}
-.error-overlay {
-  position: fixed;
-  top: 11.738vh;
-  left: 0;
-  width: 100%;
-  height: calc(100% - 11.738vh);
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 3001;
-}
-.error-popup {
-  background-color: #ffffff;
-  padding: 2vh;
-  border-radius: 1.252vh;
-  box-shadow: 0 0.626vh 1.252vh rgba(0, 0, 0, 0.2);
-  width: 300px;
-  text-align: center;
-}
-.error-popup h2 {
-  margin-bottom: 1vh;
-  color: #ff0000;
-}
-.error-popup p {
-  margin-bottom: 2vh;
-  color: #333;
-}
-.error-popup button {
-  background-color: #aa0404;
-  color: white;
-  padding: 0.8vh 2.5vh;
-  border: none;
-  border-radius: 0.7825vh;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s;
-}
-.error-popup button:hover {
-  background-color: #ff5722;
-}
-.back-button {
-  margin-top: 1vh;
-  background-color: #555;
-  color: white;
-  padding: 0.6vh 1.5vh;
-  border: none;
-  border-radius: 0.7825vh;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s;
-}
-.back-button:hover {
-  background-color: #333;
-}
-.overlay-ok-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 0.5vh 1.5vh;
-  border: none;
-  border-radius: 0.5vh;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s, transform 0.3s;
-}
-.overlay-ok-button:hover {
-  background-color: #45a049;
-  transform: scale(1.05);
-}
-.dropdown {
-  width: max-content;
-  padding: 0.5vh 1vh;
-  border: 0.1565vh solid #ccc;
-  border-radius: 0.7825vh;
-  font-size: 1rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-.dropdown:focus {
-  border-color: #777;
-  box-shadow: 0 0 5px rgba(121, 85, 72, 0.5);
-}
-.quantity-input {
-  padding: 0.5vh;
-  border: 0.1565vh solid #ccc;
-  border-radius: 0.3925vh;
-  text-align: center;
-  font-size: 1rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-.quantity-input:focus {
-  border-color: #777;
-  box-shadow: 0 0 5px rgba(121, 85, 72, 0.5);
-}
-.centered-text {
-  text-align: center;
-}
-.ok-button {
-  height: 5vh;
-  width: 7vh;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 0.5vh;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s;
-}
-.ok-button:hover {
-  background-color: #45a049;
-}
-.merch-image {
-  width: 45vh;
-  height: 33vh;
-}
-.ticket-image,
-.album-image,
-.digital-image {
-  width: 33vh;
-  height: 33vh;
-}
-.tour-dates-heading {
-  font-size: 2rem;
-  text-align: center;
-  margin-top: 0;
-}
-.open-dyslexic {
-  font-family: "OpenDyslexic", sans-serif !important;
-}
-.total-price {
-  position: static;
-  bottom: auto;
-  left: auto;
-  transform: none;
-  margin-top: 2vh;
-  background-color: #f8f8f8;
-  padding: 1vh 2vh;
-  border: 1px solid #ccc;
-  border-radius: 0.7825vh;
-  box-shadow: 0 0.313vh 0.625vh rgba(0, 0, 0, 0.1);
-  font-size: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.total-price.empty-cart {
-  margin-bottom: 2vh;
-}
-.high-contrast .total-price {
-  background-color: black !important;
-  color: white !important;
-  border-color: white !important;
-}
-.shoppingcart-container {
-  padding-bottom: 2vh;
-}
-.checkout-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 1500;
-  padding: 2vh;
-  box-sizing: border-box;
-}
 @media (max-width: 768px) {
-  .checkout-overlay {
-    top: 0;
-    height: 100%;
-  }
-}
-.checkout-overlay h2 {
-  font-size: 2rem;
-  margin-bottom: 1vh;
-  text-align: center;
-}
-.checkout-overlay p {
-  text-align: center;
-}
-checkout-overlay p {
-  font-size: 1.2rem;
-  text-align: center;
-  margin-bottom: 2vh;
-}
-.checkout-overlay button {
-  padding: 0.5vh 2vh;
-  font-size: 1rem;
-  border: none;
-  border-radius: 0.5vh;
-  background-color: #4caf50;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.checkout-overlay button:hover {
-  background-color: #45a049;
-}
-.item-price {
-  text-align: center;
-  color: #333;
-  margin-top: 0.5vh;
-}
-.bpa-logo {
-  height: 7.8247vh;
-  width: 7.8247vh;
-  padding-bottom: 2vh;
-}
-.footer-content p {
-  margin: 1vh;
-}
-.checkout-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 0.8vh 2vh;
-  border: none;
-  border-radius: 0.5vh;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s, transform 0.3s;
-  margin-top: 1vh;
-}
-.checkout-button:hover {
-  background-color: #45a049;
-  transform: scale(1.05);
-}
-.total-price span {
-  padding: 2vh 0;
-}
-.footer-special-text {
-  font-family: Arial, sans-serif;
 }
 .fade-in {
   animation: fadeIn 0.5s ease-in-out;
@@ -1367,14 +461,11 @@ checkout-overlay p {
 .change.bar1 {
   transform: rotate(-45deg) translate(-9px, 6px);
 }
-.change.bar2 {
+.change .bar2 {
   opacity: 0;
 }
 .change.bar3 {
   transform: rotate(45deg) translate(-8px, -8px);
-}
-.tourdiv .tourrow:last-child .tourinfo {
-  margin-bottom: 2vh;
 }
 audio {
   width: 35vh;
@@ -1388,60 +479,4 @@ audio {
 .iconimage {
   width: 10vh;
   height: 10vh;
-}
-.overlay-text {
-  font-size: 3rem;
-  font-weight: bold;
-  color: white;
-}
-.welcome-overlay {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 1s ease-in-out;
-}
-
-.welcome-overlay .overlay-text {
-  text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
-  color: white;
-}
-
-.welcome-overlay.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.merch-overlay,
-.ticket-overlay,
-.album-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 3000;
-}
-
-.merch-overlay.active,
-.ticket-overlay.active,
-.album-overlay.active {
-  display: flex;
-}
-
-.hidden {
-  display: none !important;
 }

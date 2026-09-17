@@ -11,7 +11,7 @@ export const Navbar: React.FC = () => {
         <a className="logo" href="/">
           <img 
             src={`${publicUrl}/Media/FrightTitleIcon.webp`} 
-            alt="Stage Fright Logo" 
+            alt="Marlowby Logo" 
             className="logoimage" 
           />
         </a>

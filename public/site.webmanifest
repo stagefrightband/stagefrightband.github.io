@@ -1,6 +1,6 @@
 {
-  "name": "Stage Fright Website",
-  "short_name": "StageFright",
+  "name": "The Marlowby Website",
+  "short_name": "Marlowby",
   "icons": [
     {
       "src": "/Media/android-chrome-192x192.webp",
@@ -33,7 +33,7 @@
   "display": "standalone",
   "start_url": "/",
   "scope": "/",
-  "description": "A website for the Stage Fright Band, a growing rock band. Created for the Business Professionals of America Website Design competition.",
+  "description": "A website for Marlowby, a new subscrption service. Created for the Business Professionals of America Website Design and Development Team competition.",
   "orientation": "any",
   "lang": "en-US"
 }
