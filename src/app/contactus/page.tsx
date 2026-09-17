@@ -3,7 +3,7 @@ import "@/globals.css";
 const ContactUs: React.FC = () => {
   return (
     <>
-      <meta httpEquiv="Cache-Control" content="max-age=31536000" />
+  
       <h1 className="fade-in" style={{ textAlign: "center", fontSize: "2rem" }}>
         Contact Us
       </h1>

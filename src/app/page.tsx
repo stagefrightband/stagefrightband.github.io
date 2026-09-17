@@ -81,7 +81,7 @@ const MainPage: React.FC = () => {
 
   return (
     <div className="mainpage-container zoom-in">
-      <meta httpEquiv="Cache-Control" content="max-age=31536000" />
+  
       <link rel="preload" as="image" href="/Media/stagefrightmerch.webp" />
       <video
         className="background-video"

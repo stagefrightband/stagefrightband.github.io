@@ -8,7 +8,7 @@ const HamburgerMenu: React.FC = () => {
   };
   return (
     <nav className="hamburger-nav">
-      <meta httpEquiv="Cache-Control" content="max-age=31536000" />
+  
       <div className="hamburger-menu" onClick={toggleMenu}>
         <div className={`bar1 ${isOpen ? 'change' : ''}`}></div>
         <div className={`bar2 ${isOpen ? 'change' : ''}`}></div>

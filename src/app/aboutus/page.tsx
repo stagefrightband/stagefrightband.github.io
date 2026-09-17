@@ -3,7 +3,7 @@ import "@/globals.css";
 const AboutUs: React.FC = () => {
   return (
     <div className="aboutus-container fade-in">
-      <meta httpEquiv="Cache-Control" content="max-age=31536000" />
+  
       <div className="about-section">
         <h1>About the Band</h1>
         <p className="about-section-text">
