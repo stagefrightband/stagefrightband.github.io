@@ -1,5 +1,4 @@
-## Website for Marlowby. Created for the (365) Website Design and Development Team in Business Professionals of America.
-### Steps for Local Deploy
+### Steps for Local Deployment
 **Prerequisites:**
 * Node.js Version 24: https://nodejs.org/en/download
 * Git: https://git-scm.com/install/windows
