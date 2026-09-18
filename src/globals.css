@@ -467,10 +467,6 @@ h1 {
 .change.bar3 {
   transform: rotate(45deg) translate(-8px, -8px);
 }
-audio {
-  width: 35vh;
-  height: 3.5vh;
-}
 .welcome-text-container {
   padding: 3vh 2vh 2vh 2vh;
   background-color: black;

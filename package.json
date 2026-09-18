@@ -13,21 +13,22 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "node sitemap.ts  && GENERATE_SOURCEMAP=false next build",
+    "build": "node sitemap.ts && GENERATE_SOURCEMAP=false next build",
     "start": "next start"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "production": [
+    "changed 12 months",
+    ">= 1%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ]
+},
   "devDependencies": {
     "@types/node": "^26.6.1",
     "@types/react": "^19.3.0",

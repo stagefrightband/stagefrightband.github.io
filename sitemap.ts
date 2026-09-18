@@ -13,11 +13,10 @@ const links: SitemapItemLoose[] = [
   { url: '/', changefreq: EnumChangefreq.DAILY, priority: 1 },
   { url: '/aboutus', changefreq: EnumChangefreq.WEEKLY, priority: 0.8 },
   { url: '/contactus', changefreq: EnumChangefreq.MONTHLY, priority: 0.7 },
-  { url: '/store', changefreq: EnumChangefreq.WEEKLY, priority: 0.8 },
-  { url: '/tourdates', changefreq: EnumChangefreq.WEEKLY, priority: 0.8 },
-  { url: '/login', changefreq: EnumChangefreq.MONTHLY, priority: 0.5 },
-  { url: '/shoppingcart', changefreq: EnumChangefreq.MONTHLY, priority: 0.5 },
-  { url: '/settings', changefreq: EnumChangefreq.MONTHLY, priority: 0.5 },
+  { url: '/featuredcities', changefreq: EnumChangefreq.WEEKLY, priority: 0.8 },
+  { url: '/settings', changefreq: EnumChangefreq.WEEKLY, priority: 0.8 },
+  { url: '/subscriptionplans', changefreq: EnumChangefreq.MONTHLY, priority: 0.5 },
+  { url: '/whatsincluded', changefreq: EnumChangefreq.MONTHLY, priority: 0.5 }
 ];
 
 async function generateSitemap(): Promise<void> {
