@@ -10,11 +10,9 @@ export default async function RootLayout({
 }) {
   const cookieStore = await cookies();
   const highContrast = cookieStore.get('highcontrast')?.value === 'true';
-  const openDyslexic = cookieStore.get('opendyslexic')?.value === 'true';
 
   const classNames = [
     highContrast ? 'high-contrast' : '',
-    openDyslexic ? 'open-dyslexic' : '',
   ]
     .filter(Boolean)
     .join(' ');

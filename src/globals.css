@@ -1,7 +1,14 @@
-
+@font-face {
+  font-family: 'AtkinsonHyperlegible';
+  src: url('../public/Fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 html,
 body {
   height: 100%;
+  font-family: "AtkinsonHyperlegible", Arial, sans-serif;
 }
 body {
   display: flex;
@@ -99,7 +106,6 @@ body {
 .high-contrast .hamburger-links,
 .high-contrast .hamburger-links li,
 .high-contrast .hamburger-links a,
-.high-contrast .open-dyslexic,
 .high-contrast .fade-in,
 .high-contrast .hamburger-menu,
 .high-contrast .hamburger-menu div,
@@ -130,19 +136,6 @@ body {
   border: 1px solid white !important;
   background-color: #333 !important;
   color: white !important;
-}
-body.open-dyslexic {
-  font-family: "OpenDyslexic", sans-serif !important;
-  font-size: 100%;
-}
-.open-dyslexic input,
-.open-dyslexic textarea,
-.open-dyslexic button {
-  font-family: "OpenDyslexic", sans-serif !important;
-}
-body.high-contrast.open-dyslexic {
-  background-color: var(--background-color) !important;
-  color: var(--text-color) !important;
 }
 .profile {
   border-radius: 1.565vh;
